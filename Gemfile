@@ -24,7 +24,7 @@ end
 group :test do
   gem 'capybara'
   gem "factory_girl_rails", "~> 4.0"
-  # gem 'database-cleaner'
+  gem 'database_cleaner'
 end
 
 # Gems shared across environments
