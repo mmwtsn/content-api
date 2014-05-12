@@ -1,10 +1,16 @@
 require 'spec_helper'
 
-feature 'anyone can' do
-  scenario 'view the app' do
+feature 'anonymous users' do
+  scenario 'can view the homepage' do
     visit root_path
 
     expect(page).to have_content('content api')
+  end
+
+  scenario 'cannot view other pages' do
+    visit pages_path
+
+    expect(page).to have_content('unauthorized')
   end
 end
 
