@@ -21,7 +21,10 @@ Rails.application.configure do
 
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
-
+  
+  # Ensure you have defined default url options in your environments files. Here
+  # is an example of default_url_options appropriate for a development environment:
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
