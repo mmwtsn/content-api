@@ -1,0 +1,11 @@
+<h1>pages#new</h1>
+
+<%= form_for @page do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, autofocus: true %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'create' %>
+<% end %>
