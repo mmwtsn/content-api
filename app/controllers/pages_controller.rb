@@ -10,7 +10,12 @@ class PagesController < ApplicationController
   end
 
   def create
-    Page.create!(params[:page].permit(:title, :body))
+    Page.create!(page_params)
     redirect_to pages_path
+  end
+
+  private
+  def page_params
+    params[:page].permit(:title, :body)
   end
 end
