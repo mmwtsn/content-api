@@ -25,10 +25,6 @@ feature 'user can' do
     expect(page).to have_content('test title')
   end
 
-  scenario 'view all pages' do
-    pending
-  end
-
   scenario 'edit a page' do
     pending
   end
