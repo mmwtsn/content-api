@@ -10,7 +10,7 @@ feature 'anonymous users' do
   scenario 'cannot view other pages' do
     visit pages_path
 
-    expect(page).to have_content('unauthorized')
+    expect(page).to have_content('need to sign in')
   end
 end
 
