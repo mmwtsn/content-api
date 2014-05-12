@@ -1,1 +1,10 @@
 <h1>content api</h1>
+
+<% if !current_user %>
+  <p>unauthenticated</p>
+  <%= link_to 'sign in', new_user_session_path %>
+  <%= link_to 'register', new_user_registration_path %>
+<% else  %>
+  <p>authenticated</p>
+  <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>
+<% end %>
