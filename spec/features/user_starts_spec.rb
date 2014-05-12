@@ -1,5 +1,9 @@
 require 'spec_helper'
 
+# TODO?
+# Call Warden test methods with FactoryGirl
+# https://github.com/plataformatec/devise/wiki/How-To:-Test-with-Capybara
+
 feature 'anonymous users' do
   scenario 'can view the homepage' do
     visit root_path
