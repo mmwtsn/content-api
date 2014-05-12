@@ -12,11 +12,14 @@ feature 'user can' do
   end
 
   scenario 'create a page' do
+    # GET /pages     pages#show
     visit pages_path
 
+    # GET /pages/new pages#new
     click_link 'create page'
-
     fill_in 'page_title', :with => 'test title'
+
+    # POST /pages    pages#create
     click_button 'create'
 
     expect(page).to have_content('test title')
