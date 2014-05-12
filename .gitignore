@@ -8,6 +8,9 @@
 # Ignore NPM modules as package.json tracks them
 node_modules/
 
+# Ignore bower-installed libraries to keep repository size down
+/public/bower_components
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
