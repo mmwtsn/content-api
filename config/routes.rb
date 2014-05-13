@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
-  resource :pages
+  resources :pages
 
   devise_for :users
 end
