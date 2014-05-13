@@ -1,0 +1,9 @@
+<h1>pages#index</h1>
+
+<%= link_to 'create page', new_page_path %>
+
+<% @pages.each do |page| %>
+  <p><%= page.title %></p>
+  <p><%= page.body %></p>d
+  <%= link_to "edit #{page.title}", edit_page_path(page) %>
+<% end %>
