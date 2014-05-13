@@ -12,14 +12,14 @@ feature 'user can' do
   end
 
   scenario 'create a page' do
-    # GET /pages     pages#show
+    # GET /pages pages#show
     visit pages_path
 
     # GET /pages/new pages#new
     click_link 'create page'
     fill_in 'page_title', :with => 'test title'
 
-    # POST /pages    pages#create
+    # POST /pages pages#create
     click_button 'create'
 
     expect(page).to have_content('test title')
@@ -28,7 +28,7 @@ feature 'user can' do
   scenario 'edit a page' do
     @page = FactoryGirl.create(:page)
 
-    # GET /pages    pages#show
+    # GET /pages pages#show
     visit pages_path
     expect(page).to have_content(@page.title)
 
@@ -39,10 +39,10 @@ feature 'user can' do
     @page.title = 'new title'
     fill_in 'page_title', :with => @page.title
 
-    # PUT /pages/id      pages#update
+    # PUT /pages/id pages#update
     click_button 'save'
 
-    # GET /pages    pages#show
+    # GET /pages pages#show
     visit pages_path
     expect(page).to have_content(@page.title)
   end
