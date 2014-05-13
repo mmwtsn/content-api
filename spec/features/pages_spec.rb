@@ -26,7 +26,25 @@ feature 'user can' do
   end
 
   scenario 'edit a page' do
-    pending
+    @page = FactoryGirl.create(:page)
+
+    # GET /pages    pages#show
+    visit pages_path
+    expect(page).to have_content(@page.title)
+
+    # GET /pages/id/edit pages#edit
+    click_link "edit #{@page.title}"
+
+    # Edit page
+    @page.title = 'new title'
+    fill_in 'page_title', :with => @page.title
+
+    # PUT /pages/id      pages#update
+    click_button 'save'
+
+    # GET /pages    pages#show
+    visit pages_path
+    expect(page).to have_content(@page.title)
   end
 
   scenario 'delete a page' do
