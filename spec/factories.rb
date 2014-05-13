@@ -5,4 +5,9 @@ FactoryGirl.define do
     password 'password'
     password_confirmation 'password'
   end
+
+  factory :page do
+    title 'Buying a Bicycle'
+    body 'Today I will buy a bicycle.'
+  end
 end
