@@ -1,12 +1,9 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_requested_page, only: [:show, :edit, :update, :destroy]
 
   def index
     @pages = Page.all
-  end
-
-  def new
-    @page = Page.new
   end
 
   def create
@@ -14,17 +11,17 @@ class PagesController < ApplicationController
     redirect_to pages_path
   end
 
-  def show
-    @page = Page.find(params[:id])
+  def new
+    @page = Page.new
   end
 
   def edit
-    @page = Page.find(params[:id])
+  end
+
+  def show
   end
 
   def update
-    @page = Page.find(params[:id])
-
     if @page.update(page_params)
       redirect_to @page
     else
@@ -35,5 +32,9 @@ class PagesController < ApplicationController
   private
   def page_params
     params[:page].permit(:title, :body)
+  end
+
+  def get_requested_page
+    @page = Page.find(params[:id])
   end
 end
