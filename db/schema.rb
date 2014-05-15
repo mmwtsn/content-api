@@ -11,11 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512182501) do
+ActiveRecord::Schema.define(version: 20140515192250) do
 
   create_table "pages", force: true do |t|
-    t.string "title"
-    t.text   "body"
+    t.string   "title"
+    t.text     "body"
+    t.string   "header_file_name"
+    t.string   "header_content_type"
+    t.integer  "header_file_size"
+    t.datetime "header_updated_at"
   end
 
   create_table "users", force: true do |t|
