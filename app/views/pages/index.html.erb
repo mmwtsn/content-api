@@ -6,4 +6,5 @@
   <p><%= page.title %></p>
   <p><%= page.body %></p>d
   <%= link_to "edit #{page.title}", edit_page_path(page) %>
+  <%= link_to 'delete', page_path(page), method: :delete %>
 <% end %>
