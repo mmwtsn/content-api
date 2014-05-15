@@ -29,6 +29,11 @@ class PagesController < ApplicationController
     end
   end
 
+  def destroy
+    @page.destroy
+    redirect_to pages_path
+  end
+
   private
   def page_params
     params[:page].permit(:title, :body)
