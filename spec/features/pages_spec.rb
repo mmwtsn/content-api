@@ -12,7 +12,7 @@ feature 'user can' do
   end
 
   scenario 'create a page' do
-    # GET /pages pages#show
+    # GET /pages pages#index
     visit pages_path
 
     # GET /pages/new pages#new
@@ -28,7 +28,7 @@ feature 'user can' do
   scenario 'edit a page' do
     @page = FactoryGirl.create(:page)
 
-    # GET /pages pages#show
+    # GET /pages pages#index
     visit pages_path
     expect(page).to have_content(@page.title)
 
@@ -48,6 +48,13 @@ feature 'user can' do
   end
 
   scenario 'delete a page' do
-    pending
+    @page = FactoryGirl.create(:page)
+
+    # GET /pages pages#index
+    visit pages_path
+
+    # DELETE /pages/:id pages#destroy
+    click_link 'delete'
+    expect(page).to have_no_content(@page.title)
   end
 end
