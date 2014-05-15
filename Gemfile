@@ -14,6 +14,9 @@ gem 'jbuilder', '~> 2.0'
 # Authentication
 gem 'devise'
 
+# Image processing
+gem 'paperclip'
+
 # Gems available in development
 group :development do
   gem 'pry-rails'
