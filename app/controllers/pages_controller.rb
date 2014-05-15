@@ -36,7 +36,7 @@ class PagesController < ApplicationController
 
   private
   def page_params
-    params[:page].permit(:title, :body)
+    params[:page].permit(:title, :body, :header)
   end
 
   def get_requested_page
