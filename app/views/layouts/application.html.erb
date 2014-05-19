@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>ContentApi</title>
+  <%= favicon_link_tag '/images/favicon.png?v=7' %>
   <%= javascript_include_tag '/bower_components/jquery/dist/jquery.min.js' %>
   <%= javascript_include_tag '/bower_components/jquery-ujs/src/rails.js' %>
   <%= csrf_meta_tags %>
@@ -11,9 +12,9 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-<main>
-  <%= yield %>
-</main>
+  <main>
+    <%= yield %>
+  </main>
 
 </body>
 </html>
