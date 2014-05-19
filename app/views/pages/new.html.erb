@@ -1,6 +1,6 @@
 <h1>pages#new</h1>
 
-<%= form_for @page do |f| %>
+<%= form_for @page, html: { multipart: true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, autofocus: true %>
 
@@ -8,7 +8,7 @@
   <%= f.text_area :body %>
 
   <%= f.label :header %>
-  <%= f.text_field :header %>
+  <%= f.file_field :header %>
 
   <%= f.submit 'create' %>
 <% end %>
