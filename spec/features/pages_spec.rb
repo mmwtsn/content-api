@@ -22,7 +22,7 @@ feature 'user can' do
     fill_in 'page_title', :with => title
 
     # POST /pages pages#create
-    click_button 'create'
+    click_button 'save'
 
     expect(page).to have_content(title)
   end
