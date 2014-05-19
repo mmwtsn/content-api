@@ -1,9 +1,12 @@
-<%= form_for :page, url: page_path(@page), method: :patch do |f| %>
+<%= form_for :page, url: page_path(@page), method: :patch, html: { multipart: true } do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title, autofocus: true %>
 
   <%= f.label :body %>
   <%= f.text_area :body %>
+
+  <%= f.label :header %>
+  <%= f.file_field :header %>
 
   <%= f.submit 'save' %>
 <% end %>
