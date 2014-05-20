@@ -1,7 +1,13 @@
-<h1>pages#show</h1>
- 
-<%= link_to 'create page', new_page_path %>
+<!--<img src="<%= @page.header %>" />-->
 
-<img src="<%= @page.header %>" />
-<p><%= @page.title %></p>
-<p><%= @page.body %></p>
+<%= render 'tmp_ibm_top' %>
+<h2 class="section-header">
+  <%= @page.title %>
+</h2>
+
+<%= render 'tmp_ibm_mid' %>
+<p>
+  <%= @page.body %>
+</p>
+
+<%= render 'tmp_ibm_bot' %>
