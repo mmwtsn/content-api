@@ -38,7 +38,10 @@ gulp.task('lint', function() {
 // SASS compilation task
 gulp.task('sass', function() {
   return gulp.src(sassPath)
-    .pipe(sass())
+    .pipe(sass({
+      includePaths: require('node-bourbon').includePaths,
+      includePaths: require('node-neat').includePaths
+    }))
     .pipe(gulp.dest(cssPath));
 });
 
