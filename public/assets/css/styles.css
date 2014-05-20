@@ -5,4 +5,7 @@
   box-sizing: border-box; }
 
 html {
-  color: #333; }
+  color: #333;
+  max-width: 960px;
+  width: 100%;
+  margin: 100px auto; }
