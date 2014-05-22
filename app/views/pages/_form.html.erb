@@ -16,6 +16,10 @@
   <%= f.label :body %>
   <%= f.text_area :body %>
 
+  <% if @page.header %>
+    <p><%= @page.header_file_name %></p>
+  <% end %>
+
   <%= f.label :header %>
   <%= f.file_field :header %>
 
