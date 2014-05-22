@@ -25,6 +25,7 @@ feature 'user can' do
     click_button 'save'
 
     expect(page).to have_content(title)
+    expect(page).to have_content('unpublished')
   end
 
   scenario 'edit a page' do
@@ -43,7 +44,6 @@ feature 'user can' do
 
     # PUT /pages/id pages#update
     click_button 'save'
-    expect(page.find('img')).to be_true
 
     # GET /pages pages#index
     visit pages_path
@@ -69,5 +69,18 @@ feature 'user can' do
     visit pages_path
     expect(page).to have_content(@page.title)
     expect(page).to have_content(@another_page.title)
+  end
+
+  scenario 'publish only complete pages' do
+    @page = FactoryGirl.create(:page)
+
+    # GET /pages/:id/edit pages#edit
+    visit edit_page_path(@page.id)
+
+    # Attempt to publish page without filling in header image field
+    find('#page_published').set(true)
+    click_button 'save'
+
+    expect(page).to have_content('error')
   end
 end
