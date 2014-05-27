@@ -1,13 +1,30 @@
+<div class="admin">
+   <%= form_for([@page, @page.scenarios.build]) do |f| %>
+     <%= f.label :quote %>
+     <%= f.text_field :quote %>
+
+     <%= f.label :pitch %>
+     <%= f.text_field :pitch %>
+
+     <%= f.submit 'add scenario' %>
+   <% end %>
+</div>
+
 <%# image_tag @page.header %>
 
-<%= render 'tmp_ibm_top' %>
+<%# render 'tmp_ibm_top' %>
 <h2 class="section-header">
   <%= @page.title %>
 </h2>
 
-<%= render 'tmp_ibm_mid' %>
+<%# render 'tmp_ibm_mid' %>
 <p>
   <%= @page.body %>
 </p>
 
-<%= render 'tmp_ibm_bot' %>
+<%# render 'tmp_ibm_bot' %>
+
+<% @page.scenarios.each do |scenario| %>
+  <h1><%= scenario.quote %></h1>
+  <p><%= scenario.pitch %></p>
+<% end %>
