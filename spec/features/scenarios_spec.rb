@@ -28,7 +28,19 @@ feature 'user can' do
   end
 
   scenario 'view all scenarios on a page' do
-    pending
+    @page = FactoryGirl.create :page, :with_scenarios, num: 2
+
+    # Update scenario quotes
+    # TODO - do this automatically in the factory
+    @page.scenarios.each_with_index do |scenario, index|
+      scenario.quote = "Quote ##{index}"
+      scenario.save!
+    end
+
+    visit page_path(@page.id)
+
+    expect(page).to have_content("Quote #0")
+    expect(page).to have_content("Quote #1")
   end
 
   scenario 'edit a scenario' do
