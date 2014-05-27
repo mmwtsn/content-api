@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-# TODO?
-# Call Warden test methods with FactoryGirl
-# https://github.com/plataformatec/devise/wiki/How-To:-Test-with-Capybara
+# Get access to Capybara's "sign_in" method
+include Warden::Test::Helpers
+Warden.test_mode!
 
 feature 'anonymous users' do
   scenario 'can view the homepage' do
@@ -21,7 +21,7 @@ end
 feature 'user can' do
   scenario 'create an account, sign in and sign out' do
     visit root_path
-    
+
     # For the initial test, manually seed the user information
     click_link 'register'
     fill_in 'user_email', with: 'user@ibmcloud.io'
@@ -29,7 +29,7 @@ feature 'user can' do
     fill_in 'user_password_confirmation', with: 'password'
 
     # register and sign in
-    click_button 'sign up'
+    click_button 'register'
     expect(page).to have_content('authenticated')
 
     # sign out
