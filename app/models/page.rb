@@ -1,4 +1,6 @@
 class Page < ActiveRecord::Base
+  has_many :scenarios
+
   # Paperclip file configuration
   has_attached_file :header, 
                     :styles => { :default => '1900x500' },
