@@ -21,6 +21,8 @@ gem 'paperclip'
 group :development do
   gem 'pry-rails'
   gem 'spring'
+  gem 'guard-rspec', require: false
+  gem 'rb-fsevent', require: false if RUBY_PLATFORM =~ /darwin/i # Only required in OS X
 end
 
 # Gems available for testing
