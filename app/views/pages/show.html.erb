@@ -12,17 +12,25 @@
 
 <%# image_tag @page.header %>
 
-<%= render 'tmp_ibm_top' %>
+<% if gaming_scenario? %>
+  <%= render 'tmp_ibm_top' %>
+<% end %>
+
 <h2 class="section-header">
   <%= @page.title %>
 </h2>
 
-<%= render 'tmp_ibm_mid' %>
+<% if gaming_scenario? %>
+  <%= render 'tmp_ibm_mid' %>
+<% end %>
+
 <p>
   <%= @page.body %>
 </p>
 
-<%= render 'tmp_ibm_bot' %>
+<% if gaming_scenario? %>
+  <%= render 'tmp_ibm_bot' %>
+<% end %>
 
 <% @page.scenarios.each do |scenario| %>
   <h1><%= scenario.quote %></h1>
