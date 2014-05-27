@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   # TODO - set up proper slug-based routing
   get '/cloud-computing/us/en/solutions-gaming.html', to: 'pages#show', id: 1
 
-  resources :pages
+  resources :pages do
+    resources :scenarios, shallow: true
+  end
 
   devise_for :users
 end
