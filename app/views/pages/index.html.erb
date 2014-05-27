@@ -3,10 +3,19 @@
 <%= link_to 'create page', new_page_path %>
 
 <% @pages.each do |page| %>
-  <p><%= page.title %></p>
-  <p><%= page.body %></p>
-  <p><%= page.published? ? 'published' : 'unpublished' %></p>
-  <%= link_to "view", page_path(page) %>
-  <%= link_to "edit", edit_page_path(page) %>
-  <%= link_to 'delete', page_path(page), method: :delete %>
+<div class="page">
+  <div class="page-header">
+    <img src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png" alt="">
+  </div>
+  <div class="page-content">
+    <h1><%= page.title %><span class="page-state"><%= page.published? ? 'published' : 'unpublished' %></span></h1>
+    <p><%= page.body %></p>
+
+    <p class="page-admin">
+      <%= link_to "view", page_path(page) %> |
+      <%= link_to "edit", edit_page_path(page) %> |
+      <%= link_to 'delete', page_path(page), method: :delete %>
+    </p>
+  </div>
+</div>
 <% end %>
