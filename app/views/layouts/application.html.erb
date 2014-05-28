@@ -18,7 +18,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
-  <main>
+  <main <%= raw admin_view? ? ' class="admin"' : '' %>>
     <%= yield %>
   </main>
 
