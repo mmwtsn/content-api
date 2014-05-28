@@ -10,4 +10,10 @@ module ApplicationHelper
       true
     end
   end
+
+  def admin_view?
+    if params[:controller] == 'pages'
+      true
+    end
+  end
 end
