@@ -7,6 +7,12 @@ html {
   color: #333;
 }
 
+main.admin {
+  max-width: 960px;
+  width: 100%;
+  margin: 100px auto;
+}
+
 .page {
   $comment-gutter: 1.4em;
   $comment-image-padding: .7em;

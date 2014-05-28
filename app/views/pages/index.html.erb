@@ -1,11 +1,11 @@
-<h1>pages#index</h1>
+<h1>all pages</h1>
 
 <%= link_to 'create page', new_page_path %>
 
 <% @pages.each do |page| %>
 <div class="page">
   <div class="page-header">
-    <img src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png" alt="">
+    <%= image_tag page.header %>
   </div>
   <div class="page-content">
     <h1><%= page.title %><span class="page-state"><%= page.published? ? 'published' : 'unpublished' %></span></h1>
