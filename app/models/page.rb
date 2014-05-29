@@ -1,5 +1,5 @@
 class Page < ActiveRecord::Base
-  has_many :scenarios
+  has_many :scenarios, dependent: :destroy
 
   # Paperclip file configuration
   has_attached_file :header, 
