@@ -42,4 +42,22 @@ RSpec.configure do |config|
       DatabaseCleaner.clean
     end
   end
+
+  # DatabaseCleaner configuration via the README:
+  # https://github.com/bmabey/database_cleaner#rspec-example
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
+  end
+  
+  # Start DatabaseCleaner before each test spec is run
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  # Run DatabaseCleaner after each test spec is run to ensure
+  # a fresh database for the next spec
+  config.after(:each) do
+    DatabaseCleaner.clean
+  end 
 end
