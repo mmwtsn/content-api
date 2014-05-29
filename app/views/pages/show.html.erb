@@ -22,6 +22,19 @@
 
 <% if admin_view? %>
 <div class="admin">
+  <%= link_to 'back', pages_path %> |
+  <%= link_to 'edit solution', edit_page_path(@page) %>
+</div>
+<% end %>
+
+<% @page.scenarios.each do |scenario| %>
+  <h1><%= scenario.quote %></h1>
+  <p><%= scenario.pitch %></p>
+  <p><strong>id:&nbsp;</strong><%= scenario.id %></p>
+<% end %>
+
+<% if admin_view? %>
+<div class="admin">
    <%= form_for([@page, @page.scenarios.build]) do |f| %>
      <%= f.label :quote %>
      <%= f.text_field :quote %>
@@ -32,9 +45,4 @@
      <%= f.submit 'add scenario' %>
    <% end %>
 </div>
-
-<% @page.scenarios.each do |scenario| %>
-  <h1><%= scenario.quote %></h1>
-  <p><%= scenario.pitch %></p>
-<% end %>
 <% end %>
