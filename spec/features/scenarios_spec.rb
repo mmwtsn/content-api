@@ -9,8 +9,6 @@ feature 'user can' do
   before(:each) do
     @user = FactoryGirl.create(:user)
     login_as(@user)
-    #@scenario = FactoryGirl.create(:scenario)
-    #@another_scenario = FactoryGirl.create(:scenario)
   end
 
   scenario 'create a scenario' do
