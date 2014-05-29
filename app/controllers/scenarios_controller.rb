@@ -5,6 +5,20 @@ class ScenariosController < ApplicationController
     redirect_to page_path(@page)
   end
 
+  def edit
+    @scenario = Scenario.find(params[:id])
+  end
+
+  def update
+    @scenario = Scenario.find(params[:id])
+
+    if @scenario.update(scenario_params)
+      redirect_to page_path(@scenario.page_id)
+    else
+      render 'edit'
+    end
+  end
+
   private
   def scenario_params
     params.require(:scenario).permit(:quote, :pitch)
