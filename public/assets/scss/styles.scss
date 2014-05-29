@@ -2,15 +2,40 @@
 @import 'bourbon';
 @import 'bitters/bitters';
 @import 'neat';
+@import 'fonts';
 
 html {
   color: #333;
+}
+
+h1 {
+  font-family: 'LubalinDemiIBM';
 }
 
 main.admin {
   max-width: 960px;
   width: 100%;
   margin: 100px auto;
+}
+
+.button.large {
+  width: 11em;
+  vertical-align: baseline;
+  background: #61D57F;
+  border-radius: 0.375em;
+  color: #FFF;
+  display: block;
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 2em 0;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #52C36F;
+  }
 }
 
 .page {
@@ -56,9 +81,15 @@ main.admin {
   .page-content {
     width: 100%;
 
-    h1 {
+    h2 {
       font-size: 1em;
+      text-transform: lowercase;
       margin-bottom: .5em;
+    }
+
+    span.page-state {
+      font-weight: lighter;
+      color: #666;
     }
 
     p {
