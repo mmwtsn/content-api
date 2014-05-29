@@ -42,7 +42,19 @@ feature 'user can' do
   end
 
   scenario 'edit a scenario' do
-    pending
+    @page = FactoryGirl.create :page
+    @scenario = FactoryGirl.create :scenario, quote: 'Vacation Scenario', pitch: 'Memorial Day'
+    new_quote = 'fancy new quote'
+
+    visit page_path(@page.id)
+
+    click_link 'edit'
+
+    fill_in 'scenario_quote', with: new_quote
+
+    click_button 'save'
+
+    expect(page).to have_content(new_quote)
   end
 
   scenario 'delete a scenario' do
