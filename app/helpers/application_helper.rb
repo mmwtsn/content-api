@@ -5,14 +5,14 @@ module ApplicationHelper
     end
   end
 
-  def gaming_scenario?
-    if user_requested?('pages', 'show', 1)
+  def admin_view?
+    if request.original_fullpath != '/cloud-computing/us/en/solutions-gaming.html'
       true
     end
   end
 
-  def admin_view?
-    if params[:controller] == 'pages'
+  def gaming_scenario?
+    if !admin_view?
       true
     end
   end
