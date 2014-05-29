@@ -1,15 +1,3 @@
-<div class="admin">
-   <%= form_for([@page, @page.scenarios.build]) do |f| %>
-     <%= f.label :quote %>
-     <%= f.text_field :quote %>
-
-     <%= f.label :pitch %>
-     <%= f.text_field :pitch %>
-
-     <%= f.submit 'add scenario' %>
-   <% end %>
-</div>
-
 <%# image_tag @page.header %>
 
 <% if gaming_scenario? %>
@@ -32,7 +20,21 @@
   <%= render 'tmp_ibm_bot' %>
 <% end %>
 
+<% if admin_view? %>
+<div class="admin">
+   <%= form_for([@page, @page.scenarios.build]) do |f| %>
+     <%= f.label :quote %>
+     <%= f.text_field :quote %>
+
+     <%= f.label :pitch %>
+     <%= f.text_field :pitch %>
+
+     <%= f.submit 'add scenario' %>
+   <% end %>
+</div>
+
 <% @page.scenarios.each do |scenario| %>
   <h1><%= scenario.quote %></h1>
   <p><%= scenario.pitch %></p>
+<% end %>
 <% end %>
