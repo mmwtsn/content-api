@@ -19,6 +19,13 @@ class ScenariosController < ApplicationController
     end
   end
 
+  def destroy
+    @scenario = Scenario.find(params[:id])
+    @scenario.destroy
+
+    redirect_to page_path(@scenario.page_id)
+  end
+
   private
   def scenario_params
     params.require(:scenario).permit(:quote, :pitch)
