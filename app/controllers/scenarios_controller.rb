@@ -1,9 +1,10 @@
 class ScenariosController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_requested_scenario, only: [:edit, :update, :destroy]
 
   def create
     @page = Page.find(params[:page_id])
-    @scenario = @page.scenarios.create(scenario_params)
+    @scenario = @page.scenarios.create!(scenario_params)
     redirect_to page_path(@page)
   end
 
@@ -26,7 +27,7 @@ class ScenariosController < ApplicationController
 
   private
   def scenario_params
-    params.require(:scenario).permit(:quote, :pitch)
+    params.require(:scenario).permit(:quote, :pitch, :avatar)
   end
 
   def get_requested_scenario
