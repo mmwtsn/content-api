@@ -57,6 +57,12 @@ feature 'user can' do
   end
 
   scenario 'delete a scenario' do
-    pending
+    @page = FactoryGirl.create :page, :with_scenarios, num: 1
+
+    visit page_path(@page.id)
+
+    click_link 'delete scenario'
+
+    expect(page).to have_no_content('edit scenario')
   end
 end
