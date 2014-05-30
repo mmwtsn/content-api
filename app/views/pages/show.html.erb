@@ -30,7 +30,7 @@
 <% @page.scenarios.each do |scenario| %>
   <h1><%= scenario.quote %></h1>
   <p><%= scenario.pitch %></p>
-  <p><strong>id:&nbsp;</strong><%= scenario.id %></p>
+  <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %>
 <% end %>
 
 <% if admin_view? %>
