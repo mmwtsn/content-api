@@ -12,10 +12,7 @@ FactoryGirl.define do
 
     # Allow header image to be tested only when necessary
     factory :post_with_header do
-      header_file_name    { 'header.jpg' }
-      header_file_size    { 269410 }
-      header_content_type { 'image/jpeg' }
-      header_updated_at   { Time.now }
+      header { File.new("#{Rails.root}/public/assets/images/defaults/header.jpg") }
     end
   end
 
@@ -26,10 +23,7 @@ FactoryGirl.define do
 
     # Allow avatar image to be tested only when necessary
     factory :scenario_with_avatar do
-      avatar_file_name    { 'avatar.png' }
-      avatar_file_size    { 81581 }
-      avatar_content_type { 'image/png' }
-      avatar_updated_at   { Time.now }
+      avatar { File.new("#{Rails.root}/public/assets/images/defaults/avatar.png") }
     end
   end
 
