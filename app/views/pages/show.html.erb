@@ -1,4 +1,4 @@
-<%# image_tag @page.header %>
+<%= image_tag @page.header, class: 'page-header' %>
 
 <% if gaming_scenario? %>
   <%= render 'tmp_ibm_top' %>
@@ -30,6 +30,8 @@
 <% @page.scenarios.each do |scenario| %>
   <h1><%= scenario.quote %></h1>
   <p><%= scenario.pitch %></p>
+  <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
+
   <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
   <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
 <% end %>
