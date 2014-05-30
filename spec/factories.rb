@@ -6,12 +6,20 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  #
+  # TODO
+  # These factories are not working currently because
+  # the nested factories should instead be traits that.
+  # I should be able to add an image onto each class,
+  # including the :with_scenarios version so that the
+  # dependency can be checked.
+  #
   factory :page do
     title 'Buying a Bicycle'
     body 'Today I will buy a bicycle.'
 
     # Allow header image to be tested only when necessary
-    factory :post_with_header do
+    factory :page_with_header do
       header { File.new("#{Rails.root}/public/assets/images/defaults/header.jpg") }
     end
   end
