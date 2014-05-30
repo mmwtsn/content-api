@@ -5,7 +5,6 @@ include Warden::Test::Helpers
 Warden.test_mode!
 
 feature 'user can' do
-
   before(:each) do
     @user = FactoryGirl.create(:user)
     login_as(@user)
