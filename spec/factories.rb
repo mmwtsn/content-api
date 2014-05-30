@@ -8,9 +8,9 @@ FactoryGirl.define do
 
   #
   # TODO
-  # These factories are not working currently because
-  # the nested factories should instead be traits that.
-  # I should be able to add an image onto each class,
+  # These factories could be refactored so that the
+  # nested factories instead use traits.
+  # One should be able to add an image onto each class,
   # including the :with_scenarios version so that the
   # dependency can be checked.
   #
