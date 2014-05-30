@@ -1,4 +1,6 @@
 class ScenariosController < ApplicationController
+  before_action :get_requested_scenario, only: [:edit, :update, :destroy]
+
   def create
     @page = Page.find(params[:page_id])
     @scenario = @page.scenarios.create(scenario_params)
@@ -6,12 +8,9 @@ class ScenariosController < ApplicationController
   end
 
   def edit
-    @scenario = Scenario.find(params[:id])
   end
 
   def update
-    @scenario = Scenario.find(params[:id])
-
     if @scenario.update(scenario_params)
       redirect_to page_path(@scenario.page_id)
     else
@@ -20,7 +19,6 @@ class ScenariosController < ApplicationController
   end
 
   def destroy
-    @scenario = Scenario.find(params[:id])
     @scenario.destroy
 
     redirect_to page_path(@scenario.page_id)
@@ -29,5 +27,9 @@ class ScenariosController < ApplicationController
   private
   def scenario_params
     params.require(:scenario).permit(:quote, :pitch)
+  end
+
+  def get_requested_scenario
+    @scenario = Scenario.find(params[:id])
   end
 end
