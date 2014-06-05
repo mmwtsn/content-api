@@ -38,6 +38,15 @@ main.admin {
   }
 }
 
+.error {
+  @extend %flash-error;
+}
+
+.notice {
+  @extend %flash-success;
+}
+
+
 .page {
   $comment-gutter: 1.4em;
   $comment-image-padding: .7em;

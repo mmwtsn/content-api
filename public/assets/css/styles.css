@@ -190,8 +190,28 @@ dl {
   dl dd {
     margin: 0; }
 
+.error {
+  background: #FBE3E4;
+  color: #96151c;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+  padding: 0.75em; }
+  .error a {
+    color: #6a0f14; }
+    .error a:hover {
+      color: #110203; }
 
 
+.notice {
+  background: #E6EFC2;
+  color: #56651a;
+  font-weight: bold;
+  margin-bottom: 0.75em;
+  padding: 0.75em; }
+  .notice a {
+    color: #333c10; }
+    .notice a:hover {
+      color: black; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -267,6 +287,8 @@ main.admin {
   text-transform: uppercase; }
   .button.large:hover {
     background: #52C36F; }
+
+
 
 .page {
   display: table;
