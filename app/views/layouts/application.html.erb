@@ -15,10 +15,10 @@
 <!-- eTree :.: Tab navigation :.: Z646056Q61579G40-->
 <body id="ibm-com" class="ibm-type">
 
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
   <main <%= raw admin_view? ? ' class="admin"' : '' %>>
+    <% if notice %><p class="notice"><%= notice %></p><% end %>
+    <% if alert  %><p class="alert"><%= alert %></p><% end %>
+
     <%= yield %>
   </main>
 
