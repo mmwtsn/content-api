@@ -36,4 +36,9 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Reset default Paperclip storage location for test images
+  Paperclip::Attachment.default_options.merge!({
+    :path => "tmp/test/file_uploads/:style/:filename"
+  })
 end
