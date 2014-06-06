@@ -19,7 +19,12 @@ feature 'user can' do
   end
 
   scenario 'edit a page header' do
-    pending
+    visit edit_page_path(@page)
+
+    attach_file :page_header, "#{Rails.root}/spec/uploads/alt_header.jpg"
+    click_button 'save'
+
+    expect(page.find('.page-header')['src']).to have_content('alt_header.jpg')
   end
 
   scenario 'add a scenario avatar' do
@@ -28,6 +33,11 @@ feature 'user can' do
   end
 
   scenario 'edit a scenario avatar' do
-    pending
+    visit edit_scenario_path(@scenario.id)
+
+    attach_file :scenario_avatar, "#{Rails.root}/spec/uploads/alt_avatar.png"
+    click_button 'save'
+
+    expect(page.find('.scenario-avatar')['src']).to have_content('alt_avatar.png')
   end
 end
