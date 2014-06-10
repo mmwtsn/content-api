@@ -65,4 +65,8 @@ feature 'Scenarios' do
 
     expect(page).to have_no_content('edit scenario')
   end
+
+  scenario 'add products to a scenario' do
+    pending
+  end
 end
