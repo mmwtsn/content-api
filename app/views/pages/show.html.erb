@@ -36,6 +36,14 @@
   <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
 <% end %>
 
+<% @page.resources.each do |resource| %>
+  <h1><%= resource.body %></h1>
+  <p><%= resource.url %></p>
+
+  <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
+  <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
+<% end %>
+
 <% if admin_view? %>
 <div class="admin">
    <%= form_for([@page, @page.scenarios.build]) do |f| %>
@@ -46,6 +54,16 @@
      <%= f.text_field :pitch %>
 
      <%= f.submit 'add scenario' %>
+   <% end %>
+
+   <%= form_for([@page, @page.resources.build]) do |f| %>
+     <%= f.label :body %>
+     <%= f.text_field :body %>
+
+     <%= f.label :url %>
+     <%= f.text_field :url %>
+
+     <%= f.submit 'add resource' %>
    <% end %>
 </div>
 <% end %>
