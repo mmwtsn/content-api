@@ -7,8 +7,8 @@ Warden.test_mode!
 feature 'Images' do
   before(:each) do
     user      = FactoryGirl.create(:user)
-    @page     = FactoryGirl.create(:page_with_header)
-    @scenario = FactoryGirl.create(:scenario_with_avatar)
+    @page     = FactoryGirl.create(:page, :with_header)
+    @scenario = FactoryGirl.create(:scenario, :with_avatar)
 
     login_as(user)
   end
