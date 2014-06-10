@@ -1,0 +1,22 @@
+<h1>resource#edit</h1>
+
+<%= form_for @resource do |f| %>
+  <% if @resource.errors.any? %>
+  <div class="errors">
+    <p><%= pluralize(@resource.errors.count, 'error') %>:</p>
+    <ul>
+      <% @resource.errors.full_messages.each do |error| %>
+        <li class="error"><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body, autofocus: true %>
+
+  <%= f.label :url %>
+  <%= f.text_area :url %>
+
+  <%= f.submit 'save' %>
+<% end %>
