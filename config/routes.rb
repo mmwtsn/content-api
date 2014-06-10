@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :pages do
     resources :scenarios, shallow: true
+    resources :resources, shallow: true
   end
 
   devise_for :users
