@@ -27,6 +27,7 @@
 </div>
 <% end %>
 
+<% if admin_view? %>
 <% @page.scenarios.each do |scenario| %>
   <h1><%= scenario.quote %></h1>
   <p><%= scenario.pitch %></p>
@@ -37,11 +38,11 @@
 <% end %>
 
 <% @page.resources.each do |resource| %>
-  <h1><%= resource.body %></h1>
-  <p><%= resource.url %></p>
+  <p><%= link_to resource.body, resource.url %></p>
 
   <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
   <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
+<% end %>
 <% end %>
 
 <% if admin_view? %>
