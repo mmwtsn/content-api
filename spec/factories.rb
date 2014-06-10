@@ -1,7 +1,12 @@
 FactoryGirl.define do
+  # Auto-incrementing e-mail sequence to prevent MySQL uniqueness errors
+  sequence :email do |n|
+    "user_#{n}@ibmcloud.io"
+  end
+
   # Simple user factory for Devise
   factory :user do
-    sequence(:email) { |n| "user_#{n}@ibmcloud.io" }
+    email
     password 'password'
     password_confirmation 'password'
   end
