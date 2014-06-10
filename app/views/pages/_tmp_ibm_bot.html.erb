@@ -7,9 +7,10 @@
 <!-- eTree :.: Main Content Grid :.: -->
 <div class="ibm-columns">
 <!-- eTree :.: Column 1-1 :.: H132845E64448L62-->
-<div class="ibm-col-1-1 ibm-topics-scenario-header ibm_cci-ibm-band"><img alt="Solutions - IT Management - Profile Image" height="173" width="173" src="//www.ibm.com/cloud-computing/images/persona_itmanagement.png"/>
-<h2 class="section-header">“I need cost-effective tools to monitor, manage and deliver a high performing, high-quality enterprise IT environment.”</h2>
-
+<div class="ibm-col-1-1 ibm-topics-scenario-header ibm_cci-ibm-band">
+  <%= image_tag @page.scenarios.first.avatar, class: 'scenario_avatar' %>
+  <h2 class="section-header">"<%= @page.scenarios.first.quote %>"</h2>
+  <p class="scenario_pitch"><%= @page.scenarios.first.pitch %></p>
 
 </div>
 <!-- eTree :.: /Column :.: -->
@@ -78,23 +79,13 @@
 
 <!-- eTree :.: Main Content Grid :.: -->
 <div class="ibm-columns">
+
 <!-- eTree :.: Column 1-1 :.: G300485P50116X55-->
 <div class="ibm-col-1-1 ibm-solutions-resources ibm-solutions-resources-block1 ibm_cci-ibm-band"><h3 class="section-header">Featured resources</h3>
 
-<h4 class="section-header">Demos</h4>
-
-
-<p><a href="https://livedemo.customers.na.apm.ibmserviceengage.com/resources/welcome/welcome.jsp?content=sandbox&amp;showwelcome=true" class="ibm-demo-link">Performance management</a>
-</p>
-
-
-<p><a href="https://sidr35cdwsa-k18.sccd.ibmserviceengage.com/gettingstarted/" class="ibm-demo-link" target="offcloud">SmartCloud Control Desk</a>
-</p>
-
-
-<p><a href="https://sandbox.wa.ibmserviceengage.com/ibm/TWSSandbox/wa/wa_sandbox.jsp" class="ibm-demo-link">Workload automation</a>
-</p>
-
+  <% @page.resources.each do |resource| %>
+    <p><%= link_to resource.body, resource.url, class: 'ibm_demo_link', target: '_blank' %></p>
+  <% end %>
 
 </div>
 <!-- eTree :.: /Column :.: -->
