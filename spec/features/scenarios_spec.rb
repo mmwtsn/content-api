@@ -15,7 +15,7 @@ feature 'Scenarios' do
     @page = FactoryGirl.create(:page)
     @scenario = FactoryGirl.build(:scenario, quote: 'Vacation Scenario', pitch: 'Memorial Day')
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     fill_in 'scenario_quote', with: @scenario.quote
     fill_in 'scenario_pitch', with: @scenario.pitch
@@ -35,7 +35,7 @@ feature 'Scenarios' do
       scenario.save!
     end
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     expect(page).to have_content("Quote #0")
     expect(page).to have_content("Quote #1")
@@ -45,7 +45,7 @@ feature 'Scenarios' do
     @page = FactoryGirl.create :page, :with_scenarios, num: 1
     edited_quote = 'Frank Ocean says: "I think I need a cold shower"'
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     click_link 'edit scenario'
 
