@@ -4,11 +4,11 @@ require 'spec_helper'
 include Warden::Test::Helpers
 Warden.test_mode!
 
-feature 'user can' do
+feature 'Scenarios' do
 
   before(:each) do
-    @user = FactoryGirl.create(:user)
-    login_as(@user)
+    user = FactoryGirl.create(:user)
+    login_as(user)
   end
 
   scenario 'create a scenario' do

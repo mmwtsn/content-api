@@ -4,13 +4,13 @@ require 'spec_helper'
 include Warden::Test::Helpers
 Warden.test_mode!
 
-feature 'user can' do
+feature 'Images' do
   before(:each) do
-    @user     = FactoryGirl.create(:user)
+    user      = FactoryGirl.create(:user)
     @page     = FactoryGirl.create(:page_with_header)
     @scenario = FactoryGirl.create(:scenario_with_avatar)
 
-    login_as(@user)
+    login_as(user)
   end
 
   scenario 'add a page header' do
