@@ -46,7 +46,6 @@ main.admin {
   @extend %flash-success;
 }
 
-
 .page {
   $comment-gutter: 1.4em;
   $comment-image-padding: .7em;
@@ -111,4 +110,13 @@ main.admin {
       color: $comment-detail-color;
     }
   }
+}
+
+.scenario_avatar {
+  width: 175px;
+}
+
+.scenario_pitch {
+  font-size: 2.5rem;
+  padding: 3rem !important;
 }

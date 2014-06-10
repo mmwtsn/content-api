@@ -327,3 +327,10 @@ main.admin {
       font-style: italic;
       font-size: 0.9em;
       color: rgba(51, 51, 51, 0.5); }
+
+.scenario_avatar {
+  width: 175px; }
+
+.scenario_pitch {
+  font-size: 2.5rem;
+  padding: 3rem !important; }
