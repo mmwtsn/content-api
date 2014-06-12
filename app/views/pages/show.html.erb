@@ -1,47 +1,53 @@
-<%= image_tag @page.header, class: 'page-header' %>
+<section class="solution">
+  <%= image_tag @page.header, class: 'page-header' %>
 
-<% if gaming_scenario? %>
-  <%= render 'tmp_ibm_top' %>
+  <% if gaming_scenario? %>
+    <%= render 'tmp_ibm_top' %>
+  <% end %>
+
+  <h2 class="section-header">
+    <%= @page.title %>
+  </h2>
+
+  <% if gaming_scenario? %>
+    <%= render 'tmp_ibm_mid' %>
+  <% end %>
+
+  <p>
+    <%= @page.body %>
+  </p>
+
+  <% if admin_view? %>
+  <div class="admin">
+    <%= link_to 'back', pages_path %> |
+    <%= link_to 'edit solution', edit_page_path(@page) %>
+  </div>
 <% end %>
-
-<h2 class="section-header">
-  <%= @page.title %>
-</h2>
-
-<% if gaming_scenario? %>
-  <%= render 'tmp_ibm_mid' %>
-<% end %>
-
-<p>
-  <%= @page.body %>
-</p>
+</section>
 
 <% if gaming_scenario? %>
   <%= render 'tmp_ibm_bot' %>
 <% end %>
 
 <% if admin_view? %>
-<div class="admin">
-  <%= link_to 'back', pages_path %> |
-  <%= link_to 'edit solution', edit_page_path(@page) %>
-</div>
-<% end %>
-
-<% if admin_view? %>
 <% @page.scenarios.each do |scenario| %>
-  <h1><%= scenario.quote %></h1>
-  <p><%= scenario.pitch %></p>
-  <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
+  <section class="scenario">
+    <h3><%= scenario.quote %></h3>
+    <p><%= scenario.pitch %></p>
 
-  <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
-  <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
+    <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
+    <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
+  </section>
 <% end %>
 
 <% @page.resources.each do |resource| %>
-  <p><%= link_to resource.body, resource.url %></p>
 
-  <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
-  <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
+  <section class="resource">
+    <p><%= link_to resource.body, resource.url %></p>
+
+    <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
+    <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
+  </section>
 <% end %>
 <% end %>
 
