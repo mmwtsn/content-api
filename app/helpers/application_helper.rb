@@ -5,14 +5,14 @@ module ApplicationHelper
     end
   end
 
-  def admin_view?
+  def admin
     if request.original_fullpath != '/cloud-computing/us/en/solutions-gaming.html'
       true
     end
   end
 
-  def gaming_scenario?
-    if !admin_view?
+  def preview
+    if request.original_fullpath == '/cloud-computing/us/en/solutions-gaming.html'
       true
     end
   end
