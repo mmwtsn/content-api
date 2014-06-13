@@ -6,7 +6,10 @@
   <%= javascript_include_tag '/bower_components/jquery/dist/jquery.min.js' %>
   <%= javascript_include_tag '/bower_components/jquery-ujs/src/rails.js' %>
   <%= javascript_include_tag '/assets/js/scripts' %>
-  <%= stylesheet_link_tag '/assets/css/styles' %>
+
+  <% if admin %><%= stylesheet_link_tag '/assets/css/admin' %><% end %>
+  <% if preview %><%= stylesheet_link_tag '/assets/css/styles' %><% end %>
+
   <%= csrf_meta_tags %>
 
   <%= render '/layouts/ibm_head' %>
@@ -16,7 +19,7 @@
 <!-- eTree :.: Tab navigation :.: Z646056Q61579G40-->
 <body id="ibm-com" class="ibm-type">
 
-  <main <%= raw admin_view? ? ' class="admin"' : '' %>>
+  <main <%= raw admin ? ' class="admin"' : '' %>>
     <% if notice %><p class="notice"><%= notice %></p><% end %>
     <% if alert %><p class="alert"><%= alert %></p><% end %>
 

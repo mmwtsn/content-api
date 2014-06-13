@@ -1,15 +1,15 @@
 <section class="solution">
   <%= image_tag @page.header, class: 'page-header' %>
 
-  <% if gaming_scenario? %>
+  <% if preview %>
     <%= render 'tmp_ibm_top' %>
   <% end %>
 
   <h2 class="section-header">
     <%= @page.title %>
   </h2>
-
-  <% if gaming_scenario? %>
+p
+  <% if preview %>
     <%= render 'tmp_ibm_mid' %>
   <% end %>
 
@@ -17,19 +17,19 @@
     <%= @page.body %>
   </p>
 
-  <% if admin_view? %>
+  <% if admin %>
   <div class="admin">
     <%= link_to 'back', pages_path %> |
     <%= link_to 'edit solution', edit_page_path(@page) %>
   </div>
-<% end %>
+  <% end %>
 </section>
 
-<% if gaming_scenario? %>
+<% if preview %>
   <%= render 'tmp_ibm_bot' %>
 <% end %>
 
-<% if admin_view? %>
+<% if admin %>
 <% @page.scenarios.each do |scenario| %>
   <section class="scenario">
     <h3><%= scenario.quote %></h3>
@@ -44,7 +44,7 @@
 <% @page.resources.each do |resource| %>
 
   <section class="resource">
-    <p><%= link_to resource.body, resource.url %></p>
+    <h4><%= resource.body %></h4>
 
     <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
     <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
@@ -52,7 +52,7 @@
 <% end %>
 <% end %>
 
-<% if admin_view? %>
+<% if admin %>
 <div class="admin">
    <%= form_for([@page, @page.scenarios.build]) do |f| %>
      <%= f.label :quote %>
