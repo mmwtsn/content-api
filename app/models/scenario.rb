@@ -1,5 +1,6 @@
 class Scenario < ActiveRecord::Base
   belongs_to :page
+  has_many :products
 
   # Paperclip file configuration
   has_attached_file :avatar,
