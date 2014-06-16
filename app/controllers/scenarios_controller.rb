@@ -1,11 +1,20 @@
 class ScenariosController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_requested_scenario, only: [:edit, :update, :destroy]
+  before_action :build_page, only: [:new, :create]
+  before_action :build_scenario, only: [:edit, :show, :update, :destroy]
+
+  def new
+    @scenario = Scenario.new
+  end
 
   def create
-    @page = Page.find(params[:page_id])
-    @scenario = @page.scenarios.create!(scenario_params)
-    redirect_to page_path(@page)
+    @scneario = Scenario.new(scenario_params)
+
+    if @scneario.save
+      redirect_to page_path(@page)
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -21,16 +30,20 @@ class ScenariosController < ApplicationController
 
   def destroy
     @scenario.destroy
-
     redirect_to page_path(@scenario.page_id)
   end
 
   private
+
   def scenario_params
-    params.require(:scenario).permit(:quote, :pitch, :avatar)
+    params.require(:scenario).permit(:quote, :pitch, :avatar, :page_id)
   end
 
-  def get_requested_scenario
+  def build_page
+    @page = Page.find(params[:page_id])
+  end
+
+  def build_scenario
     @scenario = Scenario.find(params[:id])
   end
 end
