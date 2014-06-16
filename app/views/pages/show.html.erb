@@ -1,3 +1,9 @@
+<% if admin %>
+  <section class="admin_bar">
+    <%= link_to 'add scenario', new_page_scenario_path(@page) %>
+  </section>
+<% end %>
+
 <section class="solution">
   <%= image_tag @page.header, class: 'page-header' %>
 
@@ -30,26 +36,26 @@
 <% end %>
 
 <% if admin %>
-<% @page.scenarios.each do |scenario| %>
-  <section class="scenario">
-    <h3><%= scenario.quote %></h3>
-    <p><%= scenario.pitch %></p>
-    <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
 
-    <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
-    <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
-  </section>
-<% end %>
+  <% @page.scenarios.each do |scenario| %>
+    <section class="scenario">
+      <h3><%= scenario.quote %></h3>
+      <p><%= scenario.pitch %></p>
+      <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
 
-<% @page.resources.each do |resource| %>
+      <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
+      <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
+    </section>
+  <% end %>
 
+  <% @page.resources.each do |resource| %>
   <section class="resource">
     <h4><%= resource.body %></h4>
 
     <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
     <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
   </section>
-<% end %>
+  <% end %>
 <% end %>
 
 <% if admin %>
