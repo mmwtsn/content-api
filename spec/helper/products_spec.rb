@@ -1,7 +1,23 @@
 require 'spec_helper'
 
 feature ProductAPI do
-  scenario '.fetch' do
-    pending # Fetches all products from Paat's product api
+  scenario '.format_JSONP' do
+    input = 'callback([\'key\':\'value\']);'
+    output = ProductAPI.format_JSONP(input)
+
+    expect(output).not_to include('callback')
+  end
+
+  scenario '.fetch_products' do
+    products = ProductAPI.fetch_products
+
+    expect(products).to be_a(Array)
+  end
+
+  scenario '.build_class' do
+    input = 'IBM Product Name'  
+    output = ProductAPI.build_class(input)
+
+    expect(output).to eq('ibm-product-name')
   end
 end
