@@ -1,4 +1,6 @@
 class ScenariosController < ApplicationController
+  require "#{Rails.root}/lib/product_api"
+
   before_action :authenticate_user!
   before_action :build_page, only: [:new, :create]
   before_action :build_scenario, only: [:edit, :show, :update, :destroy]
@@ -15,6 +17,10 @@ class ScenariosController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def show
+    @products = ProductAPI.fetch_products
   end
 
   def edit
