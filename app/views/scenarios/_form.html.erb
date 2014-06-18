@@ -1,0 +1,25 @@
+<%= form_for [@page, @scenario], html: { multipart: true } do |f| %>
+  <% if @scenario.errors.any? %>
+  <div class="errors">
+    <p><%= pluralize(@scenario.errors.count, 'error') %>:</p>
+    <ul>
+      <% @scenario.errors.full_messages.each do |error| %>
+        <li class="error"><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <%= f.hidden_field :page_id, value: @page.id %>
+
+  <%= f.label :quote %>
+  <%= f.text_field :quote, autofocus: true %>
+
+  <%= f.label :pitch %>
+  <%= f.text_area :pitch %>
+
+  <%= f.label :avatar %>
+  <%= f.file_field :avatar %>
+
+  <%= f.submit 'save' %>
+<% end %>
