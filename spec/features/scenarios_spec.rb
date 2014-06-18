@@ -11,16 +11,26 @@ feature 'Scenarios' do
     login_as(user)
   end
 
+  scenario 'no scenarios' do
+    @page = FactoryGirl.create(:page)
+
+    visit page_path(@page)
+
+    expect(page).to have_content('add scenario')
+  end
+
   scenario 'create a scenario' do
     @page = FactoryGirl.create(:page)
     @scenario = FactoryGirl.build(:scenario, quote: 'Vacation Scenario', pitch: 'Memorial Day')
 
     visit page_path(@page)
 
+    click_link 'add scenario'
+
     fill_in 'scenario_quote', with: @scenario.quote
     fill_in 'scenario_pitch', with: @scenario.pitch
 
-    click_button 'add scenario'
+    click_button 'save'
 
     expect(page).to have_content(@scenario.quote)
   end
