@@ -1,0 +1,20 @@
+<% if admin %>
+  <section class="admin_bar">
+    <form action="" method="get" accept-charset="utf-8" id="search">
+      <input type="search" name="find_product" id="find_product" placeholder="Find product..." />
+      <button type="submit" value="search">search</button>
+    </form>
+  </section>
+
+  <section class="products"></section>
+
+  <section class="scenario">
+    <h3><%= @scenario.quote %></h3>
+    <p><%= @scenario.pitch %></p>
+    <%= image_tag @scenario.avatar, class: 'scenario-avatar' %>
+
+    <%= link_to 'edit scenario', edit_scenario_path(@scenario) %> |
+    <%= link_to 'delete scenario', scenario_path(@scenario), method: :delete %>
+  </section>
+
+<% end %>
