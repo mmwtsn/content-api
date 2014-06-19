@@ -6,7 +6,12 @@
     </form>
   </section>
 
-  <section class="products"></section>
+  <% @products.each do |p| %>
+    <div class="product <%= ProductAPI.build_class(p["product_name"]) %>">
+      <p><strong><%= p["product_name"] %></strong> <%= p["name"] %></p>
+      <img src="<%= format_icon_url(p["category"]["icon_url"]) %>" alt="icon missing" />
+    </div>
+  <% end %>
 
   <section class="scenario">
     <h3><%= @scenario.quote %></h3>
