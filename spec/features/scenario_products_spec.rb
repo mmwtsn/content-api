@@ -23,14 +23,6 @@ feature 'Scenarios' do
     pending
   end
 
-  scenario 'view products associated with a scenario' do
-    pending
-  end
-
-  scenario 'change products associated with a scenario' do
-    pending
-  end
-
   scenario 'unassociate products associated with a scenario' do
     pending
   end
