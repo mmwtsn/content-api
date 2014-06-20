@@ -36,6 +36,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.1.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     celluloid (0.15.2)
       timers (~> 1.1.0)
     climate_control (0.0.3)
@@ -176,6 +179,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  capybara-webkit
   database_cleaner
   devise
   factory_girl_rails (~> 4.0)
