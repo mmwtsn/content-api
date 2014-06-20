@@ -28,6 +28,7 @@ end
 # Gems available for testing
 group :test do
   gem 'capybara'
+  gem 'capybara-webkit'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
 end
