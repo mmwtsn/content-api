@@ -22,6 +22,9 @@ RSpec.configure do |config|
   # Ensure RSpec has access to the application helper methods
   config.include ApplicationHelper
 
+  # Load session helper methods to authenticate users in test specs
+  config.include SessionHelpers, type: :feature
+
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
