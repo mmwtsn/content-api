@@ -20,7 +20,6 @@ class ScenariosController < ApplicationController
   end
 
   def show
-    @products = ProductAPI.fetch_products
     @product = Product.new
   end
 
