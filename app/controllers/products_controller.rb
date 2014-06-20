@@ -6,6 +6,14 @@ class ProductsController < ApplicationController
     redirect_to scenario_path(@scenario)
   end
 
+  def destroy
+    @scenario = Scenario.find(params[:scenario_id])
+    @product = @scenario.products.find(params[:id])
+
+    @product.destroy
+    redirect_to scenario_path(@scenario)
+  end
+
   private
 
   def products_params
