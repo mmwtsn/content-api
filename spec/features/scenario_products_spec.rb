@@ -1,14 +1,15 @@
 require 'spec_helper'
 
-# Get access to Capybara's "sign_in" method
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature 'Scenarios' do
 
   before(:each) do
-    user = FactoryGirl.create(:user)
-    login_as(user)
+    auth_user
+
+    scenario = FactoryGirl.create(:scenario)
+    visit scenario_path(scenario)
+
+    fill_in 'product_product_id', with: 5
+    click_button 'add product'
   end
 
   scenario 'search available products' do

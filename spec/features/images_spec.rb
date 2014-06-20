@@ -1,16 +1,10 @@
 require 'spec_helper'
-
-# Get access to Capybara's "sign_in" method
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature 'Images' do
   before(:each) do
-    user      = FactoryGirl.create(:user)
     @page     = FactoryGirl.create(:page, :with_header)
     @scenario = FactoryGirl.create(:scenario, :with_avatar)
 
-    login_as(user)
+    auth_user
   end
 
   scenario 'add a page header' do
