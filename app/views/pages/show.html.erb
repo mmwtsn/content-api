@@ -43,6 +43,7 @@
       <p><%= scenario.pitch %></p>
       <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
 
+      <%= link_to 'view scenario', scenario_path(scenario.id) %> |
       <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
       <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
     </section>
