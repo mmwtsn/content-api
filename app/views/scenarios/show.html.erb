@@ -8,9 +8,15 @@
 
   <% @products.each do |p| %>
     <div class="product <%= ProductAPI.build_class(p["product_name"]) %>">
+      <p><%= p["id"] %></p>
       <p><strong><%= p["product_name"] %></strong> <%= p["name"] %></p>
       <img src="<%= format_icon_url(p["category"]["icon_url"]) %>" alt="icon missing" />
     </div>
+  <% end %>
+
+  <%= form_for [@scenario, @scenario.products.build] do |f| %>
+    <%= f.text_field :product_id %>
+    <%= f.submit 'add product' %>
   <% end %>
 
   <section class="scenario">
@@ -21,4 +27,14 @@
     <%= link_to 'edit scenario', edit_scenario_path(@scenario) %> |
     <%= link_to 'delete scenario', scenario_path(@scenario), method: :delete %>
   </section>
+
+  <% if @scenario.products.each do |product| %>
+  <section class="scenario-product">
+    <p><%= product.product_id %></p>
+
+    <%= link_to 'delete', product_path([product.scenario, product]), method: :delete %>
+  </section>
+  <% end.empty? %>
+    <p>Nothing to see here..</p>
+  <% end %>
 <% end %>
