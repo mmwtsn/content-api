@@ -5,7 +5,7 @@ class Page < ActiveRecord::Base
   # Paperclip file configuration
   has_attached_file :header,
                     :styles => { :default => '1900x300' },
-                    :default_url => '/public/assets/images/defaults/header.jpg'
+                    :default_url => '/assets/images/defaults/header.jpg'
 
   # Paperclip validation helper method to ensure header image type is valid
   validates_attachment_content_type :header, :content_type => /\Aimage\/.*\Z/
