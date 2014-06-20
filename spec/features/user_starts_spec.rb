@@ -1,9 +1,5 @@
 require 'spec_helper'
 
-# Get access to Capybara's "sign_in" method
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature 'anonymous users' do
   scenario 'can view the homepage' do
     visit root_path

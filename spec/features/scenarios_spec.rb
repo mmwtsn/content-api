@@ -1,14 +1,9 @@
 require 'spec_helper'
 
-# Get access to Capybara's "sign_in" method
-include Warden::Test::Helpers
-Warden.test_mode!
-
 feature 'Scenarios' do
 
   before(:each) do
-    user = FactoryGirl.create(:user)
-    login_as(user)
+    auth_user
   end
 
   scenario 'no scenarios' do
