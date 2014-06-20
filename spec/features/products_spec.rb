@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Scenarios' do
+feature 'Scenario Products' do
 
   before(:each) do
     auth_user
@@ -20,11 +20,17 @@ feature 'Scenarios' do
     pending
   end
 
-  scenario 'save products to a scenario' do
-    pending
+  scenario 'save a product to a scenario' do
+    within('.scenario-products') do
+      expect(page).to have_content(5)
+    end
   end
 
-  scenario 'unassociate products associated with a scenario' do
-    pending
+  scenario 'delete a product from a scenario' do
+    within('.scenario-product', match: :first) do
+      click_link('delete')
+    end
+
+    expect(page).to have_no_content(5)
   end
 end
