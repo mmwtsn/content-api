@@ -14,6 +14,14 @@ class ProductsController < ApplicationController
     redirect_to scenario_path(@scenario)
   end
 
+  def search
+    @products = ProductAPI.search_products(params[:product])
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def products_params
