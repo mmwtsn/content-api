@@ -1,0 +1,3 @@
+<% @products.each do |product|%>
+$('.results').append('<article class="product"><h1><%= product[:product_name] %></h1><p><%= product[:name] %></p></article>');
+<% end %>
