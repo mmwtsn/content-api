@@ -15,5 +15,7 @@ Rails.application.routes.draw do
     resources :products
   end
 
+  post '/products/search', to: 'products#search', as: :products_search
+
   devise_for :users
 end
