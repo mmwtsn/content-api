@@ -70,20 +70,4 @@ feature 'Scenarios' do
 
     expect(page).to have_no_content('edit scenario')
   end
-
-  scenario 'add products to a scenario' do
-    @page = FactoryGirl.create(:page)
-    @scenario = FactoryGirl.create(:scenario, quote: 'Vacation Scenario', pitch: 'Memorial Day')
-
-    visit scenario_path(@scenario)
-
-    fill_in 'find_product', with: 'Kenexa'
-    click_button 'search'
-
-    page.find('.ibm-kenexa-talent-suite').click
-
-    click_button 'add product'
-
-    expect(page).to have_content('employee recruitment and retention')
-  end
 end
