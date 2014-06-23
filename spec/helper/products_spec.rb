@@ -20,4 +20,11 @@ feature ProductAPI do
 
     expect(output).to eq('ibm-product-name')
   end
+
+  scenario '.search_products' do
+    input = 'firewall'
+    output = ProductAPI.search_products(input)
+
+    expect(output[0][:name]).to eq('Hardware firewall')
+  end
 end
