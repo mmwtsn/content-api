@@ -360,8 +360,7 @@ main.admin {
   margin: 0 4% 4% 0;
   padding: 2%;
   min-height: 160px;
-  border-bottom: 4px solid #e8e8e8;
-  display: none; }
+  border-bottom: 4px solid #e8e8e8; }
   .product:hover {
     background: #f2f2f2;
     cursor: pointer; }
