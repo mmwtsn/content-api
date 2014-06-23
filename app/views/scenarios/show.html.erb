@@ -1,10 +1,11 @@
 <% if admin %>
-  <section class="admin_bar">
-    <form action="" method="get" accept-charset="utf-8" id="search">
-      <input type="search" name="find_product" id="find_product" placeholder="Find product..." />
-      <button type="submit" value="search">search</button>
-    </form>
-  </section>
+  <%= form_tag products_search_path, remote: true, id: 'search' do %>
+    <%= label_tag :product %>
+    <%= text_field_tag :product %>
+    <%= submit_tag 'search' %>
+  <% end %>
+
+  <section id="results" class="results"></section>
 
   <%= render 'products/form' %>
 
