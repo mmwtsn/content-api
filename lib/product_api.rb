@@ -44,4 +44,24 @@ module ProductAPI
 
     return html_class
   end
+
+  # Searches response from API for a specific product name
+  #
+  # params
+  #   string, search query (e.g. "bluemix")
+  #
+  # returns
+  #   array
+  def self.search_products(query)
+    products = ProductAPI.fetch_products
+    array = []
+
+    products.each do |product|
+      if (/#{query}/i =~ product['name']) || (/#{query}/i =~ product['product_name'])
+        array.push({name: product['name'], product_name: product['product_name']})
+      end
+    end
+
+    return array
+  end
 end
