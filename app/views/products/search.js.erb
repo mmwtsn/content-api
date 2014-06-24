@@ -1,11 +1,54 @@
-<% @products.each do |product|%>
-$('.results').append('<article class="product"><h1><%= product[:product_name] %></h1><p><%= product[:name] %></p></article>');
-<% end %>
+// Ensure global products object exists
+window.PRODUCTS = window.PRODUCTS || {};
 
-// Delegate event when user interacts with any record
+// Cache JSON response from product search
+var results = <%= raw json_escape(@results) %>;
+
+// Iterate over results and append each to the DOM
+results.forEach(function(result) {
+
+  // Add each search result to the results section
+  $('.results').append(
+    '<article class="product" data-id="' + result["id"] + '">'
+    + '<h1>' + result["name"] + '</h1>'
+    + '<p>' + result["product_name"] + '</p>'
+  + '</article>'
+  );
+
+  // Add each search result to the global products object for later
+  PRODUCTS[result['id']] = {
+    product_id:  result['id'],
+    name:        result['product_name'],
+    icon_url:    result['icon_url'],
+    description: result['description']
+  };
+});
+
+// Delegate event when user interacts with any result
 $('.product').on('click', function() {
 
+  // Cache reference to the current jQuery object
+  $this = $(this);
+
   // Update the UI to indicate that the selection was received
-  $(this).addClass('selected');
+  $this.addClass('selected');
+
+  // Stash product id
+  var id = $this.data('id');
+
+  // Get current scenario id
+  var scenario_id = window.location.pathname;
+
+  // Build destination for POST for /scenarios/:scenario_id/products route
+  var post_url = scenario_id + '/products'
+
+  // Save user's selection to the database on click
+  $.ajax({
+    type: 'POST',
+    url:  post_url,
+    data: PRODUCTS[id]
+  }).done(function() {
+    $this.addClass('saved');
+  });
 
 });
