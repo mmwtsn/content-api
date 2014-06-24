@@ -47,8 +47,12 @@ feature 'Scenario Products' do
   end
 
   # User selects products form the results and see some visual indication of their selection
-  scenario 'select multiple products', js: true do
-    pending
+  scenario 'select products from search results', js: true do
+    search_product('bluemix')
+    expect(page.assert_selector('.product')).to be_true
+
+    first('.product').click
+    expect(page.assert_selector('.selected')).to be_true
   end
 
   # TODO - Does this need more?
