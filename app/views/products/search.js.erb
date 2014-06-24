@@ -1,3 +1,11 @@
 <% @products.each do |product|%>
 $('.results').append('<article class="product"><h1><%= product[:product_name] %></h1><p><%= product[:name] %></p></article>');
 <% end %>
+
+// Delegate event when user interacts with any record
+$('.product').on('click', function() {
+
+  // Update the UI to indicate that the selection was received
+  $(this).addClass('selected');
+
+});
