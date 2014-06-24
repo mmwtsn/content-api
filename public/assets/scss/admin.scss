@@ -160,3 +160,12 @@ main.admin {
     cursor: pointer;
   }
 }
+
+.selected {
+  background: lightgreen;
+
+  &:hover {
+    background: lightgreen;
+    cursor: default;
+  }
+}
