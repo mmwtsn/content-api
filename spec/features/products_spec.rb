@@ -5,27 +5,14 @@ feature 'Scenario Products' do
   before(:each) do
     auth_user
 
-    scenario = FactoryGirl.create(:scenario)
-    visit scenario_path(scenario)
+    @product = FactoryGirl.create(:product)
+    visit scenario_path(@product.scenario_id)
   end
 
   scenario 'search cannot be empty', js: true do
     search_product('')
 
     expect(page.assert_selector('.error')).to be_true
-  end
-
-  # User not shown past results or past error messages when searching again
-  scenario 'search clears old results and error messages', js: true do
-    search_product('square')
-    search_product('')
-    search_product('bluemix')
-
-    within('.results') do
-      expect(page).to have_no_content('Square')
-    end
-
-    expect(page.assert_no_selector('.error')).to be_true
   end
 
   # User searches for a product and see the results of their search
@@ -46,33 +33,61 @@ feature 'Scenario Products' do
     end
   end
 
-  # User selects products form the results and see some visual indication of their selection
-  scenario 'select products from search results', js: true do
+  # User not shown past results or past error messages when searching again
+  scenario 'search clears old results and error messages', js: true do
+    search_product('square')
+    search_product('')
+    search_product('bluemix')
+
+    within('.results') do
+      expect(page).to have_no_content('Square')
+    end
+
+    expect(page.assert_no_selector('.error')).to be_true
+  end
+
+  # User selects products from the results and see some visual indication that
+  # their selection has been saved to the database
+  scenario 'save products from search results', js: true do
     search_product('bluemix')
     expect(page.assert_selector('.product')).to be_true
 
+    # User clicks product to save it via AJAX
     first('.product').click
     expect(page.assert_selector('.selected')).to be_true
-  end
 
-  # TODO - Does this need more?
-  scenario 'add a product to a scenario', js: true do
-    save_product(5)
-
+    # Saved product should then render to the page
     within('.scenario-products') do
-      expect(page).to have_content(5)
+      expect(page).to have_content('Bluemix')
     end
   end
 
-  scenario 'delete a product from a scenario', js: true do
-    id = 5
-    save_product(id)
+  # User sees products saved to their scenarios
+  scenario 'view scenario products', js: true do
+    within('.scenario-products') do
+      expect(page).to have_content(@product.name)
+    end
+  end
 
+  # User does not see products saved from other scenarios
+  scenario 'does not view unsaved products', js: true do
+    another_scenario = FactoryGirl.create(:scenario, quote: 'foo quote', pitch: 'bar pitch')
+
+    # Product should exist on scenario it was saved to
+    expect(page).to have_content(@product.name)
+
+    # Product should not exist on any other scenarios
+    visit scenario_path(another_scenario)
+    expect(page).to have_no_content(@product.name)
+  end
+
+  # User can delete products saved to their scenarios
+  scenario 'delete a product from a scenario', js: true do
     within('.scenario-product', match: :first) do
       click_link('delete')
     end
 
-    expect(page).to have_no_content(id)
+    expect(page).to have_no_content(@product.name)
   end
 
   def search_product(product)
