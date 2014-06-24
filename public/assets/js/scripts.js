@@ -19,7 +19,7 @@ $(document).ready(function() {
     // TODO
     // Display AJAX loading GIF while request is being processed
 
-    if (query == '') {
+    if (query === '') {
       e.preventDefault();
       $('main').prepend('<p class="error">Search query cannot be blank!</p>');
     }
