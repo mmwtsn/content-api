@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612210121) do
+ActiveRecord::Schema.define(version: 20140624204404) do
 
   create_table "pages", force: true do |t|
     t.string   "title"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20140612210121) do
   create_table "products", force: true do |t|
     t.integer "scenario_id"
     t.integer "product_id"
+    t.text    "name"
+    t.text    "description"
+    t.text    "icon_url"
   end
 
   add_index "products", ["scenario_id"], name: "index_products_on_scenario_id", using: :btree
