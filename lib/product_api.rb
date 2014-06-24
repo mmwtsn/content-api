@@ -58,7 +58,13 @@ module ProductAPI
 
     products.each do |product|
       if (/#{query}/i =~ product['name']) || (/#{query}/i =~ product['product_name'])
-        array.push({name: product['name'], product_name: product['product_name']})
+        array.push({
+          id: product['id'],
+          icon_url: product['category']['icon_url'],
+          name: product['name'],
+          product_name: product['product_name'],
+          description: product['shortDescription']
+        })
       end
     end
 
