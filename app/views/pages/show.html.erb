@@ -1,6 +1,7 @@
 <% if admin %>
   <section class="admin_bar">
-    <%= link_to 'add scenario', new_page_scenario_path(@page) %>
+    <h1>Solution</h1>
+    <%= link_to 'back', pages_path, class: 'secondary btn' %>
   </section>
 <% end %>
 
@@ -25,8 +26,7 @@
 
   <% if admin %>
   <div class="admin">
-    <%= link_to 'back', pages_path %> |
-    <%= link_to 'edit solution', edit_page_path(@page) %>
+    <%= link_to 'edit', edit_page_path(@page), class: 'small primary btn' %>
   </div>
   <% end %>
 </section>
@@ -36,6 +36,10 @@
 <% end %>
 
 <% if admin %>
+  <section class="admin_bar">
+    <h1>Scenarios</h1>
+    <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'secondary btn' %>
+  </section>
 
   <% @page.scenarios.each do |scenario| %>
     <section class="scenario">
@@ -43,18 +47,22 @@
       <p><%= scenario.pitch %></p>
       <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
 
-      <%= link_to 'view scenario', scenario_path(scenario.id) %> |
-      <%= link_to 'edit scenario', edit_scenario_path(scenario.id) %> |
-      <%= link_to 'delete scenario', scenario_path(scenario.id), method: :delete %>
+      <%= link_to 'view', scenario_path(scenario.id), class: 'small primary btn' %>
+      <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'small secondary btn' %>
+      <%= link_to 'delete', scenario_path(scenario.id), method: :delete, class: 'small secondary btn' %>
     </section>
   <% end %>
 
+  <section class="admin_bar">
+    <h1>Resources</h1>
+  </section>
+
   <% @page.resources.each do |resource| %>
   <section class="resource">
-    <h4><%= resource.body %></h4>
+    <p><%= resource.body %></p>
 
-    <%= link_to 'edit resource', edit_resource_path(resource.id) %> |
-    <%= link_to 'delete resource', resource_path(resource.id), method: :delete %>
+    <%= link_to 'edit', edit_resource_path(resource.id), class: 'small secondary btn' %>
+    <%= link_to 'delete', resource_path(resource.id), method: :delete, class: 'small secondary btn' %>
   </section>
   <% end %>
 <% end %>
@@ -68,7 +76,7 @@
      <%= f.label :pitch %>
      <%= f.text_field :pitch %>
 
-     <%= f.submit 'add scenario' %>
+     <%= f.submit 'add scenario', class: 'primary btn' %>
    <% end %>
 
    <%= form_for([@page, @page.resources.build]) do |f| %>
@@ -78,7 +86,7 @@
      <%= f.label :url %>
      <%= f.text_field :url %>
 
-     <%= f.submit 'add resource' %>
+     <%= f.submit 'add resource', class: 'primary btn' %>
    <% end %>
 </div>
 <% end %>
