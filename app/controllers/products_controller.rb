@@ -2,8 +2,11 @@ class ProductsController < ApplicationController
   def create
     @scenario = Scenario.find(params[:scenario_id])
     @product = @scenario.products.create(products_params)
+    @products = Product.all
 
-    redirect_to scenario_path(@scenario)
+    respond_to do |format|
+      format.js
+    end
   end
 
   def destroy
@@ -15,7 +18,7 @@ class ProductsController < ApplicationController
   end
 
   def search
-    @products = ProductAPI.search_products(params[:product])
+    @results = JSON.generate(ProductAPI.search_products(params[:product]))
 
     respond_to do |format|
       format.js
@@ -25,6 +28,6 @@ class ProductsController < ApplicationController
   private
 
   def products_params
-    params.require(:product).permit(:product_id)
+    params.permit(:product_id, :name, :description, :icon_url)
   end
 end
