@@ -4,12 +4,23 @@
 @import 'neat';
 @import 'fonts';
 
+$link: #4aa0f3;
+
 html {
   color: #333;
+  background: #f3f3f3;
 }
 
 h1 {
   font-family: 'LubalinDemiIBM';
+}
+
+a {
+  color: $link;
+
+  &:hover {
+    color: lighten($link, 5%);
+  }
 }
 
 main.admin {
@@ -112,10 +123,14 @@ main.admin {
   }
 }
 
-.scenario_avatar {
+.scenario-avatar {
   width: 175px;
+  margin: 0 0 1.5rem;
+  display: block;
 }
 
+// TODO
+// underscore vs hyphen inconsistency
 .scenario_pitch {
   font-size: 2.5rem;
   padding: 3rem !important;
@@ -136,15 +151,25 @@ main.admin {
 .solution,
 .scenario,
 .resource {
-  background: #f8f8f8;
+  background: #fff;
   margin: 1rem 0;
   padding: 1.5rem;
-  border-bottom: 4px solid #e8e8e8;
+  border-bottom: 5px solid #e8e8e8;
 }
 
 .scenario {
   overflow: hidden;
   clear: bloth;
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+.resource {
+  p {
+    font-weight: 500;
+  }
 }
 
 .product {
@@ -168,5 +193,67 @@ main.admin {
   &:hover {
     background: lightgreen;
     cursor: default;
+  }
+}
+
+.admin_bar {
+  margin: 5rem 0 0 0;
+  overflow: hidden;
+
+  h1 {
+    float: left;
+  }
+
+  .btn {
+    float: right;
+  }
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+
+  &:link,
+  &:hover,
+  &:active,
+  &:visited {
+    color: #fff;
+  }
+
+  &.primary {
+    background: $link;
+
+    &:hover {
+      background: darken($link, 5%);
+    }
+
+    &:active {
+      background: darken($link, 10%);
+    }
+  }
+
+  &.secondary {
+    background: #ccc;
+
+    &:hover {
+      background: darken(#ccc, 3%);
+    }
+
+    &:active {
+      background: darken(#ccc, 10%);
+    }
+  }
+
+  &.small {
+    font-size: 0.8rem;
+    padding: 0.1rem 0.7rem;
+  }
+
+  &.large {
+    font-size: 1.2rem;
   }
 }
