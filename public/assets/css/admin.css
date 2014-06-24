@@ -364,3 +364,9 @@ main.admin {
   .product:hover {
     background: #f2f2f2;
     cursor: pointer; }
+
+.selected {
+  background: lightgreen; }
+  .selected:hover {
+    background: lightgreen;
+    cursor: default; }
