@@ -21,6 +21,7 @@ class ScenariosController < ApplicationController
 
   def show
     @product = Product.new
+    @products = Scenario.find(params[:id]).products
   end
 
   def edit
