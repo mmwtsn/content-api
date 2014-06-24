@@ -60,6 +60,11 @@ FactoryGirl.define do
     end
   end
 
+  factory :product do
+    product_id 13
+    scenario # associate :product factory with :scenario factory
+  end
+
   factory :resource do
     body 'User Testing is Dead; User Testing Will Live Forever'
     url 'http://the-truth.io/'
