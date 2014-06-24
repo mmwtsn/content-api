@@ -37,7 +37,7 @@ feature 'Scenario Products' do
     end
   end
 
-  # User searches for a product and see the results of their search
+  # User searches for a product and sees only their results
   scenario 'search displays relevant results', js: true do
     search_product('bluemix')
 
