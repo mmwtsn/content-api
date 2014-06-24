@@ -62,6 +62,8 @@ FactoryGirl.define do
 
   factory :product do
     product_id 13
+    name 'Space Robot'
+    description 'A Cloud-deployable Robot from Space'
     scenario # associate :product factory with :scenario factory
   end
 
