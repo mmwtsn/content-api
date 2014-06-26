@@ -18,7 +18,7 @@ feature 'Resources' do
     @page = FactoryGirl.create(:page)
     @resource = FactoryGirl.build(:resource, body: 'fancy new resource', url: 'http://fancy-resource.io/')
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     fill_in 'resource_body', with: @resource.body
     fill_in 'resource_url', with: @resource.url
@@ -38,7 +38,7 @@ feature 'Resources' do
       resource.save!
     end
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     expect(page).to have_content("industry distrupting resource #0")
     expect(page).to have_content("industry distrupting resource #1")
@@ -48,7 +48,7 @@ feature 'Resources' do
     @page = FactoryGirl.create :page, :with_resources, num: 1
     edited_body= 'Super-Duper Updated Resource'
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     within('.resources') do
       click_link 'edit'
@@ -63,7 +63,7 @@ feature 'Resources' do
   scenario 'delete a resource' do
     @page = FactoryGirl.create :page, :with_resources, num: 1
 
-    visit page_path(@page.id)
+    visit page_path(@page)
 
     within('.resources') do
       click_link 'delete'
