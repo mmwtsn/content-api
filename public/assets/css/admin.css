@@ -462,3 +462,6 @@ main.admin {
 .product-search-wrapper {
   overflow: hidden;
   padding: 0 0.5rem 0 0; }
+
+.create-form {
+  display: none; }

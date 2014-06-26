@@ -42,4 +42,11 @@ $(document).ready(function() {
     $('.search-instructions').hide();
   });
 
+  //
+  // Drop down #create form for nested resources on pages#show
+  //
+  $('.create-button').on('click', function() {
+    $(this).next('.create-form').show();
+  });
+
 });
