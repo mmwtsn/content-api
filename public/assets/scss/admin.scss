@@ -81,7 +81,7 @@ main.admin {
   }
 
   .page-header {
-    padding-right: $comment-gutter;
+    width: 100%;
 
     > img {
       width: $comment-image-width;
@@ -105,12 +105,13 @@ main.admin {
     h2 {
       font-size: 1em;
       text-transform: lowercase;
-      margin-bottom: .5em;
+      margin: 0.5em 0;
     }
 
     span.page-state {
+      float: right;
       font-weight: lighter;
-      color: #666;
+      color: #ccc;
     }
 
     p {
