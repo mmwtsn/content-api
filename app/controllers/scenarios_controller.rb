@@ -10,13 +10,10 @@ class ScenariosController < ApplicationController
   end
 
   def create
-    @scneario = Scenario.new(scenario_params)
+    @page = Page.find(params[:page_id])
+    @scenario = @page.scenarios.create!(scenario_params)
 
-    if @scneario.save
-      redirect_to page_path(@page)
-    else
-      render 'new'
-    end
+    redirect_to page_path(@page)
   end
 
   def show
