@@ -52,10 +52,11 @@ feature 'Scenarios' do
 
     visit page_path(@page)
 
-    click_link 'edit scenario'
+    within('.scenarios') do
+      click_link 'edit'
+    end
 
     fill_in 'scenario_quote', with: edited_quote
-
     click_button 'save'
 
     expect(page).to have_content(edited_quote)
@@ -65,9 +66,10 @@ feature 'Scenarios' do
     @page = FactoryGirl.create :page, :with_scenarios, num: 1
 
     visit page_path(@page.id)
+    click_link 'delete'
 
-    click_link 'delete scenario'
-
-    expect(page).to have_no_content('edit scenario')
+    within('.scenarios') do
+      expect(page).to have_no_content('edit')
+    end
   end
 end

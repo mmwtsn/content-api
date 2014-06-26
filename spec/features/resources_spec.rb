@@ -42,10 +42,11 @@ feature 'Resources' do
 
     visit page_path(@page.id)
 
-    click_link 'edit resource'
+    within('.resources') do
+      click_link 'edit'
+    end
 
     fill_in 'resource_body', with: edited_body
-
     click_button 'save'
 
     expect(page).to have_content(edited_body)
@@ -56,8 +57,19 @@ feature 'Resources' do
 
     visit page_path(@page.id)
 
-    click_link 'delete resource'
+    within('.resources') do
+      click_link 'delete'
+    end
 
-    expect(page).to have_no_content('edit resource')
+    # Note - another "within" block needs to be created as it appears
+    #        that the context of the original block is not executed
+    #        a second time after the page reloads.
+    #
+    #        This should be unnecessary if the delete method is fired
+    #        via AJAX.
+
+    within('.resources') do
+      expect(page).to have_no_content('edit')
+    end
   end
 end
