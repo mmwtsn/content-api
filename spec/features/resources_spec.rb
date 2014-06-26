@@ -6,6 +6,14 @@ feature 'Resources' do
     auth_user
   end
 
+  scenario 'not created' do
+    @page = FactoryGirl.create(:page)
+
+    visit page_path(@page)
+
+    expect(page).to have_content('no saved resources')
+  end
+
   scenario 'create a resource' do
     @page = FactoryGirl.create(:page)
     @resource = FactoryGirl.build(:resource, body: 'fancy new resource', url: 'http://fancy-resource.io/')

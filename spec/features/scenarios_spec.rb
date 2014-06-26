@@ -6,12 +6,12 @@ feature 'Scenarios' do
     auth_user
   end
 
-  scenario 'no scenarios' do
+  scenario 'not created' do
     @page = FactoryGirl.create(:page)
 
     visit page_path(@page)
 
-    expect(page).to have_content('add scenario')
+    expect(page).to have_content('no saved scenarios')
   end
 
   scenario 'create a scenario' do
