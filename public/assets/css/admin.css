@@ -306,7 +306,7 @@ main.admin {
     display: table-cell;
     vertical-align: top; }
   .page .page-header {
-    padding-right: 1.4em; }
+    width: 100%; }
     .page .page-header > img {
       width: 4em;
       height: auto;
@@ -323,10 +323,11 @@ main.admin {
     .page .page-content h2 {
       font-size: 1em;
       text-transform: lowercase;
-      margin-bottom: 0.5em; }
+      margin: 0.5em 0; }
     .page .page-content span.page-state {
+      float: right;
       font-weight: lighter;
-      color: #666; }
+      color: #ccc; }
     .page .page-content p {
       margin-bottom: 0.5em; }
     .page .page-content p.comment-detail {
