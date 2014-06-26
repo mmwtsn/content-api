@@ -25,8 +25,9 @@ a {
 
 main.admin {
   max-width: 960px;
-  width: 100%;
+  width: 96%;
   margin: 100px auto;
+  padding: 0 2%;
 }
 
 .button.large {
@@ -57,6 +58,8 @@ main.admin {
   @extend %flash-success;
 }
 
+// TODO
+// This is boilerplate that can be removed
 .page {
   $comment-gutter: 1.4em;
   $comment-image-padding: .7em;
@@ -68,9 +71,8 @@ main.admin {
 
   display: table;
   width: 100%;
-  margin-bottom: $base-line-height;
+  margin-bottom: 1rem;
   padding-bottom: 1em;
-  border-bottom: 1px solid transparentize($comment-color, .9);
 
   .page-image,
   .page-content {
@@ -150,7 +152,9 @@ main.admin {
 
 .solution,
 .scenario,
-.resource {
+.resource,
+.scenario-product,
+.page-content {
   background: #fff;
   margin: 1rem 0;
   padding: 1.5rem;
@@ -166,34 +170,77 @@ main.admin {
   }
 }
 
+.scenario-product {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.empty {
+  margin: 1rem 0;
+  border: 2px dashed #ccc;
+  background: #f3f3f3;
+  text-align: center;
+  min-height: 100px;
+
+  p {
+    line-height: 100px;
+    color: #aaa;
+  }
+}
+
 .resource {
   p {
     font-weight: 500;
   }
 }
 
+.results {
+  overflow: hidden;
+  margin: 2rem 0 0 0;
+}
+
 .product {
-  background: #f8f8f8;
-  width: 46%;
+  background: #fff;
+  width: 48%;
   float: left;
-  margin: 0 4% 4% 0;
+  margin: 0;
   padding: 2%;
   min-height: 160px;
-  border-bottom: 4px solid #e8e8e8;
+  border-bottom: 5px solid #e8e8e8;
 
   &:hover {
-    background: #f2f2f2;
+    background: #fcfcfc;
     cursor: pointer;
+  }
+
+  &:nth-child(odd) {
+    margin: 0 4% 4% 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
   }
 }
 
-.selected {
-  background: lightgreen;
+.saved {
+  background: #B9F5B9;
+  opacity: 0.3;
+  border-bottom: 5px solid #8add8a;
 
   &:hover {
-    background: lightgreen;
+    background: #B9F5B9;
     cursor: default;
   }
+}
+
+.search-instructions {
+  display: none;
+}
+
+.add-scenario-form,
+.add-resource-form {
+  display: none;
 }
 
 .admin_bar {
@@ -207,6 +254,10 @@ main.admin {
   .btn {
     float: right;
   }
+
+  &.index {
+    margin: 0 0 2rem 0;
+  }
 }
 
 .btn {
@@ -216,12 +267,21 @@ main.admin {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 3px;
+  background: #ccc;
 
   &:link,
   &:hover,
   &:active,
   &:visited {
     color: #fff;
+  }
+
+  &:hover {
+    background: darken(#ccc, 3%);
+  }
+
+  &:active {
+    background: darken(#ccc, 10%);
   }
 
   &.primary {
@@ -236,24 +296,30 @@ main.admin {
     }
   }
 
-  &.secondary {
-    background: #ccc;
-
-    &:hover {
-      background: darken(#ccc, 3%);
-    }
-
-    &:active {
-      background: darken(#ccc, 10%);
-    }
-  }
-
   &.small {
     font-size: 0.8rem;
+    margin: 0.5rem 0 0 0;
     padding: 0.1rem 0.7rem;
   }
 
   &.large {
     font-size: 1.2rem;
   }
+}
+
+.search {
+  margin: 1rem 0 0 0;
+
+  input[type="submit"] {
+    float: right;
+  }
+
+  input[type="text"]:focus {
+    border-color: #c4c4c4; 
+  }
+}
+
+.product-search-wrapper {
+  overflow: hidden;
+  padding: 0 0.5rem 0 0;
 }
