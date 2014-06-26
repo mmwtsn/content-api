@@ -327,6 +327,9 @@ main.admin {
 
 // Hide forms on for nested resources
 // on pages#show by default
-.create-form {
+.new_scenario,
+.new_resource {
   display: none;
+  clear: left;
+  padding: 1.5rem 0 1rem;
 }
