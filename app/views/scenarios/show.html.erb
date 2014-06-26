@@ -22,9 +22,10 @@
   </section>
 
   <section class="scenario">
+    <%= image_tag @scenario.avatar, class: 'scenario-avatar icon' %>
+
     <h3><%= @scenario.quote %></h3>
     <p><%= @scenario.pitch %></p>
-    <%= image_tag @scenario.avatar, class: 'scenario-avatar' %>
 
     <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
     <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
