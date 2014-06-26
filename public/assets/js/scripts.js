@@ -43,10 +43,40 @@ $(document).ready(function() {
   });
 
   //
-  // Drop down #create form for nested resources on pages#show
+  // Drop down #create forms for nested resources on pages#show
   //
-  $('.create-button').on('click', function() {
-    $(this).next('.create-form').show();
+  $('.show_new_scenario').on('click', function(e) {
+    var $new_scenario = $('.new_scenario');
+    e.preventDefault();
+
+    if ($(this).hasClass('visible')) {
+
+      $new_resource.submit();
+
+    } else {
+
+      // The form must be moved from the bottom of the page because
+      // each form_for calls .build which will throw errors if it
+      // is called before the @scenarios.each loop is entered
+      $('.admin_bar.scenarios').append($('.new_scenario'));
+      $('.new_scenario').slideDown('slow').addClass('visible');
+
+    }
   });
 
+  $('.show_new_resource').on('click', function(e) {
+    var $new_resource = $('.new_resource');
+    e.preventDefault();
+
+    if ($(this).hasClass('visible')) {
+
+      $new_resource.submit();
+
+    } else {
+
+      $('.admin_bar.resources').append($new_resource);
+      $new_resource.slideDown('slow').addClass('visible');
+
+    }
+  });
 });
