@@ -1,8 +1,9 @@
+<section class="admin_bar">
+  <h1>Find Products</h1>
+  <%= link_to 'back', :back, class: 'btn small' %>
+</section>
+
 <% if admin %>
-  <section class="admin_bar">
-    <h1>Find Products</h1>
-    <%= link_to 'back', page_path(@scenario.page_id), class: 'btn small' %>
-  </section>
 
   <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
     <%= submit_tag 'search', class: 'btn primary' %>

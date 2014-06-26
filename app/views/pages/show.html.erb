@@ -1,9 +1,7 @@
-<% if admin %>
-  <section class="admin_bar">
-    <h1>Solution</h1>
-    <%= link_to 'back', pages_path, class: 'btn small' %>
-  </section>
-<% end %>
+<section class="admin_bar">
+  <h1>Solution</h1>
+  <%= link_to 'back', :back, class: 'btn small' %>
+</section>
 
 <section class="solution">
   <%= image_tag @page.header, class: 'page-header' %>

@@ -1,4 +1,7 @@
-<h1>scenario#edit</h1>
+<section class="admin_bar masthead">
+  <h1>edit scenario</h1>
+  <%= link_to 'back', :back, class: 'btn small' %>
+</section>
 
 <%= form_for @scenario, html: { multipart: true } do |f| %>
   <% if @scenario.errors.any? %>
