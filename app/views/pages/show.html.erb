@@ -1,7 +1,7 @@
 <% if admin %>
   <section class="admin_bar">
     <h1>Solution</h1>
-    <%= link_to 'back', pages_path, class: 'secondary btn' %>
+    <%= link_to 'back', pages_path, class: 'btn small' %>
   </section>
 <% end %>
 
@@ -26,7 +26,7 @@
 
   <% if admin %>
   <div class="admin">
-    <%= link_to 'edit', edit_page_path(@page), class: 'small primary btn' %>
+    <%= link_to 'edit', edit_page_path(@page), class: 'btn small' %>
   </div>
   <% end %>
 </section>
@@ -38,36 +38,48 @@
 <% if admin %>
   <section class="admin_bar">
     <h1>Scenarios</h1>
-    <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'secondary btn' %>
+    <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary' %>
   </section>
 
-  <% @page.scenarios.each do |scenario| %>
+  <section class="scenarios">
+  <% if @page.scenarios.each do |scenario| %>
     <section class="scenario">
       <h3><%= scenario.quote %></h3>
       <p><%= scenario.pitch %></p>
       <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
 
-      <%= link_to 'view', scenario_path(scenario.id), class: 'small primary btn' %>
-      <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'small secondary btn' %>
-      <%= link_to 'delete', scenario_path(scenario.id), method: :delete, class: 'small secondary btn' %>
+      <%= link_to 'view', scenario_path(scenario.id), class: 'btn small' %>
+      <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'btn small' %>
+      <%= link_to 'delete', scenario_path(scenario.id), method: :delete, class: 'btn small' %>
+    </section>
+  <% end.empty? %>
+    <section class="empty">
+      <p>no saved scenarios&#133;</p>
     </section>
   <% end %>
+  </section>
 
   <section class="admin_bar">
     <h1>Resources</h1>
+    <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary' %>
   </section>
 
-  <% @page.resources.each do |resource| %>
+  <section class="resources">
+  <% if @page.resources.each do |resource| %>
   <section class="resource">
     <p><%= resource.body %></p>
 
-    <%= link_to 'edit', edit_resource_path(resource.id), class: 'small secondary btn' %>
-    <%= link_to 'delete', resource_path(resource.id), method: :delete, class: 'small secondary btn' %>
+    <%= link_to 'edit', edit_resource_path(resource.id), class: 'btn small' %>
+    <%= link_to 'delete', resource_path(resource.id), method: :delete, class: 'btn small' %>
   </section>
+  <% end.empty? %>
+    <section class="empty">
+      <p>no saved resources&#133;</p>
+    </section>
   <% end %>
+  </section>
 <% end %>
 
-<% if admin %>
 <div class="admin">
    <%= form_for([@page, @page.scenarios.build]) do |f| %>
      <%= f.label :quote %>
@@ -76,7 +88,7 @@
      <%= f.label :pitch %>
      <%= f.text_field :pitch %>
 
-     <%= f.submit 'add scenario', class: 'primary btn' %>
+     <%= f.submit 'add scenario', class: 'btn primary' %>
    <% end %>
 
    <%= form_for([@page, @page.resources.build]) do |f| %>
@@ -86,7 +98,6 @@
      <%= f.label :url %>
      <%= f.text_field :url %>
 
-     <%= f.submit 'add resource', class: 'primary btn' %>
+     <%= f.submit 'add resource', class: 'btn primary' %>
    <% end %>
 </div>
-<% end %>

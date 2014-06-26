@@ -1,9 +1,13 @@
-<% @products.each do |product| %>
+<% if @products.each do |product| %>
 <section class="scenario-product">
-  <h1><%= product.name %></h1>
+  <h3><%= product.name %></h3>
   <p><%= product.description %></p>
   <%= image_tag product.icon_url %>
 
-  <p><%= link_to 'delete', [product.scenario, product], method: :delete %></p>
+  <p><%= link_to 'delete', [product.scenario, product], method: :delete, class: 'btn small' %></p>
+</section>
+<% end.empty? %>
+<section class="scenario-product empty">
+  <p>no saved products&#133;</p>
 </section>
 <% end %>
