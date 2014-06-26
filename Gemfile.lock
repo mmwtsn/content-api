@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.7)
     builder (3.2.2)
@@ -77,6 +78,8 @@ GEM
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     json (1.8.1)
+    launchy (2.4.2)
+      addressable (~> 2.3)
     libv8 (3.16.14.3)
     listen (2.7.5)
       celluloid (>= 0.15.2)
@@ -185,6 +188,7 @@ DEPENDENCIES
   factory_girl_rails (~> 4.0)
   guard-rspec
   jbuilder (~> 2.0)
+  launchy
   mysql2
   paperclip
   pry-rails

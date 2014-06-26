@@ -31,6 +31,7 @@ group :test do
   gem 'capybara-webkit'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 # Gems shared across environments
