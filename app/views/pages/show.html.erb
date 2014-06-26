@@ -34,19 +34,9 @@
 <% end %>
 
 <% if admin %>
-  <section class="admin_bar">
+  <section class="admin_bar scenarios">
     <h1>Scenarios</h1>
-    <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary create-button' %>
-
-    <%= form_for([@page, @page.scenarios.build], class: 'create-form') do |f| %>
-      <%= f.label :quote %>
-      <%= f.text_field :quote %>
-
-      <%= f.label :pitch %>
-      <%= f.text_field :pitch %>
-
-      <%= f.submit 'add scenario', class: 'btn primary' %>
-    <% end %>
+    <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary show_new_scenario' %>
   </section>
 
   <section class="scenarios">
@@ -68,19 +58,9 @@
   <% end %>
   </section>
 
-  <section class="admin_bar">
+  <section class="admin_bar resources">
     <h1>Resources</h1>
-    <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary create-button' %>
-
-    <%= form_for([@page, @page.resources.build], class: 'create-form') do |f| %>
-      <%= f.label :body %>
-      <%= f.text_field :body %>
-
-      <%= f.label :url %>
-      <%= f.text_field :url %>
-
-      <%= f.submit 'add resource', class: 'btn primary' %>
-    <% end %>
+    <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary show_new_resource' %>
   </section>
 
   <section class="resources">
@@ -97,4 +77,20 @@
     </section>
   <% end %>
   </section>
+<% end %>
+
+<%= form_for([@page, @page.scenarios.build]) do |f| %>
+  <%= f.label :quote %>
+  <%= f.text_field :quote %>
+
+  <%= f.label :pitch %>
+  <%= f.text_field :pitch %>
+<% end %>
+
+<%= form_for([@page, @page.resources.build]) do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
 <% end %>
