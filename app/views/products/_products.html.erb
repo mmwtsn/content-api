@@ -1,8 +1,9 @@
 <% if @products.each do |product| %>
 <section class="scenario-product">
+  <%= image_tag product.icon_url, class: 'icon' %>
+
   <h3><%= product.name %></h3>
   <p><%= product.description %></p>
-  <%= image_tag product.icon_url %>
 
   <p><%= link_to 'delete', [product.scenario, product], method: :delete, class: 'btn small' %></p>
 </section>

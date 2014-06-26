@@ -44,9 +44,10 @@
   <section class="scenarios">
   <% if @page.scenarios.each do |scenario| %>
     <section class="scenario">
+      <%= image_tag scenario.avatar, class: 'scenario-avatar icon' %>
+
       <h3><%= scenario.quote %></h3>
       <p><%= scenario.pitch %></p>
-      <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
 
       <%= link_to 'view', scenario_path(scenario.id), class: 'btn small' %>
       <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'btn small' %>
