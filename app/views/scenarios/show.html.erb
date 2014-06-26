@@ -1,19 +1,37 @@
 <% if admin %>
-  <%= form_tag products_search_path, remote: true, id: 'search' do %>
-    <%= label_tag :product %>
-    <%= text_field_tag :product %>
-    <%= submit_tag 'search' %>
+  <section class="admin_bar">
+    <h1>Find Products</h1>
+    <%= link_to 'back', page_path(@scenario.page_id), class: 'btn small' %>
+  </section>
+
+  <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
+    <%= submit_tag 'search', class: 'btn primary' %>
+    <div class="product-search-wrapper">
+      <%= text_field_tag :product %>
+    </div>
   <% end %>
 
+  <div class="search-instructions">
+    <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
+  </div>
+
   <section id="results" class="results"></section>
+
+  <section class="admin_bar">
+    <h1>Scenario</h1>
+  </section>
 
   <section class="scenario">
     <h3><%= @scenario.quote %></h3>
     <p><%= @scenario.pitch %></p>
     <%= image_tag @scenario.avatar, class: 'scenario-avatar' %>
 
-    <%= link_to 'edit scenario', edit_scenario_path(@scenario) %> |
-    <%= link_to 'delete scenario', scenario_path(@scenario), method: :delete %>
+    <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
+    <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
+  </section>
+
+  <section class="admin_bar">
+    <h1>Products</h1>
   </section>
 
   <section class="scenario-products">
