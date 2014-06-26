@@ -324,3 +324,9 @@ main.admin {
   overflow: hidden;
   padding: 0 0.5rem 0 0;
 }
+
+// Hide forms on for nested resources
+// on pages#show by default
+.create-form {
+  display: none;
+}
