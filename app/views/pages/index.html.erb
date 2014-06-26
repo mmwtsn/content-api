@@ -5,7 +5,7 @@
   </section>
 <% end %>
 
-<% @pages.each do |page| %>
+<% if @pages.each do |page| %>
 <div class="page">
   <div class="page-content">
     <%= image_tag page.header, class: 'page-header' %>
@@ -23,4 +23,8 @@
     </p>
   </div>
 </div>
+<% end.empty? %>
+  <section class="empty">
+    <p>no saved pages&#133;</p>
+  </section>
 <% end %>
