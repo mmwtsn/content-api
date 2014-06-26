@@ -10,7 +10,7 @@
   <div class="page-content">
     <%= image_tag page.header, class: 'page-header' %>
 
-    <h2><%= page.title %><span class="page-state"> (<%= page.published? ? 'published' : 'unpublished' %>)</span></h2>
+    <h2><%= page.title %><span class="page-state"> <%= page.published? ? 'published' : 'unpublished' %></span></h2>
     <p><%= page.body %></p>
 
     <p class="page-admin">
