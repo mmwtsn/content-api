@@ -1,6 +1,9 @@
-<h1>all pages</h1>
-
-<%= link_to 'create page', new_page_path, class: 'button large' %>
+<% if admin %>
+  <section class="admin_bar index">
+    <h1>all pages</h1>
+    <%= link_to 'create page', new_page_path, class: 'btn primary' %>
+  </section>
+<% end %>
 
 <% @pages.each do |page| %>
 <div class="page">
@@ -9,11 +12,11 @@
     <p><%= page.body %></p>
 
     <p class="page-admin">
-      <%= link_to "view", page_path(page) %> |
-      <%= link_to "edit", edit_page_path(page) %> |
-      <%= link_to 'delete', page_path(page), method: :delete %>
+      <%= link_to "view", page_path(page), class: 'btn small' %>
+      <%= link_to "edit", edit_page_path(page), class: 'btn small' %>
+      <%= link_to 'delete', page_path(page), method: :delete, class: 'btn small' %>
       <% if page.id == 1 %>
-        | <%= link_to 'preview', '/cloud-computing/us/en/solutions-gaming.html', target: '_blank' %>
+        <%= link_to 'preview', '/cloud-computing/us/en/solutions-gaming.html', target: '_blank', class: 'btn small' %>
       <% end %>
     </p>
   </div>
