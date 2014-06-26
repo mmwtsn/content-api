@@ -6,9 +6,11 @@ $(document).ready(function() {
   $product.val('');
 
   //
-  // Prevent user from submitting empty search queries
+  // Prevent user from submitting empty search queries;
+  // Toggle display of search instructions to the user
   //
-  $('#search input[type="submit"]').on('click', function(e) {
+  var $search_input = $('#search input[type="submit"]');
+  $search_input.on('click', function(e) {
     var query = $product.val();
     var $results = $('.results');
 
@@ -23,5 +25,21 @@ $(document).ready(function() {
       e.preventDefault();
       $('main').prepend('<p class="error">Search query cannot be blank!</p>');
     }
+
+    $('.search-instructions').show();
   });
+
+  //
+  // Allow user to clear search results and query
+  //
+  $('#clear-search').on('click', function() {
+    $('.results').empty();
+
+    // TODO
+    // This selector is stupid--remove the ID or rename "product"
+    $('#search #product').val('');
+
+    $('.search-instructions').hide();
+  });
+
 });
