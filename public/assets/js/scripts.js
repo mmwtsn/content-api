@@ -42,6 +42,7 @@ $(document).ready(function() {
   //
   // Drop down #create forms for nested resources on pages#show
   //
+  // REFACTOR
   $('.show_new_scenario').on('click', function(e) {
     var $new_scenario = $('.new_scenario');
     e.preventDefault();
@@ -69,28 +70,56 @@ $(document).ready(function() {
     }
   });
 
-  $('.show_new_resource').on('click', function(e) {
-    var $new_resource = $('.new_resource');
-    e.preventDefault();
+  //
+  // Returns a valid Rails route for a nested resource from the current path.
+  // On articles/1, build_nested_path('comments') -> '/articles/1/comments'
+  //
+  function build_nested_path(resource) {
+    var id  = window.location.pathname;
+    var url = id + '/' + resource;
 
-    if ($new_resource.hasClass('visible')) {
+    return url;
+  }
 
-      // Build POST url from page id
-      var page_id = window.location.pathname;
-      var url  = page_id + '/resources'
+  //
+  // Binds visibility toggle and AJAX POST to nested resource form..
+  //
+  function toggle_and_post(form_selector, submit_selector, resource) {
 
-      // Build POST data from $new_resourceform
-      var data = $new_resource.serialize();
+    $('.' + submit_selector).on('click', function(e) {
+      // Prevent default behavior of submit button
+      e.preventDefault();
 
-      // Submit via AJAX to save record
-      $.post(url, data);
+      // Cache form object
+      var $form = $('.' + form_selector);
 
-    } else {
+      // Check current state of form
+      if ($form.hasClass('visible')) {
+        // Form is visible and presumably complete
 
-      $('.admin_bar.resources').append($new_resource);
-      $new_resource.slideDown('slow').addClass('visible');
+        // Build nested resource path for AJAX POST
+        var url = build_nested_path('resources');
 
-    }
-  });
+        // Build POST data from form
+        var data = $form.serialize();
+
+        // Submit via AJAX to save record
+        $.post(url, data);
+
+      } else {
+        // Form is not visible
+
+        // Move form from into place
+        $('.admin_bar.resources').append($form);
+
+        // Toggle visibility and update state
+        $form.slideDown('slow').addClass('visible');
+
+      }
+    });
+
+  }
+
+  toggle_and_post('new_scenario', 'submit_new_scenario', 'scenarios');
 
 });
