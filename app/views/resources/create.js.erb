@@ -5,4 +5,7 @@
 <% else %>
   // TODO - see scenarios/create.js.erb
   $('.all.resources').html("<%= j render('resources') %>");
+
+  // Empty all text fields in form
+  $('.new_resource input[type="text"]').val('');
 <% end %>
