@@ -39,23 +39,10 @@
     <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary show_new_scenario' %>
   </section>
 
-  <section class="scenarios">
-  <% if @page.scenarios.each do |scenario| %>
-    <section class="scenario">
-      <%= image_tag scenario.avatar, class: 'scenario-avatar icon' %>
+  <section class="all scenarios">
 
-      <h3><%= scenario.quote %></h3>
-      <p><%= scenario.pitch %></p>
+    <%= render 'scenarios/scenarios' %>
 
-      <%= link_to 'view', scenario_path(scenario.id), class: 'btn small' %>
-      <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'btn small' %>
-      <%= link_to 'delete', scenario_path(scenario.id), method: :delete, class: 'btn small' %>
-    </section>
-  <% end.empty? %>
-    <section class="empty">
-      <p>no saved scenarios&#133;</p>
-    </section>
-  <% end %>
   </section>
 
   <section class="admin_bar resources">
@@ -63,19 +50,10 @@
     <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary show_new_resource' %>
   </section>
 
-  <section class="resources">
-  <% if @page.resources.each do |resource| %>
-  <section class="resource">
-    <p><%= resource.body %></p>
+  <section class="all resources">
 
-    <%= link_to 'edit', edit_resource_path(resource.id), class: 'btn small' %>
-    <%= link_to 'delete', resource_path(resource.id), method: :delete, class: 'btn small' %>
-  </section>
-  <% end.empty? %>
-    <section class="empty">
-      <p>no saved resources&#133;</p>
-    </section>
-  <% end %>
+    <%= render 'resources/resources' %>
+
   </section>
 <% end %>
 

@@ -1,0 +1,9 @@
+<% if @scenario.errors.any? %>
+  <% @scenario.errors.full_messages.each do |error| %>
+    $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
+  <% end %>
+<% else %>
+  // TODO - This selector is stupid but necessary as "scenarios" is
+  // not unique; it should be replace with .scenarios-container, etc.
+  $('.all.scenarios').html("<%= j render('scenarios') %>");
+<% end %>
