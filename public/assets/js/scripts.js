@@ -49,9 +49,17 @@ $(document).ready(function() {
     var $new_scenario = $('.new_scenario');
     e.preventDefault();
 
-    if ($(this).hasClass('visible')) {
+    if ($new_scenario.hasClass('visible')) {
 
-      $new_resource.submit();
+      // Build POST url from page id
+      var page_id = window.location.pathname;
+      var url  = page_id + '/scenarios'
+
+      // Build POST data from $new_scenario form
+      var data = $new_scenario.serialize();
+
+      // Submit via AJAX to save record
+      $.post(url, data);
 
     } else {
 
@@ -68,9 +76,18 @@ $(document).ready(function() {
     var $new_resource = $('.new_resource');
     e.preventDefault();
 
-    if ($(this).hasClass('visible')) {
+    if ($new_resource.hasClass('visible')) {
 
-      $new_resource.submit();
+      // Build POST url from page id
+      var page_id = window.location.pathname;
+      var url  = page_id + '/resources'
+
+      // Build POST data from $new_resourceform
+      var data = $new_resource.serialize();
+
+      // Submit via AJAX to save record
+      $.post(url, data);
+
 
     } else {
 
@@ -79,4 +96,9 @@ $(document).ready(function() {
 
     }
   });
+
+  //
+  // TODO - clear $new_scenario, $new_resource on load
+  //
+
 });
