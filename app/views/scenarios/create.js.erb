@@ -6,4 +6,7 @@
   // TODO - This selector is stupid but necessary as "scenarios" is
   // not unique; it should be replace with .scenarios-container, etc.
   $('.all.scenarios').html("<%= j render('scenarios') %>");
+
+  // Empty all text fields in form
+  $('.new_scenarios input[type="text"]').val('');
 <% end %>
