@@ -1,4 +1,6 @@
 $('.delete-resource').bind('ajax:success', function() {
+
+  // Remove closest node with "resource" class
   $(this).closest('.resource').remove();
   
   // If user just deleted the last resource, don't blow a hole in the page
