@@ -18,9 +18,6 @@ $(document).ready(function() {
     $results.empty();
     $('.error').slideUp();
 
-    // TODO
-    // Display AJAX loading GIF while request is being processed
-
     if (query === '') {
       e.preventDefault();
       $('main').prepend('<p class="error">Search query cannot be blank!</p>');
