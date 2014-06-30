@@ -1,0 +1,8 @@
+<% if @resource.errors.any? %>
+  <% @resource.errors.full_messages.each do |error| %>
+    $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
+  <% end %>
+<% else %>
+  // TODO - see scenarios/create.js.erb
+  $('.all.resources').html("<%= j render('resources') %>");
+<% end %>
