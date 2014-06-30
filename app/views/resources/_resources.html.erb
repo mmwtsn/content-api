@@ -1,0 +1,12 @@
+<% if @page.resources.each do |resource| %>
+<section class="resource">
+  <p><%= resource.body %></p>
+
+  <%= link_to 'edit', edit_resource_path(resource.id), class: 'btn small' %>
+  <%= link_to 'delete', resource_path(resource.id), method: :delete, class: 'btn small' %>
+</section>
+<% end.empty? %>
+  <section class="empty">
+    <p>no saved resources&#133;</p>
+  </section>
+<% end %>
