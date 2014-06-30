@@ -54,7 +54,7 @@ feature 'Scenario Products' do
 
     # User clicks product to save it via AJAX
     first('.product').click
-    expect(page.assert_selector('.selected')).to be_true
+    expect(page.assert_selector('.saved')).to be_true
 
     # Saved product should then render to the page
     within('.scenario-products') do
