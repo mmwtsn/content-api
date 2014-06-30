@@ -3,7 +3,7 @@
   <p><%= resource.body %></p>
 
   <%= link_to 'edit', edit_resource_path(resource.id), class: 'btn small' %>
-  <%= link_to 'delete', resource_path(resource.id), method: :delete, class: 'btn small' %>
+  <%= link_to 'delete', resource_path(resource.id), method: :delete, remote: true, class: 'btn small delete-resource' %>
 </section>
 <% end.empty? %>
   <section class="empty">
