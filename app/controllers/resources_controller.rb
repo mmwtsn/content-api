@@ -26,7 +26,10 @@ class ResourcesController < ApplicationController
   def destroy
     @resource.destroy
 
-    redirect_to page_path(@resource.page_id)
+    respond_to do |format|
+      format.js
+      format.html { redirect_to page_path(@resource.page_id) }
+    end
   end
 
   private

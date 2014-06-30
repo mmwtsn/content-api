@@ -37,7 +37,11 @@ class ScenariosController < ApplicationController
 
   def destroy
     @scenario.destroy
-    redirect_to page_path(@scenario.page_id)
+
+    respond_to do |format|
+      format.js
+      format.html { redirect_to page_path(@scenario.page_id)}
+    end
   end
 
   private
