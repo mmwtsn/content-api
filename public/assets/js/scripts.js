@@ -88,7 +88,6 @@ $(document).ready(function() {
       // Submit via AJAX to save record
       $.post(url, data);
 
-
     } else {
 
       $('.admin_bar.resources').append($new_resource);
@@ -96,9 +95,5 @@ $(document).ready(function() {
 
     }
   });
-
-  //
-  // TODO - clear $new_scenario, $new_resource on load
-  //
 
 });
