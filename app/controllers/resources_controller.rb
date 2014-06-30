@@ -5,7 +5,11 @@ class ResourcesController < ApplicationController
   def create
     @page = Page.find(params[:page_id])
     @resource = @page.resources.create!(resource_params)
-    redirect_to page_path(@page)
+
+    respond_to do |format|
+      format.js
+      format.html { redirect_to page_path(@page) }
+    end
   end
 
   def edit

@@ -13,7 +13,10 @@ class ScenariosController < ApplicationController
     @page = Page.find(params[:page_id])
     @scenario = @page.scenarios.create!(scenario_params)
 
-    redirect_to page_path(@page)
+    respond_to do |format|
+      format.js
+      format.html { redirect_to page_path(@page) }
+    end
   end
 
   def show
