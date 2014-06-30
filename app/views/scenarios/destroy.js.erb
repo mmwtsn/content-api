@@ -1,4 +1,6 @@
 $('.delete-scenario').bind('ajax:success', function() {
+
+  // Remove closest node with "scenario" class
   $(this).closest('.scenario').remove();
   
   // If user just deleted the last scenario, don't blow a hole in the page
