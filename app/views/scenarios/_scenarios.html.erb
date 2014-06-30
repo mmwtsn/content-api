@@ -7,7 +7,7 @@
 
     <%= link_to 'view', scenario_path(scenario.id), class: 'btn small' %>
     <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'btn small' %>
-    <%= link_to 'delete', scenario_path(scenario.id), method: :delete, class: 'btn small' %>
+    <%= link_to 'delete', scenario_path(scenario.id), method: :delete, remote: true, class: 'btn small delete-scenario' %>
   </section>
 <% end.empty? %>
   <section class="empty">
