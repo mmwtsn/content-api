@@ -14,16 +14,20 @@ feature 'Resources' do
     expect(page).to have_content('no saved resources')
   end
 
-  scenario 'create a resource' do
+  scenario 'create a resource', js: true do
     @page = FactoryGirl.create(:page)
     @resource = FactoryGirl.build(:resource, body: 'fancy new resource', url: 'http://fancy-resource.io/')
 
     visit page_path(@page)
 
+    # Trigger form
+    click_link 'add resource'
+
     fill_in 'resource_body', with: @resource.body
     fill_in 'resource_url', with: @resource.url
 
-    click_button 'add resource'
+    # Submit form
+    click_link 'add resource'
 
     expect(page).to have_content(@resource.body)
   end
