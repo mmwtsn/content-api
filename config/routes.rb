@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   get '/cloud-computing/us/en/solutions-gaming.html', to: 'pages#show', id: 1
 
   resources :pages, shallow: true do
-    resources :scenarios
+    member do
+      get 'preview'
+    end
 
+    resources :scenarios
     resources :resources, shallow: true
   end
 
