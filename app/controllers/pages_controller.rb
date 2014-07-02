@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_requested_page, only: [:show, :edit, :update, :destroy]
+  before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
 
   def index
     @pages = Page.all
@@ -19,6 +19,10 @@ class PagesController < ApplicationController
   end
 
   def show
+  end
+
+  def preview
+    render layout: 'preview'
   end
 
   def update
