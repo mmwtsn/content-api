@@ -403,7 +403,6 @@ main.admin {
 
 .saved {
   background: #B9F5B9;
-  opacity: 0.3;
   border-bottom: 5px solid #8add8a; }
   .saved:hover {
     background: #B9F5B9;
