@@ -4,15 +4,14 @@ module ApplicationHelper
       true
     end
   end
-
-  def admin
-    if request.original_fullpath != '/cloud-computing/us/en/solutions-gaming.html'
+  def preview
+    if params[:controller] == 'pages' && params[:action] == 'preview'
       true
     end
   end
 
-  def preview
-    if request.original_fullpath == '/cloud-computing/us/en/solutions-gaming.html'
+  def admin
+    unless preview
       true
     end
   end
