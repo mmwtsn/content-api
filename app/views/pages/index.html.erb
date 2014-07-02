@@ -17,9 +17,7 @@
       <%= link_to "view", page_path(page), class: 'btn small' %>
       <%= link_to "edit", edit_page_path(page), class: 'btn small' %>
       <%= link_to 'delete', page_path(page), method: :delete, class: 'btn small' %>
-      <% if page.id == 1 %>
-        <%= link_to 'preview', '/cloud-computing/us/en/solutions-gaming.html', target: '_blank', class: 'btn small' %>
-      <% end %>
+      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'btn primary small' %>
     </p>
   </div>
 </div>
