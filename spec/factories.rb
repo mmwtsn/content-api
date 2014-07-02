@@ -47,6 +47,13 @@ FactoryGirl.define do
         FactoryGirl.create_list :resource, evaluator.num, page: page
       end
     end
+
+    trait :with_everything do
+      after :create do |page|
+        FactoryGirl.create(:scenario, :with_product, page: page)
+        FactoryGirl.create(:resource, page: page)
+      end
+    end
   end
 
   factory :scenario do
@@ -57,6 +64,12 @@ FactoryGirl.define do
     # Allow avatar image to be tested only when necessary
     trait :with_avatar do
       avatar { File.new("#{Rails.root}/public/assets/images/defaults/avatar.png") }
+    end
+
+    trait :with_product do
+      after :create do |scenario|
+        FactoryGirl.create(:product, scenario: scenario)
+      end
     end
   end
 
