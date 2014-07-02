@@ -1,0 +1,25 @@
+<%# image_tag @page.header, class: 'page-header' %>
+
+<%= render 'tmp_ibm_top' %>
+
+<h2 class="section-header">
+  <%# @page.title %>
+</h2>
+
+<p class="section-body">
+  <%# @page.body %>
+</p>
+
+<%= render 'tmp_ibm_mid' %>
+
+<section class="scenarios">
+<% @page.scenarios.each do |scenario| %>
+  <section class="scenario">
+    <%# image_tag scenario.avatar %>
+    <h1><%# scenario.quote %></h1>
+    <p><%# scenario.pitch %></p>
+  </section>
+<% end %>
+</section>
+
+<%= render 'tmp_ibm_bot' %>
