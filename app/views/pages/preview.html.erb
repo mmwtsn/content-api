@@ -1,119 +1,38 @@
-<%# image_tag @page.header, class: 'page-header' %>
+<div class="solution" style="background-image: url('<%= @page.header %>');">
+  <h2 class="solution-header"><%= @page.title %></h2>
 
-<!-- TODO SOLUTION -->
-
-<div class="ibm-band" id="ibm-solutions-it-management-hero" style="background-image: url('<%= @page.header %>');">
-<div class="ibm-columns">
-<!-- eTree :.: Column 1-1 :.: R590218I72245U37-->
-<div class="ibm-col-1-1 ibm-topics-inner-leadspace">
-<div class="ibm-columns">
-<!-- eTree :.: Column 6-6 :.: A853623W42875N21-->
-
-<div class="ibm-col-6-6 ibm-col-1-1 ibm-topics-main-title">
-  <h2 class="section-header"><%= @page.title %></h2>
+  <p class="solution-subheader"><%= @page.body %></p>
 </div>
-<!-- eTree :.: /Column :.: -->
-
-</div>
-
-</div>
-<!-- eTree :.: /Column :.: -->
-
-</div></div>
-<!-- eTree :.: /Main Content Grid :.: -->
-
-<!-- eTree :.: Main Content Grid :.: -->
-<div class="ibm-band" id="ibm-solutions-it-management-intro">
-<div class="ibm-columns">
-<!-- eTree :.: Column 1-1 :.: T611519Z33489E96-->
-<div class="ibm-col-1-1 ibm-topics-intro">
-<p><%= @page.body %></p>
-<!-- TODO /SOLUTION -->
-
-</div>
-<!-- eTree :.: /Column :.: -->
-
-</div></div>
-<!-- eTree :.: /Main Content Grid :.: -->
-
-<!-- TODO SCENARIO -->
-<% @page.scenarios.each do |scenario| %>
-
-<!-- eTree :.: Main Content Grid :.: -->
-<div class="ibm-band" id="ibm-solutions-it-management-header">
-<div class="ibm-columns">
-<!-- eTree :.: Column 1-1 :.: H132845E64448L62-->
-<div class="ibm-col-1-1 ibm-topics-scenario-header">
-  <img alt="Solutions - IT Management - Profile Image" height="173" width="173" src="<%= scenario.avatar %>"/>
-  <h2 class="section-header">"<%= scenario.quote %>"</h2>
-  <h3 class="section-header"><%= scenario.pitch %></h3>
-</div>
-
-<!-- eTree :.: /Column :.: -->
-
-</div></div>
-<!-- eTree :.: /Main Content Grid :.: -->
-
-<!-- eTree :.: Main Content Grid :.: -->
-<div class="ibm-columns">
-<!-- eTree :.: Column 1-1 :.: D076919O51305W81-->
-<div class="ibm-col-1-1 ibm-topics-scenario-content ibm_cci-ibm-band">
-
-<!-- TODO PRODUCT -->
-<div class="ibm-columns">
-  <% scenario.products.each do |product| %>
-
-    <!-- eTree :.: Column 5-1 :.: L073337V54734O79-->
-    <div class="ibm-col-5-1 ibm-topics-scenario-content-offerings">
-      <a href="#" target="offcloud">
-        <img alt="icon" height="75" width="75" src="<%= product.icon_url %>"/>
-        <strong><%= product.name %></strong>
-      </a>
-      <p><%= product.description %></p>
-    </div>
-    <!-- eTree :.: /Column :.: -->
-
-<% end %>
-</div>
-<!-- TODO /PRODUCT -->
-</div>
-<!-- eTree :.: /Column :.: -->
-</div>
-<% end %>
-<!-- TODO /SCENARIO -->
-<!-- eTree :.: /Main Content Grid :.: -->
-
-<!-- eTree :.: Main Content Grid :.: -->
-<div class="ibm-columns">
-<!-- eTree :.: Column 1-1 :.: G300485P50116X55-->
-
-<!-- TODO RESOURCES -->
-<div class="ibm-col-1-1 ibm-solutions-resources ibm-solutions-resources-block1 ibm_cci-ibm-band">
-  <h3 class="section-header">Featured resources</h3>
-  <h4 class="section-header">Demos</h4>
-
-  <% @page.resources.each do |resource| %>
-  <p><a href="<%= resource.url %>" class="ibm-demo-link" target="offcloud"><%= resource.body %></a></p>
-  <% end %>
-</div>
-<!-- eTree :.: /Column :.: -->
-<!-- TODO /RESOURCES -->
-
-<h2 class="section-header">
-  <%# @page.title %>
-</h2>
-
-<p class="section-body">
-  <%# @page.body %>
-</p>
 
 <section class="scenarios">
-<% @page.scenarios.each do |scenario| %>
-  <section class="scenario">
-    <%# image_tag scenario.avatar %>
-    <h1><%# scenario.quote %></h1>
-    <p><%# scenario.pitch %></p>
-  </section>
-<% end %>
+  
+  <% @page.scenarios.each do |scenario| %>
+  <article class="scenario">
+    <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
+    <h2 class="scenario-header">"<%= scenario.quote %>"</h2>
+    <h3 class="scenario-subheader"><%= scenario.pitch %></h3>
+
+    <% scenario.products.each do |product| %>
+      <a href="#">
+        <%= image_tag product.icon_url, class: 'product-icon' %>
+        <strong><%= product.name %></strong>
+      </a>
+
+      <p class="product-description"><%= product.description %></p>
+    <% end %>
+  </article>
+
+  <% end %>
+
 </section>
-</div><!-- /# -->
+
+<section class="resources">
+  <h3 class="section-header">Featured resources</h3>
+
+  <% @page.resources.each do |resource| %>
+  <div class="resource">
+    <p><a href="<%= resource.url %>"><%= resource.body %></a></p>
+  </div>
+  <% end %>
+
+</section>
