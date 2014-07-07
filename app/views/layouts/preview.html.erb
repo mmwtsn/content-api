@@ -49,77 +49,9 @@
 <body id="ibm-com" class="ibm-type">
   <div id="ibm-top" class="ibm-landing-page">
 
-  <div id="ibm-masthead">
-    <div id="ibm-mast-options">
-      <ul>
-        <li id="ibm-geo">
-          <a href="http://www.ibm.com/planetwide/select/selector.html"><span class="ibm-access">Select a country/region: </span>United States</a>
-        </li>
-      </ul>
-    </div>
-
-    <div id="ibm-universal-nav">
-      <ul id="ibm-unav-links">
-        <li id="ibm-home"><a href="http://www.ibm.com/us/en/">IBM®</a></li>
-      </ul>
-
-      <ul id="ibm-menu-links">
-        <li><a href="http://www.ibm.com/sitemap/us/en/">Site map</a></li>
-      </ul>
-
-      <div id="ibm-search-module">
-        <form id="ibm-search-form" action="http://www.ibm.com/Search/" method="get">
-          <p>
-            <label for="q"><span class="ibm-access">Search</span></label>
-            <input type="text" maxlength="100" value="" name="q" id="q"/>
-            <input type="hidden" value="17" name="v"/>
-            <input type="hidden" value="utf" name="en"/>
-            <input type="hidden" value="en" name="lang"/>
-            <input type="hidden" value="us" name="cc"/>
-
-            <input type="submit" id="ibm-search" class="ibm-btn-search" value="Submit"/>
-          </p>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <div id="ibm-leadspace-head" class="ibm-alternate">
-    <div id="ibm-leadspace-body">
-      <div class="ibm-columns">
-        <div class="ibm-col-1-1">
-          <h1 class="ibm-small">IBM <span>Cloud</span><span class="breadcrumb"> / marketplace</span></h1>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div id="ibm-content-nav">
-    <div id="ibm-primary-tabs" class="ibm-no-mobile">
-      <span class="ibm-access">Primary tab navigation</span>
-
-      <ul class="ibm-tabs">
-        <li><a href="/cloud-computing/us/en/">Overview</a></li>
-        <li><a href="//www.ibm.com/cloud-computing/us/en/marketplace.html">Marketplace</a></li>
-        <li class="ibm-active ibm_cci-gbl-nav-multi parent-1"><a href="">Solutions</a><span class="ibm-access"> - selected tab, </span></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-gaming.html">Gaming</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-devops.html">DevOps</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-startups.html">Startups</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-it-management.html">IT Management</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-mobile.html">Mobile</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-analytics.html">Analytics</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-1"><a href="/cloud-computing/us/en/solutions-industry-federal.html">Federal</a></li>
-        <li class="ibm_cci-gbl-nav-multi parent-2"><a href="/cloud-computing/us/en/learn.html">Learn</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-2"><a href="/cloud-computing/us/en/saas.html">Business applications <span>(SaaS)</span></a></li>
-        <li class="ibm_cci-gbl-subnav2 child-2"><a href="/cloud-computing/us/en/paas.html">Developer services <span>(PaaS)</span></a></li>
-        <li class="ibm_cci-gbl-subnav2 child-2"><a href="/cloud-computing/us/en/iaas.html">Infrastructure services <span>(IaaS)</span></a></li>
-        <li class="ibm_cci-gbl-subnav2 child-2"><a href="/cloud-computing/us/en/private-cloud.html">Private/Hybrid</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-2"><a href="/cloud-computing/us/en/consulting.html">Consulting</a></li>
-        <li class="ibm_cci-gbl-subnav2 child-2"><a href="/cloud-computing/us/en/today-in-cloud.html">Today in cloud</a></li>
-        <li><a href="/cloud-computing/us/en/partner-landing.html">Partners</a></li>
-      </ul>
-    </div>
-  </div>
+  <%= render 'layouts/ibm/masthead' %>
+  <%= render 'layouts/ibm/leadspace' %>
+  <%= render 'layouts/ibm/nav' %>
 
   <div id="ibm-pcon">
   <div id="ibm-content">
@@ -129,29 +61,7 @@
 
   <%= yield %>
 
-  <div class="ibm-col-6-2 ibm_cci-gbl-live-chat">
-    <a id="slideout-button">
-      <img alt="Contact tab" height="173px" width="35px" src="http://www.ibm.com/cloud-computing/images/Contact.png"/>
-    </a>
-
-    <ul class="ibm-link-list">
-      <li class="ibm-phone-link"><span><strong>U.S. & Canada<br/>1-877-999-7115</strong><br/>Priority Code<br/>103HA09T</span></li>
-      <li class="ibm-email-link"><span><a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=gtsmail&amp;lang=en_US&amp;S_TACT=602AX26W">Email</a></span></li>
-    </ul>
-
-    <span id="lpbutton"> </span>
-    <hr/>
-
-    <ul class="ibm-link-list">
-      <li class="ibm-twitter-link ibm_cci-gbl-social"><a href="http://twitter.com/ibmcloud/" title="twitter">Twitter</a></li>
-      <li class="ibm-youtube-link ibm_cci-gbl-social"><a href="http://youtube.com/user/ibmcloud/" title="youtube">YouTube</a></li>
-      <li class="ibm-linkedin-link ibm_cci-gbl-social"><a href="http://www.linkedin.com/groups/IBM-Cloud-Computing-2002441" title="linkedin">Linkedin</a></li>
-      <li class="ibm-blog-link ibm_cci-gbl-social"><a href="http://thoughtsoncloud.com/" title="thoughts on cloud blog">Thoughts on Cloud</a></li>
-      <li class="ibm-facebook-link ibm_cci-gbl-social"><a href="http://www.facebook.com/IBMcloud/" title="facebook">Facebook</a></li>
-      <li class="ibm-googleplus-link ibm_cci-gbl-social"><a href="https://plus.google.com/u/0/105308978410787250865/" title="google plus">Google+</a></li>
-    </ul>
-    <a id="close-tab-slideout">Hide [x]</a>
-  </div>
+  <%= render 'layouts/ibm/contact_module' %>
 
   </div>
   <!-- eTree :.: /Main Content Grid :.: -->
@@ -159,90 +69,24 @@
   <!-- eTree :.: Main Content Grid :.: -->
   <div class="ibm-columns">
   <!-- eTree :.: Column 1-1 :.: T387812M80489V39-->
-  <div class="ibm-col-1-1 ibm-solutions-resources ibm-solutions-resources-block2 ibm_cci-ibm-band">&nbsp;
+  <div class="ibm-col-1-1 ibm-solutions-resources ibm-solutions-resources-block2 ibm_cci-ibm-band">&nbsp;</div><!-- eTree :.: /Column :.: -->
 
-  </div>
-  <!-- eTree :.: /Column :.: -->
+  </div><!-- eTree :.: /Main Content Grid :.: -->
 
-  </div>
-  <!-- eTree :.: /Main Content Grid :.: -->
-
-  <!-- eTree :.: Main Content Grid :.: -->
-  <div class="ibm-columns">
-  <!-- eTree :.: Column 1-1 :.: L677079M74975S45-->
-  <div class="ibm-col-1-1 ibm_cci-ibm-band ibm_cci-gbl-footer ibm_cci-slim-glb-footer" id="ibm-custom-smartcloud-footer">
-  <div class="ibm-columns">
-  <!-- eTree :.: Column 6-2 :.: H416583B04798I32-->
-  <div class="ibm-col-6-2 ibm_cci-gbl-footer-left">
-    <ul class="ibm-link-list">
-      <li class="ibm-twitter-link ibm_cci-gbl-social"><a href="http://twitter.com/ibmcloud/" title="twitter">Twitter</a></li>
-      <li class="ibm-youtube-link ibm_cci-gbl-social"><a href="http://youtube.com/user/ibmcloud/" title="youtube">YouTube</a></li>
-      <li class="ibm-linkedin-link ibm_cci-gbl-social"><a href="http://www.linkedin.com/groups/IBM-Cloud-Computing-2002441" title="linkedin">Linkedin</a></li>
-      <li class="ibm-blog-link ibm_cci-gbl-social"><a href="http://thoughtsoncloud.com/" title="thoughts on cloud blog">Thoughts on Cloud</a></li>
-      <li class="ibm-facebook-link ibm_cci-gbl-social"><a href="http://www.facebook.com/IBMcloud/" title="facebook">Facebook</a></li>
-      <li class="ibm-googleplus-link ibm_cci-gbl-social"><a href="https://plus.google.com/u/0/105308978410787250865/" title="google plus">Google+</a></li>
-    </ul>
-  </div>
-  <!-- eTree :.: /Column :.: -->
-
-  <!-- eTree :.: Column 6-4 :.: M030672B15534D35-->
-  <div class="ibm-col-6-4 ibm_cci-gbl-footer-right">
-    <span class="ibm-cloud-footer-link">
-      <a href="/cloud-computing/us/en/trust.html">IBM Cloud Trust and Security</a>
-    </span>
-
-    <span class="ibm-cloud-footer-link">
-      <a href="https://www14.software.ibm.com/webapp/iwm/web/signup.do?source=gtsmail&amp;lang=en_US&amp;S_TACT=602AX26W" title="email link">Email Us</a>
-    </span>
-
-    <span class="ibm-cloud-footer-phone">&nbsp;&nbsp;&nbsp;U.S. &amp; Canada 1.877.999.7115 Priority Code 103HA09T</span>
-  </div>
-  <!-- eTree :.: /Column :.: -->
-
-  </div>
-
-  </div>
-  <!-- eTree :.: /Column :.: -->
-
-  </div>
-  <!-- eTree :.: /Main Content Grid :.: -->
+  <%= render 'layouts/ibm/footer_leadspace' %>
 
   </div>
   </div>
   </div>
   </div>
 
-  <!-- RELATED_CONTENT_BEGIN -->
-  <div id="ibm-related-content">
-    <!-- ibm-merchandising-module -->
-    <div id="ibm-merchandising-module"></div>
-  </div>
-  <!-- RELATED_CONTENT_END -->
+  <%= render 'layouts/ibm/related_content' %>
+  <%= render 'layouts/ibm/footer' %>
 
-  <!-- FOOTER_BEGIN -->
-  <div id="ibm-footer-module"></div>
+  </div><!-- /#ibm-top -->
 
-  <div id="ibm-footer">
-    <h2 class="ibm-access">Footer links</h2>
+  <%= render 'layouts/ibm/metrics' %>
+  <%= render 'layouts/ibm/scripts' %>
 
-    <ul>
-      <li><a href="http://www.ibm.com/contact/us/en/">Contact</a></li>
-      <li><a href="http://www.ibm.com/privacy/us/en/">Privacy</a></li>
-      <li><a href="http://www.ibm.com/legal/us/en/">Terms of use</a></li>
-      <li><a href="http://www.ibm.com/accessibility/us/en/">Accessibility</a></li>
-    </ul>
-  </div>
-  <!-- FOOTER_END -->
-
-  </div>
-  <!-- /#ibm-top -->
-
-  <div id="ibm-metrics"></div>
-
-  <script src="//www.ibm.com/common/stats/stats.js" type="text/javascript">//</script>
-  <script src="//www.ibm.com/cloud-computing/bin/us/ww_cci.js?version=0.1" type="text/javascript">//</script>
-  <script src="//www.ibm.com/software/info/js/oplabovtrig.js" type="text/javascript">//</script>
-  <script language="javascript" type="text/javascript">var editskill = "gtscloud-usen";</script>
-  <script src="/services/common/cloud-enterprise/js/common-mtagbutton.js" type="text/javascript">//</script>
-  </body>
+</body>
 </html>
