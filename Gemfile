@@ -21,6 +21,7 @@ gem 'paperclip'
 group :development do
   gem 'pry-rails'
   gem 'spring'
+  gem 'scss-lint'
 end
 
 # Gems available for testing
