@@ -77,14 +77,16 @@ body:before {
   width: 100%;
   bottom: 0;
   position: absolute;
+  margin: 0;
   background: rgba(0, 25, 52, 0.7);
   font-family: 'LubalinDemiIBM';
-  font-size: 2.5rem;
+  font-size: 2.2rem;
+  font-weight: 500;
   text-align: center;
   color: #fff; }
   .solution-header .container {
     display: inline-block;
-    padding: 2rem 0;
+    padding: 2rem;
     max-width: 60rem;
     margin-left: auto;
     margin-right: auto; }
@@ -94,19 +96,19 @@ body:before {
       clear: both; }
 
 .solution-subheader {
-  padding: 2rem;
+  padding: 0 3rem;
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 1.4; }
+  font-size: 1.3rem;
+  line-height: 1.5;
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .solution-subheader:after {
+    content: "";
+    display: table;
+    clear: both; }
   .solution-subheader .container {
-    display: inline-block;
-    max-width: 60rem;
-    margin-left: auto;
-    margin-right: auto; }
-    .solution-subheader .container:after {
-      content: "";
-      display: table;
-      clear: both; }
+    display: inline-block; }
 
 .scenarios-wrapper {
   background: #f8f8f8;
