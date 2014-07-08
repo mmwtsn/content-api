@@ -1,38 +1,44 @@
-<div class="solution" style="background-image: url('<%= @page.header %>');">
-  <h2 class="solution-header"><%= @page.title %></h2>
-
-  <p class="solution-subheader"><%= @page.body %></p>
-</div>
-
-<section class="scenarios">
-  
-  <% @page.scenarios.each do |scenario| %>
-  <article class="scenario">
-    <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
-    <h2 class="scenario-header">"<%= scenario.quote %>"</h2>
-    <h3 class="scenario-subheader"><%= scenario.pitch %></h3>
-
-    <% scenario.products.each do |product| %>
-      <a href="#">
-        <%= image_tag product.icon_url, class: 'product-icon' %>
-        <strong><%= product.name %></strong>
-      </a>
-
-      <p class="product-description"><%= product.description %></p>
-    <% end %>
-  </article>
-
-  <% end %>
-
-</section>
-
-<section class="resources">
-  <h3 class="section-header">Featured resources</h3>
-
-  <% @page.resources.each do |resource| %>
-  <div class="resource">
-    <p><a href="<%= resource.url %>"><%= resource.body %></a></p>
+<section class="solution-wrapper">
+  <div class="solution" style="background-image: url('<%= @page.header %>');">
+    <h2 class="solution-header"><span class="container"><%= @page.title %></span></h2>
   </div>
-  <% end %>
 
+  <p class="solution-subheader"><span class="container"><%= @page.body %></span></p>
+
+  <section class="scenarios">
+
+    <% @page.scenarios.each do |scenario| %>
+    <article class="scenario">
+      <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
+      <h2 class="scenario-header">"<%= scenario.quote %>"</h2>
+        <h3 class="scenario-subheader"><%= scenario.pitch %></h3>
+
+      <section class="products">
+      <% scenario.products.each do |product| %>
+        <div class="product">
+          <a href="#">
+            <%= image_tag product.icon_url, class: 'product-icon' %>
+            <strong class="product-name"><%= product.name %></strong>
+          </a>
+
+          <p class="product-description"><%= product.description %></p>
+        </div>
+      <% end %>
+      </section>
+    </article>
+
+    <% end %>
+
+  </section>
+
+  <section class="resources">
+    <h3 class="section-header">Featured resources</h3>
+
+    <% @page.resources.each do |resource| %>
+    <div class="resource">
+      <p><a href="<%= resource.url %>"><%= resource.body %></a></p>
+    </div>
+    <% end %>
+
+  </section>
 </section>
