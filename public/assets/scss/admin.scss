@@ -1,7 +1,7 @@
 @import '../../bower_components/normalize.css/normalize.css';
-@import 'bourbon';
-@import 'bitters/bitters';
-@import 'neat';
+@import 'bourbon/bourbon';
+@import 'grid-settings';
+@import 'neat/neat';
 @import 'fonts';
 
 $link: #4aa0f3;
@@ -64,10 +64,7 @@ main.admin {
   $comment-gutter: 1.4em;
   $comment-image-padding: .7em;
   $comment-image-width: 4em;
-  $comment-color: $base-font-color;
-  $comment-background: lighten($base-accent-color, 15);
-  $comment-detail-color: transparentize($comment-color, .5);
-  $comment-image-vert-alignment: top;
+  $comment-color: #333;
 
   display: table;
   width: 100%;
@@ -77,21 +74,10 @@ main.admin {
   .page-image,
   .page-content {
     display: table-cell;
-    vertical-align: $comment-image-vert-alignment;
   }
 
   .page-header {
     width: 100%;
-
-    > img {
-      width: $comment-image-width;
-      height: auto;
-      border-radius: $base-border-radius;
-      padding: $comment-image-padding;
-      background: $comment-background;
-      display: block;
-      max-width: none;
-    }
 
     .page-reverse-order & {
       padding-right: 0;
@@ -121,7 +107,6 @@ main.admin {
     p.comment-detail {
       font-style: italic;
       font-size: .9em;
-      color: $comment-detail-color;
     }
   }
 }
