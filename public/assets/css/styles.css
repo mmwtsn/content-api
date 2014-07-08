@@ -4,209 +4,15 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-
-
-
-
-body {
-  color: #333;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1em;
-  -webkit-font-smoothing: antialiased;
-  line-height: 1.5em; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  line-height: 1.25em;
-  margin: 0;
-  text-rendering: optimizeLegibility; }
-
-h1 {
-  font-size: 2.25em; }
-
-h2 {
-  font-size: 2em; }
-
-h3 {
-  font-size: 1.75em; }
-
-h4 {
-  font-size: 1.5em; }
-
-h5 {
-  font-size: 1.25em; }
-
-h6 {
-  font-size: 1em; }
-
-p {
-  margin: 0 0 0.75em; }
-
-a {
-  color: #477DCA;
-  text-decoration: none;
-  -webkit-transition: color 0.1s linear;
-  -moz-transition: color 0.1s linear;
-  transition: color 0.1s linear; }
-  a:hover {
-    color: #2c5999; }
-  a:active, a:focus {
-    color: #2c5999;
-    outline: none; }
-
-hr {
-  border-bottom: 1px solid #DDD;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  margin: 1.5em 0; }
-
-img {
-  margin: 0;
-  max-width: 100%; }
-
-abbr, acronym {
-  border-bottom: 1px dotted #DDD;
-  cursor: help; }
-
-address {
-  display: block;
-  margin: 0 0 0.75em; }
-
-hgroup {
-  margin-bottom: 0.75em; }
-
-del {
-  color: #595959; }
-
-blockquote {
-  border-left: 2px solid #DDD;
-  color: #595959;
-  margin: 1.5em 0;
-  padding-left: 0.75em; }
-
-cite {
-  color: #737373;
-  font-style: italic; }
-  cite:before {
-    content: '\2014 \00A0'; }
-
-fieldset {
-  background: #f7f7f7;
-  border: 1px solid #DDD;
-  margin: 0 0 0.75em 0;
-  padding: 1.5em; }
-
-input, label, select {
-  display: block;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1em; }
-
-label {
-  font-weight: bold;
-  margin-bottom: 0.375em; }
-  label.required:after {
-    content: "*"; }
-  label abbr {
-    display: none; }
-
-textarea, input[type="email"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="url"], input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="time"], input[type="week"], select[multiple=multiple] {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-transition: border-color;
-  -moz-transition: border-color;
-  transition: border-color;
-  background-color: white;
-  border-radius: 0.1875em;
-  border: 1px solid #DDD;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  font-size: 1em;
-  margin-bottom: 0.75em;
-  padding: 0.5em 0.5em;
-  width: 100%; }
-  textarea:hover, input[type="email"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="url"]:hover, input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="month"]:hover, input[type="time"]:hover, input[type="week"]:hover, select[multiple=multiple]:hover {
-    border-color: #c4c4c4; }
-  textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
-    border-color: #477DCA;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(55, 112, 192, 0.7);
-    outline: none; }
-
-textarea {
-  resize: vertical; }
-
-input[type="search"] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none; }
-
-input[type="checkbox"], input[type="radio"] {
-  display: inline;
-  margin-right: 0.375em; }
-
-input[type="file"] {
-  margin-bottom: 0.75em;
-  padding-bottom: 0.5em;
-  width: 100%; }
-
-select {
-  width: auto;
-  max-width: 100%;
-  margin-bottom: 1.5em; }
-
-table {
-  border-collapse: collapse;
-  margin: 0.75em 0;
-  table-layout: fixed;
-  width: 100%; }
-
-th {
-  border-bottom: 1px solid #b7b7b7;
-  font-weight: bold;
-  padding: 0.75em 0;
-  text-align: left; }
-
-td {
-  border-bottom: 1px solid #DDD;
-  padding: 0.75em 0; }
-
-tr, td, th {
-  vertical-align: middle; }
-
-ul, ol {
-  margin: 0;
-  padding: 0;
-  list-style-type: none; }
-
-dl {
-  line-height: 1.5em;
-  margin-bottom: 0.75em; }
-  dl dt {
-    font-weight: bold;
-    margin-top: 0.75em; }
-  dl dd {
-    margin: 0; }
-
-
-
-
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
 body:before {
   content: '';
   display: inline-block;
-  background-image: deprecated-webkit-gradient(linear, left top, left bottom, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #ffff00 17.01031%, #ffff00 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #ffff00 34.02062%, #ffff00 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #ffff00 51.03093%, #ffff00 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #ffff00 68.04124%, #ffff00 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #ffff00 85.05155%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #ffff00 17.01031%, #ffff00 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #ffff00 34.02062%, #ffff00 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #ffff00 51.03093%, #ffff00 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #ffff00 68.04124%, #ffff00 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #ffff00 85.05155%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #ffff00 17.01031%, #ffff00 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #ffff00 34.02062%, #ffff00 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #ffff00 51.03093%, #ffff00 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #ffff00 68.04124%, #ffff00 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #ffff00 85.05155%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #ffff00 17.01031%, #ffff00 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #ffff00 34.02062%, #ffff00 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #ffff00 51.03093%, #ffff00 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #ffff00 68.04124%, #ffff00 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #ffff00 85.05155%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #ffff00 17.01031%, #ffff00 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #ffff00 34.02062%, #ffff00 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #ffff00 51.03093%, #ffff00 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #ffff00 68.04124%, #ffff00 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #ffff00 85.05155%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #ffff00 17.01031%, #ffff00 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #ffff00 34.02062%, #ffff00 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #ffff00 51.03093%, #ffff00 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #ffff00 68.04124%, #ffff00 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #ffff00 85.05155%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
+  background-image: deprecated-webkit-gradient(linear, left top, left bottom, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
+  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
   height: 100%;
   left: 0;
   margin: 0 auto;
@@ -217,65 +23,48 @@ body:before {
   width: 100%;
   pointer-events: none;
   z-index: 9999; }
-  @media screen and (min-width: 40em)  {
-    body:before {
-      background-image: deprecated-webkit-gradient(linear, left top, left bottom, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 22.65625%, rgba(0, 0, 0, 0) 22.65625%, rgba(0, 0, 0, 0) 25.78125%, #ffff00 25.78125%, #ffff00 48.4375%, rgba(0, 0, 0, 0) 48.4375%, rgba(0, 0, 0, 0) 51.5625%, #ffff00 51.5625%, #ffff00 74.21875%, rgba(0, 0, 0, 0) 74.21875%, rgba(0, 0, 0, 0) 77.34375%, #ffff00 77.34375%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 22.65625%, rgba(0, 0, 0, 0) 22.65625%, rgba(0, 0, 0, 0) 25.78125%, #ffff00 25.78125%, #ffff00 48.4375%, rgba(0, 0, 0, 0) 48.4375%, rgba(0, 0, 0, 0) 51.5625%, #ffff00 51.5625%, #ffff00 74.21875%, rgba(0, 0, 0, 0) 74.21875%, rgba(0, 0, 0, 0) 77.34375%, #ffff00 77.34375%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 22.65625%, rgba(0, 0, 0, 0) 22.65625%, rgba(0, 0, 0, 0) 25.78125%, #ffff00 25.78125%, #ffff00 48.4375%, rgba(0, 0, 0, 0) 48.4375%, rgba(0, 0, 0, 0) 51.5625%, #ffff00 51.5625%, #ffff00 74.21875%, rgba(0, 0, 0, 0) 74.21875%, rgba(0, 0, 0, 0) 77.34375%, #ffff00 77.34375%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 22.65625%, rgba(0, 0, 0, 0) 22.65625%, rgba(0, 0, 0, 0) 25.78125%, #ffff00 25.78125%, #ffff00 48.4375%, rgba(0, 0, 0, 0) 48.4375%, rgba(0, 0, 0, 0) 51.5625%, #ffff00 51.5625%, #ffff00 74.21875%, rgba(0, 0, 0, 0) 74.21875%, rgba(0, 0, 0, 0) 77.34375%, #ffff00 77.34375%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 22.65625%, rgba(0, 0, 0, 0) 22.65625%, rgba(0, 0, 0, 0) 25.78125%, #ffff00 25.78125%, #ffff00 48.4375%, rgba(0, 0, 0, 0) 48.4375%, rgba(0, 0, 0, 0) 51.5625%, #ffff00 51.5625%, #ffff00 74.21875%, rgba(0, 0, 0, 0) 74.21875%, rgba(0, 0, 0, 0) 77.34375%, #ffff00 77.34375%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 22.65625%, rgba(0, 0, 0, 0) 22.65625%, rgba(0, 0, 0, 0) 25.78125%, #ffff00 25.78125%, #ffff00 48.4375%, rgba(0, 0, 0, 0) 48.4375%, rgba(0, 0, 0, 0) 51.5625%, #ffff00 51.5625%, #ffff00 74.21875%, rgba(0, 0, 0, 0) 74.21875%, rgba(0, 0, 0, 0) 77.34375%, #ffff00 77.34375%, #ffff00 100%, rgba(0, 0, 0, 0) 100%); } }
-  @media screen and (min-width: 53.75em)  {
-    body:before {
-      background-image: deprecated-webkit-gradient(linear, left top, left bottom, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 11.15385%, rgba(0, 0, 0, 0) 11.15385%, rgba(0, 0, 0, 0) 12.69231%, #ffff00 12.69231%, #ffff00 23.84615%, rgba(0, 0, 0, 0) 23.84615%, rgba(0, 0, 0, 0) 25.38462%, #ffff00 25.38462%, #ffff00 36.53846%, rgba(0, 0, 0, 0) 36.53846%, rgba(0, 0, 0, 0) 38.07692%, #ffff00 38.07692%, #ffff00 49.23077%, rgba(0, 0, 0, 0) 49.23077%, rgba(0, 0, 0, 0) 50.76923%, #ffff00 50.76923%, #ffff00 61.92308%, rgba(0, 0, 0, 0) 61.92308%, rgba(0, 0, 0, 0) 63.46154%, #ffff00 63.46154%, #ffff00 74.61538%, rgba(0, 0, 0, 0) 74.61538%, rgba(0, 0, 0, 0) 76.15385%, #ffff00 76.15385%, #ffff00 87.30769%, rgba(0, 0, 0, 0) 87.30769%, rgba(0, 0, 0, 0) 88.84615%, #ffff00 88.84615%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 11.15385%, rgba(0, 0, 0, 0) 11.15385%, rgba(0, 0, 0, 0) 12.69231%, #ffff00 12.69231%, #ffff00 23.84615%, rgba(0, 0, 0, 0) 23.84615%, rgba(0, 0, 0, 0) 25.38462%, #ffff00 25.38462%, #ffff00 36.53846%, rgba(0, 0, 0, 0) 36.53846%, rgba(0, 0, 0, 0) 38.07692%, #ffff00 38.07692%, #ffff00 49.23077%, rgba(0, 0, 0, 0) 49.23077%, rgba(0, 0, 0, 0) 50.76923%, #ffff00 50.76923%, #ffff00 61.92308%, rgba(0, 0, 0, 0) 61.92308%, rgba(0, 0, 0, 0) 63.46154%, #ffff00 63.46154%, #ffff00 74.61538%, rgba(0, 0, 0, 0) 74.61538%, rgba(0, 0, 0, 0) 76.15385%, #ffff00 76.15385%, #ffff00 87.30769%, rgba(0, 0, 0, 0) 87.30769%, rgba(0, 0, 0, 0) 88.84615%, #ffff00 88.84615%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 11.15385%, rgba(0, 0, 0, 0) 11.15385%, rgba(0, 0, 0, 0) 12.69231%, #ffff00 12.69231%, #ffff00 23.84615%, rgba(0, 0, 0, 0) 23.84615%, rgba(0, 0, 0, 0) 25.38462%, #ffff00 25.38462%, #ffff00 36.53846%, rgba(0, 0, 0, 0) 36.53846%, rgba(0, 0, 0, 0) 38.07692%, #ffff00 38.07692%, #ffff00 49.23077%, rgba(0, 0, 0, 0) 49.23077%, rgba(0, 0, 0, 0) 50.76923%, #ffff00 50.76923%, #ffff00 61.92308%, rgba(0, 0, 0, 0) 61.92308%, rgba(0, 0, 0, 0) 63.46154%, #ffff00 63.46154%, #ffff00 74.61538%, rgba(0, 0, 0, 0) 74.61538%, rgba(0, 0, 0, 0) 76.15385%, #ffff00 76.15385%, #ffff00 87.30769%, rgba(0, 0, 0, 0) 87.30769%, rgba(0, 0, 0, 0) 88.84615%, #ffff00 88.84615%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 11.15385%, rgba(0, 0, 0, 0) 11.15385%, rgba(0, 0, 0, 0) 12.69231%, #ffff00 12.69231%, #ffff00 23.84615%, rgba(0, 0, 0, 0) 23.84615%, rgba(0, 0, 0, 0) 25.38462%, #ffff00 25.38462%, #ffff00 36.53846%, rgba(0, 0, 0, 0) 36.53846%, rgba(0, 0, 0, 0) 38.07692%, #ffff00 38.07692%, #ffff00 49.23077%, rgba(0, 0, 0, 0) 49.23077%, rgba(0, 0, 0, 0) 50.76923%, #ffff00 50.76923%, #ffff00 61.92308%, rgba(0, 0, 0, 0) 61.92308%, rgba(0, 0, 0, 0) 63.46154%, #ffff00 63.46154%, #ffff00 74.61538%, rgba(0, 0, 0, 0) 74.61538%, rgba(0, 0, 0, 0) 76.15385%, #ffff00 76.15385%, #ffff00 87.30769%, rgba(0, 0, 0, 0) 87.30769%, rgba(0, 0, 0, 0) 88.84615%, #ffff00 88.84615%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 11.15385%, rgba(0, 0, 0, 0) 11.15385%, rgba(0, 0, 0, 0) 12.69231%, #ffff00 12.69231%, #ffff00 23.84615%, rgba(0, 0, 0, 0) 23.84615%, rgba(0, 0, 0, 0) 25.38462%, #ffff00 25.38462%, #ffff00 36.53846%, rgba(0, 0, 0, 0) 36.53846%, rgba(0, 0, 0, 0) 38.07692%, #ffff00 38.07692%, #ffff00 49.23077%, rgba(0, 0, 0, 0) 49.23077%, rgba(0, 0, 0, 0) 50.76923%, #ffff00 50.76923%, #ffff00 61.92308%, rgba(0, 0, 0, 0) 61.92308%, rgba(0, 0, 0, 0) 63.46154%, #ffff00 63.46154%, #ffff00 74.61538%, rgba(0, 0, 0, 0) 74.61538%, rgba(0, 0, 0, 0) 76.15385%, #ffff00 76.15385%, #ffff00 87.30769%, rgba(0, 0, 0, 0) 87.30769%, rgba(0, 0, 0, 0) 88.84615%, #ffff00 88.84615%, #ffff00 100%, rgba(0, 0, 0, 0) 100%);
-      background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0, #ffff00 0, #ffff00 11.15385%, rgba(0, 0, 0, 0) 11.15385%, rgba(0, 0, 0, 0) 12.69231%, #ffff00 12.69231%, #ffff00 23.84615%, rgba(0, 0, 0, 0) 23.84615%, rgba(0, 0, 0, 0) 25.38462%, #ffff00 25.38462%, #ffff00 36.53846%, rgba(0, 0, 0, 0) 36.53846%, rgba(0, 0, 0, 0) 38.07692%, #ffff00 38.07692%, #ffff00 49.23077%, rgba(0, 0, 0, 0) 49.23077%, rgba(0, 0, 0, 0) 50.76923%, #ffff00 50.76923%, #ffff00 61.92308%, rgba(0, 0, 0, 0) 61.92308%, rgba(0, 0, 0, 0) 63.46154%, #ffff00 63.46154%, #ffff00 74.61538%, rgba(0, 0, 0, 0) 74.61538%, rgba(0, 0, 0, 0) 76.15385%, #ffff00 76.15385%, #ffff00 87.30769%, rgba(0, 0, 0, 0) 87.30769%, rgba(0, 0, 0, 0) 88.84615%, #ffff00 88.84615%, #ffff00 100%, rgba(0, 0, 0, 0) 100%); } }
 
 @font-face {
   font-family: 'LubalinDemiIBM';
-  src: url("//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.eot");
-  src: url("//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.eot?#iefix") format("embedded-opentype"), url("//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.woff") format("woff"), url("//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.ttf") format("truetype"), url("//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.svg#LubalinDemiIBM") format("svg");
+  src: url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.eot');
+  src: url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.eot?#iefix') format('embedded-opentype'), url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.woff') format('woff'), url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.ttf') format('truetype'), url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.svg#LubalinDemiIBM') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'LubalinGraphStdBookIBM';
-  src: url("//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.eot");
-  src: url("//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.eot?#iefix") format("embedded-opentype"), url("//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.woff") format("woff"), url("//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.ttf") format("truetype"), url("//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.svg#LubalinGraphStdBookIBM") format("svg");
+  src: url('//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.eot');
+  src: url('//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.eot?#iefix') format('embedded-opentype'), url('//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.woff') format('woff'), url('//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.ttf') format('truetype'), url('//1.www.s81c.com/common/fonts/lubalingraphstd-book-webfont.svg#LubalinGraphStdBookIBM') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'HelvLightIBM';
-  src: url("//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.eot");
-  src: url("//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.eot?#iefix") format("embedded-opentype"), url("//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.woff") format("woff"), url("//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.ttf") format("truetype"), url("//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.svg#HelvLightIBM") format("svg");
+  src: url('//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.eot');
+  src: url('//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.eot?#iefix') format('embedded-opentype'), url('//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.woff') format('woff'), url('//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.ttf') format('truetype'), url('//1.www.s81c.com/common/fonts/helvneueforibm-light-webfont.svg#HelvLightIBM') format('svg');
   font-weight: lighter;
   font-style: normal; }
 
 @font-face {
   font-family: 'HelvRegularIBM';
-  src: url("//1.www.s81c.com/common/fonts/helveticaneue-webfont.eot");
-  src: url("//1.www.s81c.com/common/fonts/helveticaneue-webfont.eot?#iefix") format("embedded-opentype"), url("//1.www.s81c.com/common/fonts/helveticaneue-webfont.woff") format("woff"), url("//1.www.s81c.com/common/fonts/helveticaneue-webfont.ttf") format("truetype"), url("//1.www.s81c.com/common/fonts/helveticaneue-webfont.svg#HelvRegularIBM") format("svg");
+  src: url('//1.www.s81c.com/common/fonts/helveticaneue-webfont.eot');
+  src: url('//1.www.s81c.com/common/fonts/helveticaneue-webfont.eot?#iefix') format('embedded-opentype'), url('//1.www.s81c.com/common/fonts/helveticaneue-webfont.woff') format('woff'), url('//1.www.s81c.com/common/fonts/helveticaneue-webfont.ttf') format('truetype'), url('//1.www.s81c.com/common/fonts/helveticaneue-webfont.svg#HelvRegularIBM') format('svg');
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'HelvBoldIBM';
-  src: url("//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.eot");
-  src: url("//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.eot?#iefix") format("embedded-opentype"), url("//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.woff") format("woff"), url("//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.ttf") format("truetype"), url("//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.svg#HelvBoldIBM") format("svg");
+  src: url('//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.eot');
+  src: url('//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.eot?#iefix') format('embedded-opentype'), url('//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.woff') format('woff'), url('//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.ttf') format('truetype'), url('//1.www.s81c.com/common/fonts/helvneueforibm-bold-webfont.svg#HelvBoldIBM') format('svg');
   font-weight: bold;
   font-style: normal; }
 
 @font-face {
   font-family: 'iconsIBM';
-  src: url("//1.www.s81c.com/common/fonts/icons-ibm-v1_2.eot");
-  src: url("//1.www.s81c.com/common/fonts/icons-ibm-v1_2.eot?#iefix") format("embedded-opentype"), url("//1.www.s81c.com/common/fonts/icons-ibm-v1_2.woff") format("woff"), url("//1.www.s81c.com/common/fonts/icons-ibm-v1_2.ttf") format("truetype"), url("//1.www.s81c.com/common/fonts/icons-ibm-v1_2.svg#iconsIBM") format("svg");
+  src: url('//1.www.s81c.com/common/fonts/icons-ibm-v1_2.eot');
+  src: url('//1.www.s81c.com/common/fonts/icons-ibm-v1_2.eot?#iefix') format('embedded-opentype'), url('//1.www.s81c.com/common/fonts/icons-ibm-v1_2.woff') format('woff'), url('//1.www.s81c.com/common/fonts/icons-ibm-v1_2.ttf') format('truetype'), url('//1.www.s81c.com/common/fonts/icons-ibm-v1_2.svg#iconsIBM') format('svg');
   font-weight: normal;
   font-style: normal; }
-
 
 .solution {
   height: 300px;
@@ -333,7 +122,7 @@ body:before {
     clear: both; }
 
 .scenario-avatar {
-  margin: 0px auto;
+  margin: 0 auto;
   display: block; }
 
 .scenario-header {
@@ -342,14 +131,13 @@ body:before {
   text-align: center;
   border-bottom: 2px solid #000;
   padding: 0 0 2rem 0;
-  margin-left: 25.2551%;
+  margin-left: 51.03093%;
   float: left;
   display: block;
   margin-right: 2.06186%;
   width: 48.96907%; }
   .scenario-header:last-child {
     margin-right: 0; }
-
 
 .products {
   margin: 0 auto;
@@ -367,49 +155,7 @@ body:before {
 .product-name {
   display: block; }
 
-
 .resources {
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 0;
   padding: 3rem;
   background: #f8f8f8; }
-
-.wrapp {
-  max-width: 60rem;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fff; }
-  .wrapp:after {
-    content: "";
-    display: table;
-    clear: both; }
-
-.okay {
-  margin: 2rem 0; }
-
-.first {
-  float: left;
-  display: block;
-  margin-right: 2.06186%;
-  width: 100%;
-  background: green; }
-  .first:last-child {
-    margin-right: 0; }
-
-.second {
-  float: left;
-  display: block;
-  margin-right: 2.06186%;
-  width: 14.94845%;
-  background: blue; }
-  .second:last-child {
-    margin-right: 0; }
-
-.third {
-  float: left;
-  display: block;
-  margin-right: 2.06186%;
-  width: 48.96907%;
-  margin-left: 17.01031%;
-  background: red; }
-  .third:last-child {
-    margin-right: 0; }

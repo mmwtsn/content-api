@@ -1,14 +1,12 @@
 @import '../../bower_components/normalize.css/normalize.css';
-@import 'bourbon';
-@import 'bitters/bitters';
-@import 'neat';
+@import 'bourbon/bourbon';
+@import 'grid-settings';
+@import 'neat/neat';
 @import 'fonts';
 
 //
 // Solutions
 //
-.solution-wrapper {}
-
 .solution {
   height: 300px;
   position: relative;
@@ -22,7 +20,7 @@
   bottom: 0;
   position: absolute;
 
-  background: rgba(0, 25, 52, 0.7);
+  background: rgba(0, 25, 52, .7);
   font-family: 'LubalinDemiIBM';
   font-size: 2.5rem;
   text-align: center;
@@ -62,7 +60,7 @@
 }
 
 .scenario-avatar {
-  margin: 0px auto;
+  margin: 0 auto;
   display: block;
 }
 
@@ -75,9 +73,6 @@
 
   @include shift(3);
   @include span-columns(3);
-}
-
-.scenario-subheader {
 }
 
 //
@@ -103,39 +98,11 @@
   display: block;
 }
 
-.product-description {}
-
 //
 // Resources
 //
 .resources {
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 0;
   padding: 3rem;
   background: #f8f8f8;
-}
-
-
-.wrapp {
-  @include outer-container;
-  color: #fff;
-}
-
-.okay {
-  margin: 2rem 0;
-}
-
-.first {
-  @include span-columns(6);
-  background: green;
-}
-
-.second {
-  @include span-columns(1);
-  background: blue;
-}
-
-.third {
-  @include span-columns(3);
-  @include shift(1);
-  background: red;
 }
