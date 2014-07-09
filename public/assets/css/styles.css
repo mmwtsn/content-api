@@ -4,26 +4,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body:before {
-  content: '';
-  display: inline-block;
-  background-image: deprecated-webkit-gradient(linear, left top, left bottom, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  height: 100%;
-  left: 0;
-  margin: 0 auto;
-  max-width: 60rem;
-  opacity: 0.3;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 9999; }
-
 @font-face {
   font-family: 'LubalinDemiIBM';
   src: url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.eot');

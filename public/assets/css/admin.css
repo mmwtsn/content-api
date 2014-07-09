@@ -4,26 +4,6 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
 
-body:before {
-  content: '';
-  display: inline-block;
-  background-image: deprecated-webkit-gradient(linear, left top, left bottom, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0, #add8e6 0, #add8e6 14.94845%, rgba(0, 0, 0, 0) 14.94845%, rgba(0, 0, 0, 0) 17.01031%, #add8e6 17.01031%, #add8e6 31.95876%, rgba(0, 0, 0, 0) 31.95876%, rgba(0, 0, 0, 0) 34.02062%, #add8e6 34.02062%, #add8e6 48.96907%, rgba(0, 0, 0, 0) 48.96907%, rgba(0, 0, 0, 0) 51.03093%, #add8e6 51.03093%, #add8e6 65.97938%, rgba(0, 0, 0, 0) 65.97938%, rgba(0, 0, 0, 0) 68.04124%, #add8e6 68.04124%, #add8e6 82.98969%, rgba(0, 0, 0, 0) 82.98969%, rgba(0, 0, 0, 0) 85.05155%, #add8e6 85.05155%, #add8e6 100%, rgba(0, 0, 0, 0) 100%);
-  height: 100%;
-  left: 0;
-  margin: 0 auto;
-  max-width: 60rem;
-  opacity: 0.3;
-  position: fixed;
-  right: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 9999; }
-
 @font-face {
   font-family: 'LubalinDemiIBM';
   src: url('//1.www.s81c.com/common/fonts/lubalinforibm-demi-webfont.eot');
@@ -103,6 +83,9 @@ main.admin {
 
 
 
+.page-header {
+  width: 100%; }
+
 .page {
   display: table;
   width: 100%;
@@ -110,11 +93,6 @@ main.admin {
   padding-bottom: 1em; }
   .page .page-image, .page .page-content {
     display: table-cell; }
-  .page .page-header {
-    width: 100%; }
-    .page-reverse-order .page .page-header {
-      padding-right: 0;
-      padding-left: 10px; }
   .page .page-content {
     width: 100%; }
     .page .page-content h2 {
@@ -223,27 +201,44 @@ main.admin {
 .btn {
   display: inline-block;
   cursor: pointer;
-  color: #fff;
+  color: #bbb;
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 3px;
-  background: #ccc; }
+  background: #f8f8f8;
+  text-decoration: none;
+  border-bottom-size: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #e4e4e4;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius: 3px; }
   .btn:link, .btn:hover, .btn:active, .btn:visited {
-    color: #fff; }
+    color: #bbb; }
   .btn:hover {
-    background: #c4c4c4; }
+    background: #f3f3f3; }
   .btn:active {
-    background: #b3b3b3; }
+    background: #f0f0f0; }
   .btn.primary {
-    background: #4aa0f3; }
+    background: #4aa0f3;
+    border-bottom-color: #2990f1;
+    border-bottom-size: 4px;
+    color: #fff; }
     .btn.primary:hover {
       background: #3295f1; }
     .btn.primary:active {
       background: #1a89f0; }
+  .btn.secondary {
+    border-bottom-color: #d7d7d7;
+    color: #aaa;
+    background: #e4e4e4; }
+    .btn.secondary:hover {
+      background: #dfdfdf; }
+    .btn.secondary:active {
+      background: #dcdcdc; }
   .btn.small {
     font-size: 0.8rem;
-    margin: 0.5rem 0 0 0;
-    padding: 0.1rem 0.7rem; }
+    margin: 0.5rem 0.2rem 0 0;
+    padding: 0.4rem 0.7rem; }
   .btn.large {
     font-size: 1.2rem; }
 
