@@ -404,6 +404,8 @@ main.admin {
     float: left; }
   .admin_bar .btn {
     float: right; }
+  .admin_bar .btn.secondary {
+    margin: 0.5rem 0.2rem 0 0.5rem; }
   .admin_bar.masthead {
     margin: 0 0 2rem 0; }
 
