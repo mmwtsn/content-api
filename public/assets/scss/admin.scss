@@ -58,6 +58,10 @@ main.admin {
   @extend %flash-success;
 }
 
+.page-header {
+  width: 100%;
+}
+
 // TODO
 // This is boilerplate that can be removed
 .page {
@@ -74,15 +78,6 @@ main.admin {
   .page-image,
   .page-content {
     display: table-cell;
-  }
-
-  .page-header {
-    width: 100%;
-
-    .page-reverse-order & {
-      padding-right: 0;
-      padding-left: 10px;
-    }
   }
 
   .page-content {
@@ -246,31 +241,43 @@ main.admin {
 }
 
 .btn {
+  $btn-default: #f8f8f8;
+
   display: inline-block;
   cursor: pointer;
-  color: #fff;
+  color: #bbb;
   padding: 0.5rem 1rem;
-  border: none;
+  background: $btn-default;
+  text-decoration: none;
+
+  border-bottom-size: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #e4e4e4;
+  border-top: none;
+  border-right: none;
+  border-left: none;
   border-radius: 3px;
-  background: #ccc;
 
   &:link,
   &:hover,
   &:active,
   &:visited {
-    color: #fff;
+    color: #bbb;
   }
 
   &:hover {
-    background: darken(#ccc, 3%);
+    background: darken($btn-default, 2%);
   }
 
   &:active {
-    background: darken(#ccc, 10%);
+    background: darken($btn-default, 3%);
   }
 
   &.primary {
     background: $link;
+    border-bottom-color: darken($link, 7%);
+    border-bottom-size: 4px;
+    color: #fff;
 
     &:hover {
       background: darken($link, 5%);
@@ -281,10 +288,26 @@ main.admin {
     }
   }
 
+  &.secondary {
+    $secondary: #e4e4e4;
+    border-bottom-color: darken($secondary, 5%);
+    color: #aaa;
+
+    background: $secondary; 
+
+    &:hover {
+      background: darken($secondary, 2%);
+    }
+
+    &:active {
+      background: darken($secondary, 3%);
+    }
+  }
+
   &.small {
     font-size: 0.8rem;
-    margin: 0.5rem 0 0 0;
-    padding: 0.1rem 0.7rem;
+    margin: 0.5rem 0.2rem 0 0;
+    padding: 0.4rem 0.7rem;
   }
 
   &.large {
