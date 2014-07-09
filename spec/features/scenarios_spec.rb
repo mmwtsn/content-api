@@ -14,7 +14,18 @@ feature 'Scenarios' do
     expect(page).to have_content('no saved scenarios')
   end
 
-  scenario 'create a scenario' do
+  # User cannot submit an empty Scenario!
+  scenario 'have content', js: true do
+    @page = FactoryGirl.create(:page)
+    visit page_path(@page)
+
+    click_link 'add scenario'
+    click_link 'save'
+
+    expect(page).to have_content('Whoa!')
+  end
+
+  scenario 'create a scenario', js: true do
     @page = FactoryGirl.create(:page)
     @scenario = FactoryGirl.build(:scenario, quote: 'Vacation Scenario', pitch: 'Memorial Day')
 
@@ -25,7 +36,7 @@ feature 'Scenarios' do
     fill_in 'scenario_quote', with: @scenario.quote
     fill_in 'scenario_pitch', with: @scenario.pitch
 
-    click_button 'save'
+    click_link 'save'
 
     expect(page).to have_content(@scenario.quote)
   end

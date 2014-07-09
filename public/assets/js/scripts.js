@@ -23,16 +23,24 @@ function toggle_and_post(form_selector, submit_selector, resource) {
 
     // Check current state of form
     if ($form.hasClass('visible')) {
-      // Form is visible and presumably complete
+      // Form is visible; is it complete?
+      var value  = $form.children('input[type="text"]').val();
 
-      // Build nested resource path for AJAX POST
-      var url = build_nested_path(resource);
+      
+      if (value === '') {
+        $form.prepend('<p class="error">Whoa! Submit something.</p>');
+      }
+      else
+      {
+        // Build nested resource path for AJAX POST
+        var url = build_nested_path(resource);
 
-      // Build POST data from form
-      var data = $form.serialize();
+        // Build POST data from form
+        var data = $form.serialize();
 
-      // Submit via AJAX to save record
-      $.post(url, data);
+        // Submit via AJAX to save record
+        $.post(url, data);
+      }
 
     } else {
       // Form is not visible
@@ -43,12 +51,19 @@ function toggle_and_post(form_selector, submit_selector, resource) {
       // Toggle visibility and update state
       $form.slideDown('slow').addClass('visible');
 
+      // Update button value
+      setTimeout(function() {
+        $(submit_selector).text('save');
+      }, 500);
     }
   });
 
 }
 
 $(document).ready(function() {
+  //
+  // Bind click and submit to 'add (scenario|resource)' buttons
+  //
   toggle_and_post('.new_resource', '.show_new_resource', 'resources');
   toggle_and_post('.new_scenario', '.show_new_scenario', 'scenarios');
 
