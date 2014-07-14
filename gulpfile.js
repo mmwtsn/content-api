@@ -46,7 +46,9 @@ gulp.task('scss-lint', function() {
 // SASS compilation task
 gulp.task('sass', function() {
   return gulp.src(sassPath)
-    .pipe(sass())
+    .pipe(sass({
+      'outputStyle': 'compressed'
+    }))
     .pipe(gulp.dest(cssPath));
 });
 
