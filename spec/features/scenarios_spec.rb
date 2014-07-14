@@ -57,6 +57,27 @@ feature 'Scenarios' do
     expect(page).to have_content("Quote #1")
   end
 
+  scenario 'view scenario products' do
+    @page = FactoryGirl.create :page, :with_scenarios, num: 1
+
+    visit page_path(@page)
+
+    within('.scenario') do
+      expect(page).to have_content('no products!')
+    end
+  end
+
+  # TODO - This is a near duplicate spec, refactor!
+  scenario 'view scenario without products' do
+    @page = FactoryGirl.create :page, :with_everything
+
+    visit page_path(@page)
+
+    within('.scenario') do
+      expect(page).to have_content('Space Robot')
+    end
+  end
+
   scenario 'edit a scenario' do
     @page = FactoryGirl.create :page, :with_scenarios, num: 1
     edited_quote = 'Frank Ocean says: "I think I need a cold shower"'
