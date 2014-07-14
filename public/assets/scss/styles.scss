@@ -73,8 +73,8 @@
   border-bottom: 2px solid #000;
   padding: 0 0 2rem 0;
 
-  @include shift(3);
-  @include span-columns(3);
+  @include shift(1);
+  @include span-columns(4);
 }
 
 //
@@ -84,6 +84,7 @@
   margin: 0 auto;
   padding: 2rem;
   overflow: hidden;
+  clear: both;
 }
 
 .product {
@@ -104,7 +105,7 @@
 // Resources
 //
 .resources {
-  margin: 1rem 0 0;
   padding: 3rem;
-  background: #f8f8f8;
+
+  @include outer-container;
 }

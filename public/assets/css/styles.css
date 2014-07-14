@@ -113,18 +113,19 @@
   text-align: center;
   border-bottom: 2px solid #000;
   padding: 0 0 2rem 0;
-  margin-left: 51.03093%;
+  margin-left: 17.01031%;
   float: left;
   display: block;
   margin-right: 2.06186%;
-  width: 48.96907%; }
+  width: 65.97938%; }
   .scenario-header:last-child {
     margin-right: 0; }
 
 .products {
   margin: 0 auto;
   padding: 2rem;
-  overflow: hidden; }
+  overflow: hidden;
+  clear: both; }
 
 .product {
   float: left;
@@ -138,6 +139,11 @@
   display: block; }
 
 .resources {
-  margin: 1rem 0 0;
   padding: 3rem;
-  background: #f8f8f8; }
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto; }
+  .resources:after {
+    content: "";
+    display: table;
+    clear: both; }
