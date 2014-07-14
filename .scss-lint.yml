@@ -1,3 +1,9 @@
 linters:
+  LeadingZero:
+    style: include_zero
+  MergeableSelector:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
   UrlFormat:
     enabled: false
