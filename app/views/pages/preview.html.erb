@@ -4,8 +4,10 @@
   </div>
 
   <p class="solution-subheader"><span class="container"><%= @page.body %></span></p>
+</section>
 
-  <section class="scenarios">
+<section class="scenarios-wrapper">
+  <div class="scenarios">
 
     <% @page.scenarios.each do |scenario| %>
     <article class="scenario">
@@ -26,12 +28,12 @@
       <% end %>
       </section>
     </article>
-
     <% end %>
+  </div>
+</section>
 
-  </section>
-
-  <section class="resources">
+<section class="resources-wrapper">
+  <div class="resources">
     <h3 class="section-header">Featured resources</h3>
 
     <% @page.resources.each do |resource| %>
@@ -40,5 +42,5 @@
     </div>
     <% end %>
 
-  </section>
+  </div>
 </section>
