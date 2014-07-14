@@ -38,7 +38,9 @@ gulp.task('jshint', function() {
 // SCSS lint task
 gulp.task('scss-lint', function() {
   return gulp.src(sassPath)
-    .pipe(scsslint());
+    .pipe(scsslint({
+      'config': '.scss-lint.yml'
+    }));
 });
 
 // SASS compilation task
