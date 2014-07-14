@@ -34,9 +34,9 @@ main.admin {
 .button.large {
   width: 11em;
   vertical-align: baseline;
-  background: #61D57F;
+  background: #61d57f;
   border-radius: 0.375em;
-  color: #FFF;
+  color: #fff;
   display: block;
   font-size: 0.75em;
   font-weight: bold;
@@ -47,7 +47,7 @@ main.admin {
   text-transform: uppercase;
 
   &:hover {
-    background: #52C36F;
+    background: #52c36f;
   }
 }
 
@@ -67,7 +67,7 @@ main.admin {
 // This is boilerplate that can be removed
 .page {
   $comment-gutter: 1.4em;
-  $comment-image-padding: .7em;
+  $comment-image-padding: 0.7em;
   $comment-image-width: 4em;
   $comment-color: #333;
 
@@ -97,12 +97,12 @@ main.admin {
     }
 
     p {
-      margin-bottom: .5em;
+      margin-bottom: 0.5em;
     }
 
-    p.comment-detail {
+    .comment-detail {
       font-style: italic;
-      font-size: .9em;
+      font-size: 0.9em;
     }
   }
 }
@@ -179,7 +179,7 @@ main.admin {
 
 .results {
   overflow: hidden;
-  margin: 2rem 0 0 0;
+  margin: 2rem 0 0;
 }
 
 .product {
@@ -206,11 +206,11 @@ main.admin {
 }
 
 .saved {
-  background: #B9F5B9;
+  background: #b9f5b9;
   border-bottom: 5px solid #8add8a;
 
   &:hover {
-    background: #B9F5B9;
+    background: #b9f5b9;
     cursor: default;
   }
 }
@@ -225,7 +225,7 @@ main.admin {
 }
 
 .admin_bar {
-  margin: 5rem 0 0 0;
+  margin: 5rem 0 0;
   overflow: hidden;
 
   h1 {
@@ -241,7 +241,7 @@ main.admin {
   }
 
   &.masthead {
-    margin: 0 0 2rem 0;
+    margin: 0 0 2rem;
   }
 }
 
@@ -255,13 +255,13 @@ main.admin {
   background: $btn-default;
   text-decoration: none;
 
-  border-bottom-size: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: #e4e4e4;
-  border-top: none;
-  border-right: none;
-  border-left: none;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
   border-radius: 3px;
+  border-style: solid;
+  border-bottom-color: #e4e4e4;
+  border-bottom-width: 2px;
 
   &:link,
   &:hover,
@@ -281,7 +281,7 @@ main.admin {
   &.primary {
     background: $link;
     border-bottom-color: darken($link, 7%);
-    border-bottom-size: 4px;
+    border-bottom-width: 4px;
     color: #fff;
 
     &:hover {
@@ -321,7 +321,7 @@ main.admin {
 }
 
 .search {
-  margin: 1rem 0 0 0;
+  margin: 1rem 0 0;
 
   input[type="submit"] {
     float: right;
