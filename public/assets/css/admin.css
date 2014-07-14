@@ -276,9 +276,9 @@ main.admin {
 .button.large {
   width: 11em;
   vertical-align: baseline;
-  background: #61D57F;
+  background: #61d57f;
   border-radius: 0.375em;
-  color: #FFF;
+  color: #fff;
   display: block;
   font-size: 0.75em;
   font-weight: bold;
@@ -288,7 +288,7 @@ main.admin {
   text-align: center;
   text-transform: uppercase; }
   .button.large:hover {
-    background: #52C36F; }
+    background: #52c36f; }
 
 
 
@@ -314,7 +314,7 @@ main.admin {
       color: #ccc; }
     .page .page-content p {
       margin-bottom: 0.5em; }
-    .page .page-content p.comment-detail {
+    .page .page-content .comment-detail {
       font-style: italic;
       font-size: 0.9em; }
 
@@ -366,7 +366,7 @@ main.admin {
 
 .results {
   overflow: hidden;
-  margin: 2rem 0 0 0; }
+  margin: 2rem 0 0; }
 
 .product {
   background: #fff;
@@ -385,10 +385,10 @@ main.admin {
     font-size: 1.5rem; }
 
 .saved {
-  background: #B9F5B9;
+  background: #b9f5b9;
   border-bottom: 5px solid #8add8a; }
   .saved:hover {
-    background: #B9F5B9;
+    background: #b9f5b9;
     cursor: default; }
 
 .search-instructions {
@@ -398,7 +398,7 @@ main.admin {
   display: none; }
 
 .admin_bar {
-  margin: 5rem 0 0 0;
+  margin: 5rem 0 0;
   overflow: hidden; }
   .admin_bar h1 {
     float: left; }
@@ -407,7 +407,7 @@ main.admin {
   .admin_bar .btn.secondary {
     margin: 0.5rem 0.2rem 0 0.5rem; }
   .admin_bar.masthead {
-    margin: 0 0 2rem 0; }
+    margin: 0 0 2rem; }
 
 .btn {
   display: inline-block;
@@ -416,13 +416,13 @@ main.admin {
   padding: 0.5rem 1rem;
   background: #f8f8f8;
   text-decoration: none;
-  border-bottom-size: 2px;
-  border-bottom-style: solid;
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 3px;
+  border-style: solid;
   border-bottom-color: #e4e4e4;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  border-radius: 3px; }
+  border-bottom-width: 2px; }
   .btn:link, .btn:hover, .btn:active, .btn:visited {
     color: #bbb; }
   .btn:hover {
@@ -432,7 +432,7 @@ main.admin {
   .btn.primary {
     background: #4aa0f3;
     border-bottom-color: #2990f1;
-    border-bottom-size: 4px;
+    border-bottom-width: 4px;
     color: #fff; }
     .btn.primary:hover {
       background: #3295f1; }
@@ -454,7 +454,7 @@ main.admin {
     font-size: 1.2rem; }
 
 .search {
-  margin: 1rem 0 0 0; }
+  margin: 1rem 0 0; }
   .search input[type="submit"] {
     float: right; }
   .search input[type="text"]:focus {
