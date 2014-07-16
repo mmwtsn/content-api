@@ -7,34 +7,19 @@
 <section class="solution">
   <%= image_tag @page.header, class: 'page-header' %>
 
-  <% if preview %>
-    <%= render 'tmp_ibm_top' %>
-  <% end %>
-
   <h2 class="section-header">
     <%= @page.title %>
   </h2>
-
-  <% if preview %>
-    <%= render 'tmp_ibm_mid' %>
-  <% end %>
 
   <p>
     <%= @page.body %>
   </p>
 
-  <% if admin %>
   <div class="admin">
     <%= link_to 'edit', edit_page_path(@page), class: 'btn small' %>
   </div>
-  <% end %>
 </section>
 
-<% if preview %>
-  <%= render 'tmp_ibm_bot' %>
-<% end %>
-
-<% if admin %>
   <section class="admin_bar admin_scenarios">
     <h1>Scenarios</h1>
     <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary show_new_scenario submit_new_scenario' %>

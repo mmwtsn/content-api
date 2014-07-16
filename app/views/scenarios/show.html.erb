@@ -3,40 +3,37 @@
   <%= link_to 'back', :back, class: 'btn small' %>
 </section>
 
-<% if admin %>
-
-  <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
-    <%= submit_tag 'search', class: 'btn primary' %>
-    <div class="product-search-wrapper">
-      <%= text_field_tag :product %>
-    </div>
-  <% end %>
-
-  <div class="search-instructions">
-    <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
+<%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
+  <%= submit_tag 'search', class: 'btn primary' %>
+  <div class="product-search-wrapper">
+    <%= text_field_tag :product %>
   </div>
-
-  <section id="results" class="results"></section>
-
-  <section class="admin_bar">
-    <h1>Scenario</h1>
-  </section>
-
-  <section class="scenario">
-    <%= image_tag @scenario.avatar, class: 'scenario-avatar icon' %>
-
-    <h3><%= @scenario.quote %></h3>
-    <p><%= @scenario.pitch %></p>
-
-    <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
-    <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
-  </section>
-
-  <section class="admin_bar">
-    <h1>Products</h1>
-  </section>
-
-  <section class="scenario-products">
-    <%= render 'products/products' %>
-  </section>
 <% end %>
+
+<div class="search-instructions">
+  <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
+</div>
+
+<section id="results" class="results"></section>
+
+<section class="admin_bar">
+  <h1>Scenario</h1>
+</section>
+
+<section class="scenario">
+  <%= image_tag @scenario.avatar, class: 'scenario-avatar icon' %>
+
+  <h3><%= @scenario.quote %></h3>
+  <p><%= @scenario.pitch %></p>
+
+  <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
+  <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
+</section>
+
+<section class="admin_bar">
+  <h1>Products</h1>
+</section>
+
+<section class="scenario-products">
+  <%= render 'products/products' %>
+</section>
