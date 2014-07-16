@@ -1,9 +1,7 @@
-<% if admin %>
-  <section class="admin_bar masthead">
-    <h1>all pages</h1>
-    <%= link_to 'create page', new_page_path, class: 'btn primary' %>
-  </section>
-<% end %>
+<section class="admin_bar masthead">
+  <h1>all pages</h1>
+  <%= link_to 'create page', new_page_path, class: 'btn primary' %>
+</section>
 
 <% if @pages.each do |page| %>
 <div class="page">

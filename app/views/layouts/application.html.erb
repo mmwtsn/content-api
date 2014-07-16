@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>IBM  Cloud Computing: Solutions for IT Management - United States</title>
+  <title>Content CMS</title>
   <%= favicon_link_tag '/favicon.png?v=1' %>
 
   <%= javascript_include_tag '/bower_components/jquery/dist/jquery.min.js' %>
@@ -12,15 +12,12 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body id="ibm-com" class="ibm-type">
-
-  <main <%= raw admin ? ' class="admin"' : '' %>>
+<body>
+  <main>
     <% if notice %><p class="notice"><%= notice %></p><% end %>
     <% if alert %><p class="error"><%= alert %></p><% end %>
 
     <%= yield %>
   </main>
-
-  <%= javascript_include_tag '/assets/js/hacks' %>
 </body>
 </html>
