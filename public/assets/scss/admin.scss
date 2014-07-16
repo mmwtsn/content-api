@@ -5,59 +5,14 @@
 @import 'bitters/bitters';
 @import 'fonts';
 
-$link: #4aa0f3;
-
-html {
-  color: #333;
-  background: #f3f3f3;
-}
-
-h1 {
-  font-family: 'LubalinDemiIBM';
-}
-
-a {
-  color: $link;
-
-  &:hover {
-    color: lighten($link, 5%);
-  }
-}
-
-main {
-  max-width: 960px;
-  width: 96%;
-  margin: 100px auto;
-  padding: 0 2%;
-}
-
-.button.large {
-  width: 11em;
-  vertical-align: baseline;
-  background: #61d57f;
-  border-radius: 0.375em;
-  color: #fff;
-  display: block;
-  font-size: 0.75em;
-  font-weight: bold;
-  letter-spacing: 1px;
-  margin: 2em 0;
-  padding: 1em;
-  text-align: center;
-  text-transform: uppercase;
-
-  &:hover {
-    background: #52c36f;
-  }
-}
-
-.error {
-  @extend %flash-error;
-}
-
-.notice {
-  @extend %flash-success;
-}
+//
+// Local imports
+//
+@import 'admin/variables';
+@import 'admin/base';
+@import 'admin/pages';
+@import 'admin/scenarios';
+@import 'admin/products';
 
 .page-header {
   width: 100%;
@@ -118,18 +73,6 @@ main {
 .scenario_pitch {
   font-size: 2.5rem;
   padding: 3rem !important;
-}
-
-#ibm-solutions-gaming-intro {
-  background: #fff;
-}
-
-#ibm-pcon {
-  overflow: hidden;
-}
-
-.ibm-band.ibm_cci-solutions-gaming.section7 {
-  display: none;
 }
 
 .solution,
@@ -242,81 +185,6 @@ main {
 
   &.masthead {
     margin: 0 0 2rem;
-  }
-}
-
-.btn {
-  $btn-default: #f8f8f8;
-
-  display: inline-block;
-  cursor: pointer;
-  color: #bbb;
-  padding: 0.5rem 1rem;
-  background: $btn-default;
-  text-decoration: none;
-
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  border-radius: 3px;
-  border-style: solid;
-  border-bottom-color: #e4e4e4;
-  border-bottom-width: 2px;
-
-  &:link,
-  &:hover,
-  &:active,
-  &:visited {
-    color: #bbb;
-  }
-
-  &:hover {
-    background: darken($btn-default, 2%);
-  }
-
-  &:active {
-    background: darken($btn-default, 3%);
-  }
-
-  &.primary {
-    background: $link;
-    border-bottom-color: darken($link, 7%);
-    border-bottom-width: 4px;
-    color: #fff;
-
-    &:hover {
-      background: darken($link, 5%);
-    }
-
-    &:active {
-      background: darken($link, 10%);
-    }
-  }
-
-  &.secondary {
-    $secondary: #e4e4e4;
-    border-bottom-color: darken($secondary, 5%);
-    color: #aaa;
-
-    background: $secondary; 
-
-    &:hover {
-      background: darken($secondary, 2%);
-    }
-
-    &:active {
-      background: darken($secondary, 3%);
-    }
-  }
-
-  &.small {
-    font-size: 0.8rem;
-    margin: 0.5rem 0.2rem 0 0;
-    padding: 0.1rem 0.7rem;
-  }
-
-  &.large {
-    font-size: 1.2rem;
   }
 }
 
