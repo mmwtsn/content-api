@@ -1,0 +1,49 @@
+//
+// Harmonic 5th Modular Type Scale
+//
+
+// Font Families
+$font-family-display: 'LubalinDemiIBM';
+$font-family-base: 'Helvetica Neue', Helvetica, sans-serif;
+
+// Font Sizes
+$font-size-5: 2.625;
+$font-size-4: 2.25;
+$font-size-3: 1.75;
+$font-size-2: 1.5;
+$font-size-1: 1.167;
+$font-size-0: 1;
+
+// Font Units
+$font-unit: rem;
+
+// Font Classes
+%header-primary,
+%header-secondary {
+  font-size: #{$font-size-5}#{$font-unit};
+  font-family: $font-family-display;;
+  font-weight: 500;
+}
+
+%header-secondary {
+  font-size: #{$font-size-4}#{$font-unit};
+  font-weight: 300;
+}
+
+%leadspace-primary {
+  font-size: #{$font-size-3}#{$font-unit};
+}
+
+%leadspace-secondary {
+  font-size: #{$font-size-2}#{$font-unit};
+}
+
+%leadspace-plain {
+  font-size: #{$font-size-1}#{$font-unit};
+}
+
+// Base elements typography styles
+body {
+  font-family: $font-family-base;
+  line-height: 1.142857143;
+}
