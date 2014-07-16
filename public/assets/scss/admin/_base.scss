@@ -1,0 +1,122 @@
+//
+// Base elements
+//
+
+html {
+  color: #333;
+  background: #f3f3f3;
+}
+
+main {
+  max-width: 960px;
+  width: 96%;
+  margin: 100px auto;
+  padding: 0 2%;
+}
+
+//
+// Typography
+//
+
+h1 {
+  font-family: 'LubalinDemiIBM';
+}
+
+//
+// Buttons and links
+//
+
+a {
+  color: $link;
+
+  &:hover {
+    color: lighten($link, 5%);
+  }
+}
+
+.btn {
+  $btn-default: #f8f8f8;
+
+  display: inline-block;
+  cursor: pointer;
+  color: #bbb;
+  padding: 0.5rem 1rem;
+  background: $btn-default;
+  text-decoration: none;
+
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 3px;
+  border-style: solid;
+  border-bottom-color: #e4e4e4;
+  border-bottom-width: 2px;
+
+  &:link,
+  &:hover,
+  &:active,
+  &:visited {
+    color: #bbb;
+  }
+
+  &:hover {
+    background: darken($btn-default, 2%);
+  }
+
+  &:active {
+    background: darken($btn-default, 3%);
+  }
+
+  &.primary {
+    background: $link;
+    border-bottom-color: darken($link, 7%);
+    border-bottom-width: 4px;
+    color: #fff;
+
+    &:hover {
+      background: darken($link, 5%);
+    }
+
+    &:active {
+      background: darken($link, 10%);
+    }
+  }
+
+  &.secondary {
+    $secondary: #e4e4e4;
+    border-bottom-color: darken($secondary, 5%);
+    color: #aaa;
+
+    background: $secondary; 
+
+    &:hover {
+      background: darken($secondary, 2%);
+    }
+
+    &:active {
+      background: darken($secondary, 3%);
+    }
+  }
+
+  &.small {
+    font-size: 0.8rem;
+    margin: 0.5rem 0.2rem 0 0;
+    padding: 0.1rem 0.7rem;
+  }
+
+  &.large {
+    font-size: 1.2rem;
+  }
+}
+
+//
+// System messages
+//
+
+.error {
+  @extend %flash-error;
+}
+
+.notice {
+  @extend %flash-success;
+}
