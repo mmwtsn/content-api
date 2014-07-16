@@ -5,15 +5,19 @@
     <h3><%= scenario.quote %></h3>
     <p><%= scenario.pitch %></p>
 
-    <% if scenario.products.each do |product| %>
-      <p><%= product.name %></p>
-      <%= image_tag product.icon_url %>
-    <% end.empty? %>
-      <%# TODO - Move these into a partial and pass local values! %>
-      <div class="empty">
-        <p>This scenario has no products! Click <a href="<%= scenario_path(scenario) %>">view</a> to add some.</p>
-      </div>
-    <% end %>
+    <section class="products">
+      <% if scenario.products.each do |product| %>
+        <div class="product">
+          <%= image_tag product.icon_url %>
+          <p><%= product.name %></p>
+        </div>
+      <% end.empty? %>
+        <%# TODO - Move these into a partial and pass local values! %>
+        <div class="empty">
+          <p>This scenario has no products! Click <a href="<%= scenario_path(scenario) %>">view</a> to add some.</p>
+        </div>
+      <% end %>
+    </section>
 
     <%= link_to 'view', scenario_path(scenario.id), class: 'btn small' %>
     <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'btn small' %>
