@@ -1,6 +1,6 @@
 <section class="solution-wrapper">
   <div class="solution" style="background-image: url('<%= @page.header %>');">
-    <h2 class="solution-header"><span class="container"><%= @page.title %></span></h2>
+    <h1 class="solution-header header-primary"><span class="container"><%= @page.title %></span></h1>
   </div>
 
   <p class="solution-subheader"><span class="container"><%= @page.body %></span></p>
@@ -12,7 +12,7 @@
     <% @page.scenarios.each do |scenario| %>
     <article class="scenario">
       <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
-      <h2 class="scenario-header">"<%= scenario.quote %>"</h2>
+      <h1 class="scenario-header">"<%= scenario.quote %>"</h1>
         <h3 class="scenario-subheader"><%= scenario.pitch %></h3>
 
       <section class="products">
