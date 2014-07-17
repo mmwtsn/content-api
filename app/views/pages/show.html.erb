@@ -20,28 +20,27 @@
   </div>
 </section>
 
-  <section class="admin_bar admin_scenarios">
-    <h1>Scenarios</h1>
-    <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary show_new_scenario submit_new_scenario' %>
-  </section>
+<section class="admin_bar admin_scenarios">
+  <h1>Scenarios</h1>
+  <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary show_new_scenario submit_new_scenario' %>
+</section>
 
-  <section class="all scenarios">
+<section class="all scenarios">
 
-    <%= render 'scenarios/scenarios' %>
+  <%= render 'scenarios/scenarios' %>
 
-  </section>
+</section>
 
-  <section class="admin_bar admin_resources">
-    <h1>Resources</h1>
-    <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary show_new_resource' %>
-  </section>
+<section class="admin_bar admin_resources">
+  <h1>Resources</h1>
+  <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary show_new_resource' %>
+</section>
 
-  <section class="all resources">
+<section class="all resources">
 
-    <%= render 'resources/resources' %>
+  <%= render 'resources/resources' %>
 
-  </section>
-<% end %>
+</section>
 
 <%= form_for([@page, @page.scenarios.build]) do |f| %>
   <%= f.label :quote %>
