@@ -1,0 +1,23 @@
+//
+// Products
+//
+.products {
+  margin: 0 auto;
+  padding: 2rem;
+  overflow: hidden;
+  clear: both;
+}
+
+.product {
+  float: left;
+  width: 20%;
+  padding: 2%;
+}
+
+.product-icon {
+  width: 100px;
+}
+
+.product-name {
+  display: block;
+}

@@ -1,0 +1,32 @@
+//
+// Scenarios
+//
+.scenarios {
+  background: #f8f8f8;
+  padding: 3rem;
+}
+
+.scenario {
+  @include outer-container;
+}
+
+.scenario-avatar {
+  margin: 0 auto;
+  display: block;
+}
+
+.scenario-header {
+  @extend %header-secondary;
+
+  text-align: center;
+  padding: 0 0 2rem;
+
+  @include shift(1);
+  @include span-columns(4);
+}
+
+.scenario-subheader {
+  @extend %leadspace-secondary;
+
+  clear: left;
+}
