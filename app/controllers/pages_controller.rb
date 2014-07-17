@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:preview]
   before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
 
   def index
