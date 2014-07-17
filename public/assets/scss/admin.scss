@@ -1,16 +1,31 @@
+//
+// Vendor Libraries, etc.
+//
+
+// Normalize CSS Reset
 @import '../../bower_components/normalize.css/normalize.css';
+
+// SASS Mixin Library
 @import 'bourbon/bourbon';
-@import 'grid-settings';
+
+// SASS Grid Library
+@import 'neat/grid-settings';
 @import 'neat/neat';
+
+// Bootstrap Styles
 @import 'bitters/bitters';
-@import 'fonts';
+
+// IBM Fonts
+@import 'shared/fonts';
 
 //
-// Local imports
+// Admin Styles
 //
+
+// Base styles
 @import 'admin/variables';
 @import 'admin/base';
-@import 'admin/pages';
+@import 'admin/solutions';
 @import 'admin/scenarios';
 @import 'admin/products';
 

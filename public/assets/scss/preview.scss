@@ -9,21 +9,21 @@
 @import 'bourbon/bourbon';
 
 // SASS Grid Library
-@import 'grid-settings';
+@import 'neat/grid-settings';
 @import 'neat/neat';
 
 // IBM Fonts
-@import 'fonts';
+@import 'shared/fonts';
 
 //
 // App-specific Styles
 //
 
 // Base styles
-@import 'typography';
+@import 'preview/typography';
 
 // Individual Section Styles
-@import 'solutions';
-@import 'scenarios';
-@import 'products';
-@import 'resources';
+@import 'preview/solutions';
+@import 'preview/scenarios';
+@import 'preview/products';
+@import 'preview/resources';
