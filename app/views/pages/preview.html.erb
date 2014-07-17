@@ -1,46 +1,43 @@
-<section class="solution-wrapper">
+<section class="section solutions">
   <div class="solution" style="background-image: url('<%= @page.header %>');">
-    <h1 class="solution-header header-primary"><span class="container"><%= @page.title %></span></h1>
+    <h1 class="solution-header header-primary">
+      <span class="container"><%= @page.title %></span>
+    </h1>
   </div>
 
   <p class="solution-subheader"><span class="container"><%= @page.body %></span></p>
 </section>
 
-<section class="scenarios-wrapper">
-  <div class="scenarios">
+<section class="section scenarios">
+  <% @page.scenarios.each do |scenario| %>
+  <article class="scenario">
+    <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
+    <h1 class="scenario-header">"<%= scenario.quote %>"</h1>
+    <h2 class="scenario-subheader"><%= scenario.pitch %></h2>
 
-    <% @page.scenarios.each do |scenario| %>
-    <article class="scenario">
-      <%= image_tag scenario.avatar, class: 'scenario-avatar' %>
-      <h1 class="scenario-header">"<%= scenario.quote %>"</h1>
-        <h3 class="scenario-subheader"><%= scenario.pitch %></h3>
+    <section class="products">
+    <% scenario.products.each do |product| %>
+      <div class="product">
+        <a href="#">
+          <%= image_tag product.icon_url, class: 'product-icon' %>
+          <strong class="product-name"><%= product.name %></strong>
+        </a>
 
-      <section class="products">
-      <% scenario.products.each do |product| %>
-        <div class="product">
-          <a href="#">
-            <%= image_tag product.icon_url, class: 'product-icon' %>
-            <strong class="product-name"><%= product.name %></strong>
-          </a>
-
-          <p class="product-description"><%= product.description %></p>
-        </div>
-      <% end %>
-      </section>
-    </article>
+        <p class="product-description"><%= product.description %></p>
+      </div>
     <% end %>
-  </div>
+    </section>
+
+  </article>
+  <% end %>
 </section>
 
-<section class="resources-wrapper">
-  <div class="resources">
-    <h3 class="section-header">Featured resources</h3>
+<section class="section resources">
+  <h1 class="section-header">Featured resources</h1>
 
-    <% @page.resources.each do |resource| %>
-    <div class="resource">
-      <p><a href="<%= resource.url %>"><%= resource.body %></a></p>
-    </div>
-    <% end %>
-
+  <% @page.resources.each do |resource| %>
+  <div class="resource">
+    <p><a href="<%= resource.url %>"><%= resource.body %></a></p>
   </div>
+  <% end %>
 </section>
