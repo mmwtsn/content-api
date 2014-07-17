@@ -22,7 +22,28 @@ class PagesController < ApplicationController
   end
 
   def preview
-    render layout: 'preview'
+    solution  = @page
+    resources = solution.resources
+    scenarios = solution.scenarios
+    products = []
+
+    scenarios.each do |scenario|
+      scenario.products.each do |product|
+        products << product
+      end
+    end
+
+    data = {
+      'solution'  => solution,
+      'resources' => resources,
+      'scenarios' => scenarios,
+      'products'  => products,
+    }
+
+    respond_to do |format|
+      format.html { render layout: 'preview' }
+      format.json { render json: data }
+    end
   end
 
   def update
