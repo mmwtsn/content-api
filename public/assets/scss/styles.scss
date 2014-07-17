@@ -1,110 +1,29 @@
+//
+// Vendor Libraries, etc.
+//
+
+// Normalize CSS Reset
 @import '../../bower_components/normalize.css/normalize.css';
+
+// SASS Mixin Library
 @import 'bourbon/bourbon';
+
+// SASS Grid Library
 @import 'grid-settings';
 @import 'neat/neat';
+
+// IBM Fonts
 @import 'fonts';
+
+//
+// App-specific Styles
+//
+
+// Base styles
 @import 'typography';
 
-//
-// Solutions
-//
-.solution {
-  height: 300px;
-  position: relative;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-color: #301b0c;
-}
-
-.solution-header {
-  @extend %header-primary;
-
-  width: 100%;
-  bottom: 0;
-  position: absolute;
-  margin: 0;
-  background: rgba(0, 25, 52, 0.7);
-  text-align: center;
-  color: #fff;
-
-  .container {
-    display: inline-block; 
-    padding: 2rem 0;
-    max-width: 70rem;
-  }
-}
-
-.solution-subheader {
-  @extend %leadspace-secondary;
-
-  padding: 0 3rem;
-  text-align: center;
-  font-size: 1.3rem;
-  line-height: 1.5;
-
-  @include outer-container;
-
-  .container {
-    display: inline-block;
-  }
-}
-
-//
-// Scenarios
-//
-.scenarios-wrapper {
-  background: #f8f8f8;
-  padding: 3rem;
-}
-
-.scenario {
-  @include outer-container;
-}
-
-.scenario-avatar {
-  margin: 0 auto;
-  display: block;
-}
-
-.scenario-header {
-  @extend %header-secondary;
-
-  text-align: center;
-  padding: 0 0 2rem;
-
-  @include shift(1);
-  @include span-columns(4);
-}
-
-//
-// Products
-//
-.products {
-  margin: 0 auto;
-  padding: 2rem;
-  overflow: hidden;
-  clear: both;
-}
-
-.product {
-  float: left;
-  width: 20%;
-  padding: 2%;
-}
-
-.product-icon {
-  width: 100px;
-}
-
-.product-name {
-  display: block;
-}
-
-//
-// Resources
-//
-.resources {
-  padding: 3rem;
-
-  @include outer-container;
-}
+// Individual Section Styles
+@import 'solutions';
+@import 'scenarios';
+@import 'products';
+@import 'resources';
