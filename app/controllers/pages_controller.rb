@@ -25,7 +25,7 @@ class PagesController < ApplicationController
     solution  = @page
     resources = solution.resources
     scenarios = solution.scenarios
-    products = []
+    products  = []
 
     scenarios.each do |scenario|
       scenario.products.each do |product|
