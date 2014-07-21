@@ -25,57 +25,11 @@
 // Base styles
 @import 'admin/variables';
 @import 'admin/base';
+@import 'admin/pages';
 @import 'admin/solutions';
 @import 'admin/scenarios';
 @import 'admin/products';
-
-.page-header {
-  width: 100%;
-}
-
-// TODO
-// This is boilerplate that can be removed
-.page {
-  $comment-gutter: 1.4em;
-  $comment-image-padding: 0.7em;
-  $comment-image-width: 4em;
-  $comment-color: #333;
-
-  display: table;
-  width: 100%;
-  margin-bottom: 1rem;
-  padding-bottom: 1em;
-
-  .page-image,
-  .page-content {
-    display: table-cell;
-  }
-
-  .page-content {
-    width: 100%;
-
-    h2 {
-      font-size: 1em;
-      text-transform: lowercase;
-      margin: 0.5em 0;
-    }
-
-    span.page-state {
-      float: right;
-      font-weight: lighter;
-      color: #ccc;
-    }
-
-    p {
-      margin-bottom: 0.5em;
-    }
-
-    .comment-detail {
-      font-style: italic;
-      font-size: 0.9em;
-    }
-  }
-}
+@import 'admin/resources';
 
 .icon {
   width: 50px;
@@ -83,37 +37,15 @@
   display: block;
 }
 
-// TODO
-// underscore vs hyphen inconsistency
-.scenario_pitch {
-  font-size: 2.5rem;
-  padding: 3rem !important;
-}
-
+.page,
 .solution,
 .scenario,
 .resource,
-.scenario-product,
-.page-content {
+.scenario-product {
   background: #fff;
   margin: 1rem 0;
   padding: 1.5rem;
   border-bottom: 5px solid #e8e8e8;
-}
-
-.scenario {
-  overflow: hidden;
-  clear: bloth;
-
-  h3 {
-    font-size: 1.4rem;
-  }
-}
-
-.scenario-product {
-  h3 {
-    font-size: 1.5rem;
-  }
 }
 
 .empty {
@@ -127,59 +59,6 @@
     line-height: 100px;
     color: #aaa;
   }
-}
-
-.resource {
-  p {
-    font-weight: 500;
-  }
-}
-
-.results {
-  overflow: hidden;
-  margin: 2rem 0 0;
-}
-
-.product {
-  background: #fff;
-  width: 48%;
-  float: left;
-  margin: 0;
-  padding: 2%;
-  min-height: 160px;
-  border-bottom: 5px solid #e8e8e8;
-
-  &:hover {
-    background: #fcfcfc;
-    cursor: pointer;
-  }
-
-  &:nth-child(odd) {
-    margin: 0 4% 4% 0;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-}
-
-.saved {
-  background: #b9f5b9;
-  border-bottom: 5px solid #8add8a;
-
-  &:hover {
-    background: #b9f5b9;
-    cursor: default;
-  }
-}
-
-.search-instructions {
-  display: none;
-}
-
-.add-scenario-form,
-.add-resource-form {
-  display: none;
 }
 
 .admin_bar {
@@ -201,30 +80,4 @@
   &.masthead {
     margin: 0 0 2rem;
   }
-}
-
-.search {
-  margin: 1rem 0 0;
-
-  input[type="submit"] {
-    float: right;
-  }
-
-  input[type="text"]:focus {
-    border-color: #c4c4c4; 
-  }
-}
-
-.product-search-wrapper {
-  overflow: hidden;
-  padding: 0 0.5rem 0 0;
-}
-
-// Hide forms on for nested resources
-// on pages#show by default
-.new_scenario,
-.new_resource {
-  display: none;
-  clear: left;
-  padding: 1.5rem 0 1rem;
 }
