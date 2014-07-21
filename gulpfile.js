@@ -19,7 +19,7 @@ var lintspaces = require('gulp-lintspaces');
 
 // Define asset paths
 var assetsPath = './public/assets';
-var sassPath   = assetsPath + '/scss/*/*.scss';
+var sassPath   = assetsPath + '/scss/**/*.scss';
 var cssPath    = assetsPath + '/css';
 var jsPath     = assetsPath + '/js/*.js';
 
