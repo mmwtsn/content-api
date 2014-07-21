@@ -5,7 +5,7 @@
   <h3><%= product.name %></h3>
   <p><%= product.description %></p>
 
-  <p><%= link_to 'delete', [product.scenario, product], method: :delete, class: 'btn small' %></p>
+  <p><%= link_to 'delete', scenario_product_path(product.scenario_id, product), method: :delete, class: 'btn small' %></p>
 </section>
 <% end.empty? %>
 <section class="scenario-product empty">
