@@ -22,6 +22,9 @@ results.forEach(function(result) {
     icon_url:    result['icon_url'],
     description: result['description']
   };
+
+  // Search complete! remove loading indiciation
+  $('#search input[type="submit"]').removeClass('loading');
 });
 
 // Delegate event when user interacts with any result
