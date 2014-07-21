@@ -14,7 +14,10 @@ class ProductsController < ApplicationController
     @product = @scenario.products.find(params[:id])
 
     @product.destroy
-    redirect_to scenario_path(@scenario)
+
+    respond_to do |format|
+      format.js {render nothing: true}
+    end
   end
 
   def search
