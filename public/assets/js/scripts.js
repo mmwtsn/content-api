@@ -78,7 +78,6 @@ $(document).ready(function() {
 
   //
   // Prevent user from submitting empty search queries;
-  // Toggle display of search instructions to the user
   //
   var $search_input = $('#search input[type="submit"]');
   $search_input.on('click', function(e) {
@@ -98,8 +97,6 @@ $(document).ready(function() {
       // Add "loading" class until products are returned
       $search_input.addClass('loading');
     }
-
-    $('.search-instructions').show();
   });
 
   //
