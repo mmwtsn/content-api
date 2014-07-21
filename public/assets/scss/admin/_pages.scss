@@ -1,0 +1,13 @@
+.page-header {
+  width: 100%;
+}
+
+// Hide forms on for nested resources
+// on pages#show by default
+.new_scenario,
+.new_resource {
+  display: none;
+  clear: left;
+  padding: 1.5rem 0 1rem;
+}
+
