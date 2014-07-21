@@ -6,11 +6,11 @@
 @import '../../bower_components/normalize.css/normalize.css';
 
 // SASS Mixin Library
-@import 'bourbon/bourbon';
+@import 'vendor/bourbon/bourbon';
 
 // SASS Grid Library
-@import 'neat/grid-settings';
-@import 'neat/neat';
+@import 'vendor/neat/grid-settings';
+@import 'vendor/neat/neat';
 
 // IBM Fonts
 @import 'shared/fonts';
