@@ -115,4 +115,22 @@ $(document).ready(function() {
     $('.search-instructions').hide();
   });
 
+  //
+  // Remove deleted product upon successful POST
+  //
+  $('body').on('ajax:success', '.delete-product', function() {
+    $(this).closest('.scenario-product').remove();
+
+    var $products = $('.scenario-products');
+
+    // Was that the last record present in the UI?
+    if (!$products.find('.scenario-product').length) {
+      $products.append(
+        '<section class="scenario-product empty">' +
+          '<p>no saved products…</p>' +
+        '</section>'
+      );
+    }
+  });
+
 });
