@@ -37,6 +37,19 @@
 
   input[type="submit"] {
     float: right;
+
+    &.loading {
+      color: #4aa0f3;
+      background-image: url('/assets/images/loading.gif');
+      background-repeat: no-repeat;
+      background-size: 1.5rem;
+      background-position: 50% 50%;
+    }
+  }
+
+  input[type="submit"]:hover {
+    background-color: #4aa0f3;
+    cursor: default;
   }
 
   input[type="text"]:focus {
