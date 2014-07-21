@@ -55,7 +55,7 @@ gulp.task('sass', function() {
 // Watch files for changes
 gulp.task('watch', function() {
   gulp.watch(sassPath, ['sass']);
-  gulp.watch(jsPath, ['lint']);
+  gulp.watch(jsPath, ['jshint']);
 });
 
 // Default task definition
