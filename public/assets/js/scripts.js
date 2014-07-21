@@ -87,11 +87,16 @@ $(document).ready(function() {
 
     // Ensure results and errors are cleared between searches
     $results.empty();
+
     $('.error').slideUp();
 
     if (query === '') {
       e.preventDefault();
       $('main').prepend('<p class="error">Search query cannot be blank!</p>');
+    }
+    else {
+      // Add "loading" class until products are returned
+      $search_input.addClass('loading');
     }
 
     $('.search-instructions').show();
