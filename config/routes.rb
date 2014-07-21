@@ -6,12 +6,12 @@ Rails.application.routes.draw do
       get 'preview'
     end
 
-    resources :scenarios
-    resources :resources, shallow: true
+    resources :scenarios, except: [:index]
+    resources :resources, only: [:create, :edit, :update, :destroy]
   end
 
-  resources :scenarios do
-    resources :products
+  resources :scenarios, only: [] do
+    resources :products, only: [:search, :create, :destroy]
   end
 
   post '/products/search', to: 'products#search', as: :products_search
