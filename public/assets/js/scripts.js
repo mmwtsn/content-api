@@ -26,7 +26,7 @@ function toggle_and_post(form_selector, submit_selector, resource) {
       // Form is visible; is it complete?
       var value  = $form.children('input[type="text"]').val();
 
-      
+
       if (value === '') {
         $form.prepend('<p class="error">Whoa! Submit something.</p>');
       }
@@ -40,6 +40,9 @@ function toggle_and_post(form_selector, submit_selector, resource) {
 
         // Submit via AJAX to save record
         $.post(url, data);
+
+        // Clear form data
+        $form.children('input[type="text"]').val('');
       }
 
     } else {
