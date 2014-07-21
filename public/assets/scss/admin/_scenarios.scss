@@ -1,0 +1,85 @@
+
+.product {
+  background: #fff;
+  width: 48%;
+  float: left;
+  margin: 0;
+  padding: 2%;
+  min-height: 160px;
+  border-bottom: 5px solid #e8e8e8;
+
+  &:hover {
+    background: #fcfcfc;
+    cursor: pointer;
+  }
+
+  &:nth-child(odd) {
+    margin: 0 4% 4% 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+.search-instructions {
+  display: none;
+}
+
+.add-scenario-form,
+.add-resource-form {
+  display: none;
+}
+
+.search {
+  margin: 1rem 0 0;
+
+  input[type="submit"] {
+    float: right;
+  }
+
+  input[type="text"]:focus {
+    border-color: #c4c4c4; 
+  }
+}
+
+.product-search-wrapper {
+  overflow: hidden;
+  padding: 0 0.5rem 0 0;
+}
+.scenario {
+  overflow: hidden;
+  clear: bloth;
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+.scenario-product {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.scenario_pitch {
+  font-size: 2.5rem;
+  padding: 3rem !important;
+}
+
+.results {
+  overflow: hidden;
+  margin: 2rem 0 0;
+}
+
+.saved {
+  background: #b9f5b9;
+  border-bottom: 5px solid #8add8a;
+
+  &:hover {
+    background: #b9f5b9;
+    cursor: default;
+  }
+}
+
