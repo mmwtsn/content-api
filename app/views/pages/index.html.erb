@@ -6,17 +6,19 @@
 <div class="pages">
 <% if @pages.each do |page| %>
   <section class="page">
-    <%= image_tag page.header, class: 'page-header' %>
+    <div class="page-container">
+      <%= image_tag page.header, class: 'page-header' %>
 
-    <h2><%= page.title %><span class="page-state"> <%= page.published? ? 'published' : 'unpublished' %></span></h2>
-    <p><%= page.body %></p>
+      <h2><%= page.title %><span class="page-state"> <%= page.published? ? 'published' : 'unpublished' %></span></h2>
+      <p><%= page.body %></p>
+    </div>
 
-    <p class="page-admin">
-      <%= link_to "view", page_path(page), class: 'btn small' %>
-      <%= link_to "edit", edit_page_path(page), class: 'btn small' %>
-      <%= link_to 'delete', page_path(page), method: :delete, class: 'btn small' %>
-      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'btn secondary small' %>
-    </p>
+    <div class="page-admin">
+      <%= link_to "view", page_path(page) %>
+      <%= link_to "edit", edit_page_path(page) %>
+      <%= link_to 'delete', page_path(page) %>
+      <%= link_to 'preview', preview_page_path(page), target: '_blank' %>
+    </div>
   </section>
 <% end.empty? %>
   <div class="empty">
