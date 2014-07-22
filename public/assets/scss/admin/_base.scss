@@ -182,5 +182,9 @@ a {
     font-family: 'LubalinGraphStdBookIBM';
     font-size: 1rem;
     color: #aaa;
+
+    &:hover {
+      color: lighten(#aaa, 10%);
+    }
   }
 }
