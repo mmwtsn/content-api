@@ -120,3 +120,63 @@ a {
 .notice {
   @extend %flash-success;
 }
+
+//
+// Layout
+//
+.container {
+  @include outer-container;
+}
+
+.header {
+  &.primary {
+    background: #333;
+  }
+
+  &.secondary {
+    background: #fff;
+    padding: 3rem;
+
+    .btn {
+      margin: 1rem 0;
+    }
+  }
+
+  .nav {
+    margin: 0 auto;
+    padding: 1rem 0;
+    overflow: hidden;
+
+    @include outer-container;
+  }
+
+  .app-logo,
+  .app-title {
+    float: left;
+  }
+
+  .app-logo {
+    width: 4rem;
+    padding: 0.3rem 1rem 0 0;
+  }
+
+  .app-title,
+  .app-link {
+    font-family: 'LubalinGraphStdBookIBM';
+  }
+
+  .app-title {
+    font-weight: 100;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+  }
+
+  .app-link {
+    float: right;
+    padding: 0.2rem 0 0.2rem 0.5rem;
+    font-family: 'LubalinGraphStdBookIBM';
+    font-size: 1rem;
+    color: #aaa;
+  }
+}
