@@ -8,10 +8,9 @@ html {
 }
 
 main {
-  max-width: 960px;
-  width: 96%;
-  margin: 100px auto;
-  padding: 0 2%;
+  margin: 6rem auto 8rem;
+
+  @include outer-container;
 }
 
 //
@@ -31,6 +30,11 @@ a {
 
   &:hover {
     color: lighten($link, 5%);
+  }
+
+  &:active,
+  &:focus {
+    color: $link;
   }
 }
 
