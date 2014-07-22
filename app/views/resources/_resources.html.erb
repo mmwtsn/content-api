@@ -1,9 +1,14 @@
 <% if @page.resources.each do |resource| %>
-<section class="resource">
-  <p><%= resource.body %></p>
+<section class="resource card">
+  <div class="card-container">
+    <%= content_tag :p, resource.body %>
+  </div>
 
-  <%= link_to 'edit', edit_resource_path(resource.id), class: 'btn small' %>
-  <%= link_to 'delete', resource_path(resource.id), method: :delete, remote: true, class: 'btn small delete-resource' %>
+  <div class="admin">
+    <%= link_to 'edit', edit_resource_path(resource.id) %>
+    <%= link_to 'delete', resource_path(resource.id), method: :delete, remote: true %>
+    <%= link_to 'new resource', '#', class: 'new show_new_resource' %>
+  </div>
 </section>
 <% end.empty? %>
   <section class="empty">
