@@ -13,6 +13,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header class="header primary">
+    <nav class="nav">
+      <%= image_tag '/assets/images/ibm-logo.png', class: 'app-logo' %>
+      <%= content_tag :h1, 'Cloud Lab CMS', class: 'app-title' %>
+      <%= link_to 'pages', pages_path, class: 'app-link' %>
+    </nav>
+  </header>
+
+  <header class="header secondary">
+    <div class="container">
+      <%= content_tag :h1, 'All Scenario Pages', class: 'page-title' %>
+      <%= link_to 'create page', new_page_path, class: 'btn primary' %>
+    </div>
+  </header>
+
   <main>
     <% if notice %><p class="notice"><%= notice %></p><% end %>
     <% if alert %><p class="error"><%= alert %></p><% end %>
