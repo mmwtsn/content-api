@@ -4,19 +4,15 @@
   <%= link_to 'back', :back, class: 'btn small' %>
 </section>
 
-<section class="solution">
-  <%= image_tag @page.header, class: 'page-header' %>
-
-  <h2 class="section-header">
-    <%= @page.title %>
-  </h2>
-
-  <p>
-    <%= @page.body %>
-  </p>
+<section class="solution card">
+  <div class="card-container">
+    <%= image_tag @page.header, class: 'page-header' %>
+    <%= content_tag :h2, @page.title, class: 'section-header' %>
+    <%= content_tag :p, @page.body %>
+  </div>
 
   <div class="admin">
-    <%= link_to 'edit', edit_page_path(@page), class: 'btn small' %>
+    <%= link_to 'edit', edit_page_path(@page) %>
   </div>
 </section>
 

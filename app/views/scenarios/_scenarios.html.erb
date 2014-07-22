@@ -1,27 +1,31 @@
 <% if @page.scenarios.each do |scenario| %>
-  <section class="scenario">
-    <%= image_tag scenario.avatar, class: 'scenario-avatar icon' %>
+  <section class="scenario card">
+    <div class="card-container">
+      <%= image_tag scenario.avatar, class: 'scenario-avatar icon' %>
+      <%= content_tag :h3, scenario.quote %>
+      <%= content_tag :p ,scenario.pitch %>
 
-    <h3><%= scenario.quote %></h3>
-    <p><%= scenario.pitch %></p>
+      <section class="products">
+        <% if scenario.products.each do |product| %>
+          <div class="product">
+            <%= content_tag :strong, product.name %>
+            <%= content_tag :p, product.description %>
+          </div>
+        <% end.empty? %>
+          <%# TODO - Move these into a partial and pass local values! %>
+          <div class="empty">
+            <p>This scenario has no products! Click <a href="<%= scenario_path(scenario) %>">view</a> to add some.</p>
+          </div>
+        <% end %>
+      </section>
+    </div>
 
-    <section class="products">
-      <% if scenario.products.each do |product| %>
-        <div class="product">
-          <p><%= product.name %></p>
-          <p><%= product.description %></p>
-        </div>
-      <% end.empty? %>
-        <%# TODO - Move these into a partial and pass local values! %>
-        <div class="empty">
-          <p>This scenario has no products! Click <a href="<%= scenario_path(scenario) %>">view</a> to add some.</p>
-        </div>
-      <% end %>
-    </section>
-
-    <%= link_to 'view', scenario_path(scenario.id), class: 'btn small' %>
-    <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'btn small' %>
-    <%= link_to 'delete', scenario_path(scenario.id), method: :delete, remote: true, class: 'btn small delete-scenario' %>
+    <div class="admin">
+      <%= link_to 'view', scenario_path(scenario.id) %>
+      <%= link_to 'edit', edit_scenario_path(scenario.id) %>
+      <%= link_to 'delete', scenario_path(scenario.id), method: :delete, remote: true %>
+      <%= link_to 'new scenario', '#', class: 'new show_new_scenario' %>
+    </div>
   </section>
 <% end.empty? %>
   <section class="empty">
