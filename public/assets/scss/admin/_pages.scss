@@ -1,28 +1,5 @@
-.page {
-  padding: 0 !important;
-}
-
 .page-header {
   width: 100%;
-}
-
-.page-container {
-  padding: 2rem 2rem 1rem 2rem;
-}
-
-.page-admin {
-  padding: 1rem 2rem;
-  border-top: 1px solid #e7e7e7;
-  background: #fff;
-
-  a {
-    padding: 0 1rem 0 0;
-    color: #aaa;
-
-    &:hover {
-      color: $link;
-    }
-  }
 }
 
 // Hide forms on for nested resources

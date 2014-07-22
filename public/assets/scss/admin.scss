@@ -37,17 +37,41 @@
   display: block;
 }
 
-.page,
-.solution,
-.scenario,
-.resource,
-.scenario-product {
+.card {
   background: #fff;
   margin: 1rem 0 3rem;
-  padding: 1.5rem;
   border-bottom: 1px solid #e8e8e8;
   box-shadow: 0 10px 10px -10px #ddd;
 }
+
+.card-container {
+  padding: 2rem 2rem 1rem 2rem;
+}
+
+
+.card-admin {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e7e7e7;
+  background: #fff;
+
+  a {
+    padding: 0 1rem 0 0;
+    color: #aaa;
+
+    &:hover {
+      color: $link;
+    }
+  }
+
+  .new,
+  .preview {
+    float: right;
+    padding: 0;
+    color: #84d590;
+    color: $link;
+  }
+}
+
 
 .empty {
   margin: 1rem 0;
