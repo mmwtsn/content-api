@@ -8,8 +8,8 @@
     <section class="products">
       <% if scenario.products.each do |product| %>
         <div class="product">
-          <%= image_tag product.icon_url %>
           <p><%= product.name %></p>
+          <p><%= product.description %></p>
         </div>
       <% end.empty? %>
         <%# TODO - Move these into a partial and pass local values! %>
