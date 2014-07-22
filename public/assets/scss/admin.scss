@@ -43,9 +43,10 @@
 .resource,
 .scenario-product {
   background: #fff;
-  margin: 1rem 0;
+  margin: 1rem 0 3rem;
   padding: 1.5rem;
-  border-bottom: 5px solid #e8e8e8;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 10px 10px -10px #ddd;
 }
 
 .empty {
