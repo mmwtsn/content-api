@@ -39,66 +39,65 @@ a {
 }
 
 .btn {
-  $btn-default: #f8f8f8;
+  $default-color: #bbb;
+  $default-background: #f8f8f8;
+
+  $primary-color: #fff;
+  $primary-background: $link;
+
+  $secondary-color: #aaa;
+  $secondary-background: #e4e4e4;
 
   display: inline-block;
   cursor: pointer;
-  color: #bbb;
   padding: 0.5rem 1rem;
-  background: $btn-default;
   text-decoration: none;
 
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
+  background: $default-background;
+  border: 1px solid darken($default-background, 4%);
   border-radius: 3px;
-  border-style: solid;
-  border-bottom-color: #e4e4e4;
-  border-bottom-width: 2px;
+  color: $default-color;
 
   &:link,
   &:hover,
   &:active,
   &:visited {
-    color: #bbb;
+    color: $default-color;
   }
 
   &:hover {
-    background: darken($btn-default, 2%);
+    background: darken($default-background, 1%);
   }
 
   &:active {
-    background: darken($btn-default, 3%);
+    background: darken($default-background, 2%);
   }
 
   &.primary {
-    background: $link;
-    border-bottom-color: darken($link, 7%);
-    border-bottom-width: 4px;
-    color: #fff;
+    background: $primary-background;
+    border: 1px solid darken($primary-background, 3%);
+    color: $primary-color;
 
     &:hover {
-      background: darken($link, 5%);
+      background: darken($primary-background, 5%);
     }
 
     &:active {
-      background: darken($link, 10%);
+      background: darken($primary-background, 10%);
     }
   }
 
   &.secondary {
-    $secondary: #e4e4e4;
-    border-bottom-color: darken($secondary, 5%);
-    color: #aaa;
-
-    background: $secondary; 
+    background: $secondary-background;
+    border: 1px solid darken($secondary-background, 2%);
+    color: $secondary-color;
 
     &:hover {
-      background: darken($secondary, 2%);
+      background: darken($secondary-background, 2%);
     }
 
     &:active {
-      background: darken($secondary, 3%);
+      background: darken($secondary-background, 3%);
     }
   }
 
