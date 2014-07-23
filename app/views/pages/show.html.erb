@@ -23,7 +23,7 @@
   <%= f.label :pitch %>
   <%= f.text_field :pitch %>
 
-  <%= f.submit 'save', id: 'create-scenario' %>
+  <%# f.submit 'save', id: 'create_scenario' %>
 <% end %>
 
 <%= form_for([@page, @page.resources.build]) do |f| %>
@@ -33,5 +33,5 @@
   <%= f.label :url %>
   <%= f.text_field :url %>
 
-  <%= f.submit 'save', class: 'btn secondary', id: 'create-resource' %>
+  <%# f.submit 'save', class: 'btn secondary', id: 'create_resource' %>
 <% end %>
