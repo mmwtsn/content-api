@@ -39,10 +39,14 @@
 
 .card {
   background: #fff;
-  margin: 1rem 0 3rem;
+  margin: 1rem 0 2rem;
   border: 1px solid #eee;
   border-radius: 3px;
   box-shadow: 0 10px 10px -10px #ddd;
+
+  &:last-child {
+    margin: 1rem 0 4rem;
+  }
 }
 
 .card-container {
