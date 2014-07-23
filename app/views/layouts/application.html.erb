@@ -15,8 +15,11 @@
 <body>
   <header class="header primary">
     <nav class="nav">
-      <%= image_tag '/assets/images/ibm-logo.png', class: 'app-logo' %>
-      <%= content_tag :h1, 'Cloud Lab CMS', class: 'app-title' %>
+      <%= link_to root_path do %>
+        <%= image_tag '/assets/images/ibm-logo.png', class: 'app-logo' %>
+        <%= content_tag :h1, 'Cloud Lab CMS', class: 'app-title' %>
+      <% end %>
+
       <%= link_to 'pages', pages_path, class: 'app-link' %>
     </nav>
   </header>
