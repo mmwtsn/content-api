@@ -1,7 +1,7 @@
-<section class="admin_bar masthead">
-  <h1>all pages</h1>
+<% content_for :sub_header do %>
+  <h1>Solutions Pages</h1>
   <%= link_to 'create page', new_page_path, class: 'btn primary' %>
-</section>
+<% end %>
 
 <div class="pages">
 <% if @pages.each do |page| %>

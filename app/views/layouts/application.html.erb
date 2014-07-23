@@ -23,15 +23,16 @@
 
   <header class="header secondary">
     <div class="container">
-      <%= content_tag :h1, 'All Scenario Pages', class: 'page-title' %>
-      <%= link_to 'create page', new_page_path, class: 'btn primary' %>
+      <%= yield :sub_header %>
     </div>
   </header>
 
-  <main>
+  <div class="alerts">
     <% if notice %><p class="notice"><%= notice %></p><% end %>
     <% if alert %><p class="error"><%= alert %></p><% end %>
+  </div>
 
+  <main class="main">
     <%= yield %>
   </main>
 </body>
