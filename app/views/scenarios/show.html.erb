@@ -20,14 +20,17 @@
   <h1>Scenario</h1>
 </section>
 
-<section class="scenario">
-  <%= image_tag @scenario.avatar, class: 'scenario-avatar icon' %>
+<section class="scenario card">
+  <div class="card-container">
+    <%= image_tag @scenario.avatar, class: 'scenario-avatar icon' %>
+    <%= content_tag :h3, @scenario.quote %>
+    <%= content_tag :p, @scenario.pitch %>
+  </div>
 
-  <h3><%= @scenario.quote %></h3>
-  <p><%= @scenario.pitch %></p>
-
-  <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
-  <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
+  <div class="card-admin">
+    <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
+    <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
+  </div>
 </section>
 
 <section class="admin_bar">
