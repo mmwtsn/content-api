@@ -9,25 +9,19 @@ feature 'Scenario Products' do
     @resource = @page.resources.first
     @product  = @scenario.products.first
   end
-  
+
   # User can preview the published state of any page listed on pages#index
   scenario 'preview from pages#index' do
     visit pages_path
     first(:link, 'preview').click
 
-    save_and_open_page
     expect_all_content
   end
-  
+
   # User can preview the published state of any individual page view
   scenario 'preview from pages#show' do
     visit page_path(@page)
 
-    # TODO
-    # Ensure preview assets are loaded
-    # Ensure admin assets are not loaded
-
-    save_and_open_page
     expect_all_content
   end
 
