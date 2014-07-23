@@ -1,0 +1,11 @@
+<section class="solution card">
+  <div class="card-container">
+    <%= image_tag @page.header, class: 'page-header' %>
+    <%= content_tag :h2, @page.title, class: 'section-header' %>
+    <%= content_tag :p, @page.body %>
+  </div>
+
+  <div class="card-admin">
+    <%= link_to 'edit', edit_page_path(@page) %>
+  </div>
+</section>
