@@ -1,0 +1,17 @@
+.scenario-products {
+  overflow: hidden;
+}
+
+.scenario-product {
+  width: 48.5%;
+  float: left;
+  margin-bottom: 1rem !important;
+
+  &:nth-child(odd) {
+    margin-right: 3%;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+}
