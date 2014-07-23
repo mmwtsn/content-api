@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
 
     resources :scenarios, except: [:index]
-    resources :resources, only: [:create, :edit, :update, :destroy]
+    resources :resources, only: [:new, :create, :edit, :update, :destroy]
   end
 
   #
