@@ -20,6 +20,12 @@
         <%= content_tag :h1, 'Cloud Lab CMS', class: 'app-title' %>
       <% end %>
 
+      <% if !current_user %>
+        <%= link_to 'sign in', new_user_session_path, class: 'app-link' %>
+      <% else  %>
+        <%= link_to 'sign out', destroy_user_session_path, :method => :delete, class: 'app-link' %>
+      <% end %>
+
       <%= link_to 'pages', pages_path, class: 'app-link' %>
     </nav>
   </header>
