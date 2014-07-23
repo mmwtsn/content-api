@@ -1,8 +1,9 @@
 <% content_for :sub_header do %>
   <h1>Solutions Page</h1>
-  <%= link_to 'preview', preview_page_path(@page), target: '_blank', class: 'btn secondary small' %>
   <%= link_to 'back', :back, class: 'btn small' %>
 <% end %>
+
+<%= link_to 'preview', preview_page_path(@page), target: '_blank', class: 'btn secondary' %>
 
 <section class="solution card">
   <div class="card-container">
@@ -16,26 +17,12 @@
   </div>
 </section>
 
-<section class="admin_bar admin_scenarios">
-  <h1>Scenarios</h1>
-  <%= link_to 'add scenario', new_page_scenario_path(@page), class: 'btn primary show_new_scenario submit_new_scenario' %>
-</section>
-
 <section class="all scenarios">
-
   <%= render 'scenarios/scenarios' %>
-
-</section>
-
-<section class="admin_bar admin_resources">
-  <h1>Resources</h1>
-  <%= link_to 'add resource', new_page_scenario_path(@page), class: 'btn primary show_new_resource' %>
 </section>
 
 <section class="all resources">
-
   <%= render 'resources/resources' %>
-
 </section>
 
 <%= form_for([@page, @page.scenarios.build]) do |f| %>

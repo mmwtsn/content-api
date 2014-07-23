@@ -1,3 +1,5 @@
+<%= link_to 'new resource', '#', class: 'btn secondary new show_new_resource' %>
+
 <% if @page.resources.each do |resource| %>
 <section class="resource card">
   <div class="card-container">
@@ -14,5 +16,3 @@
     <p>no saved resources&#133;</p>
   </section>
 <% end %>
-
-<%= link_to 'new resource', '#', class: 'btn secondary new show_new_resource' %>
