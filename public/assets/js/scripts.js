@@ -67,8 +67,14 @@ $(document).ready(function() {
   //
   // Bind click and submit to 'add (scenario|resource)' buttons
   //
-  toggle_and_post('.new_resource', '.show_new_resource', 'resources');
-  toggle_and_post('.new_scenario', '.show_new_scenario', 'scenarios');
+  //toggle_resource_form();
+  //toggle_resource_form();
+
+  //ajax_submit_resource();
+  //ajax_submit_resource();
+
+  toggle_and_post('#new_resource', '#show_new_resource', 'resources');
+  toggle_and_post('#new_scenario', '#show_new_scenario', 'scenarios');
 
   //
   // Ensure search input field is empty on load
