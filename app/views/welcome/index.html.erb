@@ -1,15 +1,12 @@
 <% content_for :sub_header do %>
   <h1>IBM Cloud Lab Marketing Pages</h1>
-  <%= link_to 'create page', new_page_path, class: 'btn primary' %>
 <% end %>
 
 <div class="wrapper">
   <% if !current_user %>
-    <p>unauthenticated</p>
-    <%= link_to 'sign in', new_user_session_path %>
-    <%= link_to 'register', new_user_registration_path %>
+    <h1><%= link_to 'sign in', new_user_session_path %></h1>
+    <h1><%= link_to 'register', new_user_registration_path %></h1>
   <% else  %>
-    <p>authenticated</p>
-    <%= link_to 'sign out', destroy_user_session_path, :method => :delete %>
+    <h1><%= link_to 'scenario pages', pages_path %></h1>
   <% end %>
 </div>
