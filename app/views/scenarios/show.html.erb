@@ -1,7 +1,7 @@
-<section class="admin_bar">
-  <h1>Find Products</h1>
+<% content_for :sub_header do %>
+  <h1>Scenario</h1>
   <%= link_to 'back', :back, class: 'btn small' %>
-</section>
+<% end %>
 
 <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
   <%= submit_tag 'search', class: 'btn primary' %>

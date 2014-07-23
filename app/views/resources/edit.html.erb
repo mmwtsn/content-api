@@ -1,7 +1,7 @@
-<section class="admin_bar masthead">
-  <h1>edit resource</h1>
+<% content_for :sub_header do %>
+  <h1>Edit Resource</h1>
   <%= link_to 'back', :back, class: 'btn small' %>
-</section>
+<% end %>
 
 <%= form_for @resource do |f| %>
   <% if @resource.errors.any? %>

@@ -1,6 +1,6 @@
-<section class="admin_bar masthead">
-  <h1>edit page</h1>
+<% content_for :sub_header do %>
+  <h1>Edit Solution</h1>
   <%= link_to 'back', :back, class: 'btn small' %>
-</section>
+<% end %>
 
 <%= render 'form' %>
