@@ -5,10 +5,6 @@ class ScenariosController < ApplicationController
   before_action :build_page, only: [:new, :create]
   before_action :build_scenario, only: [:edit, :show, :update, :destroy]
 
-  def new
-    @scenario = Scenario.new
-  end
-
   def create
     @page = Page.find(params[:page_id])
     @scenario = @page.scenarios.create!(scenario_params)
