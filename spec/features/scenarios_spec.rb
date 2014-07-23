@@ -19,7 +19,7 @@ feature 'Scenarios' do
     @page = FactoryGirl.create(:page)
     visit page_path(@page)
 
-    click_link 'add scenario'
+    click_link 'new scenario'
     click_link 'save'
 
     expect(page).to have_content('Whoa!')
@@ -31,7 +31,7 @@ feature 'Scenarios' do
 
     visit page_path(@page)
 
-    click_link 'add scenario'
+    click_link 'new scenario'
 
     fill_in 'scenario_quote', with: @scenario.quote
     fill_in 'scenario_pitch', with: @scenario.pitch

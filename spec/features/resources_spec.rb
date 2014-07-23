@@ -21,13 +21,13 @@ feature 'Resources' do
     visit page_path(@page)
 
     # Trigger form
-    click_link 'add resource'
+    click_link 'new resource'
 
     fill_in 'resource_body', with: @resource.body
     fill_in 'resource_url', with: @resource.url
 
     # Submit form
-    click_link 'add resource'
+    click_link 'save'
 
     expect(page).to have_content(@resource.body)
   end
