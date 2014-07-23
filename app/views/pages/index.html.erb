@@ -1,7 +1,8 @@
 <% content_for :sub_header do %>
   <h1>Solutions Pages</h1>
-  <%= link_to 'create page', new_page_path, class: 'btn primary' %>
 <% end %>
+
+<%= link_to 'create page', new_page_path, class: 'btn primary' %>
 
 <div class="pages">
 <% if @pages.each do |page| %>
