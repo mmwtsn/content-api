@@ -24,7 +24,6 @@
       <%= link_to 'view', scenario_path(scenario.id) %>
       <%= link_to 'edit', edit_scenario_path(scenario.id) %>
       <%= link_to 'delete', scenario_path(scenario.id), method: :delete, remote: true %>
-      <%= link_to 'new scenario', '#', class: 'new show_new_scenario' %>
     </div>
   </section>
 <% end.empty? %>
@@ -32,3 +31,5 @@
     <p>no saved scenarios&#133;</p>
   </section>
 <% end %>
+
+<%= link_to 'new scenario', '#', class: 'btn secondary new show_new_scenario' %>

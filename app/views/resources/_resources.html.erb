@@ -7,7 +7,6 @@
   <div class="card-admin">
     <%= link_to 'edit', edit_resource_path(resource.id) %>
     <%= link_to 'delete', resource_path(resource.id), method: :delete, remote: true %>
-    <%= link_to 'new resource', '#', class: 'new show_new_resource' %>
   </div>
 </section>
 <% end.empty? %>
@@ -15,3 +14,5 @@
     <p>no saved resources&#133;</p>
   </section>
 <% end %>
+
+<%= link_to 'new resource', '#', class: 'btn secondary new show_new_resource' %>
