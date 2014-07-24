@@ -13,6 +13,16 @@ main {
   @include outer-container;
 }
 
+footer {
+  text-align: center;
+
+  a {
+    font-size: 0.9rem;
+    color: #aaa;
+    padding: 2rem 0;
+  }
+}
+
 //
 // Typography
 //
