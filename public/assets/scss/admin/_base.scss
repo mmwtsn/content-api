@@ -37,6 +37,7 @@ h1 {
 
 a {
   color: $link;
+  @include transition (color 0.1s ease-out);
 
   &:hover {
     color: lighten($link, 5%);
@@ -63,6 +64,7 @@ a {
   padding: 0.5rem 1rem;
   text-decoration: none;
 
+  @include transition (background-color 0.1s ease-out);
   background: $default-background;
   border: 1px solid darken($default-background, 4%);
   border-radius: 3px;
