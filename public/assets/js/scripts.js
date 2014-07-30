@@ -22,9 +22,9 @@ var create = (function() {
     // Use singular form of resource for selector
     resource = singularize_resource( resource );
 
-    config['$submit']  = $('#create_' + resource);
-    config['$show']    = $('#show_new_' + resource);
-    config['$form']    = $('#new_' + resource);
+    config['$submit'] = $('#create_' + resource);
+    config['$show']   = $('#show_new_' + resource);
+    config['$form']   = $('#new_' + resource);
 
     return config;
   };
@@ -70,8 +70,12 @@ var create = (function() {
     config: config
   };
 
-})();
+});
+
+// Assign instances of create module
+var s = create();
+var r = create();
 
 // Initialize create module for Scenario and Resources
-var s = create.init( 'scenarios' );
-var r = create.init( 'resources' );
+create.init( 'scenarios' );
+create.init( 'resources' );
