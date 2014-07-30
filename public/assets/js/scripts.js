@@ -50,7 +50,7 @@ var create = (function() {
       // Update visibility and state
       $form
         .slideDown( 600 )
-        .addClass('visible');
+        .addClass( 'visible' );
 
     }
 
@@ -61,7 +61,7 @@ var create = (function() {
 
   // Check if a jQuery object has a "visible" class
   var is_not_visible = function( $form ) {
-    return !$form.hasClass('visible');
+    return !$form.hasClass( 'visible' );
   };
 
   // Expose public methods through create module
