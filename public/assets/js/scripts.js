@@ -19,3 +19,7 @@ var create = (function() {
   };
 
 })();
+
+// Initialize create module for Scenario and Resources
+var s = create.init( 'scenarios' );
+var r = create.init( 'resources' );
