@@ -6,10 +6,6 @@
   <%= favicon_link_tag '/favicon.png?v=1' %>
   <%= stylesheet_link_tag '/assets/css/admin' %>
 
-  <%= javascript_include_tag '/bower_components/jquery/dist/jquery.min.js' %>
-  <%= javascript_include_tag '/bower_components/jquery-ujs/src/rails.js' %>
-  <%= javascript_include_tag '/assets/js/scripts' %>
-
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -48,5 +44,9 @@
   <footer class="footer">
     <a href="https://github.com/mmwtsn/content-api"><small>IBM Cloud Lab CMS</small></a>
   </footer>
+
+  <%= javascript_include_tag '/bower_components/jquery/dist/jquery.min.js' %>
+  <%= javascript_include_tag '/bower_components/jquery-ujs/src/rails.js' %>
+  <%= javascript_include_tag '/assets/js/scripts' %>
 </body>
 </html>
