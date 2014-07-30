@@ -42,7 +42,7 @@ var create = (function() {
     var $submit = config.$submit;
 
     // Check visibility of $form TODO - extract
-    if( !$form.hasClass('visible') ) {
+    if( is_not_visible($form) ) {
 
       // Move $form into position
       $form.insertBefore( $submit );
@@ -57,6 +57,11 @@ var create = (function() {
     // Ensure nothing happens when link or button is clicked
     return false;
 
+  };
+
+  // Check if a jQuery object has a "visible" class
+  var is_not_visible = function( $form ) {
+    return !$form.hasClass('visible');
   };
 
   // Expose public methods through create module
