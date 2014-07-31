@@ -41,7 +41,6 @@ var create = (function() {
     var $form   = config.$form;
     var $submit = config.$submit;
 
-    // Check visibility of $form TODO - extract
     if( is_not_visible($form) ) {
 
       // Move $form into position
