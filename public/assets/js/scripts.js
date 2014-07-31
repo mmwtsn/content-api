@@ -38,18 +38,18 @@ var create = (function() {
   var toggle = function() {
 
     // Cache references for readability
-    var $form   = config.$form;
-    var $submit = config.$submit;
+    var $form = config.$form;
+    var $show = config.$show;
 
     if( is_not_visible($form) ) {
 
       // Move $form into position
-      $form.insertBefore( $submit );
+      $form.insertBefore( $show );
 
       // Update visibility and state
       $form
-        .slideDown( 600 )
-        .addClass( 'visible' );
+        .addClass( 'visible' )
+        .slideDown( 600, swap_buttons );
 
     }
 
@@ -62,6 +62,19 @@ var create = (function() {
   var is_not_visible = function( $form ) {
     return !$form.hasClass( 'visible' );
   };
+
+  // Swaps the $show button for $submit after toggle() completes
+  var swap_buttons = function() {
+
+    setTimeout(function() {
+
+      // Swap $show for $submit so the form still works
+      config.$show.remove();
+      config.$submit.show();
+
+    }, 300);
+
+  }
 
   // Expose public methods through create module
   return {
