@@ -17,14 +17,14 @@ var create = (function() {
 
   // Build config object with jQuery obects and resources string
   var configure = function( resource ) {
-    config['resource'] = resource
+    config.resource = resource;
 
     // Use singular form of resource for selector
     resource = singularize_resource( resource );
 
-    config['$submit'] = $('#create_' + resource);
-    config['$show']   = $('#show_new_' + resource);
-    config['$form']   = $('#new_' + resource);
+    config.$submit = $('#create_' + resource);
+    config.$show   = $('#show_new_' + resource);
+    config.$form   = $('#new_' + resource);
 
     return config;
   };
@@ -74,7 +74,7 @@ var create = (function() {
 
     }, 300);
 
-  }
+  };
 
   // Expose public methods through create module
   return {
