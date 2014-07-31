@@ -76,5 +76,5 @@ var s = create();
 var r = create();
 
 // Initialize create module for Scenario and Resources
-create.init( 'scenarios' );
-create.init( 'resources' );
+s.init( 'scenarios' );
+r.init( 'resources' );
