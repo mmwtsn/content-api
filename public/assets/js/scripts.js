@@ -6,28 +6,26 @@
 var create = (function() {
 
   // Define config object for later use
-  var config = {};
+  var resources, $submit, $show, $form;
 
   // Initialize instance of module, calls setup()
   var init = function( resource ) {
-    config = configure( resource );
+    configure( resource );
 
-    config.$show.on( 'click', toggle );
-    config.$submit.on( 'click', submit );
+    $show.on( 'click', toggle );
+    $submit.on( 'click', submit );
   };
 
   // Build config object with jQuery obects and resources string
   var configure = function( resource ) {
-    config.resource = resource;
+    resources = resource;
 
     // Use singular form of resource for selector
     resource = singularize_resource( resource );
 
-    config.$submit = $('#create_' + resource);
-    config.$show   = $('#show_new_' + resource);
-    config.$form   = $('#new_' + resource);
-
-    return config;
+    $submit = $('#create_' + resource);
+    $show   = $('#show_new_' + resource);
+    $form   = $('#new_' + resource);
   };
 
   // Strip last character from plural resource
@@ -37,10 +35,6 @@ var create = (function() {
 
   // Toggle visibility of $form if hidden
   var toggle = function() {
-
-    // Cache references for readability
-    var $form = config.$form;
-    var $show = config.$show;
 
     if( is_not_visible($form) ) {
 
@@ -70,8 +64,8 @@ var create = (function() {
     setTimeout(function() {
 
       // Swap $show for $submit so the form still works
-      config.$show.remove();
-      config.$submit.show();
+      $show.remove();
+      $submit.show();
 
     }, 300);
 
@@ -84,7 +78,7 @@ var create = (function() {
 
   // Checks to see if the create resource form is complete
   var form_is_complete = function() {
-    var $input = config.$form.children( 'input[type="text"]' ).first();
+    var $input = $form.children( 'input[type="text"]' ).first();
     var value  = $input.val();
 
     return (value !== '');
@@ -94,7 +88,7 @@ var create = (function() {
   var submit_error = function() {
     var error = '<p class="error">Whoa! Submit something.</p>';
 
-    config.$form.prepend( error );
+    $form.prepend( error );
 
     return false;
   };
@@ -106,7 +100,7 @@ var create = (function() {
     var url = build_nested_path();
 
     // Build POST data from form
-    var data = config.$form.serialize();
+    var data = $form.serialize();
 
     // Submit via AJAX to save record
     $.post(url, data);
@@ -122,19 +116,19 @@ var create = (function() {
   // Return the correct Rails RESTful resource path
   var build_nested_path = function() {
     var id = window.location.pathname;
-    var url = id + '/' + config.resource;
+    var url = id + '/' + resources;
 
     return url;
   };
 
   // Reset form to empty state upon successful POST
   var reset_form = function() {
-    config.$form.children('input[type="text"]').val('');
+    $form.children('input[type="text"]').val('');
   };
 
+  // Expose public methods
   return {
-    init: init,
-    config: config
+    init: init
   };
 
 });
