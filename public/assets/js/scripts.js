@@ -44,31 +44,25 @@ var Config = (function() {
 var toggle = (function() {
 
   // Cache local references to jQuery objects for use
-  var $form, $show, $submit, resources;
+  var config = {};
 
   // Initialize instance of module, calls setup()
   var init = function( resource ) {
-    var config = Config().configure( resource );
+    config = Config().configure( resource );
 
-    // Expose objects from config to simplify reference
-    $form     = config.$form;
-    $show     = config.$show;
-    $submit   = config.$submit;
-    resources = config.resources;
-
-    $show.on( 'click', toggle );
+    config.$show.on( 'click', toggle );
   };
 
   // Toggle visibility of $form if hidden
   var toggle = function() {
 
-    if( is_not_visible($form) ) {
+    if( is_not_visible(config.$form) ) {
 
       // Move $form into position
-      $form.insertBefore( $show );
+      config.$form.insertBefore( config.$show );
 
       // Update visibility and state
-      $form
+      config.$form
         .addClass( 'visible' )
         .slideDown( 600, swap_buttons );
     }
@@ -89,8 +83,8 @@ var toggle = (function() {
     setTimeout(function() {
 
       // Swap $show for $submit so the form still works
-      $show.remove();
-      $submit.show();
+      config.$show.remove();
+      config.$submit.show();
 
     }, 300);
 
@@ -110,19 +104,13 @@ var toggle = (function() {
 var create = (function() {
 
   // Cache local references to jQuery objects for use
-  var $form, $show, $submit, resources;
+  var config = {};
 
   // Initialize instance of module, calls setup()
   var init = function( resource ) {
-    var config = Config().configure( resource );
+    config = Config().configure( resource );
 
-    // Expose objects from config to simplify reference
-    $form     = config.$form;
-    $show     = config.$show;
-    $submit   = config.$submit;
-    resources = config.resources;
-
-    $show.on( 'click', toggle );
+    config.$show.on( 'click', toggle );
   };
 
   // Attempt to submit the create resource form
@@ -132,8 +120,8 @@ var create = (function() {
 
   // Checks to see if the create resource form is complete
   var form_is_complete = function() {
-    var $input = $form.children( 'input[type="text"]' ).first();
-    var value  = $input.val();
+    var $input = config.$form.children( 'input[type="text"]' ).first();
+    var value  = config.$input.val();
 
     return (value !== '');
   };
@@ -142,7 +130,7 @@ var create = (function() {
   var submit_error = function() {
     var error = '<p class="error">Whoa! Submit something.</p>';
 
-    $form.prepend( error );
+    config.$form.prepend( error );
 
     return false;
   };
@@ -154,7 +142,7 @@ var create = (function() {
     var url = build_nested_path();
 
     // Build POST data from form
-    var data = $form.serialize();
+    var data = config.$form.serialize();
 
     // Submit via AJAX to save record
     $.post(url, data);
@@ -177,7 +165,7 @@ var create = (function() {
 
   // Reset form to empty state upon successful POST
   var reset_form = function() {
-    $form.children('input[type="text"]').val('');
+    config.$form.children('input[type="text"]').val('');
   };
 
   // Expose public methods
@@ -187,8 +175,10 @@ var create = (function() {
 
 });
 
+// Initialize toggle module for Scenarios and Resources controllers
 var toggle_scenario = toggle().init( 'scenarios');
 var toggle_resource = toggle().init( 'resources' );
 
+// Initialize create module for Scenarios and Resources controllers
 var create_scenario = create().init( 'scenarios ');
 var create_resource = create().init( 'resources' );
