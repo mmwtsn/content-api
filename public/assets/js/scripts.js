@@ -37,11 +37,11 @@ var Config = (function() {
 });
 
 //
-// Handles the submission of AJAX-ready Controller#create forms
+// Handles the displaying of AJAX-ready Controller#create forms
 //
 
-// Returns an initializer for binding to the submit event
-var create = (function() {
+// Returns an initializer function
+var toggle = (function() {
 
   // Cache local references to jQuery objects for use
   var $form, $show, $submit, resources;
@@ -57,7 +57,6 @@ var create = (function() {
     resources = config.resources;
 
     $show.on( 'click', toggle );
-    $submit.on( 'click', submit );
   };
 
   // Toggle visibility of $form if hidden
@@ -95,6 +94,35 @@ var create = (function() {
 
     }, 300);
 
+  };
+
+  // Expose public methods
+  return {
+    init: init
+  };
+});
+
+//
+// Handles the submission of AJAX-ready Controller#create forms
+//
+
+// Returns an initializer for binding to the submit event
+var create = (function() {
+
+  // Cache local references to jQuery objects for use
+  var $form, $show, $submit, resources;
+
+  // Initialize instance of module, calls setup()
+  var init = function( resource ) {
+    var config = Config().configure( resource );
+
+    // Expose objects from config to simplify reference
+    $form     = config.$form;
+    $show     = config.$show;
+    $submit   = config.$submit;
+    resources = config.resources;
+
+    $show.on( 'click', toggle );
   };
 
   // Attempt to submit the create resource form
@@ -159,10 +187,8 @@ var create = (function() {
 
 });
 
-// Assign instances of create module
-var s = create();
-var r = create();
+var toggle_scenario = toggle().init( 'scenarios');
+var toggle_resource = toggle().init( 'resources' );
 
-// Initialize create module for Scenario and Resources
-s.init( 'scenarios' );
-r.init( 'resources' );
+var create_scenario = create().init( 'scenarios ');
+var create_resource = create().init( 'resources' );
