@@ -2,35 +2,52 @@
 // Handles the displaying of and submission of AJAX-ready #create forms
 //
 
-// Define Resource#create module
-var create = (function() {
-
-  // Define config object for later use
-  var resources, $submit, $show, $form;
-
-  // Initialize instance of module, calls setup()
-  var init = function( resource ) {
-    configure( resource );
-
-    $show.on( 'click', toggle );
-    $submit.on( 'click', submit );
-  };
-
-  // Build config object with jQuery obects and resources string
+// Parent module for configuring create and toggle modules
+var Config = (function() {
   var configure = function( resource ) {
-    resources = resource;
+    var config = {};
+
+    config.resources = resource;
 
     // Use singular form of resource for selector
     resource = singularize_resource( resource );
 
-    $submit = $('#create_' + resource);
-    $show   = $('#show_new_' + resource);
-    $form   = $('#new_' + resource);
+    config.$submit = $('#create_' + resource);
+    config.$show   = $('#show_new_' + resource);
+    config.$form   = $('#new_' + resource);
+
+    return config;
   };
 
   // Strip last character from plural resource
   var singularize_resource = function( resource ) {
     return resource.slice(0, -1);
+  };
+
+  // Expose public API
+  return {
+    configure: configure
+  };
+});
+
+// Define Resource#create module
+var create = (function() {
+
+  // Cache local references to jQuery objects for use
+  var $form, $show, $submit, resources;
+
+  // Initialize instance of module, calls setup()
+  var init = function( resource ) {
+    var config = Config().configure( resource );
+
+    // Expose objects from config to simplify reference
+    $form     = config.$form;
+    $show     = config.$show;
+    $submit   = config.$submit;
+    resources = config.resources;
+
+    $show.on( 'click', toggle );
+    $submit.on( 'click', submit );
   };
 
   // Toggle visibility of $form if hidden
@@ -45,7 +62,6 @@ var create = (function() {
       $form
         .addClass( 'visible' )
         .slideDown( 600, swap_buttons );
-
     }
 
     // Ensure nothing happens when link or button is clicked
