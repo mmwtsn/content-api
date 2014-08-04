@@ -1,68 +1,48 @@
-/**
- *
- * Gulp.js! A task runner.
- *
- */
-
-// Require Gulp
+// Require Gulp and Co.
 var gulp = require('gulp');
-
-// Require our plug-ins
 var sass       = require('gulp-sass');
 var jshint     = require('gulp-jshint');
 var concat     = require('gulp-concat');
 var uglify     = require('gulp-uglify');
-var rename     = require('gulp-rename');
 var scsslint   = require('gulp-scss-lint');
 var lintspaces = require('gulp-lintspaces');
 
-// Define asset paths
-var assetsPath = './public/assets';
-var sassPath   = assetsPath + '/scss/**/*.scss';
-var cssPath    = assetsPath + '/css';
-var jsPath     = assetsPath + '/js/*.js';
+// Base asset paths
+var root       = './public';
+var distPath   = root + '/dist';
+var assetsPath = root + '/assets';
 
-// JavaScript lint task
-gulp.task('jshint', function() {
+// Individual asset paths
+var sassPath   = assetsPath + '/scss/**/*.scss';
+var jsPath     = assetsPath + '/js/**/*.js';
+
+// Configuration objects
+var sassConfig = {'outputStyle': 'compressed'};
+var lintConfig = {'config': '.scss-lint.yml'};
+
+// JavaScript tasks
+gulp.task('scripts', function() {
   return gulp.src(jsPath)
     .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+    .pipe(jshint.reporter('default'))
+    .pipe(concat('scripts.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(distPath));
 });
 
-// SCSS lint task
-gulp.task('scss-lint', function() {
-  return gulp.src(sassPath)
-    .pipe(scsslint({
-      'config': '.scss-lint.yml'
-    }));
-});
-
-// SASS compilation task
-gulp.task('sass', function() {
-  return gulp.src(sassPath)
-    .pipe(sass({
-      'outputStyle': 'compressed'
-    }))
-    .pipe(gulp.dest(cssPath));
-});
-
-// Concatenate JavaScript
-gulp.task('concat', function() {
-  gulp.src(['config.js', 'create.js', 'toggle.js', 'init.js'])
-    .pipe(concat('scripts.js'));
-});
-
-// Uglify (minify and compress) JavaScript
-gulp.task('uglify', function() {
-  gulp.src(jsPath)
-    .pipe(uglify());
+// SASS tasks
+gulp.task('styles', function() {
+  return gulp.src([sassPath, '!' + assetsPath + '/scss/vendor/**/*.scss'])
+    .pipe(scsslint( lintConfig ))
+    .pipe(sass( sassConfig ))
+    .pipe(gulp.dest(distPath));
 });
 
 // Watch files for changes
 gulp.task('watch', function() {
-  gulp.watch(sassPath, ['sass']);
-  gulp.watch(jsPath, ['jshint']);
+  gulp.watch(sassPath, ['styles']);
+  gulp.watch(jsPath, ['scripts']);
 });
 
 // Default task definition
-gulp.task('default', ['jshint', 'scss-lint', 'concat', 'uglify', 'sass', 'watch']);
+gulp.task('default', ['scripts', 'styles', 'watch']);
