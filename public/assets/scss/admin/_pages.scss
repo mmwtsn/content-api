@@ -8,7 +8,17 @@
 .new_resource {
   display: none;
   clear: left;
-  padding: 1.5rem 0 1rem;
+  padding: 1.5rem 0 0;
+
+  input[type="submit"] {
+    display: none;
+    margin: 1rem 0 0;
+  }
+}
+
+.show-new-scenario,
+.show-new-resource {
+  margin: 1rem 0 0;
 }
 
 .products {
