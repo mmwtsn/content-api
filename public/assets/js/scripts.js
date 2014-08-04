@@ -1,32 +1,26 @@
 //
-// Handles the displaying of and submission of AJAX-ready #create forms
+// Parent module for configuring create and toggle modules
 //
 
-// Define Resource#create module
-var create = (function() {
+// Returns an object with the Rails Controller name and relevant jQuery objects
+var Config = (function() {
 
-  // Define config object for later use
-  var config = {};
-
-  // Initialize instance of module, calls setup()
-  var init = function( resource ) {
-    config = configure( resource );
-
-    config.$show.on( 'click', toggle );
-    config.$submit.on( 'click', submit );
-  };
-
-  // Build config object with jQuery obects and resources string
+  // Public method for building the configuration object
   var configure = function( resource ) {
-    config.resource = resource;
+    var config = {};
+
+    // Cache reference to Rails controller name
+    config.resources = resource;
 
     // Use singular form of resource for selector
     resource = singularize_resource( resource );
 
+    // Cache references to DOM elements
     config.$submit = $('#create_' + resource);
     config.$show   = $('#show_new_' + resource);
     config.$form   = $('#new_' + resource);
 
+    // Return configuration object
     return config;
   };
 
@@ -35,23 +29,42 @@ var create = (function() {
     return resource.slice(0, -1);
   };
 
+  // Expose public API
+  return {
+    configure: configure
+  };
+
+});
+
+//
+// Handles the displaying of AJAX-ready Controller#create forms
+//
+
+// Returns an initializer function
+var toggle = (function() {
+
+  // Cache local references to jQuery objects for use
+  var config = {};
+
+  // Initialize instance of module, calls setup()
+  var init = function( resource ) {
+    config = Config().configure( resource );
+
+    config.$show.on( 'click', toggle );
+  };
+
   // Toggle visibility of $form if hidden
   var toggle = function() {
 
-    // Cache references for readability
-    var $form = config.$form;
-    var $show = config.$show;
-
-    if( is_not_visible($form) ) {
+    if( is_not_visible(config.$form) ) {
 
       // Move $form into position
-      $form.insertBefore( $show );
+      config.$form.insertBefore( config.$show );
 
       // Update visibility and state
-      $form
+      config.$form
         .addClass( 'visible' )
         .slideDown( 600, swap_buttons );
-
     }
 
     // Ensure nothing happens when link or button is clicked
@@ -77,6 +90,29 @@ var create = (function() {
 
   };
 
+  // Expose public methods
+  return {
+    init: init
+  };
+});
+
+//
+// Handles the submission of AJAX-ready Controller#create forms
+//
+
+// Returns an initializer for binding to the submit event
+var create = (function() {
+
+  // Cache local references to jQuery objects for use
+  var config = {};
+
+  // Initialize instance of module, calls setup()
+  var init = function( resource ) {
+    config = Config().configure( resource );
+
+    config.$show.on( 'click', toggle );
+  };
+
   // Attempt to submit the create resource form
   var submit = function() {
     return form_is_complete() ? ajax_submit() : submit_error();
@@ -85,7 +121,7 @@ var create = (function() {
   // Checks to see if the create resource form is complete
   var form_is_complete = function() {
     var $input = config.$form.children( 'input[type="text"]' ).first();
-    var value  = $input.val();
+    var value  = config.$input.val();
 
     return (value !== '');
   };
@@ -122,7 +158,7 @@ var create = (function() {
   // Return the correct Rails RESTful resource path
   var build_nested_path = function() {
     var id = window.location.pathname;
-    var url = id + '/' + config.resource;
+    var url = id + '/' + resources;
 
     return url;
   };
@@ -132,17 +168,17 @@ var create = (function() {
     config.$form.children('input[type="text"]').val('');
   };
 
+  // Expose public methods
   return {
-    init: init,
-    config: config
+    init: init
   };
 
 });
 
-// Assign instances of create module
-var s = create();
-var r = create();
+// Initialize toggle module for Scenarios and Resources controllers
+var toggle_scenario = toggle().init( 'scenarios');
+var toggle_resource = toggle().init( 'resources' );
 
-// Initialize create module for Scenario and Resources
-s.init( 'scenarios' );
-r.init( 'resources' );
+// Initialize create module for Scenarios and Resources controllers
+var create_scenario = create().init( 'scenarios ');
+var create_resource = create().init( 'resources' );
