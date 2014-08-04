@@ -48,7 +48,7 @@ gulp.task('sass', function() {
 
 // Concatenate JavaScript
 gulp.task('concat', function() {
-  gulp.src('config.js', 'create.js', 'toggle.js', 'init.js')
+  gulp.src(['config.js', 'create.js', 'toggle.js', 'init.js'])
     .pipe(concat('scripts.js'));
 });
 
