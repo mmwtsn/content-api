@@ -46,6 +46,12 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(cssPath));
 });
 
+// Specify order of files piped into Gulp
+gulp.task('concat', function() {
+  gulp.src('config.js', 'create.js', 'toggle.js', 'init.js')
+    .pipe(concat('scripts.js'));
+});
+
 // Watch files for changes
 gulp.task('watch', function() {
   gulp.watch(sassPath, ['sass']);
@@ -53,4 +59,4 @@ gulp.task('watch', function() {
 });
 
 // Default task definition
-gulp.task('default', ['jshint', 'scss-lint', 'sass', 'watch']);
+gulp.task('default', ['jshint', 'scss-lint', 'concat', 'sass', 'watch']);
