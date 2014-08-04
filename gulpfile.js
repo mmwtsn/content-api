@@ -8,13 +8,12 @@
 var gulp = require('gulp');
 
 // Require our plug-ins
-var sass   = require('gulp-sass');
-var jshint = require('gulp-jshint');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var jshint = require('gulp-jshint');
-var scsslint = require('gulp-scss-lint');
+var sass       = require('gulp-sass');
+var jshint     = require('gulp-jshint');
+var concat     = require('gulp-concat');
+var uglify     = require('gulp-uglify');
+var rename     = require('gulp-rename');
+var scsslint   = require('gulp-scss-lint');
 var lintspaces = require('gulp-lintspaces');
 
 // Define asset paths
@@ -22,11 +21,6 @@ var assetsPath = './public/assets';
 var sassPath   = assetsPath + '/scss/**/*.scss';
 var cssPath    = assetsPath + '/css';
 var jsPath     = assetsPath + '/js/*.js';
-
-// TODO - Add these!
-// gulp-imagemin
-// gulp-minify-css
-// gulp-uglify
 
 // JavaScript lint task
 gulp.task('jshint', function() {
