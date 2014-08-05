@@ -20,7 +20,7 @@ feature 'Scenarios' do
     visit page_path(@page)
 
     click_link 'new scenario'
-    click_link 'save'
+    click_button 'save'
 
     expect(page).to have_content('Whoa!')
   end
@@ -36,7 +36,7 @@ feature 'Scenarios' do
     fill_in 'scenario_quote', with: @scenario.quote
     fill_in 'scenario_pitch', with: @scenario.pitch
 
-    click_link 'save'
+    click_button 'save'
 
     expect(page).to have_content(@scenario.quote)
   end
