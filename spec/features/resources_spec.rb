@@ -27,7 +27,7 @@ feature 'Resources' do
     fill_in 'resource_url', with: @resource.url
 
     # Submit form
-    click_link 'save'
+    click_button 'save'
 
     expect(page).to have_content(@resource.body)
   end
