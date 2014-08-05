@@ -16,13 +16,18 @@ var assetsPath = root + '/assets';
 var sassPath   = assetsPath + '/scss/**/*.scss';
 var jsPath     = assetsPath + '/js/**/*.js';
 
+// Ignored asset paths
+var sassIgnore = '!' + assetsPath + '/scss/vendor/**/*.scss';
+var jsIgnore   = '!' + assetsPath + '/js/vendor/**/*.js';
+
 // Ordered scripts path
 var jsOrdered  = [
   assetsPath + '/js/vendor/rails.js',
   assetsPath + '/js/config.js',
   assetsPath + '/js/toggle.js',
   assetsPath + '/js/create.js',
-  assetsPath + '/js/init.js'
+  assetsPath + '/js/init.js',
+  jsIgnore
 ];
 
 // Configuration objects
@@ -41,7 +46,7 @@ gulp.task( 'scripts', function() {
 
 // SASS tasks
 gulp.task( 'styles', function() {
-  return gulp.src( sassPath )
+  return gulp.src( [sassPath, sassIgnore] )
     .pipe(scsslint( lintConfig ))
     .pipe( sass(sassConfig) )
     .pipe(gulp.dest( distPath ));
