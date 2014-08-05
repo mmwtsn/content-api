@@ -16,13 +16,22 @@ var assetsPath = root + '/assets';
 var sassPath   = assetsPath + '/scss/**/*.scss';
 var jsPath     = assetsPath + '/js/**/*.js';
 
+// Ordered scripts path
+var jsOrdered  = [
+  assetsPath + '/js/vendor/rails.js',
+  assetsPath + '/js/config.js',
+  assetsPath + '/js/toggle.js',
+  assetsPath + '/js/create.js',
+  assetsPath + '/js/init.js'
+];
+
 // Configuration objects
 var sassConfig = {'outputStyle': 'compressed'};
 var lintConfig = {'config': '.scss-lint.yml'};
 
 // JavaScript tasks
 gulp.task('scripts', function() {
-  return gulp.src(jsPath)
+  return gulp.src( jsOrdered )
     .pipe(jshint())
     .pipe(jshint.reporter('default'))
     .pipe(concat('scripts.js'))
