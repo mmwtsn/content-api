@@ -12,7 +12,7 @@ var create = (function() {
   var init = function( resource ) {
     config = Config().configure( resource );
 
-    config.$show.on( 'click', toggle );
+    config.$submit.on( 'click', submit );
   };
 
   // Attempt to submit the create resource form
@@ -23,7 +23,7 @@ var create = (function() {
   // Checks to see if the create resource form is complete
   var form_is_complete = function() {
     var $input = config.$form.children( 'input[type="text"]' ).first();
-    var value  = config.$input.val();
+    var value  = $input.val();
 
     return (value !== '');
   };
