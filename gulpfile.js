@@ -2,13 +2,14 @@
 var gulp       = require( 'gulp' );
 var sass       = require( 'gulp-sass' );
 var jshint     = require( 'gulp-jshint' );
+var filter     = require( 'gulp-filter' );
 var concat     = require( 'gulp-concat' );
 var uglify     = require( 'gulp-uglify' );
 var scsslint   = require( 'gulp-scss-lint' );
 var lintspaces = require( 'gulp-lintspaces' );
 
 // Base asset paths
-var root       = './public';
+var root       = 'public';
 var distPath   = root + '/dist';
 var assetsPath = root + '/assets';
 
@@ -20,14 +21,13 @@ var jsPath     = assetsPath + '/js/**/*.js';
 var sassIgnore = '!' + assetsPath + '/scss/vendor/**/*.scss';
 var jsIgnore   = '!' + assetsPath + '/js/vendor/**/*.js';
 
-// Ordered scripts path
+// Ordered scripts path without third-party vendor scripts
 var jsOrdered  = [
   assetsPath + '/js/vendor/rails.js',
   assetsPath + '/js/config.js',
   assetsPath + '/js/toggle.js',
   assetsPath + '/js/create.js',
-  assetsPath + '/js/init.js',
-  jsIgnore
+  assetsPath + '/js/init.js'
 ];
 
 // Configuration objects
@@ -36,9 +36,13 @@ var lintConfig = { 'config': '.scss-lint.yml' };
 
 // JavaScript tasks
 gulp.task( 'scripts', function() {
-  return gulp.src( jsOrdered )
+var vendorFilter = filter( jsIgnore );
+
+  return gulp.src( jsOrdered ) // Pass in all scripts
+    .pipe( vendorFilter ) // Filter out vendor scripts
     .pipe( jshint() )
     .pipe( jshint.reporter('default') )
+    .pipe( vendorFilter.restore() ) // Restore vendor scripts
     .pipe( concat('scripts.js') )
     .pipe( uglify() )
     .pipe( gulp.dest(distPath) );
