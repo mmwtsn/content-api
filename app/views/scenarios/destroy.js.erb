@@ -4,9 +4,9 @@ $('.delete-scenario').bind('ajax:success', function() {
   $(this).parents('.scenario').remove();
 
   // If user just deleted the last scenario, don't blow a hole in the page
-  if (!$('.scenarios.all .scenario').length) {
+  if (!$('.scenarios .scenario').length) {
     // TODO - abstract this into a partial
-    $('.scenarios.all').append(
+    $('.scenarios').append(
       '<section class="empty">'
     +   '<p>no saved scenarios&#133;</p>'
     + '</section>'
