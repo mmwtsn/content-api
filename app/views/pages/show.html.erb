@@ -16,22 +16,5 @@
   <%= render 'resources/resources' %>
 </section>
 
-<%= form_for([@page, @page.scenarios.build]) do |f| %>
-  <%= f.label :quote %>
-  <%= f.text_field :quote %>
-
-  <%= f.label :pitch %>
-  <%= f.text_field :pitch %>
-
-  <%= f.submit 'save', class: 'btn secondary', id: 'create_scenario' %>
-<% end %>
-
-<%= form_for([@page, @page.resources.build]) do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
-
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-
-  <%= f.submit 'save', class: 'btn secondary', id: 'create_resource' %>
-<% end %>
+<%= render 'scenarios/form' %>
+<%= render 'resources/form' %>

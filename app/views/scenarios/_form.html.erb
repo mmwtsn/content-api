@@ -1,23 +1,12 @@
-<%= form_for [@page, @scenario], html: { multipart: true } do |f| %>
-  <% if @scenario.errors.any? %>
-  <div class="errors">
-    <p><%= pluralize(@scenario.errors.count, 'error') %>:</p>
-    <ul>
-      <% @scenario.errors.full_messages.each do |error| %>
-        <li class="error"><%= error %></li>
-      <% end %>
-    </ul>
-  </div>
-  <% end %>
-
+<%= form_for [@page, @page.scenarios.build], html: { multipart: true } do |f| %>
   <%= f.label :quote %>
   <%= f.text_field :quote, autofocus: true %>
 
   <%= f.label :pitch %>
-  <%= f.text_area :pitch %>
+  <%= f.text_field :pitch %>
 
   <%= f.label :avatar %>
   <%= f.file_field :avatar %>
 
-  <%= f.submit 'save', class: 'btn primary' %>
+  <%= f.submit 'save', class: 'btn secondary', id: 'create_scenario' %>
 <% end %>
