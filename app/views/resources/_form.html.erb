@@ -1,0 +1,9 @@
+<%= form_for([@page, @page.resources.build]) do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.label :url %>
+  <%= f.text_field :url %>
+
+  <%= f.submit 'save', class: 'btn secondary', id: 'create_resource' %>
+<% end %>
