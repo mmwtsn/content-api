@@ -3,9 +3,5 @@
     $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
   <% end %>
 <% else %>
-  // TODO - see scenarios/create.js.erb
-  $('.all.resources').html("<%= j render('resources') %>");
-
-  // Empty all text fields in form
-  $('.new_resource input[type="text"]').val('');
+  $('.resources').html("<%= j render('resources') %>");
 <% end %>

@@ -4,9 +4,9 @@ $('.delete-resource').bind('ajax:success', function() {
   $(this).parents('.resource').remove();
 
   // If user just deleted the last resource, don't blow a hole in the page
-  if (!$('.resources.all .resource').length) {
+  if (!$('.resources .resource').length) {
     // TODO - abstract this into a partial
-    $('.resources.all').append(
+    $('.resources').append(
       '<section class="empty">'
     +   '<p>no saved resources&#133;</p>'
     + '</section>'
