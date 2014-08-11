@@ -60,7 +60,7 @@ var create = (function() {
   // Return the correct Rails RESTful resource path
   var build_nested_path = function() {
     var id = window.location.pathname;
-    var url = id + '/' + resources;
+    var url = id + '/' + config.resources;
 
     return url;
   };
