@@ -11,10 +11,6 @@ class PagesController < ApplicationController
     redirect_to pages_path
   end
 
-  def new
-    @page = Page.new
-  end
-
   def edit
   end
 
