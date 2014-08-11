@@ -1,6 +1,6 @@
 class ScenariosController < ApplicationController
   before_action :authenticate_user!
-  before_action :build_page, only: [:new, :create]
+  before_action :build_page, only: [:create]
   before_action :build_scenario, only: [:edit, :show, :update, :destroy]
 
   require "#{Rails.root}/lib/product_api"
