@@ -2,6 +2,8 @@ class Scenario < ActiveRecord::Base
   belongs_to :page
   has_many :products
 
+  validates_presence_of :name
+
   # Paperclip file configuration
   has_attached_file :avatar,
                     :styles => { :default => '175x175' },

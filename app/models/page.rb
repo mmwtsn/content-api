@@ -2,6 +2,8 @@ class Page < ActiveRecord::Base
   has_many :scenarios, dependent: :destroy
   has_many :resources, dependent: :destroy
 
+  validates_presence_of :name
+
   # Paperclip file configuration
   has_attached_file :header,
                     :styles => { :default => '1900x300' },
