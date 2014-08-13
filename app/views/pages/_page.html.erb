@@ -1,4 +1,8 @@
 <section class="solution card">
+  <div class="card-name">
+    <%= content_tag :p, @page.name + ' Content' %>
+  </div>
+
   <div class="card-container">
     <%= image_tag @page.header, class: 'page-header' %>
     <%= content_tag :h2, @page.title, class: 'section-header' %>
