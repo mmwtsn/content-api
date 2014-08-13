@@ -1,5 +1,7 @@
 <% content_for :sub_header do %>
-  <h1>Edit Scenario</h1>
+  <h1 class="edit">
+    <span class="action">Edit</span> <%= @scenario.name %>
+  </h1>
 <% end %>
 
 <%= form_for @scenario, html: { multipart: true } do |f| %>

@@ -1,5 +1,7 @@
 <% content_for :sub_header do %>
-  <h1>Edit Solution</h1>
+  <h1 class="edit">
+    <span class="action">Edit</span> <%= @page.name %>
+  </h1>
 <% end %>
 
 <%= render 'form' %>
