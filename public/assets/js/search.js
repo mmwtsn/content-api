@@ -7,8 +7,6 @@ $search_input.on('click', function(e) {
   var query = $( '#product' ).val();
   var $results = $('.results');
 
-  console.log( 'CLICK' );
-
   // Ensure results and errors are cleared between searches
   $results.empty();
 
@@ -32,7 +30,6 @@ $('#clear-search').on('click', function( e ) {
 
   $('.results').empty();
 
-  // This selector is stupid--remove the ID or rename "product"
   $('#product').val('');
 
   $('.search-instructions').hide();
