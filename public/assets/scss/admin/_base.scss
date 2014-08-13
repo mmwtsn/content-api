@@ -231,12 +231,23 @@ a {
   }
 }
 
+.collection-header {
+  overflow: hidden;
+}
+
+.collection-type {
+  display: inline-block;
+  float: right;
+  font-family: 'LubalinDemiIBM';
+  color: #777;
+}
+
 .card-container {
   padding: 2rem 2rem 1rem;
 }
 
 .card-name {
-  padding: 2rem 2rem;
+  padding: 2rem;
   border-bottom: 1px solid #e7e7e7;
   text-align: center;
   color: #aaa;
