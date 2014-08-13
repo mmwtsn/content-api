@@ -1,8 +1,13 @@
 class Scenario < ActiveRecord::Base
+  extend FriendlyId
+
   belongs_to :page
   has_many :products
 
   validates_presence_of :name
+
+  # Use :name field as slug for ID
+  friendly_id :name, use: :slugged
 
   # Paperclip file configuration
   has_attached_file :avatar,
