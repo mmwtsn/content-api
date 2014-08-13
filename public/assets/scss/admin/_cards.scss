@@ -1,0 +1,58 @@
+// Container for group of related information, e.g. a form or resource
+.card {
+  background: #fff;
+  margin: 1rem 0 2rem;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: 0 10px 10px -10px #ddd;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  img {
+    margin: 0 0 1rem;
+  }
+}
+
+// Interior container inside .card, between header and footer
+.card-container {
+  padding: 2rem 2rem 1rem;
+}
+
+// Name of model instance, card title
+.card-name {
+  padding: 2rem;
+  border-bottom: 1px solid #e7e7e7;
+  text-align: center;
+  color: #aaa;
+
+  p {
+    margin: 0;
+  }
+}
+
+// Footer that contains links to various Rails actions
+.card-admin {
+  padding: 1rem 2rem;
+  border-top: 1px solid #e7e7e7;
+
+  a {
+    padding: 0 1rem 0 0;
+    color: #aaa;
+
+    &:hover {
+      color: $link;
+    }
+  }
+
+  // Links to controller actions
+  .new,
+  .preview {
+    float: right;
+    padding: 0;
+    color: #84d590;
+    color: $link;
+  }
+}
