@@ -1,4 +1,7 @@
-<%= link_to 'new resource', '#', class: 'btn secondary show-new-resource', id: 'show_new_resource' %>
+<header class="collection-header">
+  <%= link_to 'new resource', '#', class: 'btn secondary show-new-resource', id: 'show_new_resource' %>
+  <%= content_tag :h2, 'Resources', class: 'collection-type' %>
+</header>
 
 <% if @page.resources.each do |resource| %>
 <section class="resource card">
