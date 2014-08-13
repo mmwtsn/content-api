@@ -1,8 +1,13 @@
 class Page < ActiveRecord::Base
+  extend FriendlyId
+
   has_many :scenarios, dependent: :destroy
   has_many :resources, dependent: :destroy
 
   validates_presence_of :name
+
+  # Use :name field as slug for ID
+  friendly_id :name, use: :slugged
 
   # Paperclip file configuration
   has_attached_file :header,
