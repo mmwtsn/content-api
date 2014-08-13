@@ -10,6 +10,7 @@ gem 'therubyracer'
 
 # Misc. Rails helper libraries
 gem 'jbuilder', '~> 2.0'
+gem 'friendly_id', '~> 5.0.0'
 
 # Authentication
 gem 'devise'
