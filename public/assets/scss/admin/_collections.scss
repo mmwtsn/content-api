@@ -1,0 +1,31 @@
+// Collection of Rails resources (e.g. Page collection)
+.collection {
+  margin: 1rem 0 6rem;
+}
+
+// Contains link to controller action and optional type
+.collection-header {
+  overflow: hidden;
+}
+
+// Nested within .collections-header
+.collection-type {
+  display: inline-block;
+  float: right;
+  font-family: 'LubalinDemiIBM';
+  color: #aaa;
+}
+
+// Default "empty" state before cards have been added
+.empty {
+  margin: 1rem 0;
+  border: 2px dashed #ccc;
+  background: #f3f3f3;
+  text-align: center;
+  min-height: 100px;
+
+  p {
+    line-height: 100px;
+    color: #aaa;
+  }
+}
