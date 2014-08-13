@@ -9,8 +9,14 @@
     background: #fff;
     padding: 3rem;
 
-    .btn {
-      margin: 1rem 0;
+    // Modifies h1 within edit views
+    .edit {
+      color: #aaa;
+    }
+
+    // Nested element to highlight controller action
+    span {
+      color: #333;
     }
   }
 
