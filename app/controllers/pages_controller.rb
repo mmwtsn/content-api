@@ -61,6 +61,6 @@ class PagesController < ApplicationController
   end
 
   def get_requested_page
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
   end
 end
