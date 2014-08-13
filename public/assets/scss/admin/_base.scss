@@ -36,6 +36,17 @@ input {
 }
 
 //
+// Form elements
+//
+textarea,
+input[type="text"] {
+
+  &:focus {
+    border-color: #c4c4c4;
+  }
+}
+
+//
 // Buttons and links
 //
 
