@@ -6,6 +6,10 @@ class PagesController < ApplicationController
     @pages = Page.all
   end
 
+  def new
+    @page = Page.new
+  end
+
   def create
     Page.create!(page_params)
     redirect_to pages_path
