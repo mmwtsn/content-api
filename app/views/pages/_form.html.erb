@@ -12,8 +12,11 @@
       </div>
       <% end %>
 
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true %>
+
       <%= f.label :title %>
-      <%= f.text_field :title, autofocus: true %>
+      <%= f.text_field :title %>
 
       <%= f.label :body %>
       <%= f.text_area :body %>
