@@ -228,10 +228,6 @@ a {
   border-radius: 3px;
   box-shadow: 0 10px 10px -10px #ddd;
 
-  &:last-child {
-    margin: 1rem 0 4rem;
-  }
-
   h1,
   h2,
   h3,
@@ -240,6 +236,10 @@ a {
   img {
     margin: 0 0 1rem;
   }
+}
+
+.collection {
+  margin: 1rem 0 6rem;
 }
 
 .collection-header {
