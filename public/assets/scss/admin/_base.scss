@@ -302,24 +302,3 @@ a {
     color: #aaa;
   }
 }
-
-.admin_bar {
-  margin: 5rem 0 0;
-  overflow: hidden;
-
-  h1 {
-    float: left;
-  }
-
-  .btn {
-    float: right;
-  }
-
-  .btn.secondary {
-    margin: 0.5rem 0.2rem 0 0.5rem;
-  }
-
-  &.masthead {
-    margin: 0 0 2rem;
-  }
-}
