@@ -43,14 +43,14 @@ class ScenariosController < ApplicationController
   private
 
   def scenario_params
-    params.require(:scenario).permit(:quote, :pitch, :avatar, :page_id)
+    params.require(:scenario).permit(:name, :quote, :pitch, :avatar, :page_id)
   end
 
   def build_page
-    @page = Page.find(params[:page_id])
+    @page = Page.friendly.find(params[:page_id])
   end
 
   def build_scenario
-    @scenario = Scenario.find(params[:id])
+    @scenario = Scenario.friendly.find(params[:id])
   end
 end
