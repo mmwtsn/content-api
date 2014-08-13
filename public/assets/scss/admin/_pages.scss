@@ -2,6 +2,12 @@
   width: 100%;
 }
 
+.page-state {
+  float: right;
+  font-weight: 300;
+  color: #eda6a6;
+}
+
 // Hide forms on for nested resources
 // on pages#show by default
 .new_scenario,
