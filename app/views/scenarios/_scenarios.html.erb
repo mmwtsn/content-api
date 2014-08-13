@@ -1,4 +1,7 @@
-<%= link_to 'new scenario', '#', class: 'btn secondary show-new-scenario', id: 'show_new_scenario' %>
+<header class="collection-header">
+  <%= link_to 'new scenario', '#', class: 'btn secondary show-new-scenario', id: 'show_new_scenario' %>
+  <%= content_tag :h2, 'Scenarios', class: 'collection-type' %>
+</header>
 
 <% if @page.scenarios.each do |scenario| %>
 <section class="scenario card">
