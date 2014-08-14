@@ -4,23 +4,27 @@
   </h1>
 <% end %>
 
-<%= form_for @resource do |f| %>
-  <% if @resource.errors.any? %>
-  <div class="errors">
-    <p><%= pluralize(@resource.errors.count, 'error') %>:</p>
-    <ul>
-      <% @resource.errors.full_messages.each do |error| %>
-        <li class="error"><%= error %></li>
+<section class="scenario card">
+  <div class="card-container">
+    <%= form_for @resource do |f| %>
+      <% if @resource.errors.any? %>
+      <div class="errors">
+        <p><%= pluralize(@resource.errors.count, 'error') %>:</p>
+        <ul>
+          <% @resource.errors.full_messages.each do |error| %>
+            <li class="error"><%= error %></li>
+          <% end %>
+        </ul>
+      </div>
       <% end %>
-    </ul>
+
+      <%= f.label :body %>
+      <%= f.text_field :body, autofocus: true %>
+
+      <%= f.label :url %>
+      <%= f.text_area :url %>
+
+      <%= f.submit 'save', class: 'btn primary' %>
+    <% end %>
   </div>
-  <% end %>
-
-  <%= f.label :body %>
-  <%= f.text_field :body, autofocus: true %>
-
-  <%= f.label :url %>
-  <%= f.text_area :url %>
-
-  <%= f.submit 'save', class: 'btn primary' %>
-<% end %>
+</section>
