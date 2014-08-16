@@ -7,6 +7,10 @@
 <div class="pages">
 <% if @pages.each do |page| %>
   <section class="page card">
+    <div class="card-name">
+      <%= content_tag :p, page.name %>
+    </div>
+
     <div class="card-container">
       <%= image_tag page.header, class: 'page-header' %>
 
