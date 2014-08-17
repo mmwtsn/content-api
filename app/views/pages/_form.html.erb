@@ -1,4 +1,4 @@
-<%= form_for @page, html: { multipart: true } do |f| %>
+<%= form_for @page, html: { multipart: true }, remote: true do |f| %>
   <div class="card-container">
     <%= image_tag @page.header, class: 'page-header' %>
 
