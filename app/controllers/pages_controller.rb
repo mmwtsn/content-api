@@ -23,6 +23,7 @@ class PagesController < ApplicationController
   end
 
   def preview
+    # TODO - This creeped in from a feature prototype; it needs refactoring
     solution  = @page
     resources = solution.resources
     scenarios = solution.scenarios
