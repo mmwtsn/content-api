@@ -1,0 +1,9 @@
+<% if @page.errors.any? %>
+  console.log(<%= pluralize(@page.errors.count, 'error') %>);
+  <% @page.errors.full_messages.each do |error| %>
+    console.log(<%= error %>);
+  <% end %>
+  $('.solution').html('<%= j render "form" %>');
+<% else %>
+  $('.solution').html('<%= j render "page" %>');
+<% end %>
