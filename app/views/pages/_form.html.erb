@@ -1,7 +1,7 @@
 <ul class="errors"></ul>
-<%= form_for @page, html: { multipart: true }, remote: true do |f| %>
+<%= form_for object, html: { multipart: true }, remote: true do |f| %>
   <div class="card-container">
-    <%= image_tag @page.header, class: 'page-header' %>
+    <%= image_tag object.header, class: 'page-header' %>
 
     <%= f.text_field :name, class: 'page-name', autofocus: true %>
     <%= f.text_field :title %>
