@@ -35,7 +35,7 @@
 
 // Footer that contains links to various Rails actions
 .card-admin {
-  padding: 1rem 2rem;
+  padding: 0 1rem;
   border-top: 1px solid #e7e7e7;
 
   a {
@@ -51,7 +51,6 @@
   .new,
   .preview {
     float: right;
-    padding: 0;
     color: #84d590;
     color: $link;
   }
