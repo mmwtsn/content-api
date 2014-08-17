@@ -155,12 +155,23 @@ a {
 // System messages
 //
 
+// TODO - This is boilerplate from Bitters, is it still necessary?
 .error {
   @extend %flash-error;
 }
 
 .notice {
   @extend %flash-success;
+}
+
+.errors {
+  display: none;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  border: 1px solid darken($error, 2%);
+  border-radius: 2px;
+  background: $error;
+  color: darken($error, 13%);
 }
 
 //
