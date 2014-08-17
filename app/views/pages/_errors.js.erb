@@ -1,5 +1,6 @@
-console.log('<%= pluralize(object.errors.count, 'error') %>');
+var $errors = $('.errors');
+$errors.empty()
+
 <% object.errors.full_messages.each do |error| %>
-  console.log('<%= error %>');
+  $errors.append('<li><%= error %></li>');
 <% end %>
-$('.solution').html('<%= j render "form", object: object %>');
