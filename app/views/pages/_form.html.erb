@@ -1,37 +1,17 @@
-<section class="page card">
+<%= form_for @page, html: { multipart: true } do |f| %>
   <div class="card-container">
-    <%= form_for @page, html: { multipart: true } do |f| %>
-      <% if @page.errors.any? %>
-      <div class="errors">
-        <p><%= pluralize(@page.errors.count, 'error') %>:</p>
-        <ul>
-          <% @page.errors.full_messages.each do |error| %>
-            <li class="error"><%= error %></li>
-          <% end %>
-        </ul>
-      </div>
-      <% end %>
+    <%= image_tag @page.header, class: 'page-header' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, autofocus: true %>
+    <%= f.text_field :name, class: 'page-name', autofocus: true %>
+    <%= f.text_field :title %>
+    <%= f.text_area :body %>
+    <%= f.file_field :header %>
 
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-
-      <%= f.label :body %>
-      <%= f.text_area :body %>
-
-      <% if @page.header %>
-        <p><%= @page.header_file_name %></p>
-      <% end %>
-
-      <%= f.label :header %>
-      <%= f.file_field :header %>
-
-      <%= f.label :published  %>
-      <%= f.check_box :published %>
-
-      <%= f.submit 'save', class: 'btn primary' %>
-    <% end %>
+    <%# f.label :published  %>
+    <%# f.check_box :published %>
   </div>
-</section>
+
+  <div class="card-admin">
+    <%= f.submit 'save', class: 'btn plain' %>
+  </div>
+<% end %>
