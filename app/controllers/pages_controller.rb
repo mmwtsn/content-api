@@ -12,8 +12,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    Page.create!(page_params)
-    redirect_to pages_path
+    @page = Page.create!(page_params)
   end
 
   def edit
