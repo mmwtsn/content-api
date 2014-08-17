@@ -2,5 +2,7 @@ var $errors = $('.errors');
 $errors.empty()
 
 <% object.errors.full_messages.each do |error| %>
-  $errors.append('<li><%= error %></li>');
+  $errors.append('<li><strong>Hey!</strong> <%= error %>.</li>');
 <% end %>
+
+$errors.slideDown();
