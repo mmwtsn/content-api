@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  respond_to :html, :js
   before_action :authenticate_user!, except: [:preview]
   before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
 
@@ -47,11 +48,7 @@ class PagesController < ApplicationController
   end
 
   def update
-    if @page.update(page_params)
-      redirect_to @page
-    else
-      render 'edit'
-    end
+    @page.update(page_params)
   end
 
   def destroy
