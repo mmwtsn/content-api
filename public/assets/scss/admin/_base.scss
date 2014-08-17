@@ -133,7 +133,7 @@ a {
   &.plain {
     border: 0;
     background: inherit;
-    padding: 0;
+    padding: 1rem;
 
     &:hover {
       color: $link;
