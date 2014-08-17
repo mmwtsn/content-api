@@ -42,7 +42,8 @@ textarea,
 input[type="text"] {
 
   &:focus {
-    border-color: #c4c4c4;
+    border-color: #efefb4;
+    background-color: #fefee7;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) inset, 0 6px 6px -7px rgba(55, 112, 192, 0.7);
   }
 }
