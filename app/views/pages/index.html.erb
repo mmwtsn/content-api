@@ -19,10 +19,10 @@
     </div>
 
     <div class="card-admin">
-      <%= link_to "view", page_path(page) %>
-      <%= link_to "edit", edit_page_path(page) %>
-      <%= link_to 'delete', page_path(page), method: :delete %>
-      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'preview' %>
+      <%= link_to "view", page_path(page), class: 'btn plain' %>
+      <%= link_to "edit", edit_page_path(page), class: 'btn plain' %>
+      <%= link_to 'delete', page_path(page), method: :delete, class: 'btn plain' %>
+      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'btn plain preview' %>
     </div>
   </section>
 <% end.empty? %>
