@@ -7,6 +7,10 @@
 <section class="resource card">
   <div class="card-container">
     <%= content_tag :p, resource.body %>
+
+    <%= content_tag :small do %>
+      <%= link_to resource.url %>
+    <% end %>
   </div>
 
   <div class="card-admin">
