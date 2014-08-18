@@ -38,12 +38,10 @@
   padding: 0 1rem;
   border-top: 1px solid #e7e7e7;
 
-  a,
-  button,
-  input[type="submit"] {
+  .link {
     color: #aaa;
 
-    &:hover {
+    &.primary {
       color: $link;
     }
   }
