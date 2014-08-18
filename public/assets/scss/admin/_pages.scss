@@ -8,6 +8,12 @@
   color: #eda6a6;
 }
 
+.page-name {
+  font-weight: 700;
+  font-size: 2rem !important;
+  margin: 0 0 0.75rem !important;
+}
+
 // Hide forms on for nested resources
 // on pages#show by default
 .new_scenario,
@@ -36,12 +42,5 @@
 
   img {
     width: 3.5rem;
-  }
-}
-
-.edit_page {
-  .btn {
-    display: block;
-    margin: 1rem 0;
   }
 }

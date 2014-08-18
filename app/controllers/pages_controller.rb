@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
+  respond_to :html, :js
   before_action :authenticate_user!, except: [:preview]
   before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
 
   def index
-    @pages = Page.all
+    @pages = Page.order(id: :desc).all
   end
 
   def new
@@ -11,8 +12,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    Page.create!(page_params)
-    redirect_to pages_path
+    @page = Page.create!(page_params)
   end
 
   def edit
@@ -22,6 +22,7 @@ class PagesController < ApplicationController
   end
 
   def preview
+    # TODO - This creeped in from a feature prototype; it needs refactoring
     solution  = @page
     resources = solution.resources
     scenarios = solution.scenarios
@@ -47,11 +48,7 @@ class PagesController < ApplicationController
   end
 
   def update
-    if @page.update(page_params)
-      redirect_to @page
-    else
-      render 'edit'
-    end
+    @page.update(page_params)
   end
 
   def destroy

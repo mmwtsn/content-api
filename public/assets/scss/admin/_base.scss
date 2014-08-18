@@ -42,7 +42,8 @@ textarea,
 input[type="text"] {
 
   &:focus {
-    border-color: #c4c4c4;
+    border-color: #efefb4;
+    background-color: #fefee7;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) inset, 0 6px 6px -7px rgba(55, 112, 192, 0.7);
   }
 }
@@ -129,6 +130,16 @@ a {
     }
   }
 
+  &.plain {
+    border: 0;
+    background: inherit;
+    padding: 1rem;
+
+    &:hover {
+      color: $link;
+    }
+  }
+
   &.small {
     font-size: 0.8rem;
     margin: 0.5rem 0.2rem 0 0;
@@ -144,12 +155,23 @@ a {
 // System messages
 //
 
+// TODO - This is boilerplate from Bitters, is it still necessary?
 .error {
   @extend %flash-error;
 }
 
 .notice {
   @extend %flash-success;
+}
+
+.errors {
+  display: none;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  border: 1px solid darken($error, 2%);
+  border-radius: 2px;
+  background: $error;
+  color: darken($error, 13%);
 }
 
 //
@@ -169,3 +191,9 @@ a {
   display: block;
 }
 
+//
+// JavaScript Styles
+//
+.js-hidden {
+  display: none;
+}
