@@ -4,10 +4,10 @@
 
     <%= image_tag object.header, class: 'page-header' %>
 
-    <%= f.text_field :name, class: 'page-name', autofocus: true %>
-    <%= f.text_field :title %>
-    <%= f.text_area :body %>
-    <%= f.file_field :header %>
+    <%= f.text_field :name, class: 'page-name', autofocus: true, placeholder: 'Solution Name' %>
+    <%= f.text_field :title, placeholder: 'Leadspace Copy' %>
+    <%= f.text_area :body, placeholder: 'Body Copy' %>
+    <%= f.file_field :header, placeholder: 'Leadspace Image' %>
 
     <%# f.label :published  %>
     <%# f.check_box :published %>
