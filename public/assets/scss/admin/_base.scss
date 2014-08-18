@@ -166,7 +166,7 @@ a {
 
 .errors {
   display: none;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1rem;
   padding: 1rem;
   border: 1px solid darken($error, 2%);
   border-radius: 2px;
@@ -191,3 +191,9 @@ a {
   display: block;
 }
 
+//
+// JavaScript Styles
+//
+.js-hidden {
+  display: none;
+}
