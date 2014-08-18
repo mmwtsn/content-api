@@ -25,10 +25,10 @@
     </div>
 
     <div class="card-admin">
-      <%= link_to "view", page_path(page), class: 'btn plain' %>
-      <%= link_to "edit", edit_page_path(page), class: 'btn plain' %>
-      <%= link_to 'delete', page_path(page), method: :delete, class: 'btn plain' %>
-      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'btn plain preview' %>
+      <%= link_to "view", page_path(page), class: 'link plain' %>
+      <%= link_to "edit", edit_page_path(page), class: 'link plain' %>
+      <%= link_to 'delete', page_path(page), method: :delete, class: 'link plain' %>
+      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'link plain preview' %>
     </div>
   </section>
 <% end.empty? %>
