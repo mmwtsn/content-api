@@ -12,8 +12,8 @@
 </section>
 
 <% if @pages.each do |page| %>
-  <section class="page solution card">
-    <div class="card-container <%= page.published? ? 'published' : 'unpublished' %>">
+  <section class="page solution card <%= page.published? ? 'published' : 'unpublished' %>">
+    <div class="card-container">
       <%= image_tag page.header, class: 'page-header' %>
 
       <%= content_tag :h2, page.name %>
