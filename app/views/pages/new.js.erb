@@ -1,1 +1,1 @@
-$('.pages').prepend('<%= j render 'new', object: @page %>');
+$('.page.new').html('<%= j render 'new', object: @page %>').slideDown(800).removeClass('js-hidden');
