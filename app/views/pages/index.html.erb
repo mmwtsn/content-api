@@ -13,20 +13,17 @@
 
 <% if @pages.each do |page| %>
   <section class="page solution card">
-    <div class="card-name">
-      <%= content_tag :p, page.name %>
-    </div>
-
-    <div class="card-container">
+    <div class="card-container <%= page.published? ? 'published' : 'unpublished' %>">
       <%= image_tag page.header, class: 'page-header' %>
 
-      <h2><%= page.title %><span class="page-state"> <%= page.published? ? 'published' : 'unpublished' %></span></h2>
-      <p><%= page.body %></p>
+      <%= content_tag :h2, page.name %>
+      <%= content_tag :h3, page.title %>
+      <%= content_tag :p, page.body %>
     </div>
 
     <div class="card-admin">
-      <%= link_to "view", page_path(page), class: 'link plain' %>
-      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'link plain preview' %>
+      <%= link_to "view", page_path(page), class: 'link' %>
+      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'link' %>
     </div>
   </section>
 <% end.empty? %>
