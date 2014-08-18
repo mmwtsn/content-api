@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
 
   def index
-    @pages = Page.all
+    @pages = Page.order(id: :desc).all
   end
 
   def new
