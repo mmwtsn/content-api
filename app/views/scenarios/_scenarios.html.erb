@@ -5,12 +5,9 @@
 
 <% if @page.scenarios.each do |scenario| %>
 <section class="scenario card">
-  <div class="card-name">
-    <%= content_tag :p, scenario.name %>
-  </div>
-
   <div class="card-container">
     <%= image_tag scenario.avatar, class: 'scenario-avatar icon' %>
+    <%= content_tag :h2, scenario.name %>
     <%= content_tag :h3, scenario.quote %>
     <%= content_tag :p ,scenario.pitch %>
 
