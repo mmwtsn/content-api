@@ -144,20 +144,24 @@ a {
 .link {
   display: inline-block;
   cursor: pointer;
-  padding: 0.5rem 1rem;
   text-decoration: none;
+  border: 0;
+  background: inherit;
+  padding: 1rem;
 
-  &.plain {
-    border: 0;
-    background: inherit;
-    padding: 1rem;
+  &:hover {
+    color: $link;
+  }
+
+  &.primary {
+    color: $link;
 
     &:hover {
-      color: $link;
+      color: darken($link, 5%);
     }
 
-    &.primary {
-      color: $link;
+    &:active {
+      color: darken($link, 10%);
     }
   }
 }
