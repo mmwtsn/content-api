@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'pages#index'
 
   resources :pages, shallow: true do
     member do
