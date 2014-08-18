@@ -130,16 +130,6 @@ a {
     }
   }
 
-  &.plain {
-    border: 0;
-    background: inherit;
-    padding: 1rem;
-
-    &:hover {
-      color: $link;
-    }
-  }
-
   &.small {
     font-size: 0.8rem;
     margin: 0.5rem 0.2rem 0 0;
@@ -148,6 +138,27 @@ a {
 
   &.large {
     font-size: 1.2rem;
+  }
+}
+
+.link {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+
+  &.plain {
+    border: 0;
+    background: inherit;
+    padding: 1rem;
+
+    &:hover {
+      color: $link;
+    }
+
+    &.primary {
+      color: $link;
+    }
   }
 }
 
