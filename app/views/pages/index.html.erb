@@ -4,9 +4,15 @@
 
 <%= link_to 'create page', new_page_path, remote: true, class: 'btn secondary' %>
 
-<div class="pages">
+<%# TODO - "pages" -> "solutions" %>
+
+<div class="pages solutions">
+<section class="page solution card new js-hidden">
+  <!-- This card was intentionally left empty. -->
+</section>
+
 <% if @pages.each do |page| %>
-  <section class="page card">
+  <section class="page solution card">
     <div class="card-name">
       <%= content_tag :p, page.name %>
     </div>
