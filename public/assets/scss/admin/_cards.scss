@@ -14,23 +14,19 @@
   img {
     margin: 0 0 1rem;
   }
+
+  h2 {
+    font-family: 'LubalinDemiIBM';
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
 }
 
 // Interior container inside .card, between header and footer
 .card-container {
   padding: 2rem 2rem 1rem;
-}
-
-// Name of model instance, card title
-.card-name {
-  padding: 2rem;
-  border-bottom: 1px solid #e7e7e7;
-  text-align: center;
-  color: #aaa;
-
-  p {
-    margin: 0;
-  }
 }
 
 // Footer that contains links to various Rails actions
