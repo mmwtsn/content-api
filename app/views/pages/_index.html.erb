@@ -1,0 +1,10 @@
+<div class="card-container">
+  <%= image_tag object.header, class: 'page-header' %>
+  <%= content_tag :h2, object.name %>
+  <%= content_tag :p, object.title, class: 'section-header' %>
+  <%= content_tag :p, object.body %>
+</div>
+
+<div class="card-admin">
+  <%= link_to 'edit', edit_page_path(object), remote: true, class: 'btn plain' %>
+</div>

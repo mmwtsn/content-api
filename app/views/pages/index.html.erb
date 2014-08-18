@@ -2,11 +2,17 @@
   <h1>Solutions Pages</h1>
 <% end %>
 
-<%= link_to 'create page', new_page_path, class: 'btn secondary' %>
+<%= link_to 'create page', new_page_path, remote: true, class: 'btn secondary' %>
 
-<div class="pages">
+<%# TODO - "pages" -> "solutions" %>
+
+<div class="pages solutions">
+<section class="page solution card new js-hidden">
+  <!-- This card was intentionally left empty. -->
+</section>
+
 <% if @pages.each do |page| %>
-  <section class="page card">
+  <section class="page solution card">
     <div class="card-name">
       <%= content_tag :p, page.name %>
     </div>
@@ -19,10 +25,10 @@
     </div>
 
     <div class="card-admin">
-      <%= link_to "view", page_path(page) %>
-      <%= link_to "edit", edit_page_path(page) %>
-      <%= link_to 'delete', page_path(page), method: :delete %>
-      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'preview' %>
+      <%= link_to "view", page_path(page), class: 'btn plain' %>
+      <%= link_to "edit", edit_page_path(page), class: 'btn plain' %>
+      <%= link_to 'delete', page_path(page), method: :delete, class: 'btn plain' %>
+      <%= link_to 'preview', preview_page_path(page), target: '_blank', class: 'btn plain preview' %>
     </div>
   </section>
 <% end.empty? %>

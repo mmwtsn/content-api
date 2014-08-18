@@ -1,0 +1,5 @@
+<% if object.errors.any? %>
+  <%= render 'errors', object: object %>
+<% else %>
+  $('.solution').html('<%= j render("index", object: object) %>');
+<% end %>
