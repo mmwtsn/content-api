@@ -38,7 +38,9 @@
   padding: 0 1rem;
   border-top: 1px solid #e7e7e7;
 
-  a {
+  a,
+  button,
+  input[type="submit"] {
     padding: 0 1rem 0 0;
     color: #aaa;
 
