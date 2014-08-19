@@ -25,6 +25,7 @@
   min-height: 100px;
 
   p {
+    margin: 0 !important; // TODO - Remove this after large .card * selector is re-worked
     line-height: 100px;
     color: #aaa;
   }
