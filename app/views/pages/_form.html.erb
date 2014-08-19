@@ -1,19 +1,15 @@
 <%= form_for object, html: { multipart: true }, remote: true do |f| %>
-  <div class="card-container">
-    <ul class="errors"></ul>
+  <ul class="errors"></ul>
 
-    <%= image_tag object.header, class: 'page-header' %>
+  <%= image_tag object.header, class: 'page-header' %>
 
-    <%= f.text_field :name, class: 'page-name', autofocus: true, placeholder: 'Solution Name' %>
-    <%= f.text_field :title, placeholder: 'Leadspace Copy' %>
-    <%= f.text_area :body, placeholder: 'Body Copy' %>
-    <%= f.file_field :header, placeholder: 'Leadspace Image' %>
+  <%= f.text_field :name, class: 'page-name', autofocus: true, placeholder: 'Solution Name' %>
+  <%= f.text_field :title, placeholder: 'Leadspace Copy' %>
+  <%= f.text_area :body, placeholder: 'Body Copy' %>
+  <%= f.file_field :header, placeholder: 'Leadspace Image' %>
 
-    <%# f.label :published  %>
-    <%# f.check_box :published %>
-  </div>
+  <%# f.label :published  %>
+  <%# f.check_box :published %>
 
-  <div class="card-admin">
-    <%= f.submit 'save', class: 'link primary' %>
-  </div>
+  <%= f.submit 'save', class: 'link primary' %>
 <% end %>
