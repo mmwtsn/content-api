@@ -27,9 +27,9 @@
   </div>
 
   <div class="card-admin">
-    <%= link_to 'view', scenario_path(scenario.id), class: 'link plain' %>
-    <%= link_to 'edit', edit_scenario_path(scenario.id), class: 'link plain' %>
-    <%= link_to 'delete', scenario_path(scenario.id), method: :delete, remote: true, class: 'link plain delete-scenario' %>
+    <%= link_to 'view', scenario_path(scenario), class: 'link plain' %>
+    <%= link_to 'edit', edit_scenario_path(scenario), class: 'link plain' %>
+    <%= link_to 'delete', scenario_path(scenario), method: :delete, remote: true, class: 'link plain delete-scenario' %>
   </div>
 </section>
 <% end.empty? %>
