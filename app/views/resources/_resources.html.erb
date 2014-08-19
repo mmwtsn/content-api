@@ -14,8 +14,8 @@
   </div>
 
   <div class="card-admin">
-    <%= link_to 'edit', edit_resource_path(resource.id), class: 'link plain' %>
-    <%= link_to 'delete', resource_path(resource.id), method: :delete, remote: true, class: 'link plain delete-resource' %>
+    <%= link_to 'edit', edit_resource_path(resource), class: 'link plain' %>
+    <%= link_to 'delete', resource_path(resource), method: :delete, remote: true, class: 'link plain delete-resource' %>
   </div>
 </section>
 <% end.empty? %>
