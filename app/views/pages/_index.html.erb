@@ -1,17 +1,19 @@
-<div class="card-container">
-  <%= image_tag object.header, class: 'page-header' %>
-  <%= content_tag :h2, object.name %>
-  <%= content_tag :p, object.title, class: 'section-header' %>
-  <%= content_tag :p, object.body %>
-</div>
+<section class="solution card <%= object.published? ? 'published' : 'unpublished' %>">
+  <div class="card-container">
+    <%= image_tag object.header, class: 'page-header' %>
+    <%= content_tag :h2, object.name %>
+    <%= content_tag :p, object.title, class: 'section-header' %>
+    <%= content_tag :p, object.body %>
+  </div>
 
-<div class="card-admin">
-  <% if action_name == 'index' || action_name == 'create' %>
-    <%= link_to 'view', page_path(object), class: 'link' %>
-  <% elsif action_name == 'show' %>
-    <%= link_to 'edit', edit_page_path(object), remote: true, class: 'link plain' %>
-  <% end %>
+  <div class="card-admin">
+    <% if action_name == 'index' || action_name == 'create' %>
+      <%= link_to 'view', page_path(object), class: 'link' %>
+    <% elsif action_name == 'show' %>
+      <%= link_to 'edit', edit_page_path(object), remote: true, class: 'link plain' %>
+    <% end %>
 
-  <%= link_to 'delete', page_path(object), method: :delete, remote: true, class: 'link' %>
-  <%= link_to 'preview', preview_page_path(object), target: '_blank', class: 'link preview' %>
-</div>
+    <%= link_to 'delete', page_path(object), method: :delete, remote: true, class: 'link' %>
+    <%= link_to 'preview', preview_page_path(object), target: '_blank', class: 'link preview' %>
+  </div>
+</section>
