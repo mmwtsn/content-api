@@ -3,13 +3,17 @@
 
   <%= image_tag object.header, class: 'page-header' %>
 
-  <%= f.text_field :name, class: 'page-name', autofocus: true, placeholder: 'Solution Name' %>
-  <%= f.text_field :title, placeholder: 'Leadspace Copy' %>
-  <%= f.text_area :body, placeholder: 'Body Copy' %>
-  <%= f.file_field :header, placeholder: 'Leadspace Image' %>
+  <%= f.label :name, 'Solution Name' %>
+  <%= f.text_field :name, class: 'page-name' %>
 
-  <%# f.label :published  %>
-  <%# f.check_box :published %>
+  <%= f.label :title, 'Leadspace Copy' %>
+  <%= f.text_field :title %>
 
-  <%= f.submit 'save', class: 'link primary' %>
+  <%= f.label :body, 'Body Copy' %>
+  <%= f.text_area :body %>
+
+  <%= f.label :header, 'Leadspace Image' %>
+  <%= f.file_field :header %>
+
+  <%= f.submit 'save', class: 'btn secondary', id: 'save-page' %>
 <% end %>
