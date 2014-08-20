@@ -6,6 +6,12 @@
   border-radius: 3px;
   box-shadow: 0 10px 10px -10px #ddd;
 
+  a {
+    &:hover {
+      color: $link;
+    }
+  }
+
   h1,
   h2,
   h3,
