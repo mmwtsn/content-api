@@ -6,5 +6,12 @@
 </div>
 
 <div class="card-admin">
-  <%= link_to 'edit', edit_page_path(object), remote: true, class: 'link plain' %>
+  <% if action_name == 'index' %>
+    <%= link_to 'view', page_path(object), class: 'link' %>
+  <% elsif action_name == 'show' %>
+    <%= link_to 'edit', edit_page_path(object), remote: true, class: 'link plain' %>
+  <% end %>
+
+  <%= link_to 'delete', page_path(object), method: :delete, remote: true, class: 'link' %>
+  <%= link_to 'preview', preview_page_path(object), target: '_blank', class: 'link preview' %>
 </div>
