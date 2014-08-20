@@ -25,6 +25,8 @@
 // Base styles
 @import 'admin/variables';
 @import 'admin/base';
+@import 'admin/buttons';
+@import 'admin/forms';
 @import 'admin/header';
 @import 'admin/collections';
 @import 'admin/cards';
@@ -33,3 +35,4 @@
 @import 'admin/scenarios';
 @import 'admin/products';
 @import 'admin/resources';
+@import 'admin/javascript';
