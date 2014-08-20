@@ -6,7 +6,7 @@
 </div>
 
 <div class="card-admin">
-  <% if action_name == 'index' %>
+  <% if action_name == 'index' || action_name == 'create' %>
     <%= link_to 'view', page_path(object), class: 'link' %>
   <% elsif action_name == 'show' %>
     <%= link_to 'edit', edit_page_path(object), remote: true, class: 'link plain' %>
