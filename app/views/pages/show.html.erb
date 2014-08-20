@@ -3,13 +3,7 @@
 <% end %>
 
 <section class="solutions collection">
-  <header class="collection-header">
-    <%= link_to 'preview', preview_page_path(@page), target: '_blank', class: 'btn secondary' %>
-  </header>
-
-  <section class="solution card">
-    <%= render 'index', object: @page %>
-  </section>
+  <%= render 'index', object: @page %>
 </section>
 
 <section class="scenarios collection">
