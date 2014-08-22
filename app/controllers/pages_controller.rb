@@ -12,7 +12,7 @@ class PagesController < ApplicationController
   end
 
   def create
-    @page = Page.create!(page_params)
+    @page = Page.create(page_params)
   end
 
   def edit
