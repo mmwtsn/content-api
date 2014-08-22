@@ -1,0 +1,27 @@
+<section class="scenario card">
+  <div class="card-container">
+    <%= image_tag object.avatar, class: 'scenario-avatar icon' %>
+    <%= content_tag :h2, object.name %>
+    <%= content_tag :h3, object.quote %>
+    <%= content_tag :p , object.pitch %>
+
+    <section class="products">
+      <% if object.products.each do |product| %>
+        <div class="product">
+          <%= content_tag :strong, product.name %>
+          <%= content_tag :p, product.description %>
+        </div>
+      <% end.empty? %>
+        <div class="empty">
+          <p>This objecthas no products! Click <a href="<%= scenario_path(object) %>">view</a> to add some.</p>
+        </div>
+      <% end %>
+    </section>
+  </div>
+
+  <div class="card-admin">
+    <%= link_to 'view', scenario_path(object), class: 'link plain' %>
+    <%= link_to 'edit', edit_scenario_path(object), class: 'link plain' %>
+    <%= link_to 'delete', scenario_path(object), method: :delete, remote: true, class: 'link plain delete-scenario' %>
+  </div>
+</section>

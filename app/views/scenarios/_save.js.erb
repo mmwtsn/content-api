@@ -1,0 +1,6 @@
+<% if object.errors.any? %>
+  <%= render 'errors', object: object %>
+<% else %>
+  $('.scenario.new').empty();
+  $('#new-scenario').after('<%= j render("index", object: @scenario) %>').show(); // TODO - These selectors are a mess
+<% end %>
