@@ -7,9 +7,11 @@
 </section>
 
 <section class="scenarios collection">
+  <section class="scenario new" style="display: none"></section>
+
   <header class="collection-header">
     <%= content_tag :h2, 'Scenarios', class: 'collection-type' %>
-    <%= link_to 'new scenario', '#', class: 'btn secondary show-new-scenario', id: 'show_new_scenario' %>
+    <%= link_to 'new scenario', new_page_scenario_path(@page), remote: true, class: 'btn secondary', id: 'new-scenario' %>
   </header>
 
   <% if @page.scenarios.each do |scenario| %>
