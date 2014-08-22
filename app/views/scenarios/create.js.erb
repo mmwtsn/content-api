@@ -1,7 +1,1 @@
-<% if @scenario.errors.any? %>
-  <% @scenario.errors.full_messages.each do |error| %>
-    $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
-  <% end %>
-<% else %>
-  $('.scenarios').html("<%= j render('scenarios') %>");
-<% end %>
+<%= render 'save', object: @scenario %>
