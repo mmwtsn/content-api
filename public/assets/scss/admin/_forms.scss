@@ -20,12 +20,14 @@ input[type="text"] {
   width: 100%;
 }
 
-.edit_page {
+.edit_page,
+.edit_scenario {
   label {
     display: none;
   }
 
-  .page-name {
+  .instance-name {
+    margin: 0 0 0.75rem;
     font-size: 2.25rem;
     font-weight: 700;
     font-family: LubalinDemiIBM;
