@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   respond_to :html, :js
+
   before_action :authenticate_user!, except: [:preview]
   before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
 
