@@ -14,7 +14,7 @@
     <%= link_to 'new scenario', new_page_scenario_path(@page), remote: true, class: 'btn secondary', id: 'new-scenario' %>
   </header>
 
-  <% if @page.scenarios.each do |scenario| %>
+  <% if @page.scenarios.order(id: :desc).each do |scenario| %>
     <%= render 'scenarios/index', object: scenario %>
   <% end.empty? %>
     <%= render 'scenarios/empty' %>
