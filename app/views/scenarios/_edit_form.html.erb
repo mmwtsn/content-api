@@ -1,0 +1,4 @@
+<%= form_for object, remote: true, html: { multipart: true } do |f| %>
+  <%= image_tag object.avatar, class: 'icon' %>
+  <%= render 'form_fields', f: f %>
+<% end %>
