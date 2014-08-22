@@ -1,5 +1,5 @@
 $('.page.new')
-  .html('<%= j render 'new', object: @page %>')
+  .html('<%= j render "form", object: @page %>')
   .slideDown(800, function() {
     $('#new-page').hide();
     $('#save-page').show();
