@@ -1,3 +1,3 @@
-<%= form_for [@page, @page.scenarios.build], html: { multipart: true } do |f| %>
+<%= form_for [object, object.scenarios.build], html: { multipart: true } do |f| %>
   <%= render 'form_fields', f: f %>
 <% end %>
