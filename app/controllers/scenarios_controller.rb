@@ -1,18 +1,18 @@
 class ScenariosController < ApplicationController
+  respond_to :html, :js
+
   before_action :authenticate_user!
-  before_action :build_page, only: [:create]
+  before_action :build_page, only: [:new, :create]
   before_action :build_scenario, only: [:edit, :show, :update, :destroy]
 
   require "#{Rails.root}/lib/product_api"
 
-  def create
-    @page = Page.find(params[:page_id])
-    @scenario = @page.scenarios.create!(scenario_params)
+  def new
+    @scenario = Scenario.new
+  end
 
-    respond_to do |format|
-      format.js
-      format.html { redirect_to page_path(@page) }
-    end
+  def create
+    @scenario = @page.scenarios.create(scenario_params)
   end
 
   def show
