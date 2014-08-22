@@ -1,0 +1,15 @@
+<ul class="errors"></ul>
+
+<%= f.label :name, 'Scenario Name' %>
+<%= f.text_field :name, class: 'scenario-name' %>
+
+<%= f.label :quote %>
+<%= f.text_field :quote, autofocus: true %>
+
+<%= f.label :pitch %>
+<%= f.text_field :pitch %>
+
+<%= f.label :avatar %>
+<%= f.file_field :avatar %>
+
+<%= f.submit 'save', class: 'btn secondary', id: 'save-scenario', style: 'display: none' %>
