@@ -16,6 +16,14 @@ module ApplicationHelper
     end
   end
 
+  def parent_form
+    if new?
+      '.new_scenario'
+    elsif edit?
+      '.edit_scenario'
+    end
+  end
+
   def new?
     if action_name == 'new'
       true
