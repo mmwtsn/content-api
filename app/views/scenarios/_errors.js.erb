@@ -1,4 +1,5 @@
-var $errors = $('.errors');
+var $errors = $('<%= parent_form %> .errors');
+
 $errors.empty().append('<p><strong>Hey!</strong></p>');
 
 <% object.errors.full_messages.each do |error| %>
