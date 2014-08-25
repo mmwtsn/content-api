@@ -10,4 +10,21 @@ module ApplicationHelper
     return sanitized_url
   end
 
+  def container_class
+    if edit?
+      'card-container'
+    end
+  end
+
+  def new?
+    if action_name == 'new'
+      true
+    end
+  end
+
+  def edit?
+    if action_name == 'edit'
+      true
+    end
+  end
 end
