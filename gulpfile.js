@@ -28,6 +28,7 @@ var jsOrdered  = [
   assetsPath + '/js/toggle.js',
   assetsPath + '/js/create.js',
   assetsPath + '/js/search.js',
+  assetsPath + '/js/modals.js',
   assetsPath + '/js/init.js'
 ];
 
