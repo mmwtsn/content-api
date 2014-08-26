@@ -1,6 +1,5 @@
 $('.js-modal-toggle').on('click', function() {
   $('.modal').toggleClass('visible');
-  $('body').toggleClass('modal-open');
 });
 
 $(document).keyup(function(e) {
