@@ -13,14 +13,14 @@
         </div>
       <% end.empty? %>
         <div class="empty">
-          <p>This objecthas no products! Click <a href="<%= scenario_path(object) %>">view</a> to add some.</p>
+          <p>This object has no products! Click <a href="<%= scenario_path(object) %>">view</a> to add some.</p>
         </div>
       <% end %>
     </section>
   </div>
 
   <div class="card-admin">
-    <%= link_to 'view', scenario_path(object), remote: true, class: 'link plain' %>
+    <%= link_to 'add products', scenario_path(object), class: 'link primary' %>
     <%= link_to 'edit', edit_scenario_path(object), remote: true, class: 'link plain' %>
     <%= link_to 'delete', scenario_path(object), method: :delete, remote: true, class: 'link plain delete-scenario' %>
   </div>
