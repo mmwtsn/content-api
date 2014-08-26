@@ -1,33 +1,27 @@
 <% content_for :sub_header do %>
-  <h1>Scenario</h1>
+  <%= content_tag :h1, @scenario.name %>
 <% end %>
 
-<%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
-  <%= submit_tag 'search', class: 'btn primary' %>
-  <div class="product-search-wrapper">
-    <%= text_field_tag :product %>
+<%= render 'index', object: @scenario %>
+
+<div class="modal" id="modal-3">
+  <div class="modal-content">
+    <%= button_tag '✗', class: 'link plain js-modal-toggle' %>
+
+    <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
+      <%= submit_tag 'search', class: 'btn secondary' %>
+
+      <div class="product-search-wrapper">
+        <%= text_field_tag :product %>
+      </div>
+    <% end %>
+
+    <div class="search-instructions">
+      <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
+    </div>
+
+    <section id="results" class="results"></section>
   </div>
-<% end %>
-
-<div class="search-instructions">
-  <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
 </div>
 
-<section id="results" class="results"></section>
-
-<section class="scenario card">
-  <div class="card-container">
-    <%= image_tag @scenario.avatar, class: 'scenario-avatar icon' %>
-    <%= content_tag :h3, @scenario.quote %>
-    <%= content_tag :p, @scenario.pitch %>
-  </div>
-
-  <div class="card-admin">
-    <%= link_to 'edit', edit_scenario_path(@scenario), class: 'btn small' %>
-    <%= link_to 'delete', scenario_path(@scenario), method: :delete, class: 'btn small' %>
-  </div>
-</section>
-
-<section class="scenario-products">
-  <%= render 'products/products' %>
-</section>
+<div class="modal-overlay"></div>
