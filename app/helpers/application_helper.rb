@@ -10,6 +10,10 @@ module ApplicationHelper
     return sanitized_url
   end
 
+  def model_name(object)
+    object.class.name.downcase
+  end
+
   def container_class
     if edit?
       'card-container'
