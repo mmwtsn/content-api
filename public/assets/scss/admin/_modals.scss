@@ -3,12 +3,13 @@
 
 .modal {
   position: fixed;
-  top: 50%;
+  top: 40%;
   left: 50%;
   width: 50%;
   max-width: 630px;
   min-width: 320px;
   height: auto;
+  height: 60vh;
   z-index: 2000;
   visibility: hidden;
   -webkit-backface-visibility: hidden;
