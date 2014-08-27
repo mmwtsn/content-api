@@ -2,6 +2,11 @@
   overflow: hidden;
 }
 
+.results {
+  overflow: scroll;
+  max-height: 40vh;
+}
+
 .scenario-product {
   width: 48.5%;
   float: left;
