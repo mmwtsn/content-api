@@ -3,25 +3,3 @@
 <% end %>
 
 <%= render 'index', object: @scenario %>
-
-<div class="modal" id="modal-3">
-  <div class="modal-content">
-    <%= button_tag '✗', class: 'link plain js-modal-toggle' %>
-
-    <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
-      <%= submit_tag 'search', class: 'btn secondary' %>
-
-      <div class="product-search-wrapper">
-        <%= text_field_tag :product %>
-      </div>
-    <% end %>
-
-    <div class="search-instructions">
-      <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
-    </div>
-
-    <section id="results" class="results"></section>
-  </div>
-</div>
-
-<div class="modal-overlay"></div>
