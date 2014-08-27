@@ -3,5 +3,5 @@
     $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
   <% end %>
 <% else %>
-  $('.scenario-products').html("<%= j render('products') %>");
+  $('.scenario .products').html("<%= j render('products') %>");
 <% end %>
