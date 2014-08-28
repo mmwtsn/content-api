@@ -16,11 +16,10 @@
 
   <% if @page.scenarios.order(id: :desc).each do |scenario| %>
     <%= render 'scenarios/index', object: scenario %>
+    <%= render 'scenarios/products_modal', object: scenario %>
   <% end.empty? %>
     <%= render 'scenarios/empty' %>
   <% end %>
-
-  <%= render 'scenarios/products_modal' %>
 </section>
 
 <section class="resources collection">
