@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def create
-    @scenario = Scenario.find(params[:scenario_id])
+    @scenario = Scenario.friendly.find(params[:scenario_id])
     @product = @scenario.products.create(products_params)
     @products = Product.all
 
