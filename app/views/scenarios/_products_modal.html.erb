@@ -3,16 +3,16 @@
     <%= button_tag '✗', class: 'link plain js-modal-toggle' %>
     <ul class="errors"></ul>
 
-    <%= form_tag products_search_path, remote: true, id: 'search', class: 'search' do %>
-      <%= submit_tag 'search', class: 'btn primary' %>
+    <%= form_tag products_search_path, remote: true, class: 'product-search' do %>
+      <%= submit_tag 'search', class: 'btn primary product-submit' %>
 
       <div class="product-search-wrapper">
-        <%= text_field_tag :product %>
+        <%= text_field_tag :product, nil, class: 'product-query' %>
       </div>
     <% end %>
 
     <div class="search-instructions">
-      <p>Click on a product to save it to this scenario or <a href="#" id="clear-search" class="btn small">clear</a></p>
+      <p>Click on a product to save it to this scenario or <a href="#" class="btn small clear-product-search">clear</a></p>
     </div>
 
     <section id="results" class="results"></section>
