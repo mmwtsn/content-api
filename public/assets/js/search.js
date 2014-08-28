@@ -1,10 +1,10 @@
 //
 // Prevent user from submitting empty search queries;
 //
-var $search_input = $('#search input[type="submit"]');
+var $search_input = $('.product-search input[type="submit"]');
 
 $search_input.on('click', function(e) {
-  var query = $( '#product' ).val();
+  var query = $(this).parents('.search-query').val();
   var $results = $('.results');
 
   // Ensure results and errors are cleared between searches
@@ -25,7 +25,7 @@ $search_input.on('click', function(e) {
 //
 // Allow user to clear search results and query
 //
-$('#clear-search').on('click', function( e ) {
+$('.clear-search').on('click', function( e ) {
   e.preventDefault();
 
   $('.results').empty();
