@@ -1,18 +1,17 @@
-// Ensure global products object exists
-window.PRODUCTS = window.PRODUCTS || {};
+var results = <%= raw json_escape(@results) %>
+,   $modal  = $('.modal[data-modal-name=<%= @scenario_name %>]')
+,   $errors = $modal.find('.errors')
+,   $search = $modal.find('.product-query')
+,   $submit = $modal.find('.product-submit');
 
-// Cache JSON response from product search
-var results = <%= raw json_escape(@results) %>;
-
-// Check response of product search
 if(results.length === 0) {
 
   // Search complete, nothing found
-  $('#search input[type="submit"]').removeClass('loading');
+  $submit.removeClass('loading');
 
-  alert("No results found!");
+  $errors.append('<li>Your search did not return any resesults.</li>').slideDown();
 
-  $('#product').val('').focus();
+  $search.val('').focus();
 
 }
 else
