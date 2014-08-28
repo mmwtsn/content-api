@@ -20,7 +20,7 @@
   </div>
 
   <div class="card-admin">
-    <%= button_tag 'add products', class: 'link primary js-modal-toggle' %>
+    <%= button_tag 'add products', class: 'link primary js-modal-toggle', data: { name: object.name.parameterize } %>
     <%= link_to 'edit', edit_scenario_path(object), remote: true, class: 'link plain' %>
     <%= link_to 'delete', scenario_path(object), method: :delete, remote: true, class: 'link plain delete-scenario' %>
   </div>
