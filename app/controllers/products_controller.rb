@@ -21,6 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def search
+    @scenario_name = params[:scenario_name]
     @results = JSON.generate(ProductAPI.search_products(params[:product]))
 
     respond_to do |format|
