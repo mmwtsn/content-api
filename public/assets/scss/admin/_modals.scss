@@ -20,8 +20,8 @@
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 
-  .link {
-    padding: 0;
+  .js-modal-toggle {
+    padding: 0 1rem;
   }
 
   &.visible .modal-content {
