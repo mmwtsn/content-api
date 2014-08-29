@@ -2,25 +2,55 @@
   overflow: hidden;
 }
 
+.product-count {
+  margin: 0;
+}
+
 .results {
   overflow: scroll;
+  margin: 2rem 0 0;
   max-height: 40vh;
 }
 
-.scenario-product {
-  width: 48.5%;
-  float: left;
-  margin-bottom: 1rem !important;
+.results .product {
+  padding: 1rem 1rem 0.1rem;
+  border-bottom: 1px solid #eee;
 
-  h3 {
-    font-size: 1.5rem;
+  &:hover {
+    background: #fcfcfc;
+    cursor: pointer;
+  }
+}
+
+.product-description {
+  color: #ccc;
+}
+
+.product-submit,
+.product-reset {
+  float: right;
+  margin: 0 0 0 0.5rem !important;
+}
+
+.product-submit {
+  &.loading {
+    color: #4aa0f3;
+    background-image: url('/assets/images/loading.gif');
+    background-repeat: no-repeat;
+    background-size: 1.5rem;
+    background-position: 50% 50%;
   }
 
-  &:nth-child(odd) {
-    margin-right: 3%;
+  &:hover {
+    background-color: #4aa0f3;
   }
+}
 
-  &.empty {
-    width: 100%;
-  }
+.product-search {
+  margin: 1rem 0 0;
+  padding: 0 1rem;
+}
+
+.product-search-wrapper {
+  overflow: hidden;
 }
