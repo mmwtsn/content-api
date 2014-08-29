@@ -5,16 +5,13 @@
 
     <%= form_tag products_search_path, remote: true, class: 'product-search' do %>
       <%= hidden_field_tag :scenario_name, object.name.parameterize %>
+      <%= button_tag 'reset', class: 'btn secondary product-reset' %>
       <%= submit_tag 'search', class: 'btn primary product-submit' %>
 
       <div class="product-search-wrapper">
         <%= text_field_tag :product, nil, class: 'product-query' %>
       </div>
     <% end %>
-
-    <div class="search-instructions">
-      <p>Click on a product to save it to this scenario or <a href="#" class="btn small clear-product-search">clear</a></p>
-    </div>
 
     <section id="results" class="results"></section>
   </div>
