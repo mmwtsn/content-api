@@ -17,7 +17,7 @@ if(results.length === 0) {
 else
 {
 
-  $search.after('<p class="product-count">There are ' + results.length + ' results that matched your search.</p>');
+  $results.prepend('<p class="product-count">There are ' + results.length + ' results that matched your search.<button class="btn secondary product-reset">reset</button></p>');
 
   // Iterate over results and append each to the DOM
   results.forEach(function(result) {
