@@ -2,6 +2,7 @@ var results  = <%= raw json_escape(@results) %>
 ,   $modal   = $('.modal[data-modal-name=<%= @scenario_name %>]')
 ,   $errors  = $modal.find('.errors')
 ,   $search  = $modal.find('.product-query')
+,   $count   = $modal.find('.product-count')
 ,   $results = $modal.find('.results')
 ,   $submit  = $modal.find('.product-submit');
 
@@ -17,7 +18,9 @@ if(results.length === 0) {
 else
 {
 
-  $results.prepend('<p class="product-count">There are ' + results.length + ' results that matched your search.<button class="btn secondary product-reset">reset</button></p>');
+  $results.addClass('open');
+
+  $count.html(results.length).parents('.product-count-wrapper').show();
 
   // Iterate over results and append each to the DOM
   results.forEach(function(result) {

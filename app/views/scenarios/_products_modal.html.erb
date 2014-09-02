@@ -1,9 +1,9 @@
 <div class="modal" data-modal-name="<%= object.name.parameterize %>">
-  <header class="modal-header">
-    <%= content_tag :h4, "Add Products to the #{object.name}" %>
-  </header>
-
   <div class="modal-content">
+    <header class="modal-header">
+      <%= content_tag :h4, "Add Products to the #{object.name}" %>
+    </header>
+
     <%= button_tag '✗', class: 'link plain js-modal-toggle' %>
     <ul class="errors"></ul>
 
@@ -15,6 +15,11 @@
         <%= text_field_tag :product, nil, class: 'product-query' %>
       </div>
     <% end %>
+
+    <div class="product-count-wrapper">
+      <p>There are <span class="product-count"></span> results that matched your search.</p>
+      <button class="link primary product-reset">reset</button>
+    </div>
 
     <section id="results" class="results"></section>
   </div>
