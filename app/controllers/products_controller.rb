@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
     @product.destroy
 
     respond_to do |format|
-      format.js {render nothing: true}
+      format.js
     end
   end
 
