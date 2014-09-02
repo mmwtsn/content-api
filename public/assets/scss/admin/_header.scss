@@ -1,7 +1,7 @@
 .header {
   // Global masthead containing nav, icon, etc.
   &.primary {
-    background: #333;
+    background: $header-bg;
   }
 
   // Local header containing page title
