@@ -3,5 +3,6 @@
     $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
   <% end %>
 <% else %>
-  $('.scenario .products').html("<%= j render('products') %>");
+  $('.scenario .products').find('.empty').remove();
+  $('.scenario .products').append("<%= j(render 'products/index', object: @product) %>");
 <% end %>
