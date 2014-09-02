@@ -25,7 +25,7 @@ $search_input.on('click', function(e) {
 //
 // Allow user to clear search results and query
 //
-$('.clear-search').on('click', function( e ) {
+$('.product-reset').on('click', function( e ) {
   e.preventDefault();
 
   $('.results').empty();
@@ -33,6 +33,10 @@ $('.clear-search').on('click', function( e ) {
   $('#product').val('');
 
   $('.search-instructions').hide();
+
+  $('.results').removeClass('open');
+
+  $('.product-count-wrapper').hide();
 });
 
 //
