@@ -52,6 +52,16 @@
       background: darken(#f8f8f8, 5%);
     }
   }
+
+  &.saved {
+    background: #b9f5b9;
+    border-bottom: 5px solid #8add8a;
+
+    &:hover {
+      background: #b9f5b9;
+      cursor: default;
+    }
+  }
 }
 
 .product-description {
@@ -89,5 +99,35 @@
 
   input {
     margin: 0 !important;
+  }
+}
+
+.products {
+  h4 {
+    margin: 2rem 0px 0px;
+    font-family: "LubalinDemiIBM";
+    font-weight: 700;
+    font-size: 2rem;
+  }
+
+  .product {
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding: 1rem 0;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      position: absolute;
+      top: 1rem;
+      right: 0;
+      color: #aaa;
+    }
   }
 }
