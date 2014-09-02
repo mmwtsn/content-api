@@ -6,11 +6,9 @@
     <%= content_tag :p , object.pitch %>
 
     <section class="products">
+      <%= content_tag :h4, 'Products' %>
       <% if object.products.each do |product| %>
-        <div class="product">
-          <%= content_tag :strong, product.name %>
-          <%= content_tag :p, product.description %>
-        </div>
+        <%= render 'products/index', object: product %>
       <% end.empty? %>
         <div class="empty">
           <p>This <%= model_name(object) %> has no products!</p>
