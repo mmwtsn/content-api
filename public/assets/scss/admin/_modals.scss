@@ -12,7 +12,6 @@
   height: 60vh;
   z-index: 2000;
   visibility: hidden;
-  background: #fff;
   border-radius: 3px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -46,6 +45,8 @@
 }
 
 .modal-header {
+  width: 108.3%;
+  margin-left: -4.1%;
   padding: 1rem 1.5rem;
   background: $header-bg;
 
@@ -57,8 +58,9 @@
 
 .modal-content {
   margin: 0 auto;
-  padding: 0 1.5rem 1rem;
+  padding: 0 1.5rem 1.5rem;
   position: relative;
+  background: #fff;
   -webkit-transform: translateY(20%);
   -moz-transform: translateY(20%);
   -ms-transform: translateY(20%);
