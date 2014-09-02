@@ -2,14 +2,25 @@
   overflow: hidden;
 }
 
+.product-query {
+  margin: 0;
+}
+
 .product-count {
   margin: 0;
+  padding: 1rem;
+  background: #d7eaff;
 }
 
 .results {
   overflow: scroll;
-  margin: 2rem 0 0;
   max-height: 40vh;
+  border-right: 1px solid #d7eaff;
+  border-bottom: 1px solid #d7eaff;
+  border-left: 1px solid #d7eaff;
+  border-top: 0;
+  border-style: none;
+  border-radius: 3px;
 }
 
 .results .product {
@@ -47,8 +58,7 @@
 }
 
 .product-search {
-  margin: 1rem 0 0;
-  padding: 0 1rem;
+  margin: 0 0 1rem;
 }
 
 .product-search-wrapper {
