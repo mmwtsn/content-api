@@ -1,4 +1,8 @@
 <div class="modal" data-modal-name="<%= object.name.parameterize %>">
+  <header class="modal-header">
+    <%= content_tag :h4, "Add Products to the #{object.name}" %>
+  </header>
+
   <div class="modal-content">
     <%= button_tag '✗', class: 'link plain js-modal-toggle' %>
     <ul class="errors"></ul>
