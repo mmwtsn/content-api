@@ -8,7 +8,6 @@
 
 .product-count-wrapper {
   margin: 0 0 1rem;
-  display: none;
 
   p {
     margin: 0;
@@ -21,17 +20,19 @@
   }
 }
 
-.results {
+.results-wrapper {
   overflow: scroll;
   max-height: 40vh;
   margin-top: 1rem;
   border-top: 0;
+  display: none;
 
   &.open {
     border-right: 1px solid #eee;
     border-bottom: 1px solid #eee;
     border-left: 1px solid #eee;
     border-radius: 3px;
+    display: block;
   }
 }
 

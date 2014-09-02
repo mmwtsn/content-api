@@ -5,10 +5,10 @@ var $search_input = $('.product-search input[type="submit"]');
 
 $search_input.on('click', function(e) {
   var query = $(this).parents('.search-query').val();
-  var $results = $('.results');
+  var $results = $('.results-wrapper');
 
   // Ensure results and errors are cleared between searches
-  $results.empty();
+  $results.removeClass('open').find('.product').remove();
 
   $('.error').slideUp();
 
@@ -28,15 +28,13 @@ $search_input.on('click', function(e) {
 $('.product-reset').on('click', function( e ) {
   e.preventDefault();
 
-  $('.results').empty();
+  $('.results-wrapper .product').remove();
 
   $('#product').val('');
 
   $('.search-instructions').hide();
 
-  $('.results').removeClass('open');
-
-  $('.product-count-wrapper').hide();
+  $('.results-wrapper').removeClass('open');
 });
 
 //
