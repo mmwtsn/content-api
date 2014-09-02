@@ -48,16 +48,16 @@ $('.product').on('click', function() {
   var id = $this.data('id');
 
   // Get current scenario id
-  var scenario_id = window.location.pathname;
+  var scenario_id = '<%= @scenario_name %>';
 
   // Build destination for POST for /scenarios/:scenario_id/products route
-  var post_url = scenario_id + '/products'
+  var post_url = '/scenarios/' + scenario_id + '/products';
 
   // Save user's selection to the database on click
   $.ajax({
     type: 'POST',
     url:  post_url,
-    data: PRODUCTS[id]
+    data: results[id]
   }).done(function() {
     $this.addClass('saved');
   });
