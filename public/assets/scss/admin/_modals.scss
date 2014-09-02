@@ -12,6 +12,8 @@
   height: 60vh;
   z-index: 2000;
   visibility: hidden;
+  background: #fff;
+  border-radius: 3px;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -21,7 +23,8 @@
   transform: translateX(-50%) translateY(-50%);
 
   .js-modal-toggle {
-    padding: 0 1rem;
+    margin-left: -1rem;
+    padding: 1rem;
   }
 
   &.visible .modal-content {
@@ -43,11 +46,9 @@
 }
 
 .modal-content {
-  background: #fff;
-  padding: 2rem;
-  position: relative;
-  border-radius: 3px;
   margin: 0 auto;
+  padding: 0 1.5rem 1rem;
+  position: relative;
   -webkit-transform: translateY(20%);
   -moz-transform: translateY(20%);
   -ms-transform: translateY(20%);
