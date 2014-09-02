@@ -41,9 +41,6 @@ $('.product').on('click', function() {
   // Cache reference to the current jQuery object
   $this = $(this);
 
-  // Update the UI to indicate that the selection was received
-  $this.addClass('selected');
-
   // Stash product id
   var id = $this.data('id');
 
@@ -60,6 +57,12 @@ $('.product').on('click', function() {
     data: results[id]
   }).done(function() {
     $this.addClass('saved');
+
+    setTimeout(function () {
+      $this.addClass('done');
+    }, 4000);
+
+    $this.unbind('click');
   });
 
 });
