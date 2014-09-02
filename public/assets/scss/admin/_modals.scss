@@ -45,6 +45,16 @@
   }
 }
 
+.modal-header {
+  padding: 1rem 1.5rem;
+  background: $header-bg;
+
+  h4 {
+    font-family: LubalinGraphStdBookIBM;
+    color: #fff;
+  }
+}
+
 .modal-content {
   margin: 0 auto;
   padding: 0 1.5rem 1rem;
