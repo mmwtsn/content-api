@@ -1,10 +1,10 @@
-<div class="modal" data-modal-name="<%= object.name.parameterize %>">
+<div class="modal" data-name="<%= object.name.parameterize %>">
   <div class="modal-content">
     <header class="modal-header">
       <%= content_tag :h4, "Add Products to the #{object.name}" %>
     </header>
 
-    <%= button_tag '✗', class: 'link plain js-modal-toggle' %>
+    <%= button_tag '✗', class: 'link plain js-modal-toggle', data: { 'name' => object.name.parameterize }  %>
     <ul class="errors"></ul>
 
     <%= form_tag products_search_path, remote: true, class: 'product-search' do %>
