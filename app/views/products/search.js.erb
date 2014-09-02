@@ -3,7 +3,7 @@ var results  = <%= raw json_escape(@results) %>
 ,   $errors  = $modal.find('.errors')
 ,   $search  = $modal.find('.product-query')
 ,   $count   = $modal.find('.product-count')
-,   $results = $modal.find('.results')
+,   $results = $modal.find('.results-wrapper')
 ,   $submit  = $modal.find('.product-submit');
 
 $submit.removeClass('loading');
@@ -20,13 +20,13 @@ else
 
   $results.addClass('open');
 
-  $count.html(results.length).parents('.product-count-wrapper').show();
+  $count.html(results.length);
 
   // Iterate over results and append each to the DOM
   results.forEach(function(result) {
 
     // Add each search result to the results section
-    $results.append(
+    $('.results').append(
       '<article class="product" data-id="' + result["id"] + '">'
       + '<p class="product-name">' + result["name"] + '</p>'
       + '<p class="product-description">' + result["product_name"] + '</p>'
