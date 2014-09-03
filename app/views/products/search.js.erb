@@ -56,13 +56,7 @@ $('.product').on('click', function() {
     url:  post_url,
     data: results[id]
   }).done(function() {
-    $this.addClass('saved');
-
-    setTimeout(function () {
-      $this.addClass('done');
-    }, 4000);
-
-    $this.unbind('click');
+    $this.addClass('saved').unbind('click');
   });
 
 });
