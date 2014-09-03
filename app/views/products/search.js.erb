@@ -1,5 +1,5 @@
 var results  = <%= raw json_escape(@results) %>
-,   $modal   = $('.modal[data-modal-name=<%= @scenario_name %>]')
+,   $modal   = $('.modal[data-name=<%= @scenario_name %>]')
 ,   $errors  = $modal.find('.errors')
 ,   $search  = $modal.find('.product-query')
 ,   $count   = $modal.find('.product-count')
