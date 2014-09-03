@@ -36,42 +36,21 @@
   }
 }
 
-.results .product {
-  padding: 1rem 1rem 0;
-  border-bottom: 1px solid #ddd;
-  transition: background-color ease-in 0.2s;
-
-  &:hover {
-    background: darken(#fff, 3%);
-    cursor: pointer;
-  }
-
-  &.saved {
-    position: relative;
-    cursor: default;
-    background: #e8f8e8;
-
-    &:after {
-      position: absolute;
-      right: 1rem;
-      content: "saved";
-      display: block;
-      top: 3rem;
-      color: #8bd78b;
-      font-family: 'LubalinGraphStdBookIBM';
-      text-transform: uppercase;
-      font-size: 1.3rem;
-      transition: color ease-out 1s;
-    }
+.results {
+  .product {
+    padding: 1rem 1rem 0;
+    border-bottom: 1px solid #ddd;
+    transition: background-color ease-in 0.2s;
 
     &:hover {
-      background: #e8f8e8;
+      background: darken(#fff, 3%);
+      cursor: pointer;
     }
-  }
 
-  &.done {
-    &:after {
-      color: #e8f8e8;
+    &.saved {
+      position: relative;
+      cursor: default;
+      background: #e8f8e8;
     }
   }
 }
@@ -140,6 +119,10 @@
       top: 1rem;
       right: 0;
       color: #aaa;
+
+      &:hover {
+        color: $link;
+      }
     }
   }
 }
