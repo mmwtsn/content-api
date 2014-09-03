@@ -9,7 +9,7 @@
 
     <%= form_tag products_search_path, remote: true, class: 'product-search' do %>
       <%= hidden_field_tag :scenario_name, object.name.parameterize %>
-      <%= submit_tag 'search', class: 'btn primary product-submit' %>
+      <%= submit_tag 'search', class: 'btn primary loading product-submit' %>
 
       <div class="product-search-wrapper">
         <%= text_field_tag :product, nil, class: 'product-query' %>

@@ -1,7 +1,9 @@
 //
 // Prevent user from submitting empty search queries;
 //
-var $search_input = $('.product-search input[type="submit"]');
+var $search_input = $('.product-submit');
+
+$search_input.removeClass('loading');
 
 $search_input.on('click', function(e) {
   var query = $(this).parents('.search-query').val();
