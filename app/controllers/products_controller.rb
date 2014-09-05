@@ -1,32 +1,23 @@
 class ProductsController < ApplicationController
+  respond_to :js
+
   def create
     @scenario = Scenario.friendly.find(params[:scenario_id])
-    @product = @scenario.products.create(products_params)
+    @product  = @scenario.products.create(products_params)
     @products = Product.all
-
-    respond_to do |format|
-      format.js
-    end
   end
 
   def destroy
     @scenario = Scenario.find(params[:scenario_id])
-    @product = @scenario.products.find(params[:id])
+    @product  = @scenario.products.find(params[:id])
 
     @product.destroy
-
-    respond_to do |format|
-      format.js
-    end
   end
 
   def search
     @scenario_name = params[:scenario_name]
-    @results = JSON.generate(ProductAPI.search_products(params[:product]))
-
-    respond_to do |format|
-      format.js
-    end
+    @search_query  = params[:product]
+    @results       = JSON.generate(ProductAPI.search_products(params[:product]))
   end
 
   private
