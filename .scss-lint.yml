@@ -1,4 +1,6 @@
 linters:
+  DuplicateProperty:
+    enabled: false
   LeadingZero:
     style: include_zero
   MergeableSelector:
