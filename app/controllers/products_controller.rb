@@ -4,11 +4,11 @@ class ProductsController < ApplicationController
   def create
     @scenario = Scenario.friendly.find(params[:scenario_id])
     @product  = @scenario.products.create(products_params)
-    @products = Product.all
+    @scenario_name = params[:scenario_id]
   end
 
   def destroy
-    @scenario = Scenario.find(params[:scenario_id])
+    @scenario = Scenario.friendly.find(params[:scenario_id])
     @product  = @scenario.products.find(params[:id])
 
     @product.destroy
