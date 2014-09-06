@@ -29,7 +29,7 @@ else {
   results.forEach( function( result ) {
 
     $results.find( '.results' ).append(
-      '<article class="product" data-id="' + result["id"] + '">'
+      '<article class="product result unsaved" data-id="' + result["id"] + '">'
       + '<p class="product-name">' + result["name"] + '</p>'
       + '<p class="product-description">' + result["product_name"] + '</p>'
     + '</article>'
@@ -40,7 +40,7 @@ else {
 };
 
 // Delegate event when user interacts with any result
-$( '.results' ).on( 'click', '.product', function() {
+$( '.results' ).on( 'click', '.result.unsaved', function() {
 
   // Cache reference to the current jQuery object
   $this = $( this );
@@ -60,7 +60,7 @@ $( '.results' ).on( 'click', '.product', function() {
     url:  post_url,
     data: results[id]
   }).done(function() {
-    $this.addClass('saved').unbind('click');
+    $this.toggleClass( 'saved unsaved' );
   });
 
 });
