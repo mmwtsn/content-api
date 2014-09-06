@@ -1,26 +1,26 @@
 //
 // Prevent user from submitting empty search queries;
 //
-var $search_input = $('.product-submit');
+var $submit = $( '.product-submit' );
 
-$search_input.removeClass('loading');
+$submit.on( 'click', function(e) {
 
-$search_input.on('click', function(e) {
-  var query = $(this).parents('.search-query').val();
-  var $results = $('.results-wrapper');
+  var $modal   = $( this ).parents( '.modal' )
+  ,   $results = $modal.find( '.results-wrapper' )
+  ,   $errors  = $modal.find( '.errors' )
+  ,   query    = $modal.find( '.search-query' ).val();
 
   // Ensure results and errors are cleared between searches
   $results.removeClass('open').find('.product').remove();
 
-  $('.error').slideUp();
+  $errors.empty().hide();
 
-  if (query === '') {
+  if ( query === '' ) {
     e.preventDefault();
-    $('main').prepend('<p class="error">Search query cannot be blank!</p>');
+    $errors.append('<li>Search query cannot be blank!</li>');
   }
   else {
-    // Add "loading" class until products are returned
-    $search_input.addClass('loading');
+    $submit.addClass( 'loading' );
   }
 });
 
@@ -42,17 +42,15 @@ $('.product-reset').on('click', function( e ) {
 //
 // Remove deleted product upon successful POST
 //
-$('body').on('ajax:success', '.delete-product', function() {
-  $(this).closest('.scenario-product').remove();
+$( document ).on( 'ajax:success', '.delete-product', function() {
 
-  var $products = $('.scenario-products');
+  var $product  = $( this ).parents( '.product' )
+  ,   $products = $( this ).parents( '.products' );
 
-  // Was that the last record present in the UI?
-  if (!$products.find('.scenario-product').length) {
-    $products.append(
-      '<section class="scenario-product empty">' +
-        '<p>no saved products…</p>' +
-      '</section>'
-    );
+  if( $products.children( '.product' ).length === 1 ) {
+    $products.append('<div class="empty"><p>This scenario has no products!</p></div>');
   }
+
+  $product.remove();
+
 });
