@@ -10,9 +10,7 @@
       <% if object.products.each do |product| %>
         <%= render 'products/index', object: product %>
       <% end.empty? %>
-        <div class="empty">
-          <p>This <%= model_name(object) %> has no products!</p>
-        </div>
+        <%= render 'products/empty' %>
       <% end %>
     </section>
   </div>
