@@ -8,7 +8,7 @@ $submit.on( 'click', function(e) {
   var $modal   = $( this ).parents( '.modal' )
   ,   $results = $modal.find( '.results-wrapper' )
   ,   $errors  = $modal.find( '.errors' )
-  ,   query    = $modal.find( '.search-query' ).val();
+  ,   query    = $modal.find( '.product-query' ).val();
 
   // Ensure results and errors are cleared between searches
   $results.removeClass('open').find('.product').remove();
@@ -17,7 +17,7 @@ $submit.on( 'click', function(e) {
 
   if ( query === '' ) {
     e.preventDefault();
-    $errors.append('<li>Search query cannot be blank!</li>');
+    $errors.append('<li>Search query cannot be blank!</li>').slideDown();
   }
   else {
     $submit.addClass( 'loading' );
