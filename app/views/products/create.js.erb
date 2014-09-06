@@ -1,8 +1,15 @@
 <% if @product.errors.any? %>
+
   <% @product.errors.full_messages.each do |error| %>
-    $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
+    $( '.modal[data-name="<%= @scenario_name %>"] .errors' )
+      .append( '<p>' + '<%= message.html_safe %>' + '</p>' );
   <% end %>
+
 <% else %>
-  $('.scenario .products').find('.empty').remove();
-  $('.scenario .products').append("<%= j(render 'products/index', object: @product) %>");
+
+  $( '.scenario[data-name="<%= @scenario_name %>"] .products' )
+    .append( '<%= j(render "products/index", object: @product) %>' )
+    .find( '.empty' )
+    .remove();
+
 <% end %>
