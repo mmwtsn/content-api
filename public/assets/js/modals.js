@@ -1,7 +1,12 @@
 $('.js-modal-toggle').on('click', function() {
-  var scenario_name  = $(this).data('name');
+  var scenario_name  = $(this).data('name')
+  ,   $modal         = $('.modal[data-name="' + scenario_name + '"]');
 
-  $('.modal[data-name="' + scenario_name + '"]').toggleClass('visible');
+  $modal.toggleClass('visible');
+
+  setTimeout(function() {
+    $modal.find( 'input[type="text"]' ).first().focus();
+  }, 100);
 });
 
 $(document).keyup(function(e) {
