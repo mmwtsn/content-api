@@ -13,3 +13,7 @@ $(document).keyup(function(e) {
     }
   }
 });
+
+$('.modal-overlay').on('click', function() {
+  $('.modal').removeClass('visible');
+});
