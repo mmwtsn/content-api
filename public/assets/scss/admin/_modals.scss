@@ -22,7 +22,7 @@
   transform: translateX(-50%) translateY(-50%);
 
   .js-modal-toggle {
-    margin-left: -1rem;
+    margin-left: 0.5rem;
     padding: 1rem;
   }
 
@@ -45,9 +45,8 @@
 }
 
 .modal-header {
-  width: 108.3%;
-  margin-left: -4.1%;
-  padding: 1rem 1.5rem;
+  width: 100%;
+  padding: 1rem 1.5rem !important;
   background: $header-bg;
 
   h4 {
@@ -58,7 +57,7 @@
 
 .modal-content {
   margin: 0 auto;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 0 1.5rem;
   position: relative;
   background: #fff;
   -webkit-transform: translateY(20%);
@@ -69,6 +68,10 @@
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   transition: all 0.3s;
+
+  > * {
+    padding: 0 1.5rem;
+  }
 }
 
 .modal-overlay {
@@ -90,5 +93,6 @@
   padding: 0;
   text-transform: lowercase;
   color: #aaa;
+  margin-top: 0.5rem;
   padding: 0.5rem 1rem 0 0;
 }
