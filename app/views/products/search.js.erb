@@ -27,12 +27,14 @@ else {
   // Iterate over results and append each to the DOM
   results.forEach( function( result ) {
 
-    $results.find( '.results' ).append(
-      '<article class="product result unsaved" data-id="' + result["id"] + '">'
-      + '<p class="product-name">' + result["name"] + '</p>'
-      + '<p class="product-description">' + result["product_name"] + '</p>'
-    + '</article>'
-    );
+    $results
+      .find( '.results' ).append(
+        '<article class="product result unsaved" data-id="' + result["id"] + '">'
+        + '<p class="product-name">' + result["name"] + '</p>'
+        + '<p class="product-description">' + result["product_name"] + '</p>'
+      + '</article>'
+      )
+      .parent().scrollTop( 0 );
 
   });
 
