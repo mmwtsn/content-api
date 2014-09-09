@@ -32,7 +32,7 @@ a {
   text-decoration: none;
 
   @include transition (background-color 0.1s ease-out);
-  background: $default-background;
+  background-color: $default-background;
   border: 1px solid darken($default-background, 4%);
   border-radius: 3px;
   color: $default-color;
@@ -45,38 +45,38 @@ a {
   }
 
   &:hover {
-    background: darken($default-background, 1%);
+    background-color: darken($default-background, 1%);
   }
 
   &:active {
-    background: darken($default-background, 2%);
+    background-color: darken($default-background, 2%);
   }
 
   &.primary {
-    background: $primary-background;
+    background-color: $primary-background;
     border: 1px solid darken($primary-background, 3%);
     color: $primary-color;
 
     &:hover {
-      background: darken($primary-background, 5%);
+      background-color: darken($primary-background, 5%);
     }
 
     &:active {
-      background: darken($primary-background, 10%);
+      background-color: darken($primary-background, 10%);
     }
   }
 
   &.secondary {
-    background: $secondary-background;
+    background-color: $secondary-background;
     border: 1px solid darken($secondary-background, 2%);
     color: $secondary-color;
 
     &:hover {
-      background: darken($secondary-background, 2%);
+      background-color: darken($secondary-background, 2%);
     }
 
     &:active {
-      background: darken($secondary-background, 3%);
+      background-color: darken($secondary-background, 3%);
     }
   }
 
@@ -96,7 +96,7 @@ a {
   cursor: pointer;
   text-decoration: none;
   border: 0;
-  background: inherit;
+  background-color: inherit;
   padding: 1rem;
 
   &:hover {
