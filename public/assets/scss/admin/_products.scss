@@ -21,8 +21,6 @@
 }
 
 .results-wrapper {
-  overflow: scroll;
-  max-height: 40vh;
   margin-top: 1rem;
   display: none;
 
@@ -30,8 +28,10 @@
     display: block;
   }
 
-  .results {
+  .results-container {
     border: 1px solid #eee;
+    overflow: scroll;
+    max-height: 40vh;
     border-radius: 3px;
   }
 }
