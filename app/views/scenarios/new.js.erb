@@ -1,6 +1,7 @@
-$('.scenario.new')
-  .html('<%= j render "new_form", object: @page %>')
-  .slideDown(800, function() {
-    $('#new-scenario').hide();
-    $('#save-scenario').show();
-  });
+$( '#new-scenario' ).fadeOut( 300, function() {
+
+  $( '.scenario.new' )
+    .html( '<%= j render "new_form", object: @page %>' )
+    .slideDown(800);
+
+} );
