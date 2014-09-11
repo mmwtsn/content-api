@@ -1,6 +1,10 @@
 <div class="<%= container_class %>">
   <ul class="errors"></ul>
 
+  <% if edit? %>
+    <%= image_tag @scenario.avatar, class: 'icon' %>
+  <% end %>
+
   <%= f.label :name, 'Scenario Name' %>
   <%= f.text_field :name, class: 'instance-name' %>
 
