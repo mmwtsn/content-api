@@ -1,4 +1,4 @@
-<%= form_for([@page, @page.resources.build]) do |f| %>
+<%= form_for [object, object.resources.build] do |f| %>
   <%= f.label :body %>
   <%= f.text_field :body %>
 
