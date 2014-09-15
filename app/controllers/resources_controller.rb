@@ -1,9 +1,9 @@
 class ResourcesController < ApplicationController
   before_action :authenticate_user!
+  before_action :get_requested_page, only: [:new, :create]
   before_action :get_requested_resource, only: [:edit, :update, :destroy]
 
   def create
-    @page = Page.find(params[:page_id])
     @resource = @page.resources.create!(resource_params)
 
     respond_to do |format|
@@ -39,5 +39,9 @@ class ResourcesController < ApplicationController
 
   def get_requested_resource
     @resource = Resource.find(params[:id])
+  end
+
+  def get_requested_page
+    @page = Page.friendly.find(params[:page_id])
   end
 end
