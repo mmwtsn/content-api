@@ -1,4 +1,6 @@
 class ResourcesController < ApplicationController
+  respond_to :html, :js
+
   before_action :authenticate_user!
   before_action :get_requested_page, only: [:new, :create]
   before_action :get_requested_resource, only: [:edit, :update, :destroy]
