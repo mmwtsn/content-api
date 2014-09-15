@@ -22,6 +22,7 @@
   <% end %>
 </section>
 
-<section class="resources collection">
-  <%= render 'resources/index', object: @page %>
-</section>
+<div class="resources collection">
+  <%= render 'shared/collection_header', object: 'resource', parent_object: @page %>
+  <%= render(@page.resources) || render('shared/empty', resource: 'resources') %>
+</div>
