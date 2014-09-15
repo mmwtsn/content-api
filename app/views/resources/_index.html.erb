@@ -1,25 +1,12 @@
-<header class="collection-header">
-  <%= content_tag :h2, 'Resources', class: 'collection-type' %>
-  <%= link_to 'new resource', '#', class: 'btn secondary show-new-resource', id: 'show_new_resource' %>
-</header>
+<div class="card-container">
+  <%= content_tag :p, object.body %>
 
-<% if object.resources.each do |resource| %>
-  <section class="resource card" id="resource-#{<%= resource.id %>}">
-  <div class="card-container">
-    <%= content_tag :p, resource.body %>
+  <%= content_tag :small do %>
+    <%= link_to object.url %>
+  <% end %>
+</div>
 
-    <%= content_tag :small do %>
-      <%= link_to resource.url %>
-    <% end %>
-  </div>
-
-  <div class="card-admin">
-    <%= link_to 'edit', edit_resource_path(resource), remote: true, class: 'link plain' %>
-    <%= link_to 'delete', resource_path(resource), method: :delete, remote: true, class: 'link plain delete-resource' %>
-  </div>
-</section>
-<% end.empty? %>
-  <section class="empty">
-    <p>no saved resources&#133;</p>
-  </section>
-<% end %>
+<div class="card-admin">
+  <%= link_to 'edit', edit_resource_path(object), remote: true, class: 'link plain' %>
+  <%= link_to 'delete', resource_path(object), method: :delete, remote: true, class: 'link plain delete-resource' %>
+</div>
