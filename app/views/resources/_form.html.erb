@@ -1,9 +1,14 @@
-<%= form_for [object, object.resources.build] do |f| %>
-  <%= f.label :body %>
-  <%= f.text_field :body %>
+<%= form_for object, remote: true do |f| %>
+  <div class="<%= container_class %>">
+    <%= f.text_field :body %>
+    <%= f.text_field :url %>
+  </div>
 
-  <%= f.label :url %>
-  <%= f.text_field :url %>
-
-  <%= f.submit 'save', class: 'btn secondary', id: 'create_resource' %>
+  <% if new? %>
+    <%= f.submit 'save', class: 'btn secondary', id: 'create_resource' %>
+  <% elsif edit? %>
+    <div class="card-admin">
+      <%= f.submit 'save', class: 'link primary', id: 'save-scenario' %>
+    </div>
+  <% end %>
 <% end %>
