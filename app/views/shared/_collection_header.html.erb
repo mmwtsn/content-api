@@ -1,0 +1,6 @@
+<%= content_tag(:section, nil, class: "new #{object}", style: 'display: none') %>
+
+<header class="collection-header">
+  <%= content_tag :h2, "#{object.capitalize}s", class: 'collection-type' %>
+  <%= link_to "new #{object}", new_object_path(object, parent_object), remote: true, class: 'btn secondary', id: "new-#{object}" %>
+</header>
