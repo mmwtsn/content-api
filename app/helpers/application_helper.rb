@@ -14,6 +14,14 @@ module ApplicationHelper
     object.class.name.downcase
   end
 
+  def new_object_path(object, parent_object)
+    if object == 'scenario'
+      new_page_scenario_path(parent_object)
+    elsif object == 'resource'
+      new_page_resource_path(parent_object)
+    end
+  end
+
   def container_class
     if edit?
       'card-container'
