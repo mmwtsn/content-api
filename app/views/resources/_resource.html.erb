@@ -1,0 +1,14 @@
+<%= div_for resource, class: 'card' do %>
+  <div class="card-container">
+    <%= content_tag :p, resource.body %>
+
+    <%= content_tag :small do %>
+      <%= link_to resource.url %>
+    <% end %>
+  </div>
+
+  <div class="card-admin">
+    <%= link_to 'edit', edit_resource_path(resource), remote: true, class: 'link plain' %>
+    <%= link_to 'delete', resource_path(resource), method: :delete, remote: true, class: 'link plain delete-resource' %>
+  </div>
+<% end %>
