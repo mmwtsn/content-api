@@ -5,6 +5,10 @@ class ResourcesController < ApplicationController
   before_action :get_requested_page, only: [:new, :create]
   before_action :get_requested_resource, only: [:edit, :update, :destroy]
 
+  def new
+    @resource = Resource.new
+  end
+
   def create
     @resource = @page.resources.create!(resource_params)
 
