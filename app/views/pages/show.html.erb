@@ -7,19 +7,8 @@
 </section>
 
 <section class="scenarios collection">
-  <section class="scenario new" style="display: none"></section>
-
-  <header class="collection-header">
-    <%= content_tag :h2, 'Scenarios', class: 'collection-type' %>
-    <%= link_to 'new scenario', new_page_scenario_path(@page), remote: true, class: 'btn secondary', id: 'new-scenario' %>
-  </header>
-
-  <% if @page.scenarios.order(id: :desc).each do |scenario| %>
-    <%= render 'scenarios/index', object: scenario %>
-    <%= render 'scenarios/products_modal', object: scenario %>
-  <% end.empty? %>
-    <%= render 'shared/empty', object: 'scenarios' %>
-  <% end %>
+  <%= render 'shared/collection_header', object: 'scenario', parent_object: @page %>
+  <%= render(@page.scenarios) || render('shared/empty', object: 'scenarios') %>
 </section>
 
 <div class="resources collection">
