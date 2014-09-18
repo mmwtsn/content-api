@@ -18,11 +18,11 @@
     <%= render 'scenarios/index', object: scenario %>
     <%= render 'scenarios/products_modal', object: scenario %>
   <% end.empty? %>
-    <%= render 'scenarios/empty' %>
+    <%= render 'shared/empty', object: 'scenarios' %>
   <% end %>
 </section>
 
 <div class="resources collection">
   <%= render 'shared/collection_header', object: 'resource', parent_object: @page %>
-  <%= render(@page.resources) || render('shared/empty', resource: 'resources') %>
+  <%= render(@page.resources) || render('shared/empty', object: 'resources') %>
 </div>
