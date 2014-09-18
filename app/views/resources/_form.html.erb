@@ -1,7 +1,9 @@
 <%= form_for object, remote: true do |f| %>
   <div class="<%= container_class %>">
+    <%= f.label :body %>
     <%= f.text_field :body %>
 
+    <%= f.label :url %>
     <%= f.text_field :url %>
   </div>
 
