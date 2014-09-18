@@ -21,3 +21,5 @@
     <%= link_to 'delete', scenario_path(scenario), method: :delete, remote: true, class: 'link plain delete-scenario' %>
   </div>
 <% end %>
+
+<%= render 'scenarios/products_modal', object: scenario %>
