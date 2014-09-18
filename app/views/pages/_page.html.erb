@@ -1,19 +1,18 @@
-<section class="solution card <%= object.published? ? 'published' : 'unpublished' %>">
+<%= div_for page, class: 'card' do %>
   <div class="card-container">
-    <%= image_tag object.header, class: 'page-header' %>
-    <%= content_tag :h2, object.name %>
-    <%= content_tag :p, object.title, class: 'section-header' %>
-    <%= content_tag :p, object.body %>
+    <%= image_tag page.header, class: 'page-header' %>
+    <%= content_tag :h2, page.name %>
+    <%= content_tag :p, page.title, class: 'section-header' %>
+    <%= content_tag :p, page.body %>
   </div>
 
   <div class="card-admin">
     <% if action_name == 'index' || action_name == 'create' %>
-      <%= link_to 'view', page_path(object), class: 'link' %>
+      <%= link_to 'view', page_path(page), class: 'link' %>
     <% elsif action_name == 'show' %>
-      <%= link_to 'edit', edit_page_path(object), remote: true, class: 'link plain' %>
+      <%= link_to 'edit', edit_page_path(page), remote: true, class: 'link plain' %>
     <% end %>
 
-    <%= link_to 'delete', page_path(object), method: :delete, remote: true, class: 'link' %>
-    <%= link_to 'preview', preview_page_path(object), target: '_blank', class: 'link preview' %>
+    <%= link_to 'delete', page_path(page), method: :delete, remote: true, class: 'link delete' %>
   </div>
-</section>
+<% end %>
