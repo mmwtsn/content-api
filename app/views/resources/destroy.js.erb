@@ -1,15 +1,5 @@
-$('.delete-resource').bind('ajax:success', function() {
+$( '#resource_<%= @resource.id %>' ).remove();
 
-  // Remove closest node with "resource" class
-  $(this).parents('.resource').remove();
-
-  // If user just deleted the last resource, don't blow a hole in the page
-  if (!$('.resources .resource').length) {
-    // TODO - abstract this into a partial
-    $('.resources').append(
-      '<section class="empty">'
-    +   '<p>no saved resources&#133;</p>'
-    + '</section>'
-    );
-  }
-});
+if( $('.resources .resource.card').length === 0 ) {
+  $( '.resources' ).append( '<%= j render("shared/empty", object: "resources") %>' );
+}
