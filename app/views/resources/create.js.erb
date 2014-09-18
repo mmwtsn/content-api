@@ -1,7 +1,1 @@
-<% if @resource.errors.any? %>
-  <% @resource.errors.full_messages.each do |error| %>
-    $('main').append('<p>' + '<%= message.html_safe %>' + '</p>');
-  <% end %>
-<% else %>
-  $('.resources').html("<%= j render('resources') %>");
-<% end %>
+<%= render 'save', object: @resource %>
