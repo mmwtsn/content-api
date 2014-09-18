@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
   <%= render 'errors', object: object %>
 <% else %>
-  $('.resource.new').empty();
+  $( '.resource.new' ).empty();
 
   var $empty = $( '.resources .empty' );
 
@@ -9,5 +9,5 @@
     $empty.remove();
   }
 
-  $('#new-resource').after('<%= j render("resource", resource: @resource) %>').show();
+  $( '#new-resource' ).after('<%= j render("resource", resource: @resource) %>').show();
 <% end %>
