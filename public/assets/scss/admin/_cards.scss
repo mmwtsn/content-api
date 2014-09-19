@@ -43,17 +43,9 @@
 
   .link {
     color: #aaa;
-
-    &.primary {
-      color: $link;
-    }
   }
 
-  // Links to controller actions
-  .new,
-  .preview {
+  .link.primary {
     float: right;
-    color: #84d590;
-    color: $link;
   }
 }
