@@ -16,9 +16,9 @@
   </div>
 
   <div class="card-admin">
-    <%= button_tag 'add products', class: 'link primary js-modal-toggle', data: { name: scenario.name.parameterize } %>
     <%= link_to 'edit', edit_scenario_path(scenario), remote: true, class: 'link plain' %>
-    <%= link_to 'delete', scenario_path(scenario), method: :delete, remote: true, class: 'link plain delete-scenario' %>
+    <%= link_to 'delete', scenario_path(scenario), method: :delete, remote: true, class: 'link delete delete-scenario' %>
+    <%= button_tag 'add products', class: 'link primary js-modal-toggle', data: { name: scenario.name.parameterize } %>
   </div>
 <% end %>
 
