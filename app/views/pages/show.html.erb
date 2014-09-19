@@ -1,9 +1,9 @@
 <% content_for :sub_header do %>
-  <%= content_tag :h1, @page.name %>
+  <%= content_tag :h1, "Solution Page" %>
 <% end %>
 
 <section class="solutions collection">
-  <%= render 'index', object: @page %>
+  <%= render @page %>
 </section>
 
 <section class="scenarios collection">
