@@ -2,16 +2,7 @@
   <h1>Solutions Pages</h1>
 <% end %>
 
-<%# TODO - "pages" -> "solutions" %>
-
 <div class="pages solutions">
-<section class="page solution new" style="display: none"></section>
-
-<%= link_to 'create page', new_page_path, remote: true, class: 'btn secondary', id: 'new-page' %>
-
-<% if @pages.each do |page| %>
-  <%= render 'index', object: page %>
-<% end.empty? %>
-  <%= render 'empty' %>
-<% end %>
+  <%= render 'shared/collection_header', object: 'foo', parent_object: nil %>
+  <%= render(@pages) || render('shared/empty', object: 'pages') %>
 </div>
