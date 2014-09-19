@@ -21,12 +21,12 @@
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 
-  .js-modal-toggle {
+  .js_modal_toggle {
     margin-left: 0.5rem;
     padding: 1rem;
   }
 
-  &.visible .modal-content {
+  &.visible .modal_content {
     -webkit-transform: translateY(0);
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
@@ -38,13 +38,13 @@
 .visible {
   visibility: visible;
 
-  ~ .modal-overlay {
+  ~ .modal_overlay {
     opacity: 1;
     visibility: visible;
   }
 }
 
-.modal-header {
+.modal_header {
   width: 100%;
   padding: 1rem 1.5rem !important;
   background: $header-bg;
@@ -55,7 +55,7 @@
   }
 }
 
-.modal-content {
+.modal_content {
   margin: 0 auto;
   padding: 0 0 1.5rem;
   position: relative;
@@ -74,7 +74,7 @@
   }
 }
 
-.modal-overlay {
+.modal_overlay {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -89,7 +89,7 @@
   transition: all 0.3s;
 }
 
-.modal-scroll {
+.modal_scroll {
   padding: 0;
   text-transform: lowercase;
   color: #aaa;

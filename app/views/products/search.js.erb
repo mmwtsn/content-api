@@ -1,11 +1,11 @@
 // Ensure only the current modal is targeted
 var results  = <%= raw json_escape( @results ) %>
-,   $modal   = $( '.modal[data-name=<%= @scenario_name %>]' )
+,   $modal   = $( '.modal[data_name=<%= @scenario_name %>]' )
 ,   $errors  = $modal.find( '.errors' )
-,   $search  = $modal.find( '.product-query' )
-,   $count   = $modal.find( '.product-count' )
-,   $results = $modal.find( '.results-wrapper' )
-,   $submit  = $modal.find( '.product-submit' );
+,   $search  = $modal.find( '.product_query' )
+,   $count   = $modal.find( '.product_count' )
+,   $results = $modal.find( '.results_wrapper' )
+,   $submit  = $modal.find( '.product_submit' );
 
 // Search is complete, update the UI
 $submit.removeClass( 'loading' );
@@ -29,9 +29,9 @@ else {
 
     $results
       .find( '.results' ).append(
-        '<article class="product result unsaved" data-id="' + result["id"] + '">'
-        + '<p class="product-name">' + result["name"] + '</p>'
-        + '<p class="product-description">' + result["product_name"] + '</p>'
+        '<article class="product result unsaved" data_id="' + result["id"] + '">'
+        + '<p class="product_name">' + result["name"] + '</p>'
+        + '<p class="product_description">' + result["product_name"] + '</p>'
       + '</article>'
       )
       .parent().scrollTop( 0 );

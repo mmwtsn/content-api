@@ -32,12 +32,12 @@
 }
 
 // Interior container inside .card, between header and footer
-.card-container {
+.card_container {
   padding: 2rem 2rem 1rem;
 }
 
 // Footer that contains links to various Rails actions
-.card-admin {
+.card_admin {
   padding: 0 1rem;
   border-top: 1px solid #e7e7e7;
 
@@ -45,7 +45,19 @@
     color: #aaa;
   }
 
+  .primary {
+    color: $link;
+  }
+
   .link.primary {
     float: right;
+  }
+}
+
+.edit_solution,
+.edit_scenario,
+.edit_resource {
+  .link.primary {
+    float: none;
   }
 }

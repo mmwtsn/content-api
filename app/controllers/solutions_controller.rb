@@ -1,19 +1,19 @@
-class PagesController < ApplicationController
+class SolutionsController < ApplicationController
   respond_to :html, :js
 
   before_action :authenticate_user!, except: [:preview]
-  before_action :get_requested_page, only: [:show, :preview, :edit, :update, :destroy]
+  before_action :set_solution, only: [:show, :preview, :edit, :update, :destroy]
 
   def index
-    @pages = Page.order(id: :desc).all
+    @solutions = Solution.order(id: :desc).all
   end
 
   def new
-    @page = Page.new
+    @solution = Solution.new
   end
 
   def create
-    @page = Page.create(page_params)
+    @solution = Solution.create(solution_params)
   end
 
   def edit
@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 
   def preview
     # TODO - This creeped in from a feature prototype; it needs refactoring
-    solution  = @page
+    solution  = @solution
     resources = solution.resources
     scenarios = solution.scenarios
     products  = []
@@ -49,20 +49,20 @@ class PagesController < ApplicationController
   end
 
   def update
-    @page.update(page_params)
+    @solution.update(solution_params)
   end
 
   def destroy
-    @page.destroy
-    redirect_to pages_path
+    @solution.destroy
+    redirect_to Solutions_path
   end
 
   private
-  def page_params
-    params[:page].permit(:name, :title, :body, :header, :published)
+  def solution_params
+    params[:Solution].permit(:name, :title, :body, :header, :published)
   end
 
-  def get_requested_page
-    @page = Page.friendly.find(params[:id])
+  def set_solution
+    @solution = Solution.friendly.find(params[:id])
   end
 end

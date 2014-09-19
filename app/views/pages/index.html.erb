@@ -1,8 +1,0 @@
-<% content_for :sub_header do %>
-  <h1>Solutions Pages</h1>
-<% end %>
-
-<div class="pages solutions">
-  <%= render 'shared/collection_header', object: 'page', parent_object: nil %>
-  <%= render(@pages) || render('shared/empty', object: 'pages') %>
-</div>

@@ -2,5 +2,5 @@
   <%= render 'errors', object: object %>
 <% else %>
   $('.solution.new').empty();
-  $('#new-page').after('<%= j render("index", object: object) %>').show(); // TODO - These selectors are a mess
+  $('#new_solution').after('<%= j render("index", object: object) %>').show();
 <% end %>

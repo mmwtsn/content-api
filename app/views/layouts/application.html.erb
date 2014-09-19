@@ -12,16 +12,16 @@
   <header class="header primary">
     <nav class="nav">
       <%= link_to root_path do %>
-        <%= image_tag '/assets/images/ibm-logo.png', class: 'app-logo' %>
-        <%= content_tag :h1, 'Cloud Lab CMS', class: 'app-title' %>
+        <%= image_tag '/assets/images/ibm-logo.png', class: 'app_logo' %>
+        <%= content_tag :h1, 'Cloud Lab CMS', class: 'app_title' %>
       <% end %>
 
       <% if !current_user %>
-        <%= link_to 'sign in', new_user_session_path, class: 'app-link' %>
-        <%= link_to 'register', new_user_registration_path, class: 'app-link' %>
+        <%= link_to 'sign in', new_user_session_path, class: 'app_link' %>
+        <%= link_to 'register', new_user_registration_path, class: 'app_link' %>
       <% else  %>
-        <%= link_to 'sign out', destroy_user_session_path, :method => :delete, class: 'app-link' %>
-        <%= link_to 'solutions pages', pages_path, class: 'app-link' %>
+        <%= link_to 'sign out', destroy_user_session_path, :method => :delete, class: 'app_link' %>
+        <%= link_to 'solutions pages', solutions_path, class: 'app_link' %>
       <% end %>
     </nav>
   </header>

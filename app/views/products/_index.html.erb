@@ -1,5 +1,5 @@
 <div class="product">
   <%= content_tag :strong, object.name %>
   <%= content_tag :p, object.description %>
-  <%= link_to 'delete', scenario_product_path(object.scenario_id, object), method: :delete, remote: true, class: 'link delete-product' %>
+  <%= link_to 'delete', scenario_product_path(object.scenario_id, object), method: :delete, remote: true, class: 'link delete_product' %>
 </div>

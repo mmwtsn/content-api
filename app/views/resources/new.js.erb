@@ -1,7 +1,7 @@
-$( '#new-resource' ).fadeOut( 300, function() {
+$( '#new_resource' ).fadeOut( 300, function() {
 
   $( '.resource.new' )
-    .html( '<%= j render "form", object: [@page, @page.resources.build]%>' )
+    .html( '<%= j render "form", object: [@solution, @solution.resources.build]%>' )
     .slideDown(800);
 
 });

@@ -1,6 +1,6 @@
-$('.js-modal-toggle').on('click', function() {
+$('.js_modal_toggle').on('click', function() {
   var scenario_name  = $(this).data('name')
-  ,   $modal         = $('.modal[data-name="' + scenario_name + '"]');
+  ,   $modal         = $('.modal[data_name="' + scenario_name + '"]');
 
   $modal.toggleClass('visible');
 
@@ -19,20 +19,20 @@ $(document).keyup(function(e) {
   }
 });
 
-$('.modal-overlay').on('click', function() {
+$('.modal_overlay').on('click', function() {
   $('.modal').removeClass('visible');
 });
 
 var resultScroll = function( that, position ) {
-  $( that ).siblings( '.results-container' ).animate({
+  $( that ).siblings( '.results_container' ).animate({
     scrollTop: position
   }, 600);
 }
 
-$( '.modal-scroll.top' ).on( 'click', function() {
+$( '.modal_scroll.top' ).on( 'click', function() {
   resultScroll( this, 0 );
 });
 
-$( '.modal-scroll.bottom' ).on( 'click', function() {
+$( '.modal_scroll.bottom' ).on( 'click', function() {
   resultScroll( this, $('.results').height() );
 });

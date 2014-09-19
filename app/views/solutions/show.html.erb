@@ -1,0 +1,17 @@
+<% content_for :sub_header do %>
+  <%= content_tag :h1, "Solution Page" %>
+<% end %>
+
+<section class="solutions collection">
+  <%= render @solution %>
+</section>
+
+<section class="scenarios collection">
+  <%= render 'shared/collection_header', object: 'scenario', parent_object: @solution %>
+  <%= render(@solution.scenarios) || render('shared/empty', object: 'scenarios') %>
+</section>
+
+<div class="resources collection">
+  <%= render 'shared/collection_header', object: 'resource', parent_object: @solution %>
+  <%= render(@solution.resources) || render('shared/empty', object: 'resources') %>
+</div>

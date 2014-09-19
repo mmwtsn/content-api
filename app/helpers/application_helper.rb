@@ -16,12 +16,12 @@ module ApplicationHelper
 
   def new_object_path(object, parent_object)
     case object
-    when 'page'
-      new_page_path
+    when 'solution'
+      new_solution_path
     when 'scenario'
-      new_page_scenario_path(parent_object)
+      new_solution_scenario_path(parent_object)
     when 'resource'
-      new_page_resource_path(parent_object)
+      new_solution_resource_path(parent_object)
     else
       raise "Helper new_object_path does not accept object '#{object}'"
     end
@@ -29,7 +29,7 @@ module ApplicationHelper
 
   def container_class
     if edit?
-      'card-container'
+      'card_container'
     end
   end
 

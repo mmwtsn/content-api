@@ -2,8 +2,8 @@ class ScenariosController < ApplicationController
   respond_to :html, :js
 
   before_action :authenticate_user!
-  before_action :build_page, only: [:new, :create]
-  before_action :build_scenario, only: [:edit, :show, :update, :destroy]
+  before_action :set_solution, only: [:new, :create]
+  before_action :set_scenario, only: [:edit, :show, :update, :destroy]
 
   require "#{Rails.root}/lib/product_api"
 
@@ -12,7 +12,7 @@ class ScenariosController < ApplicationController
   end
 
   def create
-    @scenario = @page.scenarios.create(scenario_params)
+    @scenario = @solution.scenarios.create(scenario_params)
   end
 
   def show
@@ -25,7 +25,7 @@ class ScenariosController < ApplicationController
 
   def update
     if @scenario.update(scenario_params)
-      redirect_to page_path(@scenario.page_id)
+      redirect_to solution_path(@scenario.solution_id)
     else
       render 'edit'
     end
@@ -36,21 +36,21 @@ class ScenariosController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html { redirect_to page_path(@scenario.page_id)}
+      format.html { redirect_to solution_path(@scenario.solution_id)}
     end
   end
 
   private
 
   def scenario_params
-    params.require(:scenario).permit(:name, :quote, :pitch, :avatar, :page_id)
+    params.require(:scenario).permit(:name, :quote, :pitch, :avatar, :solution_id)
   end
 
-  def build_page
-    @page = Page.friendly.find(params[:page_id])
+  def set_solution
+    @solution = Solution.friendly.find(params[:solution_id])
   end
 
-  def build_scenario
+  def set_scenario
     @scenario = Scenario.friendly.find(params[:id])
   end
 end

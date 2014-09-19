@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def create
     @scenario = Scenario.friendly.find(params[:scenario_id])
-    @product  = @scenario.products.create(products_params)
+    @product  = @scenario.products.create(product_params)
     @scenario_name = params[:scenario_id]
   end
 
@@ -22,7 +22,7 @@ class ProductsController < ApplicationController
 
   private
 
-  def products_params
+  def product_params
     params.permit(:product_id, :name, :description, :icon_url)
   end
 end

@@ -11,23 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140815143802) do
-
-  create_table "pages", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "header_file_name"
-    t.string   "header_content_type"
-    t.integer  "header_file_size"
-    t.datetime "header_updated_at"
-    t.boolean  "published",           default: false
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "slug"
-  end
-
-  add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
+ActiveRecord::Schema.define(version: 20140919204702) do
 
   create_table "products", force: true do |t|
     t.integer  "scenario_id"
@@ -44,27 +28,43 @@ ActiveRecord::Schema.define(version: 20140815143802) do
   create_table "resources", force: true do |t|
     t.string   "body"
     t.string   "url"
-    t.integer  "page_id"
+    t.integer  "solution_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "scenarios", force: true do |t|
-    t.integer  "page_id"
+    t.integer  "solution_id"
     t.text     "quote"
     t.text     "pitch"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
-    t.string   "name"
   end
 
-  add_index "scenarios", ["page_id"], name: "index_scenarios_on_page_id", using: :btree
   add_index "scenarios", ["slug"], name: "index_scenarios_on_slug", using: :btree
+  add_index "scenarios", ["solution_id"], name: "index_scenarios_on_solution_id", using: :btree
+
+  create_table "solutions", force: true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "header_file_name"
+    t.string   "header_content_type"
+    t.integer  "header_file_size"
+    t.datetime "header_updated_at"
+    t.boolean  "published",           default: false
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "slug"
+  end
+
+  add_index "solutions", ["slug"], name: "index_solutions_on_slug", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

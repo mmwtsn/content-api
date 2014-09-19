@@ -1,0 +1,6 @@
+$('.new.solution')
+  .html('<%= j render("form", object: @solution) %>')
+  .slideDown(800, function() {
+    $('#new_solution').hide();
+    $('#save_solution').show();
+  });

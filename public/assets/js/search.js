@@ -1,14 +1,14 @@
 //
 // Prevent user from submitting empty search queries;
 //
-var $submit = $( '.product-submit' );
+var $submit = $( '.product_submit' );
 
 $submit.on( 'click', function(e) {
 
   var $modal   = $( this ).parents( '.modal' )
-  ,   $results = $modal.find( '.results-wrapper' )
+  ,   $results = $modal.find( '.results_wrapper' )
   ,   $errors  = $modal.find( '.errors' )
-  ,   query    = $modal.find( '.product-query' ).val();
+  ,   query    = $modal.find( '.product_query' ).val();
 
   // Ensure results and errors are cleared between searches
   $results.removeClass('open').find('.product').remove();
@@ -27,22 +27,22 @@ $submit.on( 'click', function(e) {
 //
 // Allow user to clear search results and query
 //
-$('.product-reset').on('click', function( e ) {
+$('.product_reset').on('click', function( e ) {
   e.preventDefault();
 
-  $('.results-wrapper .product').remove();
+  $('.results_wrapper .product').remove();
 
   $('#product').val('');
 
-  $('.search-instructions').hide();
+  $('.search_instructions').hide();
 
-  $('.results-wrapper').removeClass('open');
+  $('.results_wrapper').removeClass('open');
 });
 
 //
 // Remove deleted product upon successful POST
 //
-$( document ).on( 'ajax:success', '.delete-product', function() {
+$( document ).on( 'ajax:success', '.delete_product', function() {
 
   var $product  = $( this ).parents( '.product' )
   ,   $products = $( this ).parents( '.products' );

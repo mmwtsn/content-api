@@ -2,19 +2,19 @@ class ResourcesController < ApplicationController
   respond_to :html, :js
 
   before_action :authenticate_user!
-  before_action :get_requested_page, only: [:new, :create]
-  before_action :get_requested_resource, only: [:edit, :update, :destroy]
+  before_action :set_solution, only: [:new, :create]
+  before_action :set_resource, only: [:edit, :update, :destroy]
 
   def new
     @resource = Resource.new
   end
 
   def create
-    @resource = @page.resources.create!(resource_params)
+    @resource = @solution.resources.create!(resource_params)
 
     respond_to do |format|
       format.js
-      format.html { redirect_to page_path(@page) }
+      format.html { redirect_to solution_path(@solution) }
     end
   end
 
@@ -23,7 +23,7 @@ class ResourcesController < ApplicationController
 
   def update
     if @resource.update(resource_params)
-      redirect_to page_path(@resource.page_id)
+      redirect_to solution_path(@resource.solution_id)
     else
       render 'edit'
     end
@@ -34,7 +34,7 @@ class ResourcesController < ApplicationController
 
     respond_to do |format|
       format.js
-      format.html { redirect_to page_path(@resource.page_id) }
+      format.html { redirect_to solution_path(@resource.solution_id) }
     end
   end
 
@@ -43,11 +43,11 @@ class ResourcesController < ApplicationController
     params.require(:resource).permit(:body, :url)
   end
 
-  def get_requested_resource
+  def set_resource
     @resource = Resource.find(params[:id])
   end
 
-  def get_requested_page
-    @page = Page.friendly.find(params[:page_id])
+  def set_solution
+    @solution = Solution.friendly.find(params[:solution_id])
   end
 end
