@@ -1,7 +1,7 @@
 class Scenario < ActiveRecord::Base
   extend FriendlyId
 
-  belongs_to :page
+  belongs_to :solution
   has_many :products
 
   validates_presence_of :name

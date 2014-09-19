@@ -1,33 +1,33 @@
 <div class="modal" data-name="<%= object.name.parameterize %>">
-  <div class="modal-content">
-    <header class="modal-header">
+  <div class="modal_content">
+    <header class="modal_header">
       <%= content_tag :h4, "Add Products to the #{object.name}" %>
     </header>
 
-    <%= button_tag '✗', class: 'link plain js-modal-toggle', data: { 'name' => object.name.parameterize }  %>
+    <%= button_tag '✗', class: 'link plain js_modal_toggle', data: { 'name' => object.name.parameterize }  %>
     <ul class="errors"></ul>
 
-    <%= form_tag products_search_path, remote: true, class: 'product-search' do %>
+    <%= form_tag products_search_path, remote: true, class: 'product_search' do %>
       <%= hidden_field_tag :scenario_name, object.name.parameterize %>
-      <%= submit_tag 'search', class: 'btn primary product-submit' %>
+      <%= submit_tag 'search', class: 'btn primary product_submit' %>
 
-      <div class="product-search-wrapper">
-        <%= text_field_tag :product, nil, class: 'product-query', placeholder: 'IBM Product Name' %>
+      <div class="product_search_wrapper">
+        <%= text_field_tag :product, nil, class: 'product_query', placeholder: 'IBM Product Name' %>
       </div>
     <% end %>
 
-    <section class="results-wrapper closed">
-      <div class="product-count-wrapper">
-        <p>There are <span class="product-count"></span> results that matched your search.</p>
-        <button class="link primary product-reset">reset</button>
+    <section class="results_wrapper closed">
+      <div class="product_count_wrapper">
+        <p>There are <span class="product_count"></span> results that matched your search.</p>
+        <button class="link primary product_reset">reset</button>
       </div>
 
-      <div class="results-container"><div class="results"></div></div>
+      <div class="results_container"><div class="results"></div></div>
 
-      <button class="link plain modal-scroll top">first</button>
-      <button class="link plain modal-scroll bottom">last</button>
+      <button class="link plain modal_scroll top">first</button>
+      <button class="link plain modal_scroll bottom">last</button>
     </section>
   </div>
 </div>
 
-<div class="modal-overlay"></div>
+<div class="modal_overlay"></div>

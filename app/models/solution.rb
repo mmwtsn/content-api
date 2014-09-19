@@ -1,4 +1,4 @@
-class Page < ActiveRecord::Base
+class Solution < ActiveRecord::Base
   extend FriendlyId
 
   has_many :scenarios, dependent: :destroy
@@ -17,10 +17,10 @@ class Page < ActiveRecord::Base
   # Paperclip validation helper method to ensure header image type is valid
   validates_attachment_content_type :header, :content_type => /\Aimage\/.*\Z/
 
-  # Require all fields if the user attempts to publish the page
-  with_options if: :published? do |published_page|
-    published_page.validates :header, presence: true
-    published_page.validates :title,  presence: true
-    published_page.validates :body,   presence: true
+  # Require all fields if the user attempts to publish the solution
+  with_options if: :published? do |solution|
+    solution.validates :header, presence: true
+    solution.validates :title,  presence: true
+    solution.validates :body,   presence: true
   end
 end

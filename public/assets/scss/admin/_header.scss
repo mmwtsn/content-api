@@ -29,29 +29,29 @@
     @include outer-container;
   }
 
-  .app-logo,
-  .app-title {
+  .app_logo,
+  .app_title {
     float: left;
   }
 
-  .app-logo {
+  .app_logo {
     width: 4rem;
     padding: 0.3rem 1rem 0 0;
   }
 
-  .app-title,
-  .app-link {
+  .app_title,
+  .app_link {
     font-family: 'LubalinGraphStdBookIBM';
   }
 
-  .app-title {
+  .app_title {
     font-weight: 100;
     font-size: 1.2rem;
     line-height: 1.8;
     color: #666;
   }
 
-  .app-link {
+  .app_link {
     float: right;
     padding: 0.2rem 0 0.2rem 1.5rem;
     font-family: 'LubalinGraphStdBookIBM';

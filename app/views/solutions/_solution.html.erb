@@ -1,0 +1,18 @@
+<%= div_for solution, class: 'card' do %>
+  <div class="card_container">
+    <%= image_tag solution.header, class: 'solution_header' %>
+    <%= content_tag :h2, solution.name %>
+    <%= content_tag :p, solution.title, class: 'section_header' %>
+    <%= content_tag :p, solution.body %>
+  </div>
+
+  <div class="card_admin">
+    <% if action_name == 'index' || action_name == 'create' %>
+      <%= link_to 'view', solution_path(solution), class: 'link' %>
+    <% elsif action_name == 'show' %>
+      <%= link_to 'edit', edit_solution_path(solution), remote: true, class: 'link plain' %>
+    <% end %>
+
+    <%= link_to 'delete', solution_path(solution), method: :delete, remote: true, class: 'link delete' %>
+  </div>
+<% end %>

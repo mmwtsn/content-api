@@ -1,4 +1,4 @@
-<div class="card-container">
+<div class="card_container">
   <%= content_tag :p, object.body %>
 
   <%= content_tag :small do %>
@@ -6,7 +6,7 @@
   <% end %>
 </div>
 
-<div class="card-admin">
+<div class="card_admin">
   <%= link_to 'edit', edit_resource_path(object), remote: true, class: 'link plain' %>
-  <%= link_to 'delete', resource_path(object), method: :delete, remote: true, class: 'link plain delete-resource' %>
+  <%= link_to 'delete', resource_path(object), method: :delete, remote: true, class: 'link plain delete_resource' %>
 </div>

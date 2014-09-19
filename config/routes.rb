@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  root 'pages#index'
+  root 'solutions#index'
 
-  resources :pages, shallow: true do
+  resources :solutions, shallow: true do
     member do
       get 'preview'
     end
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # TODO - How else to avoid deeply nested routes without re-generating
   #        these Scenarios resources? Passing an empty array to only
   #        ensures that no new resources are generated as we've already
-  #        generated everything we need above (with pages/scenarios)
+  #        generated everything we need above (with solutions/scenarios)
   #
   resources :scenarios, only: [] do
     resources :products, only: [:search, :create, :destroy]

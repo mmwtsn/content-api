@@ -1,6 +1,6 @@
 <%= div_for scenario, class: 'card', data: { name: scenario.name.parameterize } do %>
-  <div class="card-container">
-    <%= image_tag scenario.avatar, class: 'scenario-avatar icon' %>
+  <div class="card_container">
+    <%= image_tag scenario.avatar, class: 'scenario_avatar icon' %>
     <%= content_tag :h2, scenario.name %>
     <%= content_tag :h3, scenario.quote %>
     <%= content_tag :p , scenario.pitch %>
@@ -15,10 +15,10 @@
     </section>
   </div>
 
-  <div class="card-admin">
+  <div class="card_admin">
     <%= link_to 'edit', edit_scenario_path(scenario), remote: true, class: 'link plain' %>
-    <%= link_to 'delete', scenario_path(scenario), method: :delete, remote: true, class: 'link delete delete-scenario' %>
-    <%= button_tag 'add products', class: 'link primary js-modal-toggle', data: { name: scenario.name.parameterize } %>
+    <%= link_to 'delete', scenario_path(scenario), method: :delete, remote: true, class: 'link delete delete_scenario' %>
+    <%= button_tag 'add products', class: 'link primary js_modal_toggle', data: { name: scenario.name.parameterize } %>
   </div>
 <% end %>
 
