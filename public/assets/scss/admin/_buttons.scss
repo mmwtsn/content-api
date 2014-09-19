@@ -114,4 +114,15 @@ a {
       color: darken($link, 10%);
     }
   }
+
+  &.delete {
+
+    &:hover {
+      color: darken($delete, 5%);
+    }
+
+    &:active {
+      color: darken($delete, 10%);
+    }
+  }
 }
