@@ -15,10 +15,15 @@ module ApplicationHelper
   end
 
   def new_object_path(object, parent_object)
-    if object == 'scenario'
+    case object
+    when 'page'
+      new_page_path
+    when 'scenario'
       new_page_scenario_path(parent_object)
-    elsif object == 'resource'
+    when 'resource'
       new_page_resource_path(parent_object)
+    else
+      raise "Helper new_object_path does not accept object '#{object}'"
     end
   end
 
