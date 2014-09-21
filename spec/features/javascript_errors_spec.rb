@@ -10,7 +10,7 @@ end
 feature 'JavaScript (authed)', js: true do
   before(:each) do
     auth_user
-    @page = FactoryGirl.create(:page, :with_scenarios, :with_resources)
+    @solution = FactoryGirl.create(:solution, :with_scenarios, :with_resources)
   end
 
   scenario 'welcome#index has no errors' do
@@ -18,18 +18,18 @@ feature 'JavaScript (authed)', js: true do
     expect(page).not_to have_errors
   end
 
-  scenario 'pages#index has no errors' do
-    visit pages_path
+  scenario 'solutions#index has no errors' do
+    visit solutions_path
     expect(page).not_to have_errors
   end
 
-  scenario 'pages#show has no errors' do
-    visit page_path(@page)
+  scenario 'solutions#show has no errors' do
+    visit solution_path(@solution)
     expect(page).not_to have_errors
   end
 
   scenario 'scenarios#show has no errors' do
-    visit scenario_path(@page.scenarios.first)
+    visit scenario_path(@solution.scenarios.first)
     expect(page).not_to have_errors
   end
 end

@@ -8,7 +8,7 @@ feature 'anonymous users' do
   end
 
   scenario 'cannot view other pages' do
-    visit pages_path
+    visit solutions_path
 
     expect(page).to have_content('You need to sign in or register before continuing.')
   end

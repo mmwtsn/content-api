@@ -56,15 +56,15 @@ feature 'Scenario Products' do
     first('.product').click
     expect(page.assert_selector('.saved')).to be_true
 
-    # Saved product should then render to the page
-    within('.scenario-products') do
+    # Saved product should then render to the solution
+    within('.scenario_products') do
       expect(page).to have_content('Bluemix')
     end
   end
 
   # User sees products saved to their scenarios
   scenario 'view scenario products', js: true do
-    within('.scenario-products') do
+    within('.scenario_products') do
       expect(page).to have_content(@product.name)
     end
   end
@@ -83,7 +83,7 @@ feature 'Scenario Products' do
 
   # User can delete products saved to their scenarios
   scenario 'delete a product from a scenario', js: true do
-    within('.scenario-product', match: :first) do
+    within('.scenario_product', match: :first) do
       click_link('delete')
     end
 

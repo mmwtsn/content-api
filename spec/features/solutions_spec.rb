@@ -1,79 +1,79 @@
 require 'spec_helper'
 
-feature 'Pages' do
+feature 'solutions' do
 
   before(:each) do
     auth_user
   end
 
-  scenario 'create a page' do
+  scenario 'create a solution' do
     title = 'test title'
 
-    # GET /pages pages#index
-    visit pages_path
+    # GET /solutions solutions#index
+    visit solutions_path
 
-    # GET /pages/new pages#new
-    click_link 'create page'
-    fill_in 'page_title', :with => title
+    # GET /solutions/new solutions#new
+    click_link 'create solution'
+    fill_in 'solution_title', :with => title
 
-    # POST /pages pages#create
+    # POST /solutions solutions#create
     click_button 'save'
 
     expect(page).to have_content(title)
     expect(page).to have_content('unpublished')
   end
 
-  scenario 'edit a page' do
-    @page = FactoryGirl.create(:page)
+  scenario 'edit a solution' do
+    @solution = FactoryGirl.create(:solution)
 
-    # GET /pages pages#index
-    visit pages_path
-    expect(page).to have_content(@page.title)
+    # GET /solutions solutions#index
+    visit solutions_path
+    expect(page).to have_content(@solution.title)
 
-    # GET /pages/id/edit pages#edit
+    # GET /solutions/id/edit solutions#edit
     first(:link, 'edit').click
 
-    # Edit page
-    @page.title = 'new title'
-    fill_in 'page_title', :with => @page.title
+    # Edit solution
+    @solution.title = 'new title'
+    fill_in 'solution_title', :with => @solution.title
 
-    # PUT /pages/id pages#update
+    # PUT /solutions/id solutions#update
     click_button 'save'
 
-    # GET /pages pages#index
-    visit pages_path
-    expect(page).to have_content(@page.title)
+    # GET /solutions solutions#index
+    visit solutions_path
+    expect(page).to have_content(@solution.title)
   end
 
-  scenario 'delete a page' do
-    @page = FactoryGirl.create(:page)
+  scenario 'delete a solution' do
+    @solution = FactoryGirl.create(:solution)
 
-    # GET /pages pages#index
-    visit pages_path
+    # GET /solutions solutions#index
+    visit solutions_path
 
-    # DELETE /pages/:id pages#destroy
+    # DELETE /solutions/:id solutions#destroy
     click_link 'delete'
-    expect(page).to have_no_content(@page.title)
+    expect(page).to have_no_content(@solution.title)
   end
 
-  scenario 'view all pages' do
-    @page = FactoryGirl.create(:page)
-    @another_page = FactoryGirl.create(:page, title: 'another page', body: 'Page, yo.')
+  scenario 'view all solutions' do
+    @solution = FactoryGirl.create(:solution)
+    @another_solution = FactoryGirl.create(:solution, title: 'another solution', body: 'solution, yo.')
 
-    # GET /pages pages#index
-    visit pages_path
-    expect(page).to have_content(@page.title)
-    expect(page).to have_content(@another_page.title)
+    # GET /solutions solutions#index
+    visit solutions_path
+    expect(page).to have_content(@solution.title)
+    expect(page).to have_content(@another_solution.title)
   end
 
-  scenario 'publish only complete pages' do
-    @page = FactoryGirl.create(:page)
+  scenario 'publish only complete solutions' do
+    @solution = FactoryGirl.create(:solution)
 
-    # GET /pages/:id/edit pages#edit
-    visit edit_page_path(@page.id)
+    # GET /solutions/:id/edit solutions#edit
+    visit edit_solution_path(@solution.id)
 
-    # Attempt to publish page without filling in header image field
-    find('#page_published').set(true)
+    # Attempt to publish solution without filling in header image field
+    find('#solution_published').set(true)
     click_button 'save'
 
     expect(page).to have_content('error')

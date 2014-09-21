@@ -7,18 +7,18 @@ feature 'Resources' do
   end
 
   scenario 'not created' do
-    @page = FactoryGirl.create(:page)
+    @solution = FactoryGirl.create(:solution)
 
-    visit page_path(@page)
+    visit solution_path(@solution)
 
     expect(page).to have_content('no saved resources')
   end
 
   scenario 'create a resource', js: true do
-    @page = FactoryGirl.create(:page)
+    @solution = FactoryGirl.create(:solution)
     @resource = FactoryGirl.build(:resource, body: 'fancy new resource', url: 'http://fancy-resource.io/')
 
-    visit page_path(@page)
+    visit solution_path(@solution)
 
     # Trigger form
     click_link 'new resource'
@@ -32,27 +32,27 @@ feature 'Resources' do
     expect(page).to have_content(@resource.body)
   end
 
-  scenario 'view all resources on a page' do
-    @page = FactoryGirl.create :page, :with_resources, num: 2
+  scenario 'view all resources on a solution' do
+    @solution = FactoryGirl.create :solution, :with_resources, num: 2
 
     # Update resources attributes
     # TODO - do this automatically in the factory
-    @page.resources.each_with_index do |resource, index|
+    @solution.resources.each_with_index do |resource, index|
       resource.body = "industry distrupting resource ##{index}"
       resource.save!
     end
 
-    visit page_path(@page)
+    visit solution_path(@solution)
 
     expect(page).to have_content("industry distrupting resource #0")
     expect(page).to have_content("industry distrupting resource #1")
   end
 
   scenario 'edit a resource' do
-    @page = FactoryGirl.create :page, :with_resources, num: 1
+    @solution = FactoryGirl.create :solution, :with_resources, num: 1
     edited_body= 'Super-Duper Updated Resource'
 
-    visit page_path(@page)
+    visit solution_path(@solution)
 
     within('.resources') do
       click_link 'edit'
@@ -65,9 +65,9 @@ feature 'Resources' do
   end
 
   scenario 'delete a resource' do
-    @page = FactoryGirl.create :page, :with_resources, num: 1
+    @solution = FactoryGirl.create :solution, :with_resources, num: 1
 
-    visit page_path(@page)
+    visit solution_path(@solution)
 
     within('.resources') do
       click_link 'delete'
@@ -75,7 +75,7 @@ feature 'Resources' do
 
     # Note - another "within" block needs to be created as it appears
     #        that the context of the original block is not executed
-    #        a second time after the page reloads.
+    #        a second time after the solution reloads.
     #
     #        This should be unnecessary if the delete method is fired
     #        via AJAX.

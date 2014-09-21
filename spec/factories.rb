@@ -11,9 +11,10 @@ FactoryGirl.define do
     "user_#{n}@ibmcloud.io"
   end
 
-  factory :page do
+  factory :solution do
     title 'Buying a Bicycle'
-    body 'Today I will buy a bicycle.'
+    body  'Today I will buy a bicycle.'
+    name  'Bicycle Solution'
 
     # Allow header image to be tested only when necessary
     trait :with_header do
@@ -21,10 +22,10 @@ FactoryGirl.define do
     end
 
     # Allow for user to specify the number of associated :scenario factories
-    # to be created when a new solutions :page is made, e.g.:
+    # to be created when a new solutions :solution is made, e.g.:
     #
-    # FactoryGirl.create :page, :with_scenarios, num: 3
-    # FactoryGirl.create :page, :with_scenarios, title: "Gaming Solution", num: 3
+    # FactoryGirl.create :solution, :with_scenarios, num: 3
+    # FactoryGirl.create :solution, :with_scenarios, title: "Gaming Solution", num: 3
     #
     # http://arjanvandergaag.nl/blog/factory_girl_tips.html
     trait :with_scenarios do
@@ -33,8 +34,8 @@ FactoryGirl.define do
       end
 
       # evaluator allows one to pass the above "ignored" attribute into the callback block
-      after :create do |page, evaluator|
-        FactoryGirl.create_list :scenario, evaluator.num, page: page
+      after :create do |solution, evaluator|
+        FactoryGirl.create_list :scenario, evaluator.num, solution: solution
       end
     end
 
@@ -43,15 +44,15 @@ FactoryGirl.define do
         num 5
       end
 
-      after :create do |page, evaluator|
-        FactoryGirl.create_list :resource, evaluator.num, page: page
+      after :create do |solution, evaluator|
+        FactoryGirl.create_list :resource, evaluator.num, solution: solution
       end
     end
 
     trait :with_everything do
-      after :create do |page|
-        FactoryGirl.create(:scenario, :with_product, page: page)
-        FactoryGirl.create(:resource, page: page)
+      after :create do |solution|
+        FactoryGirl.create(:scenario, :with_product, solution: solution)
+        FactoryGirl.create(:resource, solution: solution)
       end
     end
   end
@@ -59,7 +60,8 @@ FactoryGirl.define do
   factory :scenario do
     quote 'I want to globally globalize global globes'
     pitch 'High-performance geo-buzzword'
-    page # associate :scenario factory with :page factory
+    name  'Marketing Scenario'
+    solution # associate :scenario factory with :solution factory
 
     # Allow avatar image to be tested only when necessary
     trait :with_avatar do
@@ -83,6 +85,6 @@ FactoryGirl.define do
   factory :resource do
     body 'User Testing is Dead; User Testing Will Live Forever'
     url 'http://the-truth.io/'
-    page # associate :scenario factory with :page factory
+    solution # associate :scenario factory with :solution factory
   end
 end
