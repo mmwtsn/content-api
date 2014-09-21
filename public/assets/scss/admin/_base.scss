@@ -40,13 +40,18 @@ input {
 // System messages
 //
 
-// TODO - This is boilerplate from Bitters, is it still necessary?
 .error {
   @extend %flash-error;
+  color: #8c1e1e;
+  background-color: #f08080;
+  border-radius: 3px;
 }
 
 .notice {
   @extend %flash-success;
+  color: #5cab5c;
+  border-radius: 3px;
+  background-color: #a6e0a6;
 }
 
 .errors {
