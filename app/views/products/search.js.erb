@@ -1,6 +1,6 @@
 // Ensure only the current modal is targeted
 var results  = <%= raw json_escape( @results ) %>
-,   $modal   = $( '.modal[data_name=<%= @scenario_name %>]' )
+,   $modal   = $( '.modal[data-name=<%= @scenario_name %>]' )
 ,   $errors  = $modal.find( '.errors' )
 ,   $search  = $modal.find( '.product_query' )
 ,   $count   = $modal.find( '.product_count' )
@@ -29,7 +29,7 @@ else {
 
     $results
       .find( '.results' ).append(
-        '<article class="product result unsaved" data_id="' + result["id"] + '">'
+        '<article class="product result unsaved" data-id="' + result["id"] + '">'
         + '<p class="product_name">' + result["name"] + '</p>'
         + '<p class="product_description">' + result["product_name"] + '</p>'
       + '</article>'
