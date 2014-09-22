@@ -8,7 +8,7 @@
 <% else %>
 
   $( '.scenario[data_name="<%= @scenario_name %>"] .products' )
-    .append( '<%= j(render "products/index", object: @product) %>' )
+    .append( '<%= j render(@product) %>' )
     .find( '.empty' )
     .remove();
 
