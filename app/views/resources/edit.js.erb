@@ -1,1 +1,1 @@
-$( '<%= "#resource_#{@resource.id}" %>' ).html( '<%= j render "form", object: @resource %>' );
+<%= render 'shared/edit', resource: 'resource', object: @resource %>
