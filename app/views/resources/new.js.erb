@@ -1,7 +1,1 @@
-$( '#show_new_resource' ).fadeOut( 300, function() {
-
-  $( '.resource.new' )
-    .html( '<%= j render "form", object: [@solution, @solution.resources.build]%>' )
-    .slideDown(800);
-
-});
+<%= render 'shared/new', resource: 'resource', object: [@solution, @solution.resources.build] %>
