@@ -1,9 +1,9 @@
 class ScenariosController < ApplicationController
-  respond_to :html, :js
+  respond_to :js
 
   before_action :authenticate_user!
   before_action :set_solution, only: [:new, :create]
-  before_action :set_scenario, only: [:edit, :show, :update, :destroy]
+  before_action :set_scenario, only: [:edit, :update, :destroy]
 
   require "#{Rails.root}/lib/product_api"
 
@@ -15,11 +15,6 @@ class ScenariosController < ApplicationController
     @scenario = @solution.scenarios.create(scenario_params)
   end
 
-  def show
-    @product = Product.new
-    @products = Scenario.friendly.find(params[:id]).products
-  end
-
   def edit
   end
 
@@ -29,11 +24,6 @@ class ScenariosController < ApplicationController
 
   def destroy
     @scenario.destroy
-
-    respond_to do |format|
-      format.js
-      format.html { redirect_to solution_path(@scenario.solution_id)}
-    end
   end
 
   private
