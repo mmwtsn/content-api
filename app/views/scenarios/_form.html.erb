@@ -1,3 +1,29 @@
-<%= form_for [object, object.scenarios.build], remote: true, html: { multipart: true } do |f| %>
-  <%= render 'form_fields', f: f %>
+<%= form_for object, remote: true, html: { multipart: true } do |f| %>
+  <div class="<%= container_class %>">
+    <ul class="errors"></ul>
+
+    <% if edit? %>
+      <%= image_tag @scenario.avatar, class: 'icon' %>
+    <% end %>
+
+    <%= f.label :name, 'Scenario Name' %>
+    <%= f.text_field :name, class: 'instance_name' %>
+
+    <%= f.label :quote %>
+    <%= f.text_field :quote, autofocus: true %>
+
+    <%= f.label :pitch %>
+    <%= f.text_field :pitch %>
+
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <% if new? %>
+    <%= f.submit 'save', class: 'btn primary', id: 'save_scenario' %>
+  <% elsif edit? %>
+    <div class="card_admin">
+      <%= f.submit 'save', class: 'link primary', id: 'save_scenario' %>
+    </div>
+  <% end %>
 <% end %>
