@@ -2,7 +2,7 @@
  * Responsibile for scrolling to the top or bottom of modal search results.
  */
 
-(function() {
+; (function() {
 
   var resultScroll = function(that, position) {
     $(that).siblings('.results_container').animate({

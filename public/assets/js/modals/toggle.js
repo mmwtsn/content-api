@@ -2,7 +2,7 @@
  * Toggles the visibility of a modal window ("open" and "✗ close").
  */
 
-(function(){
+; (function() {
 
   $('.js_modal_toggle').on('click', function() {
 

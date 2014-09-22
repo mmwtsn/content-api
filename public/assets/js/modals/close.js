@@ -2,7 +2,7 @@
  * Allow users to close modal windows by pressing ESC or clicking off screen.
  */
 
-(function() {
+; (function() {
 
   $(document).keyup(function(e) {
     var $modal = $('.modal');
