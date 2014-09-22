@@ -10,6 +10,10 @@ module ApplicationHelper
     return sanitized_url
   end
 
+  def id_selector(object)
+    "##{dom_id(object)}"
+  end
+
   def model_name(object)
     object.class.name.downcase
   end
