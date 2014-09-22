@@ -15,7 +15,7 @@ var assetsPath = root + '/assets';
 
 // Individual asset paths
 var sassPath   = assetsPath + '/scss/**/*.scss';
-var jsPath     = assetsPath + '/js/**/*.js';
+var jsPath     = assetsPath + '/js/**/**/*.js';
 
 // Ignored asset paths
 var sassIgnore = '!' + assetsPath + '/scss/vendor/**/*.scss';
