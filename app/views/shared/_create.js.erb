@@ -1,0 +1,13 @@
+<% if object.errors.any? %>
+  <%= render 'errors', object: object %>
+<% else %>
+  $('<%= new_resource_wrapper(object) %>').empty();
+
+  <% if params[:controller] != 'solutions' %>
+    <%= render 'shared/remove_empty', object: object %>
+  <% end %>
+
+  $('<%= collection_class_selector(object) %>').append('<%= j render(object) %>');
+
+  $('<%= show_new_resource_selector(object) %>').show();
+<% end %>
