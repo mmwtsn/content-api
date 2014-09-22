@@ -1,0 +1,7 @@
+$('<%= "#show_new_#{resource}" %>').fadeOut( 300, function() {
+
+  $('<%= ".new.#{resource}" %>')
+    .html('<%= j render "form", object: object %>')
+    .slideDown(800);
+
+});
