@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  respond_to :html, :js
+  respond_to :js
 
   before_action :authenticate_user!
   before_action :set_solution, only: [:new, :create]
@@ -11,11 +11,6 @@ class ResourcesController < ApplicationController
 
   def create
     @resource = @solution.resources.create!(resource_params)
-
-    respond_to do |format|
-      format.js
-      format.html { redirect_to solution_path(@solution) }
-    end
   end
 
   def edit
@@ -27,14 +22,10 @@ class ResourcesController < ApplicationController
 
   def destroy
     @resource.destroy
-
-    respond_to do |format|
-      format.js
-      format.html { redirect_to solution_path(@resource.solution_id) }
-    end
   end
 
   private
+
   def resource_params
     params.require(:resource).permit(:body, :url)
   end
