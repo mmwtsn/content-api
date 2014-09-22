@@ -1,4 +1,4 @@
-$( '#new_resource' ).fadeOut( 300, function() {
+$( '#show_new_resource' ).fadeOut( 300, function() {
 
   $( '.resource.new' )
     .html( '<%= j render "form", object: [@solution, @solution.resources.build]%>' )

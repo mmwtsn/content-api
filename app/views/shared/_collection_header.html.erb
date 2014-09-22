@@ -2,5 +2,5 @@
 
 <header class="collection_header">
   <%= content_tag :h2, "#{object.capitalize}s", class: 'collection_type' %>
-  <%= link_to "new #{object}", new_object_path(object, parent_object), remote: true, class: 'btn secondary', id: "new_#{object}" %>
+  <%= link_to "new #{object}", new_object_path(object, parent_object), remote: true, class: 'btn secondary', id: "show_new_#{object}" %>
 </header>
