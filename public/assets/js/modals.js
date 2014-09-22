@@ -5,7 +5,7 @@ $('.js_modal_toggle').on('click', function() {
   $modal.toggleClass('visible');
 
   setTimeout(function() {
-    $modal.find( 'input[type="text"]' ).first().focus();
+    $modal.find('input[type="text"]').first().focus();
   }, 100);
 });
 
@@ -23,16 +23,20 @@ $('.modal_overlay').on('click', function() {
   $('.modal').removeClass('visible');
 });
 
-var resultScroll = function( that, position ) {
-  $( that ).siblings( '.results_container' ).animate({
-    scrollTop: position
-  }, 600);
-}
+(function() {
 
-$( '.modal_scroll.top' ).on( 'click', function() {
-  resultScroll( this, 0 );
-});
+  var resultScroll = function(that, position) {
+    $(that).siblings('.results_container').animate({
+      scrollTop: position
+    }, 600);
+  }
 
-$( '.modal_scroll.bottom' ).on( 'click', function() {
-  resultScroll( this, $('.results').height() );
-});
+  $('.modal_scroll.top').on('click', function() {
+    resultScroll(this, 0);
+  });
+
+  $('.modal_scroll.bottom').on('click', function() {
+    resultScroll(this, $('.results').height());
+  });
+
+})();
