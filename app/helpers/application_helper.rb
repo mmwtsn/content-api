@@ -22,12 +22,20 @@ module ApplicationHelper
     ".#{dom_class(object)}"
   end
 
+  def individual_card_class_selector(object)
+    "#{collection_class_selector(object)} #{class_selector(object)}.card"
+  end
+
   def show_new_resource_selector(object)
     "#show_#{dom_id(object.class.new)}"
   end
 
   def new_resource_wrapper(object)
     ".new.#{object.class.to_s.parameterize}"
+  end
+
+  def plural_resource_name(object)
+    object.class.to_s.pluralize.downcase
   end
 
   def model_name(object)
