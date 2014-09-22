@@ -1,8 +1,0 @@
-var $errors = $('.errors');
-$errors.empty().append('<p><strong>Hey!</strong></p>');
-
-<% object.errors.full_messages.each do |error| %>
-  $errors.append('<li><%= error %>.</li>');
-<% end %>
-
-$errors.slideDown();
