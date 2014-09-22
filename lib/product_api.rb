@@ -31,7 +31,7 @@ module ProductAPI
 
     return array
   end
-  
+
   # Returns a formatted HTML class from an English-readable product name 
   #
   # params
