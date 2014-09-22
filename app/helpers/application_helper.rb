@@ -14,6 +14,22 @@ module ApplicationHelper
     "##{dom_id(object)}"
   end
 
+  def collection_class_selector(object)
+    ".#{dom_class(object)}s"
+  end
+
+  def class_selector(object)
+    ".#{dom_class(object)}"
+  end
+
+  def show_new_resource_selector(object)
+    "#show_#{dom_id(object.class.new)}"
+  end
+
+  def new_resource_wrapper(object)
+    ".new.#{object.class.to_s.parameterize}"
+  end
+
   def model_name(object)
     object.class.name.downcase
   end
