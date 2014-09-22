@@ -5,7 +5,7 @@ class SolutionsController < ApplicationController
   before_action :set_solution, only: [:show, :preview, :edit, :update, :destroy]
 
   def index
-    @solutions = Solution.order(id: :desc).all
+    @solutions = Solution.all
   end
 
   def new
@@ -20,6 +20,14 @@ class SolutionsController < ApplicationController
   end
 
   def show
+  end
+
+  def update
+    @solution.update(solution_params)
+  end
+
+  def destroy
+    @solution.destroy
   end
 
   def preview
@@ -48,18 +56,10 @@ class SolutionsController < ApplicationController
     end
   end
 
-  def update
-    @solution.update(solution_params)
-  end
-
-  def destroy
-    @solution.destroy
-    redirect_to Solutions_path
-  end
-
   private
+
   def solution_params
-    params[:Solution].permit(:name, :title, :body, :header, :published)
+    params[:solution].permit(:name, :title, :body, :header, :published)
   end
 
   def set_solution
