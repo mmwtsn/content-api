@@ -64,6 +64,11 @@ input {
   color: darken($error, 13%);
 }
 
+.modal .errors {
+  margin: 0 1.5rem 1rem;
+  padding: 0.5rem;
+}
+
 //
 // Layout
 //
