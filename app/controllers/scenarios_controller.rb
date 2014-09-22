@@ -5,8 +5,6 @@ class ScenariosController < ApplicationController
   before_action :set_solution, only: [:new, :create]
   before_action :set_scenario, only: [:edit, :update, :destroy]
 
-  require "#{Rails.root}/lib/product_api"
-
   def new
     @scenario = Scenario.new
   end
