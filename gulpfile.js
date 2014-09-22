@@ -21,17 +21,6 @@ var jsPath     = assetsPath + '/js/**/*.js';
 var sassIgnore = '!' + assetsPath + '/scss/vendor/**/*.scss';
 var jsIgnore   = '!' + assetsPath + '/js/vendor/**/*.js';
 
-// Ordered scripts path without third-party vendor scripts
-var jsOrdered  = [
-  assetsPath + '/js/vendor/rails.js',
-  assetsPath + '/js/config.js',
-  assetsPath + '/js/toggle.js',
-  assetsPath + '/js/create.js',
-  assetsPath + '/js/search.js',
-  assetsPath + '/js/modals.js',
-  assetsPath + '/js/init.js'
-];
-
 // Configuration objects
 var sassConfig = { 'outputStyle': 'compressed' };
 var lintConfig = { 'config': '.scss-lint.yml' };
@@ -40,7 +29,7 @@ var lintConfig = { 'config': '.scss-lint.yml' };
 gulp.task( 'scripts', function() {
 var vendorFilter = filter( jsIgnore );
 
-  return gulp.src( jsOrdered ) // Pass in all scripts
+  return gulp.src( jsPath ) // Pass in all scripts
     .pipe( vendorFilter ) // Filter out vendor scripts
     .pipe( jshint() )
     .pipe( jshint.reporter('default') )
