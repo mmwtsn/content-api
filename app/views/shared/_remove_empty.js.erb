@@ -1,0 +1,9 @@
+(function() {
+
+  var $empty = $('<%= collection_class_selector(object) %> .empty');
+
+  if($empty.length) {
+    $empty.remove();
+  }
+
+}());
