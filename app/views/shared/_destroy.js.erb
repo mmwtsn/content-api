@@ -1,5 +1,5 @@
 $('<%= id_selector(object) %>').remove();
 
 if($('<%= individual_card_class_selector(object) %>').length === 0) {
-  $('<%= class_selector(object) %>').append( '<%= j render("shared/empty", object: plural_resource_name(object)) %>' );
+  $('<%= collection_class_selector(object) %>').append( '<%= j render("shared/empty", object: plural_resource_name(object)) %>' );
 }
