@@ -1,6 +1,7 @@
 $('.js_modal_toggle').on('click', function() {
+
   var scenario_name  = $(this).data('name')
-  ,   $modal         = $('.modal[data_name="' + scenario_name + '"]');
+  ,   $modal         = $('.modal[data-name="' + scenario_name + '"]');
 
   $modal.toggleClass('visible');
 
