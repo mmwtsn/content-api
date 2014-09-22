@@ -2,7 +2,9 @@
   <div class="<%= container_class %>">
     <ul class="errors"></ul>
 
-    <%= image_tag object.header, class: 'solution_header' %>
+    <% if edit? %>
+      <%= image_tag object.header, class: 'solution_header' %>
+    <% end %>
 
     <%= f.label :name, 'Solution Name' %>
     <%= f.text_field :name, class: 'instance_name' %>
