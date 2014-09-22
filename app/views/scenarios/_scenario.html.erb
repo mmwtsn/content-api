@@ -7,11 +7,7 @@
 
     <section class="products">
       <%= content_tag :h4, 'Products' %>
-      <% if scenario.products.each do |product| %>
-        <%= render 'products/index', scenario: product %>
-      <% end.empty? %>
-        <%= render 'products/empty' %>
-      <% end %>
+      <%= render(scenario.products) || render('shared/empty', object: 'product') %>
     </section>
   </div>
 
