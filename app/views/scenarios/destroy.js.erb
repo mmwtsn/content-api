@@ -1,5 +1,1 @@
-$( '#scenario_<%= @scenario.id %>' ).remove();
-
-if( $('.scenarios .scenario.card').length === 0 ) {
-  $( '.scenarios' ).append( '<%= j render("shared/empty", object: "scenarios") %>' );
-}
+<%= render 'shared/destroy', object: @scenario %>
