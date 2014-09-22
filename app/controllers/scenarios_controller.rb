@@ -24,11 +24,7 @@ class ScenariosController < ApplicationController
   end
 
   def update
-    if @scenario.update(scenario_params)
-      redirect_to solution_path(@scenario.solution_id)
-    else
-      render 'edit'
-    end
+    @scenario.update(scenario_params)
   end
 
   def destroy

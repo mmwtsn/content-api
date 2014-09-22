@@ -22,11 +22,7 @@ class ResourcesController < ApplicationController
   end
 
   def update
-    if @resource.update(resource_params)
-      redirect_to solution_path(@resource.solution_id)
-    else
-      render 'edit'
-    end
+    @resource.update(resource_params)
   end
 
   def destroy
