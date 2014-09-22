@@ -1,6 +1,0 @@
-<% if object.errors.any? %>
-  <%= render 'errors', object: object %>
-<% else %>
-  $('.solution.new').empty();
-  $('#new_solution').after('<%= j render("index", object: object) %>').show();
-<% end %>
