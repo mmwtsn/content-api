@@ -1,56 +1,56 @@
 // Ensure only the current modal is targeted
-var results  = <%= raw json_escape( @results ) %>
-,   $modal   = $( '.modal[data-name=<%= @scenario_name %>]' )
-,   $errors  = $modal.find( '.errors' )
-,   $search  = $modal.find( '.product_query' )
-,   $count   = $modal.find( '.product_count' )
-,   $results = $modal.find( '.results_wrapper' )
-,   $submit  = $modal.find( '.product_submit' );
+var results  = <%= raw json_escape(@results) %>
+,   $modal   = $('.modal[data-name=<%= @scenario_name %>]')
+,   $errors  = $modal.find('.errors')
+,   $search  = $modal.find('.product_query')
+,   $count   = $modal.find('.product_count')
+,   $results = $modal.find('.results_wrapper')
+,   $submit  = $modal.find('.product_submit');
 
 // Search is complete, update the UI
-$submit.removeClass( 'loading' );
+$submit.removeClass('loading');
 
 // Do we have any results?
-if( results.length === 0 ) {
+if(results.length === 0) {
 
-  $errors.append( '<li>Your search did not return any resesults.</li>' ).slideDown();
+  $errors.append('<li>Your search did not return any resesults.</li>').slideDown();
 
 }
 else {
 
   // Toggle visibility of the results wrapper
-  $results.toggleClass( 'open closed' );
+  $results.toggleClass('open closed');
 
   // Update the UI with the total number of results
-  $count.html( results.length );
+  $count.html(results.length);
 
   // Iterate over results and append each to the DOM
-  results.forEach( function( result ) {
+  results.forEach(function(result) {
 
     $results
-      .find( '.results' ).append(
+      .find('.results').append(
         '<article class="product result unsaved" data-id="' + result["id"] + '">'
         + '<p class="product_name">' + result["name"] + '</p>'
         + '<p class="product_description">' + result["product_name"] + '</p>'
       + '</article>'
       )
-      .parent().scrollTop( 0 );
+      .parent().scrollTop(0);
 
   });
 
 };
 
 // Delegate event when user interacts with any result
-$( '.results' ).on( 'click', '.result.unsaved', function() {
+$('.results').on('click', '.result.unsaved', function() {
 
   // Cache reference to the current jQuery object
-  $this = $( this );
+  $this = $(this);
 
   // Stash product id
-  var id = $this.data( 'id' );
+  var id = $this.data('id');
 
   // Get current scenario id
-  var scenario_name = $this.parents( '.modal' ).data( 'name' );
+  var scenario_name = $this.parents('.modal').data('name');
 
   // Build destination for POST for /scenarios/:scenario_friendly_id/products
   var post_url = '/scenarios/' + scenario_name + '/products';
@@ -61,7 +61,7 @@ $( '.results' ).on( 'click', '.result.unsaved', function() {
     url:  post_url,
     data: results[id]
   }).done(function() {
-    $this.toggleClass( 'saved unsaved' );
+    $this.toggleClass('saved unsaved');
   });
 
 });
