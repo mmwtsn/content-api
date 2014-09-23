@@ -40,28 +40,31 @@ input {
 // System messages
 //
 
-.error {
-  @extend %flash-error;
+%ui-notice {
+  color: #5cab5c;
+  border-radius: 3px;
+  background-color: #a6e0a6;
+}
+
+%ui-error {
   color: #8c1e1e;
   background-color: #f08080;
   border-radius: 3px;
 }
 
 .notice {
-  @extend %flash-success;
-  color: #5cab5c;
-  border-radius: 3px;
-  background-color: #a6e0a6;
+  @extend %ui-notice;
+}
+
+.error {
+  @extend %ui-error;
 }
 
 .errors {
+  @extend %ui-error;
   display: none;
   margin: 0 0 1rem;
   padding: 1rem;
-  border: 1px solid darken($error, 2%);
-  border-radius: 2px;
-  background: $error;
-  color: darken($error, 13%);
 }
 
 .modal .errors {
