@@ -38,19 +38,3 @@ $('.product_reset').on('click', function(e) {
 
   $('.results_wrapper').removeClass('open');
 });
-
-//
-// Remove deleted product upon successful POST
-//
-$(document).on('ajax:success', '.delete_product', function() {
-
-  var $product  = $(this).parents('.product')
-  ,   $products = $(this).parents('.products');
-
-  if($products.children('.product').length === 1) {
-    $products.append('<div class="empty"><p>This scenario has no products!</p></div>');
-  }
-
-  $product.remove();
-
-});
