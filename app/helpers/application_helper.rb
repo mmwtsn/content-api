@@ -11,27 +11,49 @@ module ApplicationHelper
   end
 
   def id_selector(object)
-    "##{dom_id(object)}"
+    make_id(dom_id(object))
   end
 
   def collection_class_selector(object)
-    ".#{dom_class(object)}s"
+    make_class(dom_class(object).pluralize)
   end
 
   def class_selector(object)
-    ".#{dom_class(object)}"
+    make_class(dom_class(object))
   end
 
-  def individual_card_class_selector(object)
-    "#{collection_class_selector(object)} #{class_selector(object)}.card"
+  def individual_resource_selector(object)
+    if object.class == Product
+      "#{products_container_class(object.scenario)} .product"
+    else
+      "#{collection_class_selector(object)} #{class_selector(object)}.card"
+    end
+  end
+
+  def make_class(string)
+    ".#{string}"
+  end
+
+  def make_id(string)
+    "##{string}"
+  end
+
+  def products_container(scenario)
+    "products #{scenario.name.parameterize}-products"
+  end
+
+  # TODO - I'm rushing, this is a mess.
+
+  def products_container_class(scenario)
+    make_class(products_container(scenario).split(' ').join('.'))
   end
 
   def show_new_resource_selector(object)
-    "#show_#{dom_id(object.class.new)}"
+    "show_#{dom_id(object.class.new)}"
   end
 
   def new_resource_wrapper(object)
-    ".new.#{object.class.to_s.parameterize}"
+    "new_#{object.class.to_s.parameterize}_wrapper"
   end
 
   def plural_resource_name(object)
