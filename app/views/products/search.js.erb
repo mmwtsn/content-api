@@ -61,7 +61,9 @@ $('.results').on('click', '.result.unsaved', function() {
     url:  post_url,
     data: results[id]
   }).done(function() {
-    $this.toggleClass('saved unsaved');
+    $this
+      .toggleClass('saved unsaved')
+      .append('<span class="ui-check">✔︎</span>');
   });
 
 });
