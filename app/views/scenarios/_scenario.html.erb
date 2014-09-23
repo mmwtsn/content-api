@@ -5,10 +5,10 @@
     <%= content_tag :h3, scenario.quote %>
     <%= content_tag :p , scenario.pitch %>
 
-    <section class="products">
+    <%= content_tag :section, class: products_container(scenario) do %>
       <%= content_tag :h4, 'Products' %>
       <%= render(scenario.products) || render('shared/empty', object: 'product') %>
-    </section>
+    <% end %>
   </div>
 
   <div class="card_admin">
