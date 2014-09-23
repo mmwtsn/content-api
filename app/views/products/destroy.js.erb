@@ -1,0 +1,7 @@
+<%# TODO - DRY up this partial and render "shared/destroy" when the helper methods are cleaned up -%>
+
+$('<%= id_selector(@product) %>').remove();
+
+if($('<%= individual_resource_selector(@product) %>').length === 0) {
+  $('<%= products_container_class(@product.scenario) %>').append( '<%= j render("shared/empty", object: plural_resource_name(@product)) %>' );
+}
