@@ -1,5 +1,6 @@
 # Use secure gem source
 source 'https://rubygems.org'
+ruby '2.1.1'
 
 # Latest stable Rails
 gem 'rails', '4.1.0'
@@ -37,4 +38,8 @@ end
 # Gems shared across environments
 group :test, :development do
   gem 'rspec-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
