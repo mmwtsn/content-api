@@ -1,21 +1,18 @@
 default: &default
-  adapter: mysql2
-  encoding: utf8
+  adapter: postgresql
+  encoding: unicode
   pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
 
 development:
   <<: *default
-  database: page_development
+  database: content_development
 
 test:
   <<: *default
-  database: page_test
+  database: content_test
 
 production:
   <<: *default
-  database: page_production
-  username: root
-  password: <%= ENV['PAGE_DATABASE_PASSWORD'] %>
+  database: content_production
+  username: content
+  password: <%= ENV['CONTENT_DATABASE_PASSWORD'] %>
