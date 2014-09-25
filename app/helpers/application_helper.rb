@@ -49,11 +49,11 @@ module ApplicationHelper
   end
 
   def show_new_resource_selector(object)
-    "show_#{dom_id(object.class.new)}"
+    ".show_#{dom_id(object.class.new)}"
   end
 
   def new_resource_wrapper(object)
-    "new_#{object.class.to_s.parameterize}_wrapper"
+    ".new_#{object.class.to_s.parameterize}_wrapper"
   end
 
   def plural_resource_name(object)
