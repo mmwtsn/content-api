@@ -1,4 +1,4 @@
-# Drop all MySQL database tables except "users" and "schema_migrations" tables
+# Drop all database tables except "users" and "schema_migrations" tables
 ActiveRecord::Base.establish_connection
 ActiveRecord::Base.connection.tables.each do |table|
   ActiveRecord::Base.connection.execute("TRUNCATE #{table}") unless table == "schema_migrations" || table == "users"
@@ -10,7 +10,7 @@ images_path = './public/assets/images/seed'
 # Seed data for Solutions Pages and their nested Scenarios and Resources
 solutions = [
   {
-    page: {
+    solution: {
       name:  'Gaming Solution',
       header: File.open("#{images_path}/gaming_header.jpg"),
       title: 'For game developers and publishers: the game is on',
@@ -32,7 +32,7 @@ solutions = [
     ]
   },
   {
-    page: {
+    solution: {
       name:  'DevOps Solution',
       header: File.open("#{images_path}/devops_header.jpg"),
       title: 'DevOps in the cloud: from idea to production in minutes',
@@ -54,7 +54,7 @@ solutions = [
     ]
   },
   {
-    page: {
+    solution: {
       name:  'Mobile Solution',
       header: File.open("#{images_path}/mobile_header.jpg"),
       title: 'Accelerated mobile app development with IBM Bluemix',
@@ -85,9 +85,9 @@ solutions = [
   }
 ]
 
-# Seed new Solutions Pages with Scenarios and Resources
+# Seed new Solutions with Scenarios and Resources
 solutions.each do |solution|
-  s = Page.new solution[:page]
+  s = Solution.new solution[:solution]
 
   if solution[:scenarios]
     solution[:scenarios].each do |scenario|
