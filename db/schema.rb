@@ -13,18 +13,8 @@
 
 ActiveRecord::Schema.define(version: 20140919204702) do
 
-  create_table "pages", force: true do |t|
-    t.string   "title"
-    t.text     "body"
-    t.string   "header_file_name"
-    t.string   "header_content_type"
-    t.integer  "header_file_size"
-    t.datetime "header_updated_at"
-    t.boolean  "published",           default: false
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "products", force: true do |t|
     t.integer  "scenario_id"
