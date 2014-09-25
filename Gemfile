@@ -3,10 +3,10 @@ source 'https://rubygems.org'
 ruby '2.1.1'
 
 # Latest stable Rails
-gem 'rails', '4.1.0'
+gem 'rails', '4.1.4'
 
 # Database adapter and depdencies
-gem 'mysql2'
+gem 'pg'
 gem 'therubyracer'
 
 # Misc. Rails helper libraries
